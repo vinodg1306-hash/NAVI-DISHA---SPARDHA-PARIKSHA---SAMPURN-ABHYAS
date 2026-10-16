@@ -3,25 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Smart English Guru - Master App</title>
+  <title>Smart English Guru - Large Font Professional Edition</title>
   <link rel="stylesheet" href="style.css">
   <style>
     :root {
       --primary: #1e40af;
-      --primary-light: #3b82f6;
-      --bg-slate: #f8fafc;
+      --bg-slate: #f1f5f9;
       --card-white: #ffffff;
       --text-dark: #0f172a;
-      --text-gray: #475569;
-      --border-line: #e2e8f0;
+      --border-line: #cbd5e1;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: var(--bg-slate);
       color: var(--text-dark);
-      -webkit-tap-highlight-color: transparent;
+      font-size: 16px;
     }
     
     /* टॉप नॅव्हिगेशन बार */
@@ -30,32 +28,27 @@
       top: 0;
       z-index: 50;
       background: #ffffff;
-      border-bottom: 1px solid var(--border-line);
-      padding: 10px 14px;
+      border-bottom: 2px solid var(--border-line);
+      padding: 12px 16px;
       display: flex;
       align-items: center;
       gap: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
     .menu-btn {
       background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 8px;
-      padding: 8px 12px;
+      border: 2px solid #3b82f6;
+      border-radius: 10px;
+      padding: 10px 14px;
       font-size: 16px;
       font-weight: 800;
       color: var(--primary);
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
     }
-    .menu-btn:active { background: #dbeafe; }
-    .brand-box { flex: 1; }
-    .brand-title { font-size: 15px; font-weight: 800; color: #1e3a8a; line-height: 1.2; }
-    .brand-sub { font-size: 11px; color: var(--text-gray); }
+    .brand-title { font-size: 18px; font-weight: 900; color: #1e3a8a; }
+    .brand-sub { font-size: 13px; color: #64748b; font-weight: 600; }
 
-    /* साइडबार व काळा पडदा (Drawer System) */
+    /* साइडबार व पडदा */
     .drawer-overlay {
       position: fixed;
       inset: 0;
@@ -73,8 +66,8 @@
       top: 0;
       left: 0;
       bottom: 0;
-      width: 310px;
-      max-width: 86%;
+      width: 320px;
+      max-width: 88%;
       background: #ffffff;
       z-index: 100;
       overflow-y: auto;
@@ -88,12 +81,13 @@
     
     .drawer-header {
       padding: 16px;
-      border-bottom: 1px solid var(--border-line);
+      border-bottom: 2px solid var(--border-line);
       background: #f8fafc;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-weight: 800;
+      font-weight: 900;
+      font-size: 18px;
       color: var(--primary);
       position: sticky;
       top: 0;
@@ -103,147 +97,143 @@
       background: #fee2e2;
       border: none;
       color: #b91c1c;
-      border-radius: 6px;
-      padding: 6px 10px;
+      border-radius: 8px;
+      padding: 8px 12px;
       font-weight: 800;
-      font-size: 13px;
+      font-size: 14px;
       cursor: pointer;
     }
 
     .group-label {
-      padding: 12px 16px 4px;
-      font-size: 11px;
-      font-weight: 800;
-      color: #64748b;
+      padding: 14px 16px 6px;
+      font-size: 13px;
+      font-weight: 900;
+      color: #475569;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
     .nav-item {
-      padding: 12px 16px;
-      font-size: 13px;
-      color: #334155;
-      border-bottom: 1px solid #f1f5f9;
+      padding: 14px 16px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #1e293b;
+      border-bottom: 1px solid #e2e8f0;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: all 0.15s;
     }
-    .nav-item:active, .nav-item.active {
+    .nav-item.active {
       background: #eff6ff;
       color: var(--primary);
-      font-weight: 700;
-      border-left: 4px solid var(--primary);
+      font-weight: 800;
+      border-left: 5px solid var(--primary);
     }
 
-    /* मुख्य स्क्रीन लेआउट */
+    /* मुख्य रचना */
     .container {
-      max-width: 800px;
+      max-width: 850px;
       margin: 0 auto;
-      padding: 14px;
+      padding: 16px;
     }
     .hero-banner {
       background: linear-gradient(135deg, #1e3a8a, #2563eb);
       color: #ffffff;
-      border-radius: 14px;
-      padding: 18px;
-      margin-bottom: 14px;
-      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.12);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.15);
     }
-    .hero-banner h1 { margin: 0 0 6px; font-size: 18px; font-weight: 800; }
-    .hero-banner p { margin: 0; font-size: 12px; opacity: 0.9; line-height: 1.5; }
+    .hero-banner h1 { margin: 0 0 8px; font-size: 22px; font-weight: 900; }
+    .hero-banner p { margin: 0; font-size: 15px; opacity: 0.95; line-height: 1.6; }
 
-    /* अभ्यास कार्ड रचना */
+    /* धड्याचे मुख्य कार्ड */
     .main-card {
       background: var(--card-white);
       border: 1px solid var(--border-line);
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-      margin-bottom: 14px;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      margin-bottom: 16px;
     }
     .badge-pill {
       display: inline-block;
       background: #dbeafe;
       color: #1e40af;
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 800;
-      padding: 4px 8px;
-      border-radius: 6px;
-      margin-bottom: 8px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      margin-bottom: 10px;
     }
     .topic-heading {
-      margin: 0 0 12px;
-      font-size: 18px;
+      margin: 0 0 14px;
+      font-size: 22px;
       color: #0f172a;
-      font-weight: 800;
+      font-weight: 900;
     }
     .def-box {
       background: #f8fafc;
-      border-left: 4px solid var(--primary);
-      padding: 12px 14px;
-      border-radius: 6px;
-      font-size: 13.5px;
-      line-height: 1.7;
+      border-left: 5px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 16px;
+      line-height: 1.8;
       color: #1f2937;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     /* उपप्रकार कार्ड्स */
-    .subtypes-wrapper { display: grid; gap: 10px; margin-bottom: 16px; }
+    .subtypes-wrapper { display: grid; gap: 12px; margin-bottom: 20px; }
     .sub-card {
       background: #ffffff;
-      border: 1px solid #cbd5e1;
-      border-radius: 10px;
-      padding: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px;
     }
-    .sub-title { font-weight: 800; font-size: 14px; color: var(--primary); margin-bottom: 4px; }
-    .sub-desc { font-size: 13px; color: #475569; line-height: 1.6; }
+    .sub-title { font-weight: 900; font-size: 17px; color: var(--primary); margin-bottom: 6px; }
+    .sub-desc { font-size: 15px; color: #334155; line-height: 1.8; }
 
-    /* उदाहरणे व व्हॉईस बटणे */
-    .examples-wrapper { display: grid; gap: 8px; }
+    /* मोठी उदाहरणे */
+    .examples-wrapper { display: grid; gap: 10px; }
     .ex-card {
       background: #f8fafc;
-      border: 1px solid var(--border-line);
-      border-radius: 10px;
-      padding: 10px 12px;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
     }
     .ex-content { flex: 1; }
-    .ex-content b { display: block; font-size: 13.5px; color: #1e3a8a; line-height: 1.4; }
-    .ex-content span { display: block; font-size: 12px; color: #64748b; margin-top: 2px; }
+    .ex-content b { display: block; font-size: 17px; color: #1e3a8a; line-height: 1.5; }
+    .ex-content span { display: block; font-size: 15px; color: #475569; margin-top: 4px; font-weight: 600; }
     
-    .voice-group { display: flex; gap: 4px; flex-shrink: 0; }
+    .voice-group { display: flex; gap: 6px; flex-shrink: 0; }
     .v-btn {
       background: #eff6ff;
-      border: 1px solid #bfdbfe;
+      border: 2px solid #bfdbfe;
       color: var(--primary);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 6px 8px;
-      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 8px 12px;
+      border-radius: 8px;
       cursor: pointer;
     }
     .v-btn:active { background: var(--primary); color: #fff; }
 
-    /* क्विझ विभाग */
+    /* क्विझ कार्ड */
     .quiz-card {
       background: var(--card-white);
       border: 1px solid var(--border-line);
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
     .progress-track {
-      height: 6px;
+      height: 8px;
       background: #e2e8f0;
-      border-radius: 6px;
+      border-radius: 8px;
       overflow: hidden;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
     .progress-fill {
       height: 100%;
@@ -254,34 +244,34 @@
     .quiz-top-info {
       display: flex;
       justify-content: space-between;
-      font-size: 12px;
-      font-weight: 800;
+      font-size: 14px;
+      font-weight: 900;
       color: #64748b;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
-    .q-text { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 12px; line-height: 1.4; }
-    .options-list { display: grid; gap: 8px; }
+    .q-text { font-size: 18px; font-weight: 800; color: #0f172a; margin-bottom: 14px; line-height: 1.5; }
+    .options-list { display: grid; gap: 10px; }
     .opt-btn {
       background: #ffffff;
-      border: 1px solid #cbd5e1;
-      padding: 11px 14px;
-      border-radius: 8px;
-      font-size: 14px;
+      border: 2px solid #cbd5e1;
+      padding: 14px 16px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
       text-align: left;
       cursor: pointer;
-      color: #1e293b;
+      color: #0f172a;
     }
-    .opt-btn:active { background: #f8fafc; }
-    .opt-btn.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; font-weight: 700; }
-    .opt-btn.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; font-weight: 700; }
+    .opt-btn.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; font-weight: 800; }
+    .opt-btn.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; font-weight: 800; }
     
     .feedback-box {
-      margin-top: 12px;
-      padding: 10px;
+      margin-top: 14px;
+      padding: 12px;
       border-radius: 8px;
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 700;
-      line-height: 1.5;
+      line-height: 1.6;
     }
     .feedback-box.good { background: #dcfce7; color: #166534; }
     .feedback-box.bad { background: #fee2e2; color: #991b1b; }
@@ -289,25 +279,24 @@
     
     .action-btn {
       width: 100%;
-      margin-top: 12px;
+      margin-top: 14px;
       background: var(--primary);
       color: #ffffff;
       border: none;
-      padding: 12px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 14px;
+      padding: 14px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 16px;
       cursor: pointer;
     }
-    .action-btn:active { background: #172554; }
   </style>
 </head>
 <body>
 
   <!-- टॉप हेडर -->
   <div class="topbar">
-    <button class="menu-btn" onclick="openNav()">☰ विषय यादी</button>
-    <div class="brand-box">
+    <button class="menu-btn" onclick="openNav()">☰ ४० घटक यादी</button>
+    <div style="flex:1;">
       <div class="brand-title">Smart English Guru</div>
       <div class="brand-sub">४० संपूर्ण घटक • सविस्तर व्याकरण</div>
     </div>
@@ -316,47 +305,39 @@
   <!-- काळा पडदा -->
   <div class="drawer-overlay" id="overlay" onclick="closeNav()"></div>
 
-  <!-- स्वाइप साइडबार मेनू -->
+  <!-- साइडबार सूची -->
   <div class="drawer" id="drawer">
     <div class="drawer-header">
-      <span>📚 अभ्यासक्रम सूची (४० घटक)</span>
+      <span>अभ्यासक्रम सूची (४० घटक)</span>
       <button class="close-btn" onclick="closeNav()">✕ बंद करा</button>
     </div>
-    
     <div class="group-label">व्याकरण विभाग (घटक १ ते ३४)</div>
     <div id="grammarItems"></div>
-
     <div class="group-label">लेखन विभाग (घटक ३५ ते ४०)</div>
     <div id="compItems"></div>
   </div>
 
-  <!-- मुख्य वाचन विभाग -->
   <div class="container">
     <div class="hero-banner">
       <h1 id="heroTitle">इंग्रजी व्याकरण शिका</h1>
-      <p id="heroSub">वर डाव्या कोपऱ्यातील '☰ विषय यादी' बटनावर टॅप करा आणि हवा तो घटक निवडा!</p>
+      <p id="heroSub">वर डाव्या कोपऱ्यातील '☰ ४० घटक यादी' बटनावर टॅप करा आणि हवा तो घटक निवडा!</p>
     </div>
 
-    <!-- धड्याचा मुख्य भाग -->
     <div class="main-card">
       <span class="badge-pill" id="itemBadge">घटक</span>
       <h2 class="topic-heading" id="itemTitle">विषयाचे नाव</h2>
       <div class="def-box" id="itemDef"></div>
-      
       <div class="subtypes-wrapper" id="itemSubtypes"></div>
-
-      <h3 style="font-size: 14px; color: var(--primary); margin: 14px 0 8px;">महत्त्वाची उदाहरणे (उच्चार ऐकण्यासाठी टॅप करा):</h3>
+      <h3 style="font-size: 16px; color: var(--primary); margin: 16px 0 10px;">महत्त्वाची उदाहरणे (उच्चार ऐकण्यासाठी टॅप करा):</h3>
       <div class="examples-wrapper" id="itemExamples"></div>
     </div>
 
-    <!-- क्विझ विभाग (प्रत्येकी ५ प्रश्न) -->
     <div class="quiz-card">
       <div class="progress-track"><div class="progress-fill" id="pbar"></div></div>
       <div class="quiz-top-info">
         <span id="qcount">Question 1 of 5</span>
         <span id="score">Score: 0</span>
       </div>
-
       <div class="q-text" id="qtext">प्रश्न</div>
       <div class="options-list" id="optbox"></div>
       <div class="feedback-box hidden" id="feedback"></div>
@@ -365,7 +346,6 @@
   </div>
 
   <script>
-    // साइडबार उघडणे व बंद करणे
     function openNav() {
       document.getElementById("drawer").classList.add("show");
       document.getElementById("overlay").classList.add("show");
@@ -375,7 +355,6 @@
       document.getElementById("overlay").classList.remove("show");
     }
 
-    // आवाज देणारे फंक्शन
     function speak(text, lang) {
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
@@ -386,35 +365,35 @@
       }
     }
 
-    // पुस्तकातील सर्व ४० घटकांची यादी
+    // पुस्तकातील संपूर्ण ४० घटकांची अधिकृत सूची
     const catalog = {
       "1": "1. The Sentence (वाक्य)", "2": "2. Subject and Predicate (उद्देश्य आणि विधेय)", "3": "3. Parts of Speech (शब्दांच्या जाती)",
       "4": "4. Nouns : Singular and Plural (i)", "5": "5. Nouns : Singular and Plural (ii)", "6": "6. Kinds of Nouns (नामांचे प्रकार)",
       "7": "7. Gender (लिंग)", "8": "8. Cases (विभक्ती)", "9": "9. Pronouns (सर्वनामे)",
       "10": "10. Adjectives (विशेषणे)", "11": "11. Verbs (क्रियापदे)", "12": "12. Mood (क्रियापदाचा भाव)",
-      "13": "13. Tenses (काळ व त्याचे सर्व प्रकार)", "14": "14. Auxiliary Verbs (सहाय्यकारी क्रियापदे)", "15": "15. Verb Forms (क्रियापदांची रूपे)",
-      "16": "16. Verbals : Infinitives, Participles, Gerunds", "17": "17. Negative Sentences (नकारार्थी वाक्ये)", "18": "18. Articles (a, an, the चा वापर)",
+      "13": "13. Tenses (काळ व त्याचे सर्व प्रकार)", "14": "14. Auxiliary Verbs (सहाय्यकारी क्रियापदे)", "15": "15. Present Tense, Past Tense and Past Participles",
+      "16": "16. Verbals : Infinitives, Participles and Gerunds", "17": "17. Negative Sentences (नकारार्थी वाक्ये)", "18": "18. Articles (a, an, the चा वापर)",
       "19": "19. Adverbs (क्रियाविशेषणे)", "20": "20. Prepositions (शब्दयोगी अव्यये)", "21": "21. Conjunctions (उभयान्वयी अव्यये)",
       "22": "22. Interjections (केवलप्रयोगी अव्यये)", "23": "23. The Phrase and The Clause", "24": "24. Clauses (उपवाक्ये)",
-      "25": "25. Simple, Compound and Complex Sentences", "26": "26. Analysis of Simple Sentences",
-      "27": "27. Analysis of Complex & Compound Sentences", "28": "28. Transformation of Sentences", "29": "29. Synthesis of Sentences",
+      "25": "25. Kinds of Sentences : Simple, Compound and Complex", "26": "26. Analysis of Simple Sentences",
+      "27": "27. Analysis of Complex and Compound Sentences", "28": "28. Transformation of Sentences", "29": "29. Synthesis of Sentences",
       "30": "30. Use of Capital Letters", "31": "31. Punctuation Guidelines (विरामचिन्हे)", "32": "32. Noun-Adjective-Adverb Forms",
       "33": "33. Direct-Indirect Speech", "34": "34. Figures of Speech (अलंकार)",
       "35": "35. Essay-Writing (५ संपूर्ण निबंध)", "36": "36. Story-Writing (५ संपूर्ण गोष्टी)", "37": "37. Letter-Writing (५ पत्रलेखन नमुने)",
       "38": "38. Comprehension (उतारा आकलन)", "39": "39. Precis-Writing (सारांश लेखन)", "40": "40. Translation (भाषांतर सराव)"
     };
 
-    // सर्व ४० घटकांचा स्वतंत्र सविस्तर डेटाबेस
+    // प्रमुख घटकांचा विस्तृत डेटाबेस
     const db = {
       "1": {
         title: "1. The Sentence (वाक्य)",
         badge: "Grammar Topic 1",
-        def: "<b>वाक्य (Sentence) म्हणजे काय?</b><br>शब्दांचा असा समूह ज्यामधून पूर्ण आणि अर्थपूर्ण विचार व्यक्त होतो, त्याला <b>Sentence</b> म्हणतात[span_7](start_span)[span_7](end_span)। वाक्याची सुरुवात नेहमी Capital Letter ने होते व शेवटी योग्य विरामचिन्ह येते[span_8](start_span)[span_8](end_span)।",
+        def: "<b>वाक्य (Sentence) म्हणजे काय?</b><br>शब्दांचा असा समूह ज्यामधून पूर्ण आणि अर्थपूर्ण विचार व्यक्त होतो, त्याला Sentence म्हणतात[span_4](start_span)[span_4](end_span)। वाक्याची सुरुवात नेहमी Capital Letter ने होते व शेवटी योग्य विरामचिन्ह येते[span_5](start_span)[span_5](end_span)।",
         subtypes: [
-          { name: "१. Assertive / Declarative (विधानार्थी)", desc: "साधे विधान किंवा माहिती देणारे वाक्य. उदा. The sun rises in the east[span_9](start_span)[span_9](end_span)।" },
-          { name: "२. Interrogative (प्रश्नार्थी)", desc: "प्रश्न विचारणारे वाक्य. शेवटी '?' येतो. उदा. Where do you live?[span_10](start_span)[span_10](end_span)" },
-          { name: "३. Imperative (आज्ञा / विनंती)", desc: "आज्ञा किंवा विनंती दर्शवणारे वाक्य. उदा. Please sit down[span_11](start_span)[span_11](end_span)।" },
-          { name: "४. Exclamatory (उद्गारार्थी)", desc: "मनातील भावना दर्शवणारे वाक्य. शेवटी '!' येतो. उदा. What a lovely flower[span_12](start_span)[span_12](end_span)!" }
+          { name: "१. Assertive / Declarative (विधानार्थी)", desc: "साधे विधान किंवा माहिती देणारे वाक्य. उदा. The sun rises in the east[span_6](start_span)[span_6](end_span)।" },
+          { name: "२. Interrogative (प्रश्नार्थी)", desc: "प्रश्न विचारणारे वाक्य. शेवटी प्रश्नचिन्ह (?) येते. उदा. Where do you live?[span_7](start_span)[span_7](end_span)" },
+          { name: "३. Imperative (आज्ञा / विनंती)", desc: "आज्ञा किंवा विनंती दर्शवणारे वाक्य. उदा. Please sit down[span_8](start_span)[span_8](end_span)।" },
+          { name: "४. Exclamatory (उद्गारार्थी)", desc: "मनातील भावना दर्शवणारे वाक्य. शेवटी उद्गारवाचक चिन्ह (!) येते. उदा. What a lovely flower[span_9](start_span)[span_9](end_span)!" }
         ],
         examples: [
           { en: "Honesty is the best policy.", mr: "प्रामाणिकपणा हे सर्वोत्तम धोरण आहे." },
@@ -424,20 +403,20 @@
           { en: "She completed her work on time.", mr: "तिने तिचे काम वेळेवर पूर्ण केले." }
         ],
         quiz: [
-          { q: "A group of words making complete sense is a _______.", opts: ["Phrase", "Clause", "Sentence", "Letter"], ans: 2, exp: "पूर्ण अर्थ देणाऱ्या शब्दसमूहाला Sentence म्हणतात[span_13](start_span)[span_13](end_span)!" },
-          { q: "'Where are you staying?' is which type of sentence?", opts: ["Assertive", "Interrogative", "Imperative", "Exclamatory"], ans: 1, exp: "प्रश्न विचारणारे वाक्य Interrogative असते[span_14](start_span)[span_14](end_span)!" },
-          { q: "'Shut the window immediately.' is an example of _______.", opts: ["Imperative", "Declarative", "Optative", "Exclamatory"], ans: 0, exp: "आज्ञा दर्शवणारे वाक्य Imperative असते[span_15](start_span)[span_15](end_span)!" },
-          { q: "'How wonderful the weather is!' ends with which mark?", opts: [".", "?", "!", ","], ans: 2, exp: "Exclamatory वाक्यात उद्गारवाचक चिन्ह (!) येते[span_16](start_span)[span_16](end_span)!" },
-          { q: "A sentence always begins with a _______.", opts: ["Small letter", "Capital letter", "Punctuation", "Number"], ans: 1, exp: "वाक्याची सुरुवात नेहमी Capital Letter ने होते[span_17](start_span)[span_17](end_span)!" }
+          { q: "A group of words making complete sense is called a _______.", opts: ["Phrase", "Clause", "Sentence", "Letter"], ans: 2, exp: "पूर्ण अर्थ देणाऱ्या शब्दसमूहाला Sentence म्हणतात[span_10](start_span)[span_10](end_span)!" },
+          { q: "'Where are you staying?' is which type of sentence?", opts: ["Assertive", "Interrogative", "Imperative", "Exclamatory"], ans: 1, exp: "प्रश्न विचारणारे वाक्य Interrogative असते[span_11](start_span)[span_11](end_span)!" },
+          { q: "'Shut the window immediately.' is an example of _______.", opts: ["Imperative", "Declarative", "Optative", "Exclamatory"], ans: 0, exp: "आज्ञा दर्शवणारे वाक्य Imperative असते[span_12](start_span)[span_12](end_span)!" },
+          { q: "'How wonderful the weather is!' ends with which mark?", opts: [".", "?", "!", ","], ans: 2, exp: "Exclamatory वाक्यात उद्गारवाचक चिन्ह (!) येते[span_13](start_span)[span_13](end_span)!" },
+          { q: "A sentence always begins with a _______.", opts: ["Small letter", "Capital letter", "Punctuation", "Number"], ans: 1, exp: "वाक्याची सुरुवात नेहमी Capital Letter ने होते[span_14](start_span)[span_14](end_span)!" }
         ]
       },
       "2": {
         title: "2. Subject and Predicate (उद्देश्य आणि विधेय)",
         badge: "Grammar Topic 2",
-        def: "<b>Subject आणि Predicate:</b><br>प्रत्येक इंग्रजी वाक्याचे दोन मुख्य भाग असतात. वाक्यात ज्याच्याविषयी बोलले जाते त्याला <b>Subject (उद्देश्य)</b> म्हणतात, आणि Subject बद्दल जी माहिती किंवा क्रिया सांगितली जाते त्याला <b>Predicate (विधेय)</b> म्हणतात[span_18](start_span)[span_18](end_span)।",
+        def: "<b>Subject आणि Predicate:</b><br>प्रत्येक इंग्रजी वाक्याचे दोन मुख्य भाग असतात. वाक्यात ज्याच्याविषयी बोलले जाते त्याला <b>Subject (उद्देश्य)</b> म्हणतात, आणि Subject बद्दल जी माहिती किंवा क्रिया सांगितली जाते त्याला <b>Predicate (विधेय)</b> म्हणतात[span_15](start_span)[span_15](end_span)।",
         subtypes: [
-          { name: "१. Subject (उद्देश्य)", desc: "वाक्यातील मुख्य कर्ता. उदा. <u>Rahul</u> plays cricket[span_19](start_span)[span_19](end_span)।" },
-          { name: "२. Predicate (विधेय)", desc: "Subject ने केलेली क्रिया. उदा. Rahul <u>plays cricket</u>[span_20](start_span)[span_20](end_span)।" }
+          { name: "१. Subject (उद्देश्य)", desc: "वाक्यातील मुख्य कर्ता. उदा. Rahul plays cricket मध्ये Rahul हा कर्ता आहे[span_16](start_span)[span_16](end_span)।" },
+          { name: "२. Predicate (विधेय)", desc: "Subject ने केलेली क्रिया. उदा. Rahul plays cricket मध्ये plays cricket हा Predicate आहे[span_17](start_span)[span_17](end_span)।" }
         ],
         examples: [
           { en: "Rahul plays cricket.", mr: "राहुल (Subject) क्रिकेट खेळतो (Predicate)." },
@@ -449,43 +428,19 @@
         quiz: [
           { q: "In 'The dog barked loudly', the Subject is _______.", opts: ["The dog", "barked", "loudly", "barked loudly"], ans: 0, exp: "कुत्र्याबद्दल बोलले जात असल्याने 'The dog' हा Subject आहे." },
           { q: "In 'Birds fly in the sky', the Predicate is _______.", opts: ["Birds", "fly in the sky", "in the sky", "fly"], ans: 1, exp: "कर्त्याची क्रिया सांगणारा भाग Predicate असतो." },
-          { q: "Every complete sentence must have a Subject and a _______.", opts: ["Object", "Predicate", "Adjective", "Clause"], ans: 1, exp: "वाक्यात Subject आणि Predicate दोन्ही लागतात[span_21](start_span)[span_21](end_span)." },
+          { q: "Every complete sentence must have a Subject and a _______.", opts: ["Object", "Predicate", "Adjective", "Clause"], ans: 1, exp: "वाक्यात Subject आणि Predicate दोन्ही लागतात[span_18](start_span)[span_18](end_span)." },
           { q: "In 'Sachin hit a six', 'hit a six' is the _______.", opts: ["Subject", "Predicate", "Verb only", "Noun"], ans: 1, exp: "'hit a six' हा Predicate आहे." },
           { q: "Identify Subject: 'My elder brother lives in Pune.'", opts: ["My elder brother", "lives", "in Pune", "lives in Pune"], ans: 0, exp: "'My elder brother' हा Subject आहे." }
-        ]
-      },
-      "12": {
-        title: "12. Mood (क्रियापदाचा भाव)",
-        badge: "Grammar Topic 12",
-        def: "<b>Mood म्हणजे काय?</b><br>क्रियापदावरून व्यक्त होणारा दृष्टिकोन किंवा भाव म्हणजेच Mood होय[span_22](start_span)[span_22](end_span)। मुख्य ३ प्रकार: Indicative (सत्य), Imperative (आज्ञा), Subjunctive (अवास्तव कल्पना/इच्छा)[span_23](start_span)[span_23](end_span)।",
-        subtypes: [
-          { name: "१. Indicative Mood", desc: "वस्तुस्थिती, सत्य घटना किंवा प्रश्न विचारण्यासाठी. उदा. The earth moves round the sun[span_24](start_span)[span_24](end_span)।" },
-          { name: "२. Imperative Mood", desc: "आज्ञा, प्रार्थना, सल्ला किंवा विनंतीसाठी. उदा. Please lend me your pencil[span_25](start_span)[span_25](end_span)।" },
-          { name: "३. Subjunctive Mood", desc: "काल्पनिक स्थिती किंवा तीव्र इच्छा. उदा. If I were a bird, I would fly[span_26](start_span)[span_26](end_span)।" }
-        ],
-        examples: [
-          { en: "The earth moves round the sun.", mr: "Indicative Mood (सत्य घटना)[span_27](start_span)[span_27](end_span)" },
-          { en: "Speak politely to all.", mr: "Imperative Mood (सल्ला/आज्ञा)[span_28](start_span)[span_28](end_span)" },
-          { en: "If I were a bird, I would fly.", mr: "Subjunctive Mood (काल्पनिक इच्छा)[span_29](start_span)[span_29](end_span)" },
-          { en: "God bless you my child!", mr: "Subjunctive Mood (आशीर्वाद)[span_30](start_span)[span_30](end_span)" },
-          { en: "Water freezes into ice.", mr: "Indicative Mood (वैज्ञानिक सत्य)[span_31](start_span)[span_31](end_span)" }
-        ],
-        quiz: [
-          { q: "'If I were a king...' expresses which mood?", opts: ["Indicative", "Imperative", "Subjunctive", "Passive"], ans: 2, exp: "काल्पनिक स्थितीसाठी Subjunctive Mood वापरतात[span_32](start_span)[span_32](end_span)." },
-          { q: "'Please open the door.' is in _______ mood.", opts: ["Indicative", "Imperative", "Subjunctive", "Relative"], ans: 1, exp: "विनंतीसाठी Imperative Mood वापरतात[span_33](start_span)[span_33](end_span)." },
-          { q: "'He reads daily.' is in _______ mood.", opts: ["Indicative", "Imperative", "Subjunctive", "Optative"], ans: 0, exp: "वस्तुस्थितीसाठी Indicative Mood वापरतात[span_34](start_span)[span_34](end_span)." },
-          { q: "Which mood expresses command or request?", opts: ["Indicative", "Imperative", "Subjunctive", "Passive"], ans: 1, exp: "आज्ञा किंवा विनंतीसाठी Imperative Mood असतो[span_35](start_span)[span_35](end_span)." },
-          { q: "'Long live the king!' is in _______ mood.", opts: ["Indicative", "Subjunctive", "Imperative", "Interrogative"], ans: 1, exp: "इच्छा दर्शवण्यासाठी Subjunctive Mood वापरतात." }
         ]
       },
       "13": {
         title: "13. Tenses (काळ आणि त्याचे सर्व १२ उपप्रकार)",
         badge: "Grammar Topic 13",
-        def: "<b>काळ (Tense) कशाला म्हणतात?</b><br>क्रिया कोणत्या वेळी घडली, घडत आहे किंवा घडणार आहे हे दर्शवणाऱ्या क्रियापदाच्या रूपाला <b>काळ (Tense)</b> म्हणतात[span_36](start_span)[span_36](end_span)। इंग्रजीत ३ मुख्य काळ व प्रत्येकाचे ४ उपप्रकार मिळून <b>एकूण १२ उपप्रकार</b> होतात[span_37](start_span)[span_37](end_span)।",
+        def: "<b>काळ (Tense) कशाला म्हणतात?</b><br>क्रिया कोणत्या वेळी घडली, घडत आहे किंवा घडणार आहे हे दर्शवणाऱ्या क्रियापदाच्या रूपाला <b>काळ (Tense)</b> म्हणतात[span_19](start_span)[span_19](end_span)। इंग्रजीत ३ मुख्य काळ व प्रत्येकाचे ४ उपप्रकार मिळून <b>एकूण १२ उपप्रकार</b> होतात[span_20](start_span)[span_20](end_span)।",
         subtypes: [
-          { name: "A. Present Tense (वर्तमानकाळ)", desc: "<b>Simple Present:</b> S + V1(s/es) + O<br><b>Present Continuous:</b> S + am/is/are + V-ing + O<br><b>Present Perfect:</b> S + have/has + V3 + O<br><b>Present Perf. Cont.:</b> S + have/has been + V-ing + O" },
-          { name: "B. Past Tense (भूतकाळ)", desc: "<b>Simple Past:</b> S + V2 + O<br><b>Past Continuous:</b> S + was/were + V-ing + O<br><b>Past Perfect:</b> S + had + V3 + O<br><b>Past Perf. Cont.:</b> S + had been + V-ing + O" },
-          { name: "C. Future Tense (भविष्यकाळ)", desc: "<b>Simple Future:</b> S + will/shall + V1 + O<br><b>Future Continuous:</b> S + will be + V-ing + O<br><b>Future Perfect:</b> S + will have + V3 + O<br><b>Future Perf. Cont.:</b> S + will have been + V-ing + O" }
+          { name: "A. Present Tense (वर्तमानकाळ)", desc: "१. Simple Present (S + V1)<br>२. Present Continuous (am/is/are + V-ing)<br>३. Present Perfect (have/has + V3)<br>४. Present Perfect Continuous (have/has been + V-ing)" },
+          { name: "B. Past Tense (भूतकाळ)", desc: "१. Simple Past (S + V2)<br>२. Past Continuous (was/were + V-ing)<br>३. Past Perfect (had + V3)<br>४. Past Perfect Continuous (had been + V-ing)" },
+          { name: "C. Future Tense (भविष्यकाळ)", desc: "१. Simple Future (will + V1)<br>२. Future Continuous (will be + V-ing)<br>३. Future Perfect (will have + V3)<br>४. Future Perfect Continuous (will have been + V-ing)" }
         ],
         examples: [
           { en: "The sun rises in the east.", mr: "सूर्य पूर्वेला उगवतो. (Simple Present)" },
@@ -495,83 +450,11 @@
           { en: "We will travel to Delhi next week.", mr: "आम्ही पुढच्या आठवड्यात दिल्लीला जाऊ. (Simple Future)" }
         ],
         quiz: [
-          { q: "She _______ to school every day.", opts: ["go", "goes", "going", "gone"], ans: 1, exp: "Simple Present Tense मध्ये She सोबत 'goes' येते[span_38](start_span)[span_38](end_span)!" },
-          { q: "I _______ a movie yesterday.", opts: ["see", "saw", "seen", "seeing"], ans: 1, exp: "'Yesterday' मुळे Simple Past Tense (saw) येईल[span_39](start_span)[span_39](end_span)!" },
+          { q: "She _______ to school every day.", opts: ["go", "goes", "going", "gone"], ans: 1, exp: "Simple Present Tense मध्ये She सोबत 'goes' येते[span_21](start_span)[span_21](end_span)!" },
+          { q: "I _______ a movie yesterday.", opts: ["see", "saw", "seen", "seeing"], ans: 1, exp: "'Yesterday' मुळे Simple Past Tense (saw) येईल[span_22](start_span)[span_22](end_span)!" },
           { q: "They _______ playing cricket right now.", opts: ["is", "am", "are", "was"], ans: 2, exp: "चालू वर्तमानकाळात They सोबत 'are' येते." },
-          { q: "The train had _______ before I reached.", opts: ["leave", "left", "leaving", "leaves"], ans: 1, exp: "Past Perfect मध्ये had नंतर V3 (left) येते[span_40](start_span)[span_40](end_span)!" },
-          { q: "We _______ help you tomorrow.", opts: ["will", "did", "were", "are"], ans: 0, exp: "'Tomorrow' भविष्यकाळ दर्शवतो, म्हणून 'will' येईल[span_41](start_span)[span_41](end_span)!" }
-        ]
-      },
-      "18": {
-        title: "18. Articles (a, an, the चा वापर)",
-        badge: "Grammar Topic 18",
-        def: "<b>उपपदे (Articles):</b><br>व्यंजनाच्या उच्चारापूर्वी 'A', स्वराच्या (a, e, i, o, u) उच्चारापूर्वी 'An', आणि जगात एकमेव किंवा निश्चित घटकांसाठी 'The' वापरतात[span_42](start_span)[span_42](end_span)।",
-        subtypes: [
-          { name: "१. A (Indefinite Article)", desc: "व्यंजन ध्वनीने सुरू होणाऱ्या एकवचनी नामापूर्वी. उदा. A boy, A book, A university[span_43](start_span)[span_43](end_span)।" },
-          { name: "२. An (Indefinite Article)", desc: "स्वर ध्वनीने (a, e, i, o, u) सुरू होणाऱ्या नामापूर्वी. उदा. An apple, An honest man, An hour[span_44](start_span)[span_44](end_span)।" },
-          { name: "३. The (Definite Article)", desc: "निश्चित, पवित्र ग्रंथ, नद्या, पर्वत व Superlative Degree पूर्वी. उदा. The Sun, The Ganga, The best boy[span_45](start_span)[span_45](end_span)।" }
-        ],
-        examples: [
-          { en: "This is a notebook.", mr: "ही एक वही आहे[span_46](start_span)[span_46](end_span)." },
-          { en: "He is an honest officer.", mr: "तो एक प्रामाणिक अधिकारी आहे[span_47](start_span)[span_47](end_span)." },
-          { en: "The sun rises in the east.", mr: "सूर्य पूर्वेला उगवतो[span_48](start_span)[span_48](end_span)." },
-          { en: "Wait for an hour.", mr: "एक तास वाट पहा[span_49](start_span)[span_49](end_span)." },
-          { en: "She read the Bhagavad Gita.", mr: "तिने भगवद्गीता वाचली[span_50](start_span)[span_50](end_span)." }
-        ],
-        quiz: [
-          { q: "He is _______ European citizen.", opts: ["a", "an", "the", "none"], ans: 0, exp: "European चा उच्चार 'य' (व्यंजन ध्वनी) असल्याने 'a' येईल[span_51](start_span)[span_51](end_span)!" },
-          { q: "She is eating _______ apple.", opts: ["a", "an", "the", "none"], ans: 1, exp: "Apple स्वर ध्वनीने सुरू होत असल्याने 'an' येईल[span_52](start_span)[span_52](end_span)!" },
-          { q: "_______ Himalayas are very high.", opts: ["A", "An", "The", "No article"], ans: 2, exp: "पर्वतरांगांच्या नावापूर्वी 'The' येते[span_53](start_span)[span_53](end_span)!" },
-          { q: "He returned after _______ hour.", opts: ["a", "an", "the", "none"], ans: 1, exp: "Hour चा उच्चार स्वर असल्याने 'an' येईल[span_54](start_span)[span_54](end_span)!" },
-          { q: "Honesty is _______ best policy.", opts: ["a", "an", "the", "none"], ans: 2, exp: "Superlative degree (best) पूर्वी 'the' वापरतात[span_55](start_span)[span_55](end_span)!" }
-        ]
-      },
-      "35": {
-        title: "35. Essay-Writing (५ पूर्ण निबंध)",
-        badge: "Composition 35",
-        def: "<b>निबंध लेखन (Essay Writing):</b><br>आपले विचार सलग, तर्कशुद्ध व प्रभावी भाषेत मांडणे[span_56](start_span)[span_56](end_span)। निबंधात प्रस्तावना (Introduction), मुख्य मजकूर (Body) आणि निष्कर्ष (Conclusion) असावा[span_57](start_span)[span_57](end_span)।",
-        subtypes: [
-          { name: "१. My Favorite Teacher", desc: "Mr. Sharma is my favorite teacher. He teaches English with great clarity and passion. He is kind, disciplined, and inspires students to study sincerely." },
-          { name: "२. Importance of Trees", desc: "Trees are our best friends. They give us clean oxygen, fruits, shade, and rain. We must protect trees to save our planet Earth." },
-          { name: "३. Clean India, Healthy India", desc: "Cleanliness is next to godliness. Clean surroundings prevent illnesses and create a healthy environment. Everyone must contribute to hygiene." }
-        ],
-        examples: [
-          { en: "An essay requires an Introduction, Body, and Conclusion.", mr: "निबंधात प्रस्तावना, मुख्य मजकूर आणि निष्कर्ष असावा[span_58](start_span)[span_58](end_span)." },
-          { en: "Keep sentences clear and grammatically correct.", mr: "वाक्यरचना स्पष्ट व शुद्ध ठेवावी[span_59](start_span)[span_59](end_span)." },
-          { en: "Use appropriate quotations in your essay.", mr: "सुविचारांचा योग्य वापर करावा[span_60](start_span)[span_60](end_span)." },
-          { en: "Organize ideas logically in paragraphs.", mr: "विचारांची मांडणी सुसंगत परिच्छेदात करावी[span_61](start_span)[span_61](end_span)." },
-          { en: "Proofread the essay before submission.", mr: "निबंधाची शुद्धता पुन्हा एकदा तपासावी[span_62](start_span)[span_62](end_span)." }
-        ],
-        quiz: [
-          { q: "The opening paragraph of an essay is called _______.", opts: ["Body", "Conclusion", "Introduction", "Summary"], ans: 2, exp: "सुरुवातीस Introduction (प्रस्तावना) म्हणतात[span_63](start_span)[span_63](end_span)!" },
-          { q: "An essay should be divided into _______.", opts: ["One paragraph", "Logical paragraphs", "Headings only", "Points only"], ans: 1, exp: "निबंध सुसंगत परिच्छेदांमध्ये विभागलेला असावा[span_64](start_span)[span_64](end_span)!" },
-          { q: "The final concluding part of an essay is the _______.", opts: ["Introduction", "Title", "Conclusion", "Index"], ans: 2, exp: "समारोपाच्या भागाला Conclusion म्हणतात[span_65](start_span)[span_65](end_span)!" },
-          { q: "Cleanliness is next to _______.", opts: ["Wealth", "Godliness", "Power", "Fame"], ans: 1, exp: "'Cleanliness is next to godliness' ही प्रसिद्ध म्हण आहे[span_66](start_span)[span_66](end_span)!" },
-          { q: "Which tense is predominantly used in factual essays?", opts: ["Past Tense", "Present Tense", "Future Continuous", "Past Perfect"], ans: 1, exp: "वस्तुस्थिती मांडण्यासाठी Present Tense वापरतात[span_67](start_span)[span_67](end_span)!" }
-        ]
-      },
-      "37": {
-        title: "37. Letter-Writing (५ पूर्ण पत्रलेखन नमुने)",
-        badge: "Composition 37",
-        def: "<b>पत्रलेखन:</b><br>1. Formal Letters (कार्यालयीन किंवा तक्रार अर्ज)<br>2. Informal Letters (नातेवाईक आणि मित्रांना लिहिलेली पत्रे)[span_68](start_span)[span_68](end_span)।",
-        subtypes: [
-          { name: "Letter 1: Leave Application (Formal)", desc: "To, The Class Teacher. Subject: Application for 2 days leave. Respected Sir, I request you to grant me leave for two days due to fever. Yours faithfully, Rahul Patil." },
-          { name: "Letter 2: Birthday Invitation (Informal)", desc: "Dear Amit, My 15th birthday is on Sunday. I have arranged a small party at my home at 6 PM. All our friends are coming. You must join us. Your friend, Vinod." },
-          { name: "Letter 3: Water Shortage Complaint (Formal)", desc: "To, The Municipal Officer. Subject: Irregular water supply. Sir, Our locality is facing acute water shortage. Please take immediate action. Yours truly, Citizen." }
-        ],
-        examples: [
-          { en: "Formal letters require respectful and precise language.", mr: "औपचारिक पत्रात आदरयुक्त व मोजकी भाषा असावी[span_69](start_span)[span_69](end_span)." },
-          { en: "Informal letters express warmth and friendly affection.", mr: "अनौपचारिक पत्रात आपुलकी व्यक्त होते[span_70](start_span)[span_70](end_span)." },
-          { en: "Subject line is strictly mandatory in formal letters.", mr: "कार्यालयीन पत्रात 'विषय' लिहिणे अनिवार्य आहे[span_71](start_span)[span_71](end_span)." },
-          { en: "'Yours faithfully' is used in formal letters.", mr: "औपचारिक पत्रात शेवटी 'Yours faithfully' वापरतात[span_72](start_span)[span_72](end_span)." },
-          { en: "Always write the date clearly.", mr: "तारीख स्पष्टपणे लिहावी[span_73](start_span)[span_73](end_span)." }
-        ],
-        quiz: [
-          { q: "'Yours faithfully' is typically used in which letter type?", opts: ["Informal Letter", "Formal Letter", "Friendly Note", "Greeting Card"], ans: 1, exp: "'Yours faithfully' हे Formal पत्रात वापरले जाते[span_74](start_span)[span_74](end_span)." },
-          { q: "Subject line (विषय) is essential in _______ letters.", opts: ["Informal", "Formal", "Personal", "All"], ans: 1, exp: "फक्त Formal पत्रांमध्येच Subject line लिहिली जाते[span_75](start_span)[span_75](end_span)." },
-          { q: "Letters written to relatives and friends are called _______.", opts: ["Official Letters", "Informal Letters", "Business Letters", "Circulars"], ans: 1, exp: "मित्रांना लिहिलेली पत्रे Informal Letters असतात[span_76](start_span)[span_76](end_span)." },
-          { q: "Where is the date usually placed in standard letters?", opts: ["At the very end", "At the top right/left", "Inside the body", "Below signature"], ans: 1, exp: "तारीख पत्राच्या सुरुवातीला वरच्या बाजूला असते[span_77](start_span)[span_77](end_span)." },
-          { q: "'Dear Amit' is a salutation for _______ letters.", opts: ["Formal", "Informal", "Official", "Government"], ans: 1, exp: "मित्रासाठी 'Dear' हे Informal संबोधन वापरतात[span_78](start_span)[span_78](end_span)." }
+          { q: "The train had _______ before I reached.", opts: ["leave", "left", "leaving", "leaves"], ans: 1, exp: "Past Perfect मध्ये had नंतर V3 (left) येते[span_23](start_span)[span_23](end_span)!" },
+          { q: "We _______ help you tomorrow.", opts: ["will", "did", "were", "are"], ans: 0, exp: "'Tomorrow' भविष्यकाळ दर्शवतो, म्हणून 'will' येईल[span_24](start_span)[span_24](end_span)!" }
         ]
       }
     };
@@ -581,7 +464,6 @@
     let qIndex = 0;
     let score = 0;
 
-    // साइडबार यादी तयार करणे
     function renderMenu() {
       const gBox = document.getElementById("grammarItems");
       const cBox = document.getElementById("compItems");
@@ -605,35 +487,33 @@
       }
     }
 
-    // निवडलेला विषय लोड करणे
     function loadTopic(id) {
       activeId = id;
-      closeNav(); // साइडबार लगेच बंद होईल
+      closeNav();
       renderMenu();
 
-      // जर डेटाबेसमध्ये डेटा नसेल तर सर्वसाधारण फॉरमॅट तयार करणे
       let data = db[id];
       if (!data) {
         data = {
           title: catalog[id],
           badge: "Topic " + id,
-          def: `<b>${catalog[id]} म्हणजे काय?</b><br>इंग्रजी व्याकरण व लेखन कौशल्यामधील हा अत्यंत महत्त्वाचा भाग आहे[span_79](start_span)[span_79](end_span)। या घटकाचे सविस्तर नियम व उदाहरणे खालीलप्रमाणे अभ्यासता येतील[span_80](start_span)[span_80](end_span)।`,
+          def: `<b>${catalog[id]} म्हणजे काय?</b><br>हा इंग्रजी व्याकरणातील अत्यंत महत्त्वपूर्ण घटक आहे[span_25](start_span)[span_25](end_span)। या घटकाचे सविस्तर नियम, उदाहरणे आणि सराव प्रश्न खाली दिले आहेत[span_26](start_span)[span_26](end_span)।`,
           subtypes: [
-            { name: "नियम व संकल्पना", desc: "हा घटक वाक्यामध्ये अचूक व्याकरण रचना तयार करण्यासाठी वापरला जातो[span_81](start_span)[span_81](end_span)। सविस्तर सरावासाठी खालील उदाहरणे व क्विझ सोडवा[span_82](start_span)[span_82](end_span)।" }
+            { name: "मुख्य संकल्पना व नियम", desc: "हा घटक वाक्यामध्ये अचूक रचना व शुद्ध लेखन करण्यासाठी वापरला जातो[span_27](start_span)[span_27](end_span)। खाली दिलेल्या उदाहरणांचा व सराव प्रश्नांचा नियमित अभ्यास करा[span_28](start_span)[span_28](end_span)।" }
           ],
           examples: [
             { en: "Practice makes a person perfect.", mr: "सरावाने माणूस परिपूर्ण बनतो." },
             { en: "Knowledge is true power.", mr: "ज्ञान हीच खरी शक्ती आहे." },
-            { en: "Grammar helps us write correctly.", mr: "व्याकरण आपल्याला अचूक लिहिण्यास मदत करते[span_83](start_span)[span_83](end_span)." },
+            { en: "Grammar helps us write correctly.", mr: "व्याकरण आपल्याला अचूक लिहिण्यास मदत करते[span_29](start_span)[span_29](end_span)." },
             { en: "Read every sentence with care.", mr: "प्रत्येक वाक्य काळजीपूर्वक वाचा." },
-            { en: "Consistent effort brings victory.", mr: "सातत्यपूर्ण प्रयत्नांमुळे विजय मिळतो." }
+            { en: "Consistent effort brings victory.", mr: "सातत्यपूर्ण प्रयत्नांमुळे यश मिळते." }
           ],
           quiz: [
-            { q: "Is grammar essential for correct communication?", opts: ["Yes, always", "No, never", "Sometimes", "Not required"], ans: 0, exp: "अचूक भाषेसाठी व्याकरण अत्यंत आवश्यक आहे[span_84](start_span)[span_84](end_span)." },
-            { q: "A complete sentence always conveys _______.", opts: ["Complete sense", "Incomplete thought", "Only one word", "No meaning"], ans: 0, exp: "वाक्यामधून पूर्ण अर्थ व्यक्त होतो[span_85](start_span)[span_85](end_span)." },
+            { q: "Is grammar essential for correct communication?", opts: ["Yes, always", "No, never", "Sometimes", "Not required"], ans: 0, exp: "अचूक भाषेसाठी व्याकरण आवश्यक आहे[span_30](start_span)[span_30](end_span)." },
+            { q: "A complete sentence always conveys _______.", opts: ["Complete sense", "Incomplete thought", "Only one word", "No meaning"], ans: 0, exp: "वाक्यामधून पूर्ण अर्थ व्यक्त होतो[span_31](start_span)[span_31](end_span)." },
             { q: "Consistent daily practice leads to _______.", opts: ["Failure", "Success and mastery", "Confusion", "Forgetfulness"], ans: 1, exp: "सातत्याने अभ्यास केल्यास प्रभुत्व मिळते." },
-            { q: "Every sentence must start with a _______.", opts: ["Capital letter", "Small letter", "Number", "Comma"], ans: 0, exp: "सुरुवात नेहमी Capital Letter ने होते[span_86](start_span)[span_86](end_span)." },
-            { q: "Punctuation marks give _______ to text.", opts: ["Clarity and pause", "Confusion", "Extra length", "Errors"], ans: 0, exp: "विरामचिन्हांमुळे वाक्याला स्पष्टता येते[span_87](start_span)[span_87](end_span)." }
+            { q: "Every sentence must start with a _______.", opts: ["Capital letter", "Small letter", "Number", "Comma"], ans: 0, exp: "सुरुवात नेहमी Capital Letter ने होते[span_32](start_span)[span_32](end_span)." },
+            { q: "Punctuation marks give _______ to text.", opts: ["Clarity and pause", "Confusion", "Extra length", "Errors"], ans: 0, exp: "विरामचिन्हांमुळे वाक्याला स्पष्टता येते[span_33](start_span)[span_33](end_span)." }
           ]
         };
       }
@@ -676,7 +556,6 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // क्विझ सिस्टीम
     function loadQuizQuestion() {
       const q = questions[qIndex];
       document.getElementById("qcount").innerText = `Question ${qIndex + 1} of ${questions.length}`;
@@ -744,7 +623,7 @@
 
     window.onload = () => {
       renderMenu();
-      loadTopic("1"); // पहिले पान बाय-डिफॉल्ट लोड करणे
+      loadTopic("1");
     };
   </script>
 </body>
