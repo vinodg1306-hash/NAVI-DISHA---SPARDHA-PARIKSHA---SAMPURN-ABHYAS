@@ -6,12 +6,12 @@
   <title>Smart English Guru</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .controls { display: grid; gap: 12px; margin: 20px 0; }
-    .select-box { width: 100%; padding: 13px; border-radius: 12px; border: 2px solid #3157d5; font-size: 15px; font-weight: bold; background: #fff; color: #18233a; }
-    .lesson-box { background: #fff; border: 1px solid #e4e8f3; border-radius: 20px; padding: 24px; margin-top: 15px; box-shadow: 0 8px 24px #253b7510; }
-    .def-box { background: #f3f6ff; border-left: 5px solid #3157d5; padding: 16px; border-radius: 8px; margin: 15px 0; font-size: 15px; line-height: 1.7; }
-    .examples-grid { display: grid; gap: 10px; margin-top: 15px; }
-    .example-item { background: #fafbff; border: 1px solid #e8ebf5; border-radius: 10px; padding: 12px 16px; font-size: 14px; line-height: 1.6; }
+    .controls { margin: 15px 0; }
+    .select-box { width: 100%; padding: 12px; border-radius: 12px; border: 2px solid #3157d5; font-size: 15px; font-weight: bold; background: #fff; color: #18233a; }
+    .lesson-box { background: #fff; border: 1px solid #e4e8f3; border-radius: 20px; padding: 20px; margin-top: 15px; box-shadow: 0 8px 24px #253b7510; }
+    .def-box { background: #f3f6ff; border-left: 5px solid #3157d5; padding: 14px; border-radius: 8px; margin: 12px 0; font-size: 15px; line-height: 1.7; }
+    .examples-grid { display: grid; gap: 8px; margin-top: 12px; }
+    .example-item { background: #fafbff; border: 1px solid #e8ebf5; border-radius: 10px; padding: 10px 14px; font-size: 14px; line-height: 1.6; }
     .example-item b { color: #172f86; }
     .example-item span { color: #555; display: block; font-size: 13px; }
   </style>
@@ -30,68 +30,26 @@
 
   <div class="container">
     <div class="hero">
-      <span class="pill">४० संपूर्ण घटक</span>
+      <span class="pill">व्याकरण सराव</span>
       <h1>इंग्रजी व्याकरण शिका</h1>
-      <p>खालील यादीतून कोणताही विषय निवडा; त्याची सविस्तर माहिती, १० उदाहरणे आणि सराव क्विझ सोडवा!</p>
+      <p>खालील यादीतून विषय निवडा; त्याची सविस्तर माहिती, १० उदाहरणे आणि सराव क्विझ सोडवा!</p>
     </div>
 
     <!-- Dropdown Controls -->
     <div class="controls">
-      <div>
-        <label for="topicDropdown" style="font-weight: 800; display:block; margin-bottom: 6px;">घटक / विषय निवडा (Select Topic):</label>
-        <select id="topicDropdown" class="select-box" onchange="renderApp()">
-          <optgroup label="Grammar Section (व्याकरण)">
-            <option value="1">1. The Sentence (वाक्य)</option>
-            <option value="2">2. Subject and Predicate (उद्देश्य आणि विधेय)</option>
-            <option value="3">3. Parts of Speech (शब्दांच्या जाती)</option>
-            <option value="4">4. Nouns : Singular and Plural (एकवचन व अनेकवचन)</option>
-            <option value="5">5. Kinds of Nouns (नामांचे प्रकार)</option>
-            <option value="6">6. Gender (लिंग)</option>
-            <option value="7">7. Cases (विभक्ती)</option>
-            <option value="8">8. Pronouns (सर्वनामे)</option>
-            <option value="9">9. Adjectives (विशेषणे)</option>
-            <option value="10">10. Verbs (क्रियापदे)</option>
-            <option value="11">11. Mood</option>
-            <option value="12" selected>12. Tenses (काळ व त्याचे प्रकार)</option>
-            <option value="13">13. Auxiliary Verbs (सहाय्यकारी क्रियापदे)</option>
-            <option value="14">14. Present, Past & Past Participles</option>
-            <option value="15">15. Verbals : Infinitives, Participles, Gerunds</option>
-            <option value="16">16. Negative Sentences (नकारार्थी वाक्ये)</option>
-            <option value="17">17. Articles (a, an, the चा वापर)</option>
-            <option value="18">18. Adverbs (क्रियाविशेषणे)</option>
-            <option value="19">19. Prepositions (शब्दयोगी अव्यये)</option>
-            <option value="20">20. Conjunctions (उभयान्वयी अव्यये)</option>
-            <option value="21">21. Interjections (केवलप्रयोगी अव्यये)</option>
-            <option value="22">22. The Phrase and The Clause</option>
-            <option value="23">23. Clauses</option>
-            <option value="24">24. Kinds of Sentences</option>
-            <option value="25">25. Analysis of Simple Sentences</option>
-            <option value="26">26. Analysis of Complex & Compound Sentences</option>
-            <option value="27">27. Transformation of Sentences</option>
-            <option value="28">28. Synthesis of Sentences</option>
-            <option value="29">29. Use of Capital Letters</option>
-            <option value="30">30. Punctuation Guidelines (विरामचिन्हे)</option>
-            <option value="31">31. Noun-Adjective-Adverb Forms</option>
-            <option value="32">32. Direct - Indirect Speech</option>
-            <option value="33">33. Figures of Speech (अलंकार)</option>
-          </optgroup>
-          <optgroup label="Composition Section (लेखन विभाग)">
-            <option value="34">34. Essay-Writing (निबंध लेखन)</option>
-            <option value="35">35. Story-Writing (गोष्ट लेखन)</option>
-            <option value="36">36. Letter-Writing (पत्र लेखन)</option>
-            <option value="37">37. Comprehension (उतारा आकलन)</option>
-            <option value="38">38. Precis-Writing (सारांश लेखन)</option>
-            <option value="39">39. Translation (भाषांतर सराव)</option>
-          </optgroup>
-        </select>
-      </div>
+      <label for="topicDropdown" style="font-weight: 800; display:block; margin-bottom: 6px;">घटक / विषय निवडा (Select Topic):</label>
+      <select id="topicDropdown" class="select-box" onchange="renderApp()">
+        <option value="1">1. The Sentence (वाक्य)</option>
+        <option value="12" selected>12. Tenses (काळ व त्याचे प्रकार)</option>
+        <option value="17">17. Articles (a, an, the चा वापर)</option>
+      </select>
     </div>
 
     <!-- Topic Details Card -->
     <div class="lesson-box">
-      <h2 id="lessonTitle" style="color: #172f86; margin-top:0;">विषय लोड होत आहे...</h2>
+      <h2 id="lessonTitle" style="color: #172f86; margin-top:0;">विषय</h2>
       <div id="lessonDefinition" class="def-box"></div>
-      <h3 style="color: #3157d5; margin: 18px 0 10px;">१० महत्त्वाची उदाहरणे (10 Key Examples):</h3>
+      <h3 style="color: #3157d5; margin: 16px 0 8px;">१० महत्त्वाची उदाहरणे (10 Key Examples):</h3>
       <div id="lessonExamples" class="examples-grid"></div>
     </div>
 
@@ -105,7 +63,7 @@
         <span id="score">Score: 0</span>
       </div>
 
-      <h2 id="qtext">प्रश्न लोड होत आहे...</h2>
+      <h2 id="qtext">प्रश्न</h2>
       <div class="options" id="optbox"></div>
       <div id="feedback" class="feedback hidden"></div>
       <button class="primary" id="nextbtn" onclick="nextQuestion()">पुढचा प्रश्न ➜</button>
@@ -116,6 +74,164 @@
     Made with ❤️ | Smart English Guru
   </footer>
 
-  <script src="app.js"></script>
+  <script>
+    const topicsData = {
+      "12": {
+        title: "12. Tenses (काळ व त्याचे प्रकार)",
+        def: "<b>काळ (Tense) कशाला म्हणतात?</b><br>क्रिया कोणत्या वेळी घडली किंवा घडत आहे हे दर्शवणाऱ्या क्रियापदाच्या रूपाला काळ (Tense) म्हणतात. काळाचे मुख्य ३ प्रकार पडतात: Present Tense (वर्तमानकाळ), Past Tense (भूतकाळ), आणि Future Tense (भविष्यकाळ).",
+        examples: [
+          { en: "1. I drink milk every morning.", mr: "मी रोज सकाळी दूध पितो. (Simple Present)" },
+          { en: "2. She is reading a novel.", mr: "ती कादंबरी वाचत आहे. (Present Continuous)" },
+          { en: "3. We have completed our work.", mr: "आम्ही आमचे काम पूर्ण केले आहे. (Present Perfect)" },
+          { en: "4. It has been raining since 6 AM.", mr: "सकाळी ६ वाजेपासून पाऊस पडत आहे. (Present Perfect Continuous)" },
+          { en: "5. He bought a new laptop yesterday.", mr: "त्याने काल नवीन लॅपटॉप खरेदी केला. (Simple Past)" },
+          { en: "6. They were playing football.", mr: "ते फुटबॉल खेळत होते. (Past Continuous)" },
+          { en: "7. The train had left before I reached.", mr: "मी पोहोचण्यापूर्वी गाडी निघून गेली होती. (Past Perfect)" },
+          { en: "8. I will meet you tomorrow.", mr: "मी तुला उद्या भेटेन. (Simple Future)" },
+          { en: "9. She will be waiting for us.", mr: "ती आपली वाट पाहत असेल. (Future Continuous)" },
+          { en: "10. We will have reached Mumbai by evening.", mr: "आम्ही संध्याकाळपर्यंत मुंबईत पोहोचलेलो असू. (Future Perfect)" }
+        ],
+        quiz: [
+          { q: "She _______ to temple every day.", opts: ["go", "goes", "going", "gone"], ans: 1, exp: "Simple Present Tense मध्ये She सोबत क्रियापदाला s/es (goes) येते." },
+          { q: "I _______ a movie yesterday.", opts: ["see", "saw", "seen", "seeing"], ans: 1, exp: "'Yesterday' मुळे Simple Past Tense (saw) येईल." },
+          { q: "We _______ start the exam tomorrow.", opts: ["will", "did", "have", "are"], ans: 0, exp: "'Tomorrow' भविष्यकाळ दर्शवतो, म्हणून 'will' येईल." },
+          { q: "They _______ playing cricket right now.", opts: ["is", "am", "are", "was"], ans: 2, exp: "They सोबत चालू वर्तमानकाळात 'are' येते." },
+          { q: "He has _______ his dinner.", opts: ["finish", "finished", "finishing", "finishes"], ans: 1, exp: "Has नंतर क्रियापदाचे ३ रे रूप (V3 - finished) येते." }
+        ]
+      },
+      "1": {
+        title: "1. The Sentence (वाक्य)",
+        def: "<b>वाक्य (Sentence) म्हणजे काय?</b><br>शब्दांचा असा समूह ज्यामधून पूर्ण आणि अर्थपूर्ण विचार व्यक्त होतो, त्याला Sentence म्हणतात. वाक्याचे मुख्य ४ प्रकार पडतात: Declarative (विधानार्थी), Interrogative (प्रश्नार्थी), Imperative (आज्ञा/विनंती), आणि Exclamatory (उद्गारार्थी)[span_2](start_span)[span_2](end_span).",
+        examples: [
+          { en: "1. The earth moves around the sun.", mr: "पृथ्वी सूर्याभोवती फिरते. (Declarative)" },
+          { en: "2. Knowledge is power.", mr: "ज्ञान हीच शक्ती आहे. (Declarative)" },
+          { en: "3. Where do you live?", mr: "तू कुठे राहतोस? (Interrogative)" },
+          { en: "4. What is your goal?", mr: "तुझे ध्येय काय आहे? (Interrogative)" },
+          { en: "5. Please open the door.", mr: "कृपया दरवाजा उघडा. (Imperative - विनंती)" },
+          { en: "6. Obey your teachers.", mr: "शिक्षकांचे ऐका. (Imperative - आज्ञा)" },
+          { en: "7. What a beautiful painting!", mr: "किती सुंदर चित्र आहे हे! (Exclamatory)" },
+          { en: "8. How fast he runs!", mr: "तो किती वेगाने धावतो! (Exclamatory)" },
+          { en: "9. Honesty is the best policy.", mr: "प्रामाणिकपणा हेच सर्वोत्तम धोरण आहे." },
+          { en: "10. Never give up on your dreams.", mr: "आपल्या स्वप्नांचा कधीही त्याग करू नका." }
+        ],
+        quiz: [
+          { q: "A group of words making complete sense is a _______.", opts: ["Phrase", "Clause", "Sentence", "Letter"], ans: 2, exp: "पूर्ण अर्थ देणाऱ्या शब्दसमूहाला Sentence म्हणतात[span_3](start_span)[span_3](end_span)." },
+          { q: "'Where are you going?' is an example of _______.", opts: ["Imperative", "Interrogative", "Assertive", "Exclamatory"], ans: 1, exp: "प्रश्न विचारणारे वाक्य Interrogative असते." },
+          { q: "Every sentence must start with a _______ letter.", opts: ["Small", "Capital", "Bold", "Italic"], ans: 1, exp: "वाक्याची सुरुवात नेहमी Capital Letter ने होते[span_4](start_span)[span_4](end_span)." }
+        ]
+      },
+      "17": {
+        title: "17. Articles (a, an, the चा वापर)",
+        def: "<b>उपपदे (Articles):</b><br>इंग्रजीत A, An, आणि The ही तीन उपपदे आहेत. व्यंजनाच्या उच्चारापूर्वी 'A', स्वराच्या (a, e, i, o, u) उच्चारापूर्वी 'An', आणि जगात एकमेव किंवा निश्चित घटकांसाठी 'The' वापरतात.",
+        examples: [
+          { en: "1. This is a pen.", mr: "हा एक पेन आहे." },
+          { en: "2. He is a doctor.", mr: "तो एक डॉक्टर आहे." },
+          { en: "3. She eats an apple daily.", mr: "ती रोज एक सफरचंद खाते." },
+          { en: "4. He is an honest man.", mr: "तो एक प्रामाणिक माणूस आहे. ('ऑ' स्वर उच्चार)" },
+          { en: "5. Wait for an hour.", mr: "एक तास वाट पहा. ('आ' स्वर उच्चार)" },
+          { en: "6. The sun rises in the east.", mr: "सूर्य पूर्वेला उगवतो." },
+          { en: "7. The Himalayas are high.", mr: "हिमालय पर्वत उंच आहे." },
+          { en: "8. He read the Bhagavad Gita.", mr: "त्याने भगवद्गीता वाचली." },
+          { en: "9. She is the best student.", mr: "ती सर्वात उत्कृष्ट विद्यार्थिनी आहे." },
+          { en: "10. Look at the moon.", mr: "चंद्राकडे पहा." }
+        ],
+        quiz: [
+          { q: "She is eating _______ orange.", opts: ["a", "an", "the", "no article"], ans: 1, exp: "Orange चा उच्चार स्वराने होत असल्याने 'an' येईल." },
+          { q: "_______ Ganga is a sacred river.", opts: ["A", "An", "The", "No article"], ans: 2, exp: "नद्यांच्या नावापूर्वी 'The' लागते." },
+          { q: "He returned after _______ hour.", opts: ["a", "an", "the", "none"], ans: 1, exp: "Hour चा उच्चार 'आवर' (स्वर) असल्याने 'an' येईल." }
+        ]
+      }
+    };
+
+    let currentQuestions = [];
+    let currIdx = 0;
+    let score = 0;
+
+    function renderApp() {
+      const val = document.getElementById("topicDropdown").value;
+      const item = topicsData[val];
+
+      document.getElementById("lessonTitle").innerText = item.title;
+      document.getElementById("lessonDefinition").innerHTML = item.def;
+      
+      document.getElementById("lessonExamples").innerHTML = item.examples.map(e => `
+        <div class="example-item">
+          <b>${e.en}</b>
+          <span>${e.mr}</span>
+        </div>
+      `).join("");
+
+      currentQuestions = item.quiz;
+      currIdx = 0;
+      score = 0;
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      const q = currentQuestions[currIdx];
+      document.getElementById("qcount").innerText = `Question ${currIdx + 1} of ${currentQuestions.length}`;
+      document.getElementById("score").innerText = `Score: ${score}`;
+      document.getElementById("qtext").innerText = q.q;
+      document.getElementById("pbar").style.width = `${((currIdx + 1) / currentQuestions.length) * 100}%`;
+
+      const optbox = document.getElementById("optbox");
+      optbox.innerHTML = "";
+      const feedback = document.getElementById("feedback");
+      feedback.className = "feedback hidden";
+      feedback.innerText = "";
+      document.getElementById("nextbtn").innerText = "पुढचा प्रश्न ➜";
+      document.getElementById("nextbtn").onclick = nextQuestion;
+
+      q.opts.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "option";
+        btn.innerText = opt;
+        btn.onclick = () => selectAnswer(btn, idx);
+        optbox.appendChild(btn);
+      });
+    }
+
+    function selectAnswer(btn, idx) {
+      const q = currentQuestions[currIdx];
+      const allBtns = document.querySelectorAll(".option");
+      allBtns.forEach(b => b.onclick = null);
+
+      const feedback = document.getElementById("feedback");
+      feedback.classList.remove("hidden");
+
+      if (idx === q.ans) {
+        btn.classList.add("correct");
+        feedback.className = "feedback good";
+        feedback.innerText = "बरोबर उत्तर! 🎉 " + q.exp;
+        score += 10;
+      } else {
+        btn.classList.add("wrong");
+        feedback.className = "feedback bad";
+        feedback.innerText = "चुकीचे उत्तर! ❌ " + q.exp;
+        allBtns[q.ans].classList.add("correct");
+      }
+      document.getElementById("score").innerText = `Score: ${score}`;
+    }
+
+    function nextQuestion() {
+      if (currIdx < currentQuestions.length - 1) {
+        currIdx++;
+        loadQuestion();
+      } else {
+        document.getElementById("qtext").innerText = `क्विझ पूर्ण झाली! तुमचा एकूण स्कोअर: ${score} / ${currentQuestions.length * 10}`;
+        document.getElementById("optbox").innerHTML = "";
+        document.getElementById("feedback").className = "feedback good";
+        document.getElementById("feedback").innerText = "अभिनंदन! तुम्ही इतर विषय निवडून नवीन सराव करू शकता.";
+        document.getElementById("nextbtn").innerText = "पुन्हा सोडवा (Restart Quiz)";
+        document.getElementById("nextbtn").onclick = () => {
+          currIdx = 0;
+          score = 0;
+          loadQuestion();
+        };
+      }
+    }
+
+    window.onload = renderApp;
+  </script>
 </body>
 </html>
