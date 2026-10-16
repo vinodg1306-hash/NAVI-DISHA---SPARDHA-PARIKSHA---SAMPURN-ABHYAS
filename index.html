@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#3157d5">
+<title>Smart English Guru</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">SEG</div>
+    <div><strong>Smart English Guru</strong><small>Learn English • Learn Smart</small></div>
+  </div>
+  <select id="language" aria-label="Language">
+    <option value="mr">मराठी</option><option value="hi">हिंदी</option><option value="en">English</option>
+  </select>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <span class="pill">FREE • MOBILE FRIENDLY</span>
+    <h1 id="title">इंग्रजी शिका, आत्मविश्वास वाढवा!</h1>
+    <p id="subtitle">Grammar lessons, examples आणि मजेदार quizzes एकाच ठिकाणी.</p>
+    <div class="stats"><div><b id="score">0</b><span id="scoreLabel">गुण</span></div><div><b>3</b><span id="langLabel">भाषा</span></div><div><b>100%</b><span id="freeLabel">मोफत</span></div></div>
+  </section>
+
+  <nav class="tabs">
+    <button class="tab active" data-page="lesson">📚 <span id="lessonTab">Grammar Lesson</span></button>
+    <button class="tab" data-page="quiz">🧠 <span id="quizTab">Quiz</span></button>
+  </nav>
+
+  <section id="lessonPage" class="page">
+    <div class="card">
+      <div class="cardhead"><div><span class="tag">TENSE 01</span><h2 id="lessonTitle">Simple Present Tense</h2></div><span class="icon">A+</span></div>
+      <p id="lessonIntro">नेहमी घडणारी कृती, सवय किंवा सार्वत्रिक सत्य सांगण्यासाठी Simple Present Tense वापरतो.</p>
+      <div class="formula"><b>Formula</b><br>Subject + V1 (s/es) + Object</div>
+      <h3 id="examplesTitle">Examples</h3>
+      <div class="examples">
+        <div><b>English:</b> I play cricket every day.<br><span>मराठी: मी दररोज क्रिकेट खेळतो.</span></div>
+        <div><b>English:</b> She goes to school.<br><span>मराठी: ती शाळेत जाते.</span></div>
+        <div><b>English:</b> The sun rises in the east.<br><span>मराठी: सूर्य पूर्वेला उगवतो.</span></div>
+      </div>
+      <button class="primary" id="startQuiz">🧠 Start Tense Quiz</button>
+    </div>
+  </section>
+
+  <section id="quizPage" class="page hidden">
+    <div class="card quizcard">
+      <div class="progress"><span id="progressBar"></span></div>
+      <div class="qmeta"><span id="questionNo">Question 1 of 5</span><span id="liveScore">Score: 0</span></div>
+      <h2 id="question"></h2>
+      <div id="options" class="options"></div>
+      <div id="feedback" class="feedback hidden"></div>
+      <button id="next" class="primary hidden">Next Question →</button>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Smart English Guru • Learn English in Marathi, Hindi and English</footer>
+<script src="app.js"></script>
+</body>
+</html>
