@@ -3,46 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart English Guru - 40 Topics Edition</title>
+  <title>Smart English Guru - Complete 40 Topics with Audio</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    body { background-color: #f6f8fc; color: #18233a; padding-bottom: 50px; }
-    .topbar { background: #fff; padding: 14px 20px; border-bottom: 1px solid #e4e8f3; }
-    .brand { display: flex; align-items: center; gap: 12px; max-width: 820px; margin: 0 auto; }
-    .logo { background: #3157d5; color: white; font-weight: bold; padding: 8px 12px; border-radius: 8px; font-size: 15px; }
-    .brand strong { display: block; font-size: 17px; color: #172f86; }
-    .brand small { color: #666; font-size: 13px; }
-    .container { max-width: 820px; margin: 0 auto; padding: 16px; }
-    .hero { background: linear-gradient(135deg, #2b48b8, #3b66f5); color: white; padding: 22px; border-radius: 18px; margin-bottom: 18px; box-shadow: 0 8px 20px rgba(49,87,213,0.15); }
-    .hero .pill { background: rgba(255,255,255,0.25); font-size: 12px; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 8px; font-weight: 600; }
-    .hero h1 { font-size: 24px; margin-bottom: 6px; }
-    .hero p { font-size: 14px; opacity: 0.95; line-height: 1.5; }
     .controls { margin: 15px 0; }
-    .select-box { width: 100%; padding: 13px; border-radius: 12px; border: 2px solid #3157d5; font-size: 15px; font-weight: bold; background: #fff; color: #18233a; outline: none; cursor: pointer; }
-    .lesson-box { background: #fff; border: 1px solid #e4e8f3; border-radius: 18px; padding: 22px; box-shadow: 0 4px 16px rgba(37,59,117,0.06); }
-    .def-box { background: #f3f6ff; border-left: 5px solid #3157d5; padding: 16px; border-radius: 8px; margin: 14px 0; font-size: 14.5px; line-height: 1.7; }
-    .formula-tag { display: inline-block; background: #e3ebff; color: #172f86; padding: 4px 10px; border-radius: 6px; font-weight: bold; margin-top: 6px; }
-    .examples-grid { display: grid; gap: 9px; margin-top: 14px; }
-    .example-item { background: #fafbff; border: 1px solid #e8ebf5; border-radius: 10px; padding: 12px 15px; font-size: 14px; line-height: 1.6; }
-    .example-item b { color: #172f86; display: block; margin-bottom: 3px; }
-    .example-item span { color: #555; display: block; font-size: 13px; }
-    .quizcard { background: #fff; border: 1px solid #e4e8f3; border-radius: 18px; padding: 22px; box-shadow: 0 4px 16px rgba(37,59,117,0.06); margin-top: 20px; }
-    .progress { background: #eef1f8; height: 8px; border-radius: 4px; overflow: hidden; margin-bottom: 14px; }
-    .progress span { display: block; height: 100%; background: #3157d5; transition: width 0.3s ease; }
-    .qmeta { display: flex; justify-content: space-between; font-size: 13px; color: #666; margin-bottom: 14px; font-weight: 600; }
-    #qtext { font-size: 17px; color: #18233a; margin-bottom: 15px; line-height: 1.5; }
-    .options { display: grid; gap: 10px; margin-bottom: 15px; }
-    .option { width: 100%; text-align: left; padding: 13px 16px; border-radius: 10px; border: 1.5px solid #dce2f0; background: #fff; font-size: 14.5px; cursor: pointer; transition: 0.2s; outline: none; }
-    .option:hover { border-color: #3157d5; background: #f6f8ff; }
-    .option.correct { background: #eaf8ef; border-color: #27ae60; color: #1e7e43; font-weight: bold; }
-    .option.wrong { background: #fdeeee; border-color: #eb5757; color: #c0392b; font-weight: bold; }
-    .feedback { padding: 12px 16px; border-radius: 8px; font-size: 14px; margin-bottom: 14px; line-height: 1.5; }
-    .feedback.good { background: #eaf8ef; color: #1e7e43; border: 1px solid #c2ebd0; }
-    .feedback.bad { background: #fdeeee; color: #c0392b; border: 1px solid #fad2d2; }
-    .hidden { display: none; }
-    .primary { width: 100%; background: #3157d5; color: white; border: none; padding: 13px; border-radius: 10px; font-size: 15px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
-    .primary:hover { background: #2343ad; }
-    footer { text-align: center; font-size: 13px; color: #777; margin-top: 30px; }
+    .select-box { width: 100%; padding: 13px; border-radius: 12px; border: 2px solid #3157d5; font-size: 15px; font-weight: bold; background: #fff; color: #18233a; }
+    .lesson-box { background: #fff; border: 1px solid #e4e8f3; border-radius: 20px; padding: 22px; margin-top: 15px; box-shadow: 0 8px 24px #253b7510; }
+    .def-box { background: #f3f6ff; border-left: 5px solid #3157d5; padding: 15px; border-radius: 8px; margin: 14px 0; font-size: 15px; line-height: 1.7; }
+    .examples-grid { display: grid; gap: 10px; margin-top: 12px; }
+    
+    .example-item {
+      background: #fafbff;
+      border: 1px solid #e8ebf5;
+      border-radius: 12px;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    .example-text { flex: 1; }
+    .example-text b { color: #172f86; font-size: 15px; display: block; margin-bottom: 3px; cursor: pointer; }
+    .example-text span { color: #555; display: block; font-size: 13px; cursor: pointer; }
+    
+    .voice-buttons { display: flex; gap: 6px; }
+    .speaker-btn {
+      background: #edf1ff;
+      border: 1px solid #d2ddff;
+      border-radius: 8px;
+      padding: 6px 9px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #3157d5;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      transition: all 0.2s;
+    }
+    .speaker-btn:active { transform: scale(0.92); background: #3157d5; color: #fff; }
   </style>
 </head>
 <body>
@@ -52,24 +51,24 @@
       <div class="logo">SEG</div>
       <div>
         <strong>Smart English Guru</strong>
-        <small>४० घटक + काळांचे १२ स्वतंत्र प्रकार (Complete Grammar & Composition)</small>
+        <small>४० घटक (इंग्रजी व मराठी आवाज)</small>
       </div>
     </div>
   </div>
 
   <div class="container">
     <div class="hero">
-      <span class="pill">४० संपूर्ण घटक • प्रत्येकी ५ क्विझ प्रश्न</span>
-      <h1>इंग्रजी व्याकरण व रचना</h1>
-      <p>खालील ड्रॉपडाऊनमधून कोणताही घटक निवडा; त्याची सोपी माहिती, १० उदाहरणे आणि ५ बहुपर्यायी प्रश्नांची क्विझ सोडवा!</p>
+      <span class="pill">🔊 Voice Supported</span>
+      <h1>इंग्रजी व्याकरण व उच्चार शिका</h1>
+      <p>वाक्यावर किंवा स्पीकर बटनावर टॅप करा आणि इंग्रजी व मराठीत स्पष्ट उच्चार ऐका!</p>
     </div>
 
-    <!-- Dropdown -->
+    <!-- Dropdown: सर्व ४० घटक -->
     <div class="controls">
       <label for="topicDropdown" style="font-weight: 800; display:block; margin-bottom: 6px;">घटक / विषय निवडा (Select Topic):</label>
       <select id="topicDropdown" class="select-box" onchange="renderApp()">
-        <optgroup label="Grammar Section (व्याकरण विभाग)">
-          <option value="1" selected>1. The Sentence (वाक्य व प्रकार)</option>
+        <optgroup label="Grammar Section (व्याकरण)">
+          <option value="1">1. The Sentence (वाक्य)</option>
           <option value="2">2. Subject and Predicate (उद्देश्य आणि विधेय)</option>
           <option value="3">3. Parts of Speech (शब्दांच्या जाती)</option>
           <option value="4">4. Nouns : Singular and Plural (i) (एकवचन व अनेकवचन - १)</option>
@@ -81,22 +80,7 @@
           <option value="10">10. Adjectives (विशेषणे)</option>
           <option value="11">11. Verbs (क्रियापदे)</option>
           <option value="12">12. Mood (क्रियापदाचा भाव)</option>
-        </optgroup>
-        <optgroup label="13. Tenses (काळ - १२ स्वतंत्र उपप्रकार)">
-          <option value="13_1">13.1 Simple Present Tense (साधा वर्तमानकाळ)</option>
-          <option value="13_2">13.2 Present Continuous Tense (चालू वर्तमानकाळ)</option>
-          <option value="13_3">13.3 Present Perfect Tense (पूर्ण वर्तमानकाळ)</option>
-          <option value="13_4">13.4 Present Perfect Continuous Tense (चालू-पूर्ण वर्तमानकाळ)</option>
-          <option value="13_5">13.5 Simple Past Tense (साधा भूतकाळ)</option>
-          <option value="13_6">13.6 Past Continuous Tense (चालू भूतकाळ)</option>
-          <option value="13_7">13.7 Past Perfect Tense (पूर्ण भूतकाळ)</option>
-          <option value="13_8">13.8 Past Perfect Continuous Tense (चालू-पूर्ण भूतकाळ)</option>
-          <option value="13_9">13.9 Simple Future Tense (साधा भविष्यकाळ)</option>
-          <option value="13_10">13.10 Future Continuous Tense (चालू भविष्यकाळ)</option>
-          <option value="13_11">13.11 Future Perfect Tense (पूर्ण भविष्यकाळ)</option>
-          <option value="13_12">13.12 Future Perfect Continuous Tense (चालू-पूर्ण भविष्यकाळ)</option>
-        </optgroup>
-        <optgroup label="Grammar Section - पुढील घटक">
+          <option value="13" selected>13. Tenses (काळ व त्याचे प्रकार)</option>
           <option value="14">14. Auxiliary Verbs (सहाय्यकारी क्रियापदे)</option>
           <option value="15">15. Present Tense, Past Tense and Past Participles</option>
           <option value="16">16. Verbals : Infinitives, Participles and Gerunds</option>
@@ -108,7 +92,7 @@
           <option value="22">22. Interjections (केवलप्रयोगी अव्यये)</option>
           <option value="23">23. The Phrase and The Clause</option>
           <option value="24">24. Clauses (उपवाक्ये)</option>
-          <option value="25">25. Kinds of Sentences : Simple, Compound and Complex</option>
+          <option value="25">25. Kinds of Sentences : Simple, Compound, Complex</option>
           <option value="26">26. Analysis of Simple Sentences</option>
           <option value="27">27. Analysis of Complex and Compound Sentences</option>
           <option value="28">28. Transformation of Sentences</option>
@@ -130,1309 +114,819 @@
       </select>
     </div>
 
-    <!-- Lesson Box -->
+    <!-- Topic Details Card -->
     <div class="lesson-box">
       <h2 id="lessonTitle" style="color: #172f86; margin-top:0;">विषय</h2>
       <div id="lessonDefinition" class="def-box"></div>
-      <h3 style="color: #3157d5; margin: 16px 0 8px;">१० महत्त्वाची उदाहरणे (10 Key Examples):</h3>
+      <h3 style="color: #3157d5; margin: 16px 0 8px;">महत्त्वाची उदाहरणे (उच्चार ऐकण्यासाठी टॅप करा):</h3>
       <div id="lessonExamples" class="examples-grid"></div>
     </div>
 
-    <!-- Quiz Box -->
-    <div class="quizcard">
+    <br>
+
+    <!-- Quiz Card -->
+    <div class="card quizcard">
       <div class="progress"><span id="pbar" style="width: 20%;"></span></div>
       <div class="qmeta">
-        <span id="qcount">Question 1 of 5</span>
+        <span id="qcount">Question 1</span>
         <span id="score">Score: 0</span>
       </div>
 
-      <h2 id="qtext">प्रश्न</h2>
-      <div class="options" id="optbox"></div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2 id="qtext" style="margin:0;">प्रश्न</h2>
+        <button class="speaker-btn" onclick="speakCurrentQuestion()">🔊 EN</button>
+      </div>
+      
+      <div class="options" id="optbox" style="margin-top:14px;"></div>
       <div id="feedback" class="feedback hidden"></div>
       <button class="primary" id="nextbtn" onclick="nextQuestion()">पुढचा प्रश्न ➜</button>
     </div>
   </div>
 
   <footer>
-    Made with ❤️ | Smart English Guru - 40 Topics Edition
+    Smart English Guru - All 40 Topics
   </footer>
 
   <script>
+    // आवाज देणारे फंक्शन (Text-to-Speech)
+    function playAudio(text, lang) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang === 'en' ? 'en-US' : 'mr-IN';
+        utterance.rate = lang === 'en' ? 0.85 : 0.95;
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert("तुमच्या ब्राउझरमध्ये आवाज सपोर्ट उपलब्ध नाही.");
+      }
+    }
+
+    function speakCurrentQuestion() {
+      const q = currentQuestions[currIdx];
+      if (q) playAudio(q.q, 'en');
+    }
+
     const allTopics = {
-      // 1. The Sentence
       "1": {
-        title: "1. The Sentence (वाक्य व प्रकार)",
-        def: "<b>वाक्य म्हणजे काय?</b><br>पूर्ण अर्थ व्यक्त करणाऱ्या शब्दसमूहाला <b>Sentence (वाक्य)</b> म्हणतात. इंग्रजीत वाक्याचे ४ मुख्य प्रकार आहेत:<br>१. <b>Assertive / Declarative:</b> विधानार्थी वाक्य<br>२. <b>Interrogative:</b> प्रश्नार्थक वाक्य<br>३. <b>Imperative:</b> आज्ञार्थी / विनंतीदर्शक वाक्य<br>४. <b>Exclamatory:</b> उद्गारवाचक वाक्य.",
+        title: "1. The Sentence (वाक्य)",
+        def: "<b>वाक्य म्हणजे काय?</b><br>शब्दांचा असा समूह ज्यामधून पूर्ण, अर्थपूर्ण विचार व्यक्त होतो, त्याला Sentence म्हणतात. याचे ४ प्रकार आहेत: Assertive (विधानार्थी), Interrogative (प्रश्नार्थी), Imperative (आज्ञा/विनंती), आणि Exclamatory (उद्गारार्थी)[span_1](start_span)[span_1](end_span).",
         examples: [
-          { en: "1. Mina sings very well.", mr: "मीना खूप छान गाते. (Assertive)" },
-          { en: "2. The sun gives us light and heat.", mr: "सूर्य आपल्याला प्रकाश आणि उष्णता देतो. (Assertive)" },
-          { en: "3. Where do you stay?", mr: "तू कुठे राहतोस? (Interrogative)" },
-          { en: "4. Do you know this story?", mr: "तुला ही गोष्ट माहिती आहे का? (Interrogative)" },
-          { en: "5. Please give me your pencil.", mr: "कृपया मला तुझी पेन्सिल दे. (Imperative - विनंती)" },
-          { en: "6. Bring that book here.", mr: "ते पुस्तक इथे घेऊन ये. (Imperative - आज्ञा)" },
-          { en: "7. How kind of you!", mr: "तुम्ही किती दयाळू आहात! (Exclamatory)" },
-          { en: "8. What a beautiful garden this is!", mr: "हे किती सुंदर उद्यान आहे! (Exclamatory)" },
-          { en: "9. Always speak the truth.", mr: "नेहमी खरे बोला. (Imperative - सल्ला)" },
-          { en: "10. He is a very hardworking student.", mr: "तो अतिशय कष्टाळू विद्यार्थी आहे. (Assertive)" }
+          { en: "The sun gives us heat and light.", mr: "सूर्य आपल्याला उष्णता व प्रकाश देतो." },
+          { en: "Birds build nests in trees.", mr: "पक्षी झाडांवर घरटी बांधतात." },
+          { en: "Where are you going today?", mr: "तू आज कुठे जात आहेस?" },
+          { en: "What is your father's name?", mr: "तुझ्या वडिलांचे नाव काय आहे?" },
+          { en: "Please help me with this problem.", mr: "कृपया मला या समस्येत मदत करा." },
+          { en: "Always speak the truth.", mr: "नेहमी खरे बोला." },
+          { en: "What a wonderful surprise it is!", mr: "किती छान आश्चर्य आहे हे!" },
+          { en: "How beautifully she sings!", mr: "ती किती सुरेख गाते!" },
+          { en: "Honesty is appreciated by everyone.", mr: "प्रामाणिकपणाचे सर्वांकडून कौतुक होते." },
+          { en: "Work hard to achieve your dreams.", mr: "स्वप्ने पूर्ण करण्यासाठी मेहनत करा." }
         ],
         quiz: [
-          { q: "A group of words that makes complete sense is called a _______.", opts: ["Letter", "Phrase", "Sentence", "Paragraph"], ans: 2, exp: "पूर्ण अर्थ व्यक्त करणाऱ्या शब्दांच्या समूहाला Sentence म्हणतात." },
-          { q: "'Where do you stay?' is an example of which sentence?", opts: ["Assertive", "Interrogative", "Imperative", "Exclamatory"], ans: 1, exp: "प्रश्न विचारणाऱ्या वाक्याला Interrogative Sentence म्हणतात." },
-          { q: "'Please help me with this box.' हे वाक्य कोणत्या प्रकारचे आहे?", opts: ["Imperative", "Assertive", "Exclamatory", "Interrogative"], ans: 0, exp: "विनंती किंवा आज्ञा Imperative Sentence मध्ये मोडते." },
-          { q: "'What a pleasant surprise!' च्या शेवटी कोणते विरामचिन्ह येईल?", opts: [".", "?", "!", ","], ans: 2, exp: "उद्गारवाचक वाक्याच्या शेवटी Exclamation mark (!) येतो." },
-          { q: "विधान करणाऱ्या साध्या वाक्याला काय म्हणतात?", opts: ["Imperative", "Declarative / Assertive", "Interrogative", "Exclamatory"], ans: 1, exp: "माहिती किंवा विधान सांगणारे वाक्य Assertive असते." }
+          { q: "A group of words making complete sense is called a _______.", opts: ["Letter", "Clause", "Sentence", "Phrase"], ans: 2, exp: "पूर्ण अर्थ देणाऱ्या शब्दसमूहाला Sentence म्हणतात[span_2](start_span)[span_2](end_span)." },
+          { q: "'Where do you stay?' is an example of _______.", opts: ["Assertive", "Interrogative", "Imperative", "Exclamatory"], ans: 1, exp: "प्रश्न विचारणारे वाक्य Interrogative असते." }
         ]
       },
-
-      // 2. Subject and Predicate
       "2": {
         title: "2. Subject and Predicate (उद्देश्य आणि विधेय)",
-        def: "<b>Subject आणि Predicate:</b><br>प्रत्येक वाक्याचे दोन मुख्य भाग असतात:<br>१. <b>Subject (उद्देश्य):</b> वाक्यात ज्याच्याबद्दल बोलले जाते किंवा जो क्रिया करतो.<br>२. <b>Predicate (विधेय):</b> Subject बद्दल जी काही क्रिया किंवा माहिती सांगितली जाते.",
+        def: "<b>Subject आणि Predicate:</b><br>वाक्यात ज्याच्याविषयी बोलले जाते त्याला <b>Subject (उद्देश्य)</b> म्हणतात, आणि Subject बद्दल जी माहिती सांगितली जाते त्याला <b>Predicate (विधेय)</b> म्हणतात[span_3](start_span)[span_3](end_span).",
         examples: [
-          { en: "1. Suhas | plays cricket.", mr: "Subject: Suhas | Predicate: plays cricket" },
-          { en: "2. The barking dogs | seldom bite.", mr: "Subject: The barking dogs | Predicate: seldom bite" },
-          { en: "3. My mother | cooks delicious food.", mr: "Subject: My mother | Predicate: cooks delicious food" },
-          { en: "4. The earth | revolves around the sun.", mr: "Subject: The earth | Predicate: revolves around the sun" },
-          { en: "5. He | is a good boy.", mr: "Subject: He | Predicate: is a good boy" },
-          { en: "6. Stars | twinkle at night.", mr: "Subject: Stars | Predicate: twinkle at night" },
-          { en: "7. The train | arrived on time.", mr: "Subject: The train | Predicate: arrived on time" },
-          { en: "8. Regular exercise | keeps us fit.", mr: "Subject: Regular exercise | Predicate: keeps us fit" },
-          { en: "9. Birds | build nests in trees.", mr: "Subject: Birds | Predicate: build nests in trees" },
-          { en: "10. Rahul and Rohan | are best friends.", mr: "Subject: Rahul and Rohan | Predicate: are best friends" }
+          { en: "Rahul plays cricket.", mr: "राहुल (Subject) क्रिकेट खेळतो (Predicate)." },
+          { en: "Barking dogs seldom bite.", mr: "भुंकणारे कुत्रे चावत नाहीत." },
+          { en: "My mother cooks delicious food.", mr: "माझी आई चविष्ट जेवण बनवते." },
+          { en: "Nature is the best teacher.", mr: "निसर्ग हा सर्वोत्तम गुरू आहे." },
+          { en: "The train arrived on time.", mr: "गाडी वेळेवर पोहोचली." },
+          { en: "Honesty is the best policy.", mr: "प्रामाणिकपणा हेच उत्तम धोरण आहे." },
+          { en: "The teacher entered the class.", mr: "शिक्षक वर्गात आले." },
+          { en: "Stars twinkle at night.", mr: "तारे रात्री चमकतात." },
+          { en: "We love our country.", mr: "आम्ही आमच्या देशावर प्रेम करतो." },
+          { en: "Regular exercise keeps us fit.", mr: "नियमित व्यायाम आपल्याला तंदुरुस्त ठेवतो." }
         ],
         quiz: [
-          { q: "In 'The dog barked loudly', what is the Subject?", opts: ["The dog", "barked", "loudly", "barked loudly"], ans: 0, exp: "कुत्र्याबद्दल बोलले असल्याने 'The dog' हा Subject आहे." },
-          { q: "In 'Suhas plays cricket', which part is the Predicate?", opts: ["Suhas", "plays cricket", "cricket", "plays"], ans: 1, exp: "कर्त्याबद्दलची माहिती म्हणजेच 'plays cricket' हा Predicate आहे." },
-          { q: "How do we find the Subject in a sentence?", opts: ["By asking 'When'", "By asking 'Who' or 'What'", "By checking last word", "By counting words"], ans: 1, exp: "क्रियापदाला 'Who' किंवा 'What' विचारल्यास कर्ता मिळतो." },
-          { q: "Identify the Subject: 'My elder brother lives in Pune.'", opts: ["My elder brother", "lives", "in Pune", "brother lives"], ans: 0, exp: "'My elder brother' हा वाक्याचा कर्ता (Subject) आहे." },
-          { q: "A Predicate always contains a _______.", opts: ["Pronoun", "Verb", "Preposition", "Conjunction"], ans: 1, exp: "Predicate मध्ये मुख्य क्रियापद (Verb) असणे आवश्यक आहे." }
+          { q: "In 'The dog barked loudly', the Subject is _______.", opts: ["The dog", "barked", "loudly", "barked loudly"], ans: 0, exp: "कुत्र्याबद्दल बोलले जात असल्याने 'The dog' हा Subject आहे." }
         ]
       },
-
-      // 3. Parts of Speech
       "3": {
-        title: "3. Parts of Speech (शब्दांच्या ८ जाती)",
-        def: "<b>शब्दांच्या जाती:</b><br>शब्दांच्या उपयोगानुसार इंग्रजीत ८ मुख्य प्रकार पडतात:<br>१. Noun (नाम) २. Pronoun (सर्वनाम) ३. Adjective (विशेषण) ४. Verb (क्रियापद) ५. Adverb (क्रियाविशेषण) ६. Preposition (शब्दयोगी अव्यय) ७. Conjunction (उभयान्वयी अव्यय) ८. Interjection (केवलप्रयोगी अव्यय).",
+        title: "3. Parts of Speech (शब्दांच्या जाती)",
+        def: "<b>शब्दांच्या ८ जाती:</b><br>1. Noun, 2. Pronoun, 3. Adjective, 4. Verb, 5. Adverb, 6. Preposition, 7. Conjunction, 8. Interjection[span_4](start_span)[span_4](end_span).",
         examples: [
-          { en: "1. Noun: Ramesh lives in Mumbai.", mr: "Ramesh व Mumbai ही नामे आहेत." },
-          { en: "2. Pronoun: He is very clever.", mr: "He हे नामाऐवजी आलेले सर्वनाम आहे." },
-          { en: "3. Adjective: She has a red pen.", mr: "Red हे पेनाची माहिती देणारे विशेषण आहे." },
-          { en: "4. Verb: Children play football.", mr: "Play ही क्रिया दर्शवणारे क्रियापद आहे." },
-          { en: "5. Adverb: He runs very fast.", mr: "Fast हे क्रियेबद्दल सांगणारे क्रियाविशेषण आहे." },
-          { en: "6. Preposition: The cat is on the table.", mr: "On हे संबंध जोडणारे शब्दयोगी अव्यय आहे." },
-          { en: "7. Conjunction: Ram and Shyam came.", mr: "And हे जोडणारे उभयान्वयी अव्यय आहे." },
-          { en: "8. Interjection: Hurrah! We won.", mr: "Hurrah! हा भावना दर्शवणारा शब्द आहे." },
-          { en: "9. Verb: She wrote a poem.", mr: "Wrote हे क्रियापद आहे." },
-          { en: "10. Adjective: It is a cold day.", mr: "Cold हे विशेषण आहे." }
+          { en: "Sachin is a great batsman.", mr: "नाम (Noun)" },
+          { en: "He is very clever.", mr: "सर्वनाम (Pronoun)" },
+          { en: "She has a red pen.", mr: "विशेषण (Adjective)" },
+          { en: "They run every morning.", mr: "क्रियापद (Verb)" },
+          { en: "He runs very fast.", mr: "क्रियाविशेषण (Adverb)" },
+          { en: "The book is on the table.", mr: "शब्दयोगी अव्यय (Preposition)" },
+          { en: "Ram and Shyam came.", mr: "उभयान्वयी अव्यय (Conjunction)" },
+          { en: "Wow! What a great sight.", mr: "केवलप्रयोगी अव्यय (Interjection)" },
+          { en: "It is a cold day.", mr: "विशेषण (Adjective)" },
+          { en: "She writes a poem.", mr: "क्रियापद (Verb)" }
         ],
         quiz: [
-          { q: "Which part of speech connects words or clauses?", opts: ["Preposition", "Conjunction", "Adverb", "Noun"], ans: 1, exp: "जोडण्याचे काम Conjunction (उभयान्वयी अव्यय) करते." },
-          { q: "Identify the Pronoun: 'She completed her study.'", opts: ["study", "completed", "She", "her"], ans: 2, exp: "'She' हे वाक्यातील मुख्य सर्वनाम आहे." },
-          { q: "In 'He speaks softly', 'softly' is an _______.", opts: ["Adjective", "Adverb", "Noun", "Verb"], ans: 1, exp: "बोलण्याच्या पद्धतीबद्दल सांगणारा 'softly' हा Adverb आहे." },
-          { q: "Which of the following is a Preposition?", opts: ["Under", "Because", "Clever", "Quickly"], ans: 0, exp: "'Under' (खाली) हे Preposition आहे." },
-          { q: "'Wow!' is which part of speech?", opts: ["Noun", "Pronoun", "Interjection", "Verb"], ans: 2, exp: "उद्गारवाचक शब्द Interjection असतो." }
+          { q: "Which part of speech connects words or sentences?", opts: ["Preposition", "Conjunction", "Adverb", "Noun"], ans: 1, exp: "जोडण्याचे काम Conjunction (उभयान्वयी अव्यय) करते." }
         ]
       },
-
-      // 4. Nouns : Singular and Plural (i)
       "4": {
-        title: "4. Nouns : Singular and Plural (i) (एकवचन व अनेकवचन - १)",
-        def: "<b>नियम (भाग १):</b><br>१. सामान्यतः नामाला <b>'s'</b> लावून अनेकवचन होते.<br>२. ज्या नामांच्या शेवटी <b>s, ss, sh, ch, x, o</b> असते, त्यांना <b>'es'</b> प्रत्यय लागतो.",
+        title: "4. Nouns : Singular and Plural (i)",
+        def: "<b>एकवचन आणि अनेकवचन (भाग १):</b><br>सामान्यतः शब्दाला 's' किंवा 'es' जोडून अनेकवचन तयार केले जाते[span_5](start_span)[span_5](end_span).",
         examples: [
-          { en: "1. Book → Books", mr: "पुस्तक → पुस्तके ('s' जोडून)" },
-          { en: "2. Pen → Pens", mr: "पेन → पेन्स" },
-          { en: "3. Boy → Boys", mr: "मुलगा → मुले" },
-          { en: "4. Bus → Buses", mr: "बस → बसेस (शेवटी s असल्याने es)" },
-          { en: "5. Box → Boxes", mr: "खोका → खोके (शेवटी x असल्याने es)" },
-          { en: "6. Class → Classes", mr: "वर्ग → वर्ग (शेवटी ss असल्याने es)" },
-          { en: "7. Watch → Watches", mr: "घड्याळ → घड्याळे (शेवटी ch असल्याने es)" },
-          { en: "8. Dish → Dishes", mr: "थाळी → थाळ्या (शेवटी sh असल्याने es)" },
-          { en: "9. Mango → Mangoes", mr: "आंबा → आंबे (शेवटी o असल्याने es)" },
-          { en: "10. Potato → Potatoes", mr: "बटाटा → बटाटे (शेवटी o असल्याने es)" }
+          { en: "Book → Books", mr: "पुस्तक → पुस्तके" },
+          { en: "Pen → Pens", mr: "पेन → पेन्स" },
+          { en: "Boy → Boys", mr: "मुलगा → मुले" },
+          { en: "Bus → Buses", mr: "बस → बसेस" },
+          { en: "Box → Boxes", mr: "खोका → खोके" },
+          { en: "Class → Classes", mr: "वर्ग → अनेक वर्ग" },
+          { en: "Watch → Watches", mr: "घड्याळ → घड्याळे" },
+          { en: "Brush → Brushes", mr: "ब्रश → अनेक ब्रश" },
+          { en: "Mango → Mangoes", mr: "आंबा → आंबे" },
+          { en: "Tree → Trees", mr: "झाड → झाडे" }
         ],
         quiz: [
-          { q: "Plural of 'Box' is _______.", opts: ["Boxs", "Boxes", "Boxies", "Boxen"], ans: 1, exp: "शेवटी x असल्याने 'es' लागून Boxes होते." },
-          { q: "Plural of 'Watch' is _______.", opts: ["Watchs", "Watches", "Watchies", "Watches'"], ans: 1, exp: "शेवटी ch असल्याने 'es' लागते." },
-          { q: "Plural of 'Mango' is _______.", opts: ["Mangos", "Mangoes", "Mangose", "Mangoi"], ans: 1, exp: "शेवटी o असल्याने 'es' लागून Mangoes होते." },
-          { q: "Plural of 'Class' is _______.", opts: ["Classes", "Classs", "Classis", "Classen"], ans: 0, exp: "शेवटी ss असल्याने 'es' लागते." },
-          { q: "Most common plural ending is _______.", opts: ["-es", "-ies", "-s", "-en"], ans: 2, exp: "इंग्रजीत सामान्यतः '-s' जोडून अनेकवचन होते." }
+          { q: "Plural form of 'Box' is _______.", opts: ["Boxs", "Boxes", "Boxies", "Boxen"], ans: 1, exp: "शेवटी x असल्याने 'es' जोडून Boxes होते." }
         ]
       },
-
-      // 5. Nouns : Singular and Plural (ii)
       "5": {
-        title: "5. Nouns : Singular and Plural (ii) (एकवचन व अनेकवचन - २)",
-        def: "<b>विशेष नियम (भाग २):</b><br>१. नामाच्या शेवटी <b>'y'</b> असून त्यापूर्वी व्यंजन असल्यास 'y' चे <b>'ies'</b> होते.<br>२. शेवटी <b>'f'</b> किंवा <b>'fe'</b> असल्यास त्यांचे <b>'ves'</b> होते.<br>३. काही नामांचे अनेकवचन आतील स्वरात बदल होऊन किंवा अनियमित होते.",
+        title: "5. Nouns : Singular and Plural (ii)",
+        def: "<b>एकवचन आणि अनेकवचन (भाग २):</b><br>शेवटी y, f, fe असणारे आणि अनियमित बदलणारे शब्द[span_6](start_span)[span_6](end_span).",
         examples: [
-          { en: "1. Baby → Babies", mr: "बाळ → बाळे (y चे ies)" },
-          { en: "2. City → Cities", mr: "शहर → शहरे" },
-          { en: "3. Leaf → Leaves", mr: "पान → पाने (f चे ves)" },
-          { en: "4. Knife → Knives", mr: "सुरी → सुऱ्या (fe चे ves)" },
-          { en: "5. Man → Men", mr: "पुरुष → पुरुष (स्वरात बदल)" },
-          { en: "6. Woman → Women", mr: "स्त्री → स्त्रिया" },
-          { en: "7. Child → Children", mr: "मूल → मुले (अनियमित रूप)" },
-          { en: "8. Tooth → Teeth", mr: "दात → अनेक दात" },
-          { en: "9. Foot → Feet", mr: "पाय → दोन्ही पाय" },
-          { en: "10. Mouse → Mice", mr: "उंदीर → उंदीर" }
+          { en: "Baby → Babies", mr: "बाळ → बाळे" },
+          { en: "City → Cities", mr: "शहर → शहरे" },
+          { en: "Leaf → Leaves", mr: "पान → पाने" },
+          { en: "Knife → Knives", mr: "सुरी → सुऱ्या" },
+          { en: "Man → Men", mr: "पुरुष → अनेक पुरुष" },
+          { en: "Woman → Women", mr: "स्त्री → स्त्रिया" },
+          { en: "Child → Children", mr: "मूल → मुले" },
+          { en: "Tooth → Teeth", mr: "दात → अनेक दात" },
+          { en: "Foot → Feet", mr: "पाय → दोन्ही पाय" },
+          { en: "Mouse → Mice", mr: "उंदीर → अनेक उंदीर" }
         ],
         quiz: [
-          { q: "Plural of 'Child' is _______.", opts: ["Childs", "Children", "Childrens", "Childes"], ans: 1, exp: "Child चे अनेकवचन Children होते." },
-          { q: "Plural of 'Knife' is _______.", opts: ["Knifes", "Knives", "Knifess", "Knivs"], ans: 1, exp: "fe चा लोप होऊन 'ves' (Knives) होते." },
-          { q: "Plural of 'City' is _______.", opts: ["Citys", "Cities", "Cityes", "Citis"], ans: 1, exp: "y पूर्वी व्यंजन असल्याने 'ies' लागते." },
-          { q: "Plural of 'Tooth' is _______.", opts: ["Tooths", "Teeth", "Teeths", "Toothes"], ans: 1, exp: "आतील oo चा ee (Teeth) होतो." },
-          { q: "Plural of 'Mouse' is _______.", opts: ["Mouses", "Mice", "Mices", "Mousen"], ans: 1, exp: "Mouse चे अनेकवचन Mice होते." }
+          { q: "What is the plural of 'Child'?", opts: ["Childs", "Children", "Childrens", "Childes"], ans: 1, exp: "Child चे अनेकवचन 'Children' होते." }
         ]
       },
-
-      // 6. Kinds of Nouns
       "6": {
         title: "6. Kinds of Nouns (नामांचे प्रकार)",
-        def: "<b>नामांचे मुख्य ५ प्रकार:</b><br>१. <b>Proper Noun:</b> विशेषनाम (Sachin, Pune)<br>२. <b>Common Noun:</b> सामान्यनाम (Boy, City, River)<br>३. <b>Collective Noun:</b> समुदायवाचक (Army, Team, Class)<br>४. <b>Material Noun:</b> पदार्थवाचक (Gold, Water, Iron)<br>५. <b>Abstract Noun:</b> भाववाचक (Honesty, Truth, Beauty).",
+        def: "<b>नामांचे मुख्य ५ प्रकार:</b><br>1. Proper (विशेषनाम), 2. Common (सामान्यनाम), 3. Collective (समुदायवाचक), 4. Material (पदार्थवाचक), 5. Abstract (भाववाचक नाम)[span_7](start_span)[span_7](end_span).",
         examples: [
-          { en: "1. Proper: Ganga is a sacred river.", mr: "Ganga हे विशेषनाम आहे." },
-          { en: "2. Common: Rivers flow to the sea.", mr: "Rivers व Sea ही सामान्यनामे आहेत." },
-          { en: "3. Collective: Our team won the trophy.", mr: "Team हे समुदायवाचक नाम आहे." },
-          { en: "4. Material: Gold is a precious metal.", mr: "Gold हे पदार्थवाचक नाम आहे." },
-          { en: "5. Abstract: Honesty is the best policy.", mr: "Honesty हे भाववाचक नाम आहे." },
-          { en: "6. Collective: A flock of birds flew away.", mr: "Flock (पक्ष्यांचा थवा) Collective Noun." },
-          { en: "7. Abstract: Knowledge gives freedom.", mr: "Knowledge भाववाचक नाम आहे." },
-          { en: "8. Proper: Mumbai is a capital city.", mr: "Mumbai हे विशेषनाम आहे." },
-          { en: "9. Material: Water is life.", mr: "Water हे Material Noun आहे." },
-          { en: "10. Common: Dogs are faithful animals.", mr: "Dogs हे सामान्यनाम आहे." }
+          { en: "Shivaji was a great king.", mr: "Proper Noun (विशेषनाम)" },
+          { en: "A boy is sitting under the tree.", mr: "Common Noun (सामान्यनाम)" },
+          { en: "Our cricket team won the cup.", mr: "Collective Noun (समुदायवाचक)" },
+          { en: "Gold is a precious yellow metal.", mr: "Material Noun (पदार्थवाचक)" },
+          { en: "Honesty is appreciated everywhere.", mr: "Abstract Noun (भाववाचक)" },
+          { en: "Sunday is a holiday.", mr: "Proper Noun" },
+          { en: "Dogs are faithful animals.", mr: "Common Noun" },
+          { en: "An army of soldiers.", mr: "Collective Noun" },
+          { en: "Water is life.", mr: "Material Noun" },
+          { en: "Courage leads to victory.", mr: "Abstract Noun" }
         ],
         quiz: [
-          { q: "'Honesty' is which kind of noun?", opts: ["Common", "Proper", "Abstract", "Material"], ans: 2, exp: "गुण दर्शवणारा शब्द Abstract Noun (भाववाचक) असतो." },
-          { q: "'Army' is a _______ Noun.", opts: ["Proper", "Collective", "Abstract", "Material"], ans: 1, exp: "सैनिकांचा समूह असल्याने Army हे Collective Noun आहे." },
-          { q: "Which of the following is a Proper Noun?", opts: ["City", "Country", "India", "River"], ans: 2, exp: "एका विशिष्ट देशाचे नाव 'India' हे विशेषनाम आहे." },
-          { q: "'Silver' is an example of _______ Noun.", opts: ["Material", "Abstract", "Proper", "Collective"], ans: 0, exp: "चांदी हा धातू असल्याने Material Noun आहे." },
-          { q: "Name given in common to every person of the same kind is _______.", opts: ["Proper", "Common", "Abstract", "Material"], ans: 1, exp: "एकाच जातीच्या सर्व घटकांसाठी सामान्यनाम (Common) वापरतात." }
+          { q: "Which of the following is an Abstract Noun?", opts: ["Gold", "Team", "Honesty", "Mumbai"], ans: 2, exp: "Honesty (प्रामाणिकपणा) हा गुण असल्याने भाववाचक नाम आहे." }
         ]
       },
-
-      // 7. Gender
       "7": {
         title: "7. Gender (लिंग)",
-        def: "<b>Gender चे ४ प्रकार:</b><br>१. <b>Masculine:</b> पुल्लिंग (नर जात - Boy, King)<br>२. <b>Feminine:</b> स्त्रीलिंग (मादी जात - Girl, Queen)<br>३. <b>Common:</b> सामान्य लिंग (दोघांसाठी - Doctor, Student)<br>४. <b>Neuter:</b> नपुंसकलिंग (निर्जीव वस्तू - Pen, Book).",
+        def: "<b>Gender चे ४ प्रकार:</b><br>1. Masculine (पुल्लिंग), 2. Feminine (स्त्रीलिंग), 3. Common (सामान्य), 4. Neuter (नपुंसकलिंग)[span_8](start_span)[span_8](end_span).",
         examples: [
-          { en: "1. King → Queen", mr: "राजा → राणी" },
-          { en: "2. Actor → Actress", mr: "अभिनेता → अभिनेत्री" },
-          { en: "3. Boy → Girl", mr: "मुलगा → मुलगी" },
-          { en: "4. Lion → Lioness", mr: "सिंह → सिंहीण" },
-          { en: "5. Hero → Heroine", mr: "नायक → नायिका" },
-          { en: "6. Common: Doctor treated the patient.", mr: "Doctor हे दोन्ही लिंगांसाठी वापरले जाते." },
-          { en: "7. Common: My friend is clever.", mr: "Friend हे सामान्य लिंग आहे." },
-          { en: "8. Neuter: The chair is broken.", mr: "निर्जीव वस्तू Neuter Gender असते." },
-          { en: "9. Bull → Cow", mr: "बैल → गाय" },
-          { en: "10. Uncle → Aunt", mr: "काका → काकू" }
+          { en: "King → Queen", mr: "राजा → राणी" },
+          { en: "Boy → Girl", mr: "मुलगा → मुलगी" },
+          { en: "Father → Mother", mr: "वडील → आई" },
+          { en: "Lion → Lioness", mr: "सिंह → सिंहीण" },
+          { en: "Actor → Actress", mr: "अभिनेता → अभिनेत्री" },
+          { en: "Brother → Sister", mr: "भाऊ → बहीण" },
+          { en: "Doctor (Common)", mr: "डॉक्टर (स्त्री किंवा पुरुष)" },
+          { en: "Teacher (Common)", mr: "शिक्षक (स्त्री किंवा पुरुष)" },
+          { en: "Pen (Neuter)", mr: "पेन (निर्जीव वस्तू)" },
+          { en: "Table (Neuter)", mr: "टेबल (निर्जीव वस्तू)" }
         ],
         quiz: [
-          { q: "Feminine form of 'King' is _______.", opts: ["Queen", "Princess", "Empress", "Lady"], ans: 0, exp: "King चे स्त्रीलिंग Queen होते." },
-          { q: "'Doctor' belongs to which gender?", opts: ["Masculine", "Feminine", "Common", "Neuter"], ans: 2, exp: "स्त्री किंवा पुरुष दोघांसाठी वापरले जाणारे नाव Common Gender असते." },
-          { q: "Feminine of 'Actor' is _______.", opts: ["Actoress", "Actress", "Actres", "Actorine"], ans: 1, exp: "Actor चे स्त्रीलिंग Actress होते." },
-          { q: "'Table' is which gender?", opts: ["Masculine", "Feminine", "Neuter", "Common"], ans: 2, exp: "निर्जीव वस्तू Neuter Gender (नपुंसकलिंग) मध्ये मोडतात." },
-          { q: "Feminine of 'Lion' is _______.", opts: ["Liones", "Lioness", "She-lion", "Lionna"], ans: 1, exp: "Lion चे स्त्रीलिंग Lioness होते." }
+          { q: "Feminine gender of 'King' is _______.", opts: ["Princess", "Queen", "Empress", "Lady"], ans: 1, exp: "King चे स्त्रीलिंग 'Queen' होते." }
         ]
       },
-
-      // 8. Cases
       "8": {
         title: "8. Cases (विभक्ती)",
-        def: "<b>विभक्तीचे ३ मुख्य प्रकार:</b><br>१. <b>Nominative Case:</b> प्रथमा (वाक्याचा कर्ता - Who?)<br>२. <b>Objective / Accusative Case:</b> द्वितीया (वाक्याचे कर्म - Whom / What?)<br>३. <b>Possessive / Genitive Case:</b> षष्ठी (मालकी हक्क - Whose?).",
+        def: "<b>विभक्तीचे प्रकार:</b><br>Nominative (प्रथमा - कर्ता), Objective (द्वितीया - कर्म), आणि Possessive (षष्ठी - मालकी हक्क दर्शवणे)[span_9](start_span)[span_9](end_span).",
         examples: [
-          { en: "1. Rohan threw a ball.", mr: "Rohan हा Nominative (कर्ता) आहे." },
-          { en: "2. Rohan threw a ball.", mr: "Ball हे Objective (कर्म) आहे." },
-          { en: "3. This is Rohan's bat.", mr: "Rohan's हे Possessive (मालकी) आहे." },
-          { en: "4. The teacher taught the students.", mr: "Students हे कर्म (Objective) आहे." },
-          { en: "5. Nature's beauty is amazing.", mr: "Nature's ही षष्ठी विभक्ती आहे." },
-          { en: "6. He invited me.", mr: "'Me' हे Objective Case मध्ये आहे." },
-          { en: "7. India's culture is famous.", mr: "India's मालकी दर्शवणारी विभक्ती." },
-          { en: "8. She wrote a long story.", mr: "Story हे कर्म आहे." },
-          { en: "9. Birds build nests.", mr: "Birds कर्ता (Nominative) आहे." },
-          { en: "10. This is my sister's pen.", mr: "Sister's हे Possessive Case आहे." }
+          { en: "Rohan threw a stone.", mr: "Rohan हा कर्ता (Nominative) आहे." },
+          { en: "Rohan threw a stone.", mr: "Stone हे कर्म (Objective) आहे." },
+          { en: "This is Rohan's bat.", mr: "Rohan's हे मालकी दर्शवते (Possessive)." },
+          { en: "He called me.", mr: "Me ही द्वितीया विभक्ती आहे." },
+          { en: "This is my house.", mr: "My हे मालकी दर्शवते." },
+          { en: "The teacher taught pupils.", mr: "Pupils हे कर्म आहे." },
+          { en: "Nature's beauty is grand.", mr: "Nature's ही षष्ठी विभक्ती आहे." },
+          { en: "She wrote a long letter.", mr: "Letter हे कर्म आहे." },
+          { en: "Sachin hit the ball.", mr: "Sachin कर्ता, ball कर्म." },
+          { en: "India's glory is ancient.", mr: "India's ही षष्ठी विभक्ती आहे." }
         ],
         quiz: [
-          { q: "In 'Ram hit the ball', 'Ram' is in _______ Case.", opts: ["Nominative", "Objective", "Possessive", "Vocative"], ans: 0, exp: "वाक्याचा कर्ता Nominative Case मध्ये असतो." },
-          { q: "In 'Ram hit the ball', 'the ball' is in _______ Case.", opts: ["Nominative", "Objective", "Possessive", "Vocative"], ans: 1, exp: "क्रिया ज्यावर घडते ते कर्म Objective Case असते." },
-          { q: "'This is Sita's bag.' Sita's is in _______ Case.", opts: ["Nominative", "Objective", "Possessive", "None"], ans: 2, exp: "Apostrophe 's' मालकी (Possessive) दर्शवतो." },
-          { q: "Nominative Case answers the question _______.", opts: ["Whose?", "Who?", "Where?", "When?"], ans: 1, exp: "'Who' (कोण) ने विचारल्यास Nominative Case मिळते." },
-          { q: "Which pronoun is in Objective Case?", opts: ["He", "She", "Him", "They"], ans: 2, exp: "'Him' हे ద్వितीया (Objective) विभक्तीचे सर्वनाम आहे." }
+          { q: "In 'This is Ram's umbrella', Ram's is in _______ Case.", opts: ["Nominative", "Objective", "Possessive", "Vocative"], ans: 2, exp: "मालकी हक्कासाठी Possessive Case वापरतात." }
         ]
       },
-
-      // 9. Pronouns
       "9": {
         title: "9. Pronouns (सर्वनामे)",
-        def: "<b>सर्वनाम म्हणजे काय?</b><br>नामाची पुनरावृत्ती टाळण्यासाठी नामाऐवजी वापरल्या जाणाऱ्या शब्दाला <b>Pronoun (सर्वनाम)</b> म्हणतात.<br>उदा. Personal (I, He, They), Demonstrative (This, That), Relative (Who, Which), Interrogative (What, Who).",
+        def: "<b>सर्वनाम म्हणजे काय?</b><br>नामाची पुनरावृत्ती टाळण्यासाठी वापरला जाणारा शब्द[span_10](start_span)[span_10](end_span). (I, We, You, He, She, It, They इ.).",
         examples: [
-          { en: "1. I am learning English.", mr: "मी इंग्रजी शिकत आहे." },
-          { en: "2. He is my best friend.", mr: "तो माझा सर्वात चांगला मित्र आहे." },
-          { en: "3. She completed her project.", mr: "तिने तिचा प्रकल्प पूर्ण केला." },
-          { en: "4. They are playing in the garden.", mr: "ते बागेत खेळत आहेत." },
-          { en: "5. This is my favorite bicycle.", mr: "ही माझी आवडती सायकल आहे." },
-          { en: "6. Who is standing outside?", mr: "बाहेर कोण उभे आहे?" },
-          { en: "7. The boy who worked hard won.", mr: "Who हे Relative Pronoun आहे." },
-          { en: "8. I did this work myself.", mr: "Myself हे Reflexive Pronoun आहे." },
-          { en: "9. We respect our elders.", mr: "आम्ही मोठ्यांचा आदर करतो." },
-          { en: "10. What are you looking for?", mr: "तू काय शोधत आहेस?" }
+          { en: "I am learning English grammar.", mr: "मी इंग्रजी व्याकरण शिकत आहे." },
+          { en: "He is my best friend.", mr: "तो माझा चांगला मित्र आहे." },
+          { en: "She completed her project.", mr: "तिने तिचा प्रकल्प पूर्ण केला." },
+          { en: "They are playing together.", mr: "ते एकत्र खेळत आहेत." },
+          { en: "This is a great chance.", mr: "ही नामी संधी आहे." },
+          { en: "Who is knocking at the door?", mr: "दारावर कोण ठोठावत आहे?" },
+          { en: "The boy who won worked hard.", mr: "ज्याने जिंकले त्याने मेहनत केली." },
+          { en: "I finished the work myself.", mr: "मी स्वतः काम पूर्ण केले." },
+          { en: "We respect our elders.", mr: "आम्ही मोठ्यांचा आदर करतो." },
+          { en: "You must take care of health.", mr: "तुम्ही आरोग्याची काळजी घेतली पाहिजे." }
         ],
         quiz: [
-          { q: "A word used instead of a noun is called a _______.", opts: ["Verb", "Adjective", "Pronoun", "Adverb"], ans: 2, exp: "नामाऐवजी वापरल्या जाणाऱ्या शब्दाला Pronoun म्हणतात." },
-          { q: "Identify the Pronoun: 'He runs fast.'", opts: ["runs", "He", "fast", "None"], ans: 1, exp: "'He' हे पुरुषवाचक सर्वनाम आहे." },
-          { q: "'This is my pen.' 'This' is a _______ Pronoun.", opts: ["Demonstrative", "Personal", "Relative", "Reflexive"], ans: 0, exp: "वस्तू दाखवण्यासाठी Demonstrative Pronoun वापरतात." },
-          { q: "Plural form of 'I' is _______.", opts: ["You", "We", "They", "He"], ans: 1, exp: "'I' चे अनेकवचन 'We' होते." },
-          { q: "'The boy who won...' Here 'who' is a _______ Pronoun.", opts: ["Interrogative", "Relative", "Demonstrative", "Personal"], ans: 1, exp: "दोन वाक्ये जोडणारे 'who' हे Relative Pronoun आहे." }
+          { q: "Which of the following is a Pronoun?", opts: ["Pune", "He", "Clever", "Run"], ans: 1, exp: "'He' हे पुरुषवाचक सर्वनाम आहे." }
         ]
       },
-
-      // 10. Adjectives
       "10": {
         title: "10. Adjectives (विशेषणे)",
-        def: "<b>विशेषण म्हणजे काय?</b><br>नामाबद्दल किंवा सर्वनामाबद्दल विशेष माहिती सांगणाऱ्या शब्दाला <b>Adjective (विशेषण)</b> म्हणतात.<br>उदा. Quality (गुण), Quantity (प्रमाण), Number (संख्या).",
+        def: "<b>विशेषण म्हणजे काय?</b><br>नामाबद्दल विशेष माहिती देणारा शब्द[span_11](start_span)[span_11](end_span). (गुण, संख्या, परिमाण).",
         examples: [
-          { en: "1. Shivaji was a brave king.", mr: "Brave हे राजाचा गुण सांगणारे विशेषण आहे." },
-          { en: "2. She has long hair.", mr: "Long हे केसांचे वैशिष्ट्य सांगते." },
-          { en: "3. There is some milk in the pot.", mr: "Some हे परिमाण दर्शवते." },
-          { en: "4. I have two brothers.", mr: "Two हे संख्या दर्शवणारे विशेषण आहे." },
-          { en: "5. It is a hot summer day.", mr: "Hot हे दिवसाची स्थिती दर्शवते." },
-          { en: "6. The sky is blue.", mr: "Blue हा रंग दर्शवणारे विशेषण आहे." },
-          { en: "7. An honest man never lies.", mr: "Honest हे गुणविशेषण आहे." },
-          { en: "8. Many people attended the event.", mr: "Many हे प्रमाण सांगते." },
-          { en: "9. Sweet mangoes taste good.", mr: "Sweet हे विशेषण आहे." },
-          { en: "10. He lives in a big city.", mr: "Big हे शहराचे वर्णन करते." }
+          { en: "Shivaji was a brave king.", mr: "Brave हे गुणविशेषण आहे." },
+          { en: "She has long hair.", mr: "Long हे केसांची माहिती देते." },
+          { en: "There is some milk.", mr: "Some हे परिमाण दर्शवते." },
+          { en: "I have two pencils.", mr: "Two हे संख्या दर्शवते." },
+          { en: "It is a sunny morning.", mr: "Sunny हे सकाळचे वर्णन करते." },
+          { en: "The sky is blue.", mr: "Blue हा रंग दर्शवतो." },
+          { en: "An honest person speaks truth.", mr: "Honest हे गुणविशेषण आहे." },
+          { en: "Many people were present.", mr: "Many हे संख्याविशेषण आहे." },
+          { en: "Give me five rupees.", mr: "Five हे संख्या दर्शवते." },
+          { en: "Sweet oranges are tasty.", mr: "Sweet हे चव दर्शवते." }
         ],
         quiz: [
-          { q: "In 'She lives in a big house', which is the Adjective?", opts: ["She", "lives", "big", "house"], ans: 2, exp: "घराबद्दल अधिक माहिती सांगणारा 'big' हा शब्द विशेषण आहे." },
-          { q: "An Adjective describes a _______.", opts: ["Verb", "Noun or Pronoun", "Adverb", "Preposition"], ans: 1, exp: "विशेषण नेहमी नाम किंवा सर्वनामाचे वर्णन करते." },
-          { q: "Identify the Adjective: 'He drank five cups of tea.'", opts: ["five", "drank", "cups", "tea"], ans: 0, exp: "'five' हे संख्याविशेषण आहे." },
-          { q: "Opposite of 'Rich' is _______.", opts: ["Poor", "Happy", "Kind", "Brave"], ans: 0, exp: "Rich चे विरुद्धार्थी विशेषण Poor आहे." },
-          { q: "'He is an honest boy.' Honest shows _______.", opts: ["Quantity", "Quality", "Number", "Time"], ans: 1, exp: "प्रामाणिकपणा हा गुण (Quality) आहे." }
+          { q: "In 'She lives in a big city', which word is an Adjective?", opts: ["She", "lives", "big", "city"], ans: 2, exp: "'Big' हा शब्द शहराचे वर्णन करतो." }
         ]
       },
-
-      // 11. Verbs
       "11": {
         title: "11. Verbs (क्रियापदे)",
-        def: "<b>क्रियापद (Verb):</b><br>वाक्याचा अर्थ पूर्ण करणाऱ्या व कृती/स्थिती दर्शवणाऱ्या शब्दाला क्रियापद म्हणतात.<br>मुख्य २ प्रकार: <b>Transitive (सकर्मक)</b> - कर्माची गरज असणारे, आणि <b>Intransitive (अकर्मक)</b> - कर्माची गरज नसणारे.",
+        def: "<b>क्रियापद (Verb):</b><br>वाक्याचा अर्थ पूर्ण करणारा आणि क्रिया दर्शवणारा शब्द[span_12](start_span)[span_12](end_span). (Transitive - सकर्मक, Intransitive - अकर्मक).",
         examples: [
-          { en: "1. Sachin hits the ball.", mr: "Hits हे सकर्मक क्रियापद आहे (Ball कर्म)." },
-          { en: "2. Birds fly in the sky.", mr: "Fly हे अकर्मक क्रियापद आहे." },
-          { en: "3. The baby sleeps peacefully.", mr: "Sleeps हे अकर्मक क्रियापद आहे." },
-          { en: "4. She writes a story.", mr: "Writes हे सकर्मक क्रियापद आहे." },
-          { en: "5. Rain fell heavily.", mr: "Fell हे क्रियापद आहे." },
-          { en: "6. He opened the door.", mr: "Opened हे क्रियापद आहे." },
-          { en: "7. Water boils at 100°C.", mr: "Boils हे क्रियापद आहे." },
-          { en: "8. Children laugh loudly.", mr: "Laugh हे क्रियापद आहे." },
-          { en: "9. We built a sand castle.", mr: "Built हे सकर्मक क्रियापद आहे." },
-          { en: "10. The sun shines brightly.", mr: "Shines हे क्रियापद आहे." }
+          { en: "Sachin hits the ball.", mr: "Hits हे सकर्मक क्रियापद आहे." },
+          { en: "Birds fly in the sky.", mr: "Fly हे अकर्मक क्रियापद आहे." },
+          { en: "The baby sleeps peacefully.", mr: "Sleeps हे अकर्मक क्रियापद आहे." },
+          { en: "She writes a letter.", mr: "Writes हे सकर्मक क्रियापद आहे." },
+          { en: "Heavy rain fell.", mr: "Fell हे क्रियापद आहे." },
+          { en: "He opened the door.", mr: "Opened हे क्रियापद आहे." },
+          { en: "Water boils at 100°C.", mr: "Boils हे क्रियापद आहे." },
+          { en: "The stars shine brightly.", mr: "Shine हे क्रियापद आहे." },
+          { en: "They built a tall house.", mr: "Built हे क्रियापद आहे." },
+          { en: "Children laugh with joy.", mr: "Laugh हे क्रियापद आहे." }
         ],
         quiz: [
-          { q: "Identify the Verb: 'The boy kicked the ball.'", opts: ["boy", "kicked", "the", "ball"], ans: 1, exp: "'Kicked' हा शब्द क्रिया दर्शवणारे क्रियापद आहे." },
-          { q: "A verb that needs an object is called _______.", opts: ["Transitive", "Intransitive", "Auxiliary", "Modal"], ans: 0, exp: "ज्याला कर्माची गरज असते ते Transitive (सकर्मक) असते." },
-          { q: "In 'Birds fly', 'fly' is an _______ verb.", opts: ["Transitive", "Intransitive", "Helping", "None"], ans: 1, exp: "यात कर्म नसल्याने हे Intransitive (अकर्मक) आहे." },
-          { q: "No sentence can be formed without a _______.", opts: ["Noun", "Adjective", "Verb", "Adverb"], ans: 2, exp: "क्रियापदाशिवाय कोणतेही वाक्य पूर्ण होऊ शकत नाही." },
-          { q: "Identify the Verb: 'She sings a sweet song.'", opts: ["She", "sings", "sweet", "song"], ans: 1, exp: "'Sings' हे क्रियापद आहे." }
+          { q: "Identify the Verb: 'The boy kicked the ball.'", opts: ["boy", "kicked", "the", "ball"], ans: 1, exp: "'Kicked' हा शब्द क्रिया दर्शवतो." }
         ]
       },
-
-      // 12. Mood
       "12": {
         title: "12. Mood (क्रियापदाचा भाव)",
-        def: "<b>Mood म्हणजे काय?</b><br>क्रियापदावरून व्यक्त होणारा भाव किंवा दृष्टिकोन.<br>१. <b>Indicative Mood:</b> प्रत्यक्ष सत्य किंवा वस्तुस्थिती सांगणे.<br>२. <b>Imperative Mood:</b> आज्ञा, विनंती किंवा सल्ला देणे.<br>३. <b>Subjunctive Mood:</b> अवास्तव कल्पना, इच्छा किंवा प्रार्थना व्यक्त करणे.",
+        def: "<b>Mood म्हणजे काय?</b><br>क्रियापदावरून व्यक्त होणारा दृष्टिकोन: Indicative (सत्य), Imperative (आज्ञा), Subjunctive (कल्पना)[span_13](start_span)[span_13](end_span).",
         examples: [
-          { en: "1. The earth moves round the sun.", mr: "Indicative Mood (वस्तुस्थिती)" },
-          { en: "2. Speak politely to everyone.", mr: "Imperative Mood (सल्ला/आज्ञा)" },
-          { en: "3. If I were a bird, I would fly.", mr: "Subjunctive Mood (अवास्तव कल्पना)" },
-          { en: "4. God bless you!", mr: "Subjunctive Mood (आशीर्वाद)" },
-          { en: "5. Stand in a straight queue.", mr: "Imperative Mood (आज्ञा)" },
-          { en: "6. He studies every evening.", mr: "Indicative Mood (नियमित सवय)" },
-          { en: "7. Don't make a noise.", mr: "Imperative Mood (मनाई करणे)" },
-          { en: "8. I wish I were rich.", mr: "Subjunctive Mood (इच्छा)" },
-          { en: "9. Please lend me your notebook.", mr: "Imperative Mood (विनंती)" },
-          { en: "10. Water freezes at 0°C.", mr: "Indicative Mood (वैज्ञानिक सत्य)" }
+          { en: "The earth moves round the sun.", mr: "Indicative Mood (सत्य घटना)" },
+          { en: "Speak politely to all.", mr: "Imperative Mood (आज्ञा/सल्ला)" },
+          { en: "If I were a bird, I would fly.", mr: "Subjunctive Mood (कल्पना)" },
+          { en: "God bless you my child!", mr: "Subjunctive Mood (आशीर्वाद)" },
+          { en: "Stand in a proper row.", mr: "Imperative Mood (आज्ञा)" },
+          { en: "He studies every evening.", mr: "Indicative Mood (नियमित सवय)" },
+          { en: "Do not make any noise.", mr: "Imperative Mood (मनाई)" },
+          { en: "I wish I were very rich.", mr: "Subjunctive Mood (इच्छा)" },
+          { en: "Please lend me your pencil.", mr: "Imperative Mood (विनंती)" },
+          { en: "Water freezes into ice.", mr: "Indicative Mood (सत्य)" }
         ],
         quiz: [
-          { q: "'If I were a king...' expresses which mood?", opts: ["Indicative", "Imperative", "Subjunctive", "Passive"], ans: 2, exp: "काल्पनिक स्थितीसाठी Subjunctive Mood वापरतात." },
-          { q: "'Open the door' is in which mood?", opts: ["Indicative", "Imperative", "Subjunctive", "Active"], ans: 1, exp: "आज्ञा किंवा विनंती Imperative Mood मध्ये असते." },
-          { q: "'The sun rises in the east' is in _______ Mood.", opts: ["Indicative", "Imperative", "Subjunctive", "Conditional"], ans: 0, exp: "खरी वस्तुस्थिती Indicative Mood मध्ये मांडली जाते." },
-          { q: "'God save the Queen!' is an example of _______ Mood.", opts: ["Indicative", "Imperative", "Subjunctive", "Past"], ans: 2, exp: "प्रार्थना किंवा सदिच्छा Subjunctive असते." },
-          { q: "How many main moods are there in English?", opts: ["Two", "Three", "Four", "Five"], ans: 1, exp: "Indicative, Imperative आणि Subjunctive हे मुख्य ३ प्रकार आहेत." }
+          { q: "'If I were a king...' expresses which mood?", opts: ["Indicative", "Imperative", "Subjunctive", "Passive"], ans: 2, exp: "काल्पनिक स्थितीसाठी Subjunctive Mood वापरतात." }
         ]
       },
-
-      // --- TENSES (12 स्वतंत्र उपप्रकार) ---
-
-      // 13.1 Simple Present Tense
-      "13_1": {
-        title: "13.1 Simple Present Tense (साधा वर्तमानकाळ)",
-        def: "<b>वापर व नियम:</b><br>दररोजच्या सवयी, नेहमी घडणाऱ्या क्रिया, त्रिकालबाधित सत्य (Universal Truths) यासाठी हा काळ वापरतात.<br><span class='formula-tag'>सूत्र: Subject + V1 (s/es) + Object</span><br><b>नियम:</b> कर्ता He, She, It किंवा एकवचनी नाम असल्यास क्रियापदाला <b>'s' किंवा 'es'</b> लागते. I, We, You, They सोबत फक्त V1 येते.",
+      "13": {
+        title: "13. Tenses (काळ व त्याचे प्रकार)",
+        def: "<b>काळ (Tense) कशाला म्हणतात?</b><br>क्रिया कोणत्या वेळी घडली किंवा घडत आहे हे दर्शवणाऱ्या क्रियापदाच्या रूपाला <b>काळ (Tense)</b> म्हणतात[span_14](start_span)[span_14](end_span). मुख्य ३ प्रकार: Present, Past, Future[span_15](start_span)[span_15](end_span).",
         examples: [
-          { en: "1. I drink milk every morning.", mr: "मी दररोज सकाळी दूध पितो." },
-          { en: "2. The sun rises in the east.", mr: "सूर्य पूर्वेला उगवतो." },
-          { en: "3. She goes to school by bus.", mr: "ती बसने शाळेत जाते." },
-          { en: "4. Water boils at 100°C.", mr: "पाणी १००°C वर उकळते." },
-          { en: "5. They play cricket on Sundays.", mr: "ते रविवारी क्रिकेट खेळतात." },
-          { en: "6. He works in a bank.", mr: "तो बँकेत काम करतो." },
-          { en: "7. We live in Maharashtra.", mr: "आम्ही महाराष्ट्रात राहतो." },
-          { en: "8. Birds fly in the sky.", mr: "पक्षी आकाशात उडतात." },
-          { en: "9. My father reads newspaper daily.", mr: "माझे वडील रोज वर्तमानपत्र वाचतात." },
-          { en: "10. Honest people speak the truth.", mr: "प्रामाणिक लोक खरे बोलतात." }
+          { en: "I drink milk every morning.", mr: "मी रोज सकाळी दूध पितो. (Simple Present)" },
+          { en: "She is reading a novel.", mr: "ती कादंबरी वाचत आहे. (Present Continuous)" },
+          { en: "We have completed our work.", mr: "आम्ही आमचे काम पूर्ण केले आहे. (Present Perfect)" },
+          { en: "It has been raining since morning.", mr: "सकाळपासून पाऊस पडत आहे. (Present Perf. Cont.)" },
+          { en: "He bought a new car yesterday.", mr: "त्याने काल कार खरेदी केली. (Simple Past)" },
+          { en: "They were playing football.", mr: "ते फुटबॉल खेळत होते. (Past Continuous)" },
+          { en: "The train had left before we reached.", mr: "गाडी आधीच निघून गेली होती. (Past Perfect)" },
+          { en: "I will meet you tomorrow.", mr: "मी तुला उद्या भेटेन. (Simple Future)" },
+          { en: "She will be waiting for us.", mr: "ती आपली वाट पाहत असेल. (Future Continuous)" },
+          { en: "We will have reached Pune by evening.", mr: "आम्ही संध्याकाळपर्यंत पुण्यात पोहोचू. (Future Perfect)" }
         ],
         quiz: [
-          { q: "She _______ to school every day.", opts: ["go", "goes", "going", "gone"], ans: 1, exp: "She सोबत क्रियापदाला s/es (goes) लागते." },
-          { q: "The earth _______ round the sun.", opts: ["revolve", "revolves", "revolved", "revolving"], ans: 1, exp: "त्रिकालबाधित सत्यासाठी Simple Present (revolves) वापरतात." },
-          { q: "They _______ football on Sundays.", opts: ["plays", "play", "playing", "played"], ans: 1, exp: "They सोबत क्रियापदाचे मूळ रूप (play) येते." },
-          { q: "Negative: 'He speaks fast' → He _______ fast.", opts: ["does not speak", "do not speak", "not speaks", "did not speak"], ans: 0, exp: "He साठी 'does not + V1' (speak) वापरतात." },
-          { q: "I _______ early in the morning.", opts: ["wakes up", "wake up", "woke up", "waking up"], ans: 1, exp: "'I' सोबत मूळ रूप (wake up) येते." }
+          { q: "She _______ to school every day.", opts: ["go", "goes", "going", "gone"], ans: 1, exp: "Simple Present मध्ये She सोबत goes येते." },
+          { q: "I _______ a movie yesterday.", opts: ["see", "saw", "seen", "seeing"], ans: 1, exp: "Yesterday मुळे Past Tense (saw) येईल." }
         ]
       },
-
-      // 13.2 Present Continuous Tense
-      "13_2": {
-        title: "13.2 Present Continuous Tense (चालू वर्तमानकाळ)",
-        def: "<b>वापर व नियम:</b><br>सध्या प्रत्यक्ष घडत असलेली चालू क्रिया दर्शवण्यासाठी.<br><span class='formula-tag'>सूत्र: Subject + am/is/are + V-ing + Object</span><br><b>नियम:</b> I सोबत <b>am</b>, He/She/It सोबत <b>is</b>, We/You/They सोबत <b>are</b> वापरतात.",
-        examples: [
-          { en: "1. I am reading a novel.", mr: "मी कादंबरी वाचत आहे." },
-          { en: "2. She is cooking dinner.", mr: "ती स्वयंपाक करत आहे." },
-          { en: "3. They are playing football.", mr: "ते फुटबॉल खेळत आहेत." },
-          { en: "4. The baby is sleeping now.", mr: "बाळ आता झोपत आहे." },
-          { en: "5. It is raining heavily outside.", mr: "बाहेर मुसळधार पाऊस पडत आहे." },
-          { en: "6. We are preparing for exams.", mr: "आम्ही परीक्षेची तयारी करत आहोत." },
-          { en: "7. The teacher is writing on the board.", mr: "शिक्षक फळ्यावर लिहीत आहेत." },
-          { en: "8. He is washing his car.", mr: "तो त्याची गाडी धूत आहे." },
-          { en: "9. Birds are chirping sweetly.", mr: "पक्षी किलबिलाट करत आहेत." },
-          { en: "10. You are learning fast.", mr: "तू वेगाने शिकत आहेस." }
-        ],
-        quiz: [
-          { q: "Look! The bus _______ .", opts: ["comes", "is coming", "are coming", "came"], ans: 1, exp: "सध्या चालू क्रियेसाठी 'is coming' येईल." },
-          { q: "I _______ my homework right now.", opts: ["am doing", "is doing", "are doing", "did"], ans: 0, exp: "'I' सोबत नेहमी 'am' येते." },
-          { q: "Children _______ in the pool.", opts: ["is swimming", "are swimming", "swims", "swimming"], ans: 1, exp: "Children अनेकवचनासाठी 'are swimming' येईल." },
-          { q: "Which helping verb is used with 'She'?", opts: ["am", "are", "is", "have"], ans: 2, exp: "She सोबत 'is' वापरतात." },
-          { q: "They are _______ trees in the park.", opts: ["plant", "plants", "planting", "planted"], ans: 2, exp: "Are नंतर '-ing' रूप (planting) येते." }
-        ]
-      },
-
-      // 13.3 Present Perfect Tense
-      "13_3": {
-        title: "13.3 Present Perfect Tense (पूर्ण वर्तमानकाळ)",
-        def: "<b>वापर व नियम:</b><br>जी क्रिया नुकतीच पूर्ण झाली आहे, पण परिणाम वर्तमानात आहे.<br><span class='formula-tag'>सूत्र: Subject + have/has + V3 + Object</span><br><b>नियम:</b> He/She/It सोबत <b>has</b>; I/We/You/They सोबत <b>have</b> वापरतात.",
-        examples: [
-          { en: "1. I have finished my homework.", mr: "मी माझा गृहपाठ पूर्ण केला आहे." },
-          { en: "2. She has left for Mumbai.", mr: "ती मुंबईसाठी निघाली आहे." },
-          { en: "3. We have won the trophy.", mr: "आम्ही ट्रॉफी जिंकली आहे." },
-          { en: "4. The train has arrived.", mr: "गाडी पोहोचली आहे." },
-          { en: "5. He has bought a new car.", mr: "त्याने नवीन कार खरेदी केली आहे." },
-          { en: "6. They have lived here for 10 years.", mr: "ते इथे १० वर्षे राहिले आहेत." },
-          { en: "7. Have you seen the Taj Mahal?", mr: "तू ताजमहाल पाहिला आहेस का?" },
-          { en: "8. The doctor has examined him.", mr: "डॉक्टरांनी त्याला तपासले आहे." },
-          { en: "9. Someone has stolen my pen.", mr: "कोणीतरी माझा पेन चोरला आहे." },
-          { en: "10. We have completed the project.", mr: "आम्ही प्रकल्प पूर्ण केला आहे." }
-        ],
-        quiz: [
-          { q: "She _______ her keys.", opts: ["has lost", "have lost", "is lost", "losing"], ans: 0, exp: "She सोबत 'has + lost' (V3) येईल." },
-          { q: "We _______ our breakfast just now.", opts: ["has eaten", "have eaten", "eating", "eats"], ans: 1, exp: "We सोबत 'have + V3' (eaten) येते." },
-          { q: "Formula of Present Perfect Tense is _______.", opts: ["have/has + V3", "was/were + V-ing", "had + V3", "will + V1"], ans: 0, exp: "याचे सूत्र 'have/has + V3' असे आहे." },
-          { q: "I _______ him since last Monday.", opts: ["haven't seen", "hasn't seen", "not see", "saw not"], ans: 0, exp: "'I' सोबत 'haven't seen' येईल." },
-          { q: "The postman has _______ the letters.", opts: ["deliver", "delivered", "delivering", "delivers"], ans: 1, exp: "Has नंतर ३ रे रूप 'delivered' (V3) येते." }
-        ]
-      },
-
-      // 13.4 Present Perfect Continuous
-      "13_4": {
-        title: "13.4 Present Perfect Continuous (चालू-पूर्ण वर्तमानकाळ)",
-        def: "<b>वापर व नियम:</b><br>जी क्रिया भूतकाळात सुरू झाली असून सध्याही चालू आहे. निश्चित वेळेसाठी <b>since</b> आणि कालावधीसाठी <b>for</b> वापरतात.<br><span class='formula-tag'>सूत्र: Subject + have/has + been + V-ing + Object</span>",
-        examples: [
-          { en: "1. It has been raining since morning.", mr: "सकाळपासून पाऊस पडत आहे." },
-          { en: "2. I have been studying for two hours.", mr: "मी २ तासांपासून अभ्यास करत आहे." },
-          { en: "3. They have been playing since 4 PM.", mr: "ते ४ वाजल्यापासून खेळत आहेत." },
-          { en: "4. She has been working here since 2018.", mr: "ती २०१८ पासून इथे काम करत आहे." },
-          { en: "5. He has been waiting for 30 minutes.", mr: "तो ३० मिनिटांपासून वाट पाहत आहे." },
-          { en: "6. We have been learning English.", mr: "आम्ही इंग्रजी शिकत आलो आहोत." },
-          { en: "7. The farmer has been ploughing since sunrise.", mr: "शेतकरी सूर्योदयापासून नांगरत आहे." },
-          { en: "8. Children have been swimming for an hour.", mr: "मुले एका तासापासून पोहत आहेत." },
-          { en: "9. How long have you been living here?", mr: "तू इथे किती दिवसांपासून राहत आहेस?" },
-          { en: "10. He has been writing this book.", mr: "तो हे पुस्तक लिहीत आहे." }
-        ],
-        quiz: [
-          { q: "It has been raining _______ morning.", opts: ["for", "since", "from", "at"], ans: 1, exp: "निश्चित वेळेसाठी 'since' वापरतात." },
-          { q: "She _______ working here for five years.", opts: ["has been", "have been", "is been", "was been"], ans: 0, exp: "She सोबत 'has been' येते." },
-          { q: "Watching TV _______ three hours.", opts: ["since", "for", "during", "from"], ans: 1, exp: "कालावधीसाठी 'for' वापरतात." },
-          { q: "Which form follows 'been' in this tense?", opts: ["V1", "V2", "V3", "V-ing"], ans: 3, exp: "Been नंतर 'V-ing' रूप येते." },
-          { q: "I have been _______ for you.", opts: ["wait", "waited", "waiting", "waits"], ans: 2, exp: "योग्य रूप 'waiting' आहे." }
-        ]
-      },
-
-      // 13.5 Simple Past Tense
-      "13_5": {
-        title: "13.5 Simple Past Tense (साधा भूतकाळ)",
-        def: "<b>वापर व नियम:</b><br>भूतकाळात विशिष्ट वेळी संपलेली क्रिया दर्शवण्यासाठी.<br><span class='formula-tag'>सूत्र: Subject + V2 (Past form) + Object</span><br><b>टीप:</b> प्रश्न किंवा नकारार्थी वाक्यात <b>did</b> आल्यावर क्रियापदाचे मूळ रूप (V1) होते.",
-        examples: [
-          { en: "1. He bought a car yesterday.", mr: "त्याने काल कार खरेदी केली." },
-          { en: "2. India won the match.", mr: "भारताने सामना जिंकला." },
-          { en: "3. I met my teacher yesterday.", mr: "मी काल माझ्या शिक्षकांना भेटलो." },
-          { en: "4. She wrote a letter.", mr: "तिने पत्र लिहिले." },
-          { en: "5. The train arrived at 6 PM.", mr: "गाडी ६ वाजता पोहोचली." },
-          { en: "6. We visited Agra last year.", mr: "आम्ही गेल्या वर्षी आग्राला गेलो होतो." },
-          { en: "7. He did not attend school.", mr: "तो शाळेत आला नाही." },
-          { en: "8. Columbus discovered America.", mr: "कोलंबसने अमेरिकेचा शोध लावला." },
-          { en: "9. The bell rang loudly.", mr: "घंटा मोठ्याने वाजली." },
-          { en: "10. They built a grand house.", mr: "त्यांनी घर बांधले." }
-        ],
-        quiz: [
-          { q: "I _______ a movie yesterday.", opts: ["see", "saw", "seen", "seeing"], ans: 1, exp: "भूतकाळासाठी 'saw' (V2) येईल." },
-          { q: "Negative: 'He wrote a letter' → He _______ a letter.", opts: ["did not write", "did not wrote", "does not write", "not wrote"], ans: 0, exp: "Did नंतर मूळ रूप 'write' (V1) येते." },
-          { q: "We _______ dinner last night.", opts: ["have", "had", "having", "has"], ans: 1, exp: "भूतकाळासाठी 'had' योग्य आहे." },
-          { q: "Did you _______ your keys?", opts: ["find", "found", "finding", "finds"], ans: 0, exp: "Did सोबत V1 (find) वापरतात." },
-          { q: "Simple Past (V2) of 'Go' is _______.", opts: ["Gone", "Going", "Went", "Goes"], ans: 2, exp: "Go चे V2 रूप 'Went' आहे." }
-        ]
-      },
-
-      // 13.6 Past Continuous Tense
-      "13_6": {
-        title: "13.6 Past Continuous Tense (चालू भूतकाळ)",
-        def: "<b>वापर व नियम:</b><br>भूतकाळात एका विशिष्ट वेळी क्रिया सुरू होती हे दाखवण्यासाठी.<br><span class='formula-tag'>सूत्र: Subject + was/were + V-ing + Object</span><br><b>नियम:</b> I, He, She, It सोबत <b>was</b>; We, You, They सोबत <b>were</b> वापरतात.",
-        examples: [
-          { en: "1. I was watching TV at 8 PM.", mr: "मी ८ वाजता टीव्ही पाहत होतो." },
-          { en: "2. They were playing football.", mr: "ते फुटबॉल खेळत होते." },
-          { en: "3. She was reading when I called.", mr: "मी फोन केला तेव्हा ती वाचत होती." },
-          { en: "4. Rain was falling heavily.", mr: "मुसळधार पाऊस पडत होता." },
-          { en: "5. We were traveling all night.", mr: "आम्ही रात्रभर प्रवास करत होतो." },
-          { en: "6. The teacher was teaching.", mr: "शिक्षक शिकवत होते." },
-          { en: "7. Birds were singing sweetly.", mr: "पक्षी गात होते." },
-          { en: "8. He was driving carefully.", mr: "तो काळजीपूर्वक गाडी चालवत होता." },
-          { en: "9. Why were you crying?", mr: "तू का रडत होतास?" },
-          { en: "10. The baby was sleeping.", mr: "बाळ झोपलेले होते." }
-        ],
-        quiz: [
-          { q: "They _______ playing chess.", opts: ["was", "were", "are", "have"], ans: 1, exp: "They सोबत 'were' वापरतात." },
-          { q: "I _______ studying yesterday evening.", opts: ["was", "were", "am", "is"], ans: 0, exp: "भूतकाळात 'I' सोबत 'was' येते." },
-          { q: "While she was cooking, the bell _______ .", opts: ["rang", "was ringing", "rings", "rung"], ans: 0, exp: "दरम्यान घडलेली क्रिया Simple Past (rang) मध्ये असते." },
-          { q: "What was he _______ at that time?", opts: ["do", "did", "doing", "done"], ans: 2, exp: "Was नंतर 'doing' (V-ing) येईल." },
-          { q: "Students _______ shouting loudly.", opts: ["was", "were", "is", "have been"], ans: 1, exp: "Students अनेकवचनासाठी 'were' वापरतात." }
-        ]
-      },
-
-      // 13.7 Past Perfect Tense
-      "13_7": {
-        title: "13.7 Past Perfect Tense (पूर्ण भूतकाळ)",
-        def: "<b>वापर व नियम:</b><br>भूतकाळात दोन क्रिया घडल्यास आधी पूर्ण झालेली पहिली क्रिया दर्शवण्यासाठी.<br><span class='formula-tag'>सूत्र: Subject + had + V3 + Object</span><br>सर्व कर्त्यांसोबत फक्त <b>had</b> वापरतात.",
-        examples: [
-          { en: "1. The train had left before we reached.", mr: "आम्ही पोहोचण्यापूर्वी गाडी निघून गेली होती." },
-          { en: "2. The patient had died before doctor arrived.", mr: "डॉक्टर येण्यापूर्वी रुग्ण दगावला होता." },
-          { en: "3. I had completed my study by 9 PM.", mr: "मी ९ वाजण्यापूर्वी अभ्यास पूर्ण केला होता." },
-          { en: "4. She had never seen such sight before.", mr: "तिने असे दृश्य आधी पाहिले नव्हते." },
-          { en: "5. Movie had already started.", mr: "चित्रपट आधीच सुरू झाला होता." },
-          { en: "6. He had locked all doors.", mr: "त्याने दरवाजे बंद केले होते." },
-          { en: "7. They had sold their car.", mr: "त्यांनी कार विकली होती." },
-          { en: "8. I had already told him.", mr: "मी त्याला आधीच सांगितले होते." },
-          { en: "9. Rain had stopped before match.", mr: "सामन्यापूर्वी पाऊस थांबला होता." },
-          { en: "10. She had forgotten her bag.", mr: "ती तिची बॅग विसरली होती." }
-        ],
-        quiz: [
-          { q: "The train _______ before we reached.", opts: ["had left", "left", "has left", "leaves"], ans: 0, exp: "पहिली पूर्ण क्रिया 'had left' येईल." },
-          { q: "Helping verb used in Past Perfect is _______.", opts: ["has", "have", "had", "was"], ans: 2, exp: "या काळात फक्त 'had' वापरतात." },
-          { q: "After she had _______ the letter, she slept.", opts: ["write", "wrote", "written", "writing"], ans: 2, exp: "Had नंतर ३ रे रूप 'written' (V3) येते." },
-          { q: "When I arrived, mom had already _______ .", opts: ["cooked", "cook", "cooking", "cooks"], ans: 0, exp: "Had सोबत 'cooked' येईल." },
-          { q: "He thanked me for what I _______ for him.", opts: ["done", "had done", "have done", "doing"], ans: 1, exp: "आधी केलेल्या मदतीसाठी 'had done' योग्य आहे." }
-        ]
-      },
-
-      // 13.8 Past Perfect Continuous
-      "13_8": {
-        title: "13.8 Past Perfect Continuous (चालू-पूर्ण भूतकाळ)",
-        def: "<b>वापर व नियम:</b><br>भूतकाळातील एका वेळेपूर्वी काही काळापासून क्रिया अखंड चालू होती हे दाखवण्यासाठी.<br><span class='formula-tag'>सूत्र: Subject + had + been + V-ing + Object</span>",
-        examples: [
-          { en: "1. He had been working for three hours.", mr: "तो ३ तासांपासून काम करत होता." },
-          { en: "2. Ground was wet as it had been raining.", mr: "पाऊस पडत असल्याने जमीन ओली होती." },
-          { en: "3. They had been living there for five years.", mr: "ते ५ वर्षे तिथे राहत होते." },
-          { en: "4. She was tired as she had been running.", mr: "धावत असल्याने ती दमली होती." },
-          { en: "5. I had been waiting since 2 PM.", mr: "मी २ वाजल्यापासून वाट पाहत होतो." },
-          { en: "6. Players had been practicing hard.", mr: "खेळाडू सराव करत होते." },
-          { en: "7. We had been searching for an hour.", mr: "आम्ही १ तासापासून शोधत होतो." },
-          { en: "8. Company had been losing money.", mr: "कंपनीचे नुकसान होत होते." },
-          { en: "9. How long had you been studying?", mr: "तू किती वेळ अभ्यास करत होतास?" },
-          { en: "10. He had been teaching for years.", mr: "तो अनेक वर्षे शिकवत होता." }
-        ],
-        quiz: [
-          { q: "He was out of breath because he _______ running.", opts: ["had been", "have been", "was been", "has been"], ans: 0, exp: "भूतकाळातील चालू क्रियेसाठी 'had been' येईल." },
-          { q: "Structure of Past Perfect Continuous is _______.", opts: ["had + V3", "had + been + V-ing", "has + been + V-ing", "was + V-ing"], ans: 1, exp: "रचना 'had + been + V-ing' अशी असते." },
-          { q: "They had been _______ for two hours.", opts: ["wait", "waited", "waiting", "waits"], ans: 2, exp: "Been नंतर 'waiting' (V-ing) येते." },
-          { q: "She had been living here _______ 10 years.", opts: ["since", "for", "from", "at"], ans: 1, exp: "कालावधीसाठी 'for' वापरतात." },
-          { q: "Which helping verb applies to all subjects?", opts: ["has been", "had been", "have been", "were been"], ans: 1, exp: "सर्व कर्त्यांसाठी 'had been' च वापरतात." }
-        ]
-      },
-
-      // 13.9 Simple Future Tense
-      "13_9": {
-        title: "13.9 Simple Future Tense (साधा भविष्यकाळ)",
-        def: "<b>वापर व नियम:</b><br>भविष्यात एखादी क्रिया घडेल हे दर्शवण्यासाठी.<br><span class='formula-tag'>सूत्र: Subject + shall/will + V1 + Object</span>",
-        examples: [
-          { en: "1. I will call you tomorrow.", mr: "मी तुला उद्या फोन करेन." },
-          { en: "2. We shall overcome this.", mr: "आम्ही यावर मात करू." },
-          { en: "3. She will buy a new laptop.", mr: "ती नवीन लॅपटॉप खरेदी करेल." },
-          { en: "4. They will come on Sunday.", mr: "ते रविवारी येतील." },
-          { en: "5. It will rain this evening.", mr: "आज संध्याकाळी पाऊस पडेल." },
-          { en: "6. School will reopen in June.", mr: "शाळा जूनमध्ये सुरू होईल." },
-          { en: "7. He will help you.", mr: "तो तुला मदत करेल." },
-          { en: "8. I will never forget this.", mr: "मी हे कधीही विसरणार नाही." },
-          { en: "9. Will you come with us?", mr: "तू आमच्यासोबत येशील का?" },
-          { en: "10. The doctor will see you soon.", mr: "डॉक्टर लवकरच तुम्हाला तपासतील." }
-        ],
-        quiz: [
-          { q: "I _______ you tomorrow.", opts: ["will meet", "met", "meeting", "have met"], ans: 0, exp: "उद्यासाठी 'will meet' योग्य आहे." },
-          { q: "After shall/will, which verb form is used?", opts: ["V1", "V2", "V3", "V-ing"], ans: 0, exp: "Shall/will नंतर मूळ रूप (V1) वापरतात." },
-          { q: "She _______ 18 next month.", opts: ["is", "was", "will be", "been"], ans: 2, exp: "भविष्यासाठी 'will be' येईल." },
-          { q: "Negative: 'He will come' → He _______ come.", opts: ["will not", "not will", "do not", "did not"], ans: 0, exp: "भविष्यकाळात 'will not' (won't) वापरतात." },
-          { q: "Traditional rule uses 'shall' with _______.", opts: ["He, She", "You, They", "I, We", "It"], ans: 2, exp: "पारंपरिक नियमात I व We सोबत Shall वापरतात." }
-        ]
-      },
-
-      // 13.10 Future Continuous Tense
-      "13_10": {
-        title: "13.10 Future Continuous Tense (चालू भविष्यकाळ)",
-        def: "<b>वापर व नियम:</b><br>भविष्यात एखाद्या विशिष्ट वेळी क्रिया चालू असेल हे दाखवण्यासाठी.<br><span class='formula-tag'>सूत्र: Subject + will be / shall be + V-ing + Object</span>",
-        examples: [
-          { en: "1. Tomorrow this time, I will be flying.", mr: "उद्या या वेळी मी विमानात असेन." },
-          { en: "2. She will be waiting for us.", mr: "ती आपली वाट पाहत असेल." },
-          { en: "3. They will be playing cricket.", mr: "ते क्रिकेट खेळत असतील." },
-          { en: "4. We will be studying tonight.", mr: "आम्ही आज रात्री अभ्यास करत असू." },
-          { en: "5. He will be watching TV at 8 PM.", mr: "तो रात्री ८ वाजता टीव्ही पाहत असेल." },
-          { en: "6. Don't call now, she will be sleeping.", mr: "फोन करू नकोस, ती झोपलेली असेल." },
-          { en: "7. It will be raining there.", mr: "तिथे पाऊस पडत असेल." },
-          { en: "8. The band will be performing live.", mr: "बँड थेट सादरीकरण करत असेल." },
-          { en: "9. What will you be doing?", mr: "तू काय करत असशील?" },
-          { en: "10. We will be traveling to Pune.", mr: "आम्ही पुण्याला प्रवास करत असू." }
-        ],
-        quiz: [
-          { q: "This time tomorrow, she _______ an exam.", opts: ["will write", "will be writing", "writes", "wrote"], ans: 1, exp: "भविष्यातील चालू क्रियेसाठी 'will be writing' येईल." },
-          { q: "Structure of Future Continuous is _______.", opts: ["will + V1", "will + be + V-ing", "will + have + V3", "was + V-ing"], ans: 1, exp: "रचना 'will + be + V-ing' अशी असते." },
-          { q: "They will be _______ cricket tomorrow.", opts: ["play", "played", "playing", "plays"], ans: 2, exp: "Will be नंतर 'playing' येईल." },
-          { q: "He will be _______ when you reach.", opts: ["rest", "resting", "rested", "rests"], ans: 1, exp: "चालू स्थितीसाठी 'resting' योग्य आहे." },
-          { q: "Will you be _______ us at the station?", opts: ["meet", "meeting", "met", "meets"], ans: 1, exp: "'Meeting' हे रूप येईल." }
-        ]
-      },
-
-      // 13.11 Future Perfect Tense
-      "13_11": {
-        title: "13.11 Future Perfect Tense (पूर्ण भविष्यकाळ)",
-        def: "<b>वापर व नियम:</b><br>भविष्यात एखाद्या विशिष्ट वेळेपूर्वी क्रिया पूर्ण झालेली असेल हे दर्शवण्यासाठी.<br><span class='formula-tag'>सूत्र: Subject + will have + V3 + Object</span>",
-        examples: [
-          { en: "1. I will have finished this book by tomorrow.", mr: "मी उद्यापर्यंत हे पुस्तक संपवलेले असेल." },
-          { en: "2. We will have reached Pune by 6 PM.", mr: "आम्ही ६ वाजेपर्यंत पोहोचलेलो असू." },
-          { en: "3. She will have graduated by next year.", mr: "पुढच्या वर्षापर्यंत तिची पदवी झालेली असेल." },
-          { en: "4. The train will have left before you reach.", mr: "तू पोहोचण्यापूर्वी गाडी निघून गेलेली असेल." },
-          { en: "5. They will have built the bridge by 2028.", mr: "त्यांनी २०२८ पर्यंत पूल बांधलेला असेल." },
-          { en: "6. He will have returned by then.", mr: "तोपर्यंत तो परत आलेला असेल." },
-          { en: "7. We will have saved enough money.", mr: "आम्ही पुरेसे पैसे साठवलेले असतील." },
-          { en: "8. Doctor will have checked all patients.", mr: "डॉक्टरांनी रुग्ण तपासलेले असतील." },
-          { en: "9. Will you have finished by Monday?", mr: "सोमवारपर्यंत काम झालेले असेल का?" },
-          { en: "10. The sun will have risen.", mr: "सूर्य उगवलेला असेल." }
-        ],
-        quiz: [
-          { q: "By next month, I _______ my course.", opts: ["will complete", "will have completed", "completed", "am completing"], ans: 1, exp: "मर्यादेत पूर्ण होणाऱ्या क्रियेसाठी 'will have completed' वापरतात." },
-          { q: "Formula of Future Perfect is _______.", opts: ["Sub + will have + V3", "Sub + will be + V-ing", "Sub + will + V1", "Sub + had + V3"], ans: 0, exp: "'will have + V3' हे पूर्ण भविष्यकाळाचे सूत्र आहे." },
-          { q: "The train will have _______ before you reach.", opts: ["leave", "left", "leaving", "leaves"], ans: 1, exp: "Will have नंतर ३ रे रूप 'left' (V3) येते." },
-          { q: "Scientists will have _______ a cure by 2030.", opts: ["found", "find", "finding", "finds"], ans: 0, exp: "V3 रूप 'found' येईल." },
-          { q: "She will have _______ the work.", opts: ["finish", "finishing", "finished", "finishes"], ans: 2, exp: "'Finished' हे योग्य रूप आहे." }
-        ]
-      },
-
-      // 13.12 Future Perfect Continuous
-      "13_12": {
-        title: "13.12 Future Perfect Continuous (चालू-पूर्ण भविष्यकाळ)",
-        def: "<b>वापर व नियम:</b><br>भविष्यात एखाद्या वेळेपर्यंत एखादी क्रिया चालू राहिलेली असेल हे दाखवण्यासाठी.<br><span class='formula-tag'>सूत्र: Subject + will have been + V-ing + Object</span>",
-        examples: [
-          { en: "1. By next month, I will have been working here for two years.", mr: "पुढच्या महिन्यात मला इथे २ वर्षे पूर्ण होतील." },
-          { en: "2. By 5 PM, they will have been playing for 4 hours.", mr: "५ वाजेपर्यंत ते ४ तासांपासून खेळत राहिलेले असतील." },
-          { en: "3. She will have been teaching for 10 years by 2027.", mr: "२०२७ पर्यंत त्या १० वर्षांपासून शिकवत राहिलेल्या असतील." },
-          { en: "4. We will have been living here for a decade.", mr: "आम्हाला इथे १० वर्षे पूर्ण झालेली असतील." },
-          { en: "5. He will have been driving for 6 hours.", mr: "तो ६ तास गाडी चालवत राहिलेला असेल." },
-          { en: "6. Workers will have been building the road for months.", mr: "कामगार कित्येक महिन्यांपासून रस्ता बनवत राहिलेले असतील." },
-          { en: "7. How long will you have been waiting?", mr: "तू किती वेळ वाट पाहत राहिलेला असशील?" },
-          { en: "8. It will have been raining for hours.", mr: "तासनतास पाऊस पडत राहिलेला असेल." },
-          { en: "9. He will have been training for 3 years.", mr: "तो ३ वर्षांपासून सराव करत राहिलेला असेल." },
-          { en: "10. Students will have been studying all night.", mr: "विद्यार्थी रात्रभर अभ्यास करत राहिलेले असतील." }
-        ],
-        quiz: [
-          { q: "By next year, I _______ living here for five years.", opts: ["will have been", "will be", "would have", "have been"], ans: 0, exp: "भविष्यातील कालावधीसाठी 'will have been' योग्य आहे." },
-          { q: "Which form follows 'will have been'?", opts: ["V1", "V2", "V3", "V-ing"], ans: 3, exp: "या काळात 'V-ing' रूप वापरतात." },
-          { q: "By 6 PM, they will have been _______ for 3 hours.", opts: ["play", "played", "playing", "plays"], ans: 2, exp: "योग्य क्रियापद 'playing' आहे." },
-          { q: "Identify the tense: 'She will have been teaching for ten years.'", opts: ["Future Perfect", "Future Perfect Continuous", "Future Continuous", "Simple Future"], ans: 1, exp: "'will have been + V-ing' ही चालू-पूर्ण भविष्यकाळाची खूण आहे." },
-          { q: "Which preposition indicates duration in this tense?", opts: ["for", "at", "by", "on"], ans: 0, exp: "कालावधी सांगण्यासाठी 'for' वापरतात." }
-        ]
-      },
-
-      // 14. Auxiliary Verbs
       "14": {
         title: "14. Auxiliary Verbs (सहाय्यकारी क्रियापदे)",
-        def: "<b>सहाय्यकारी क्रियापदे:</b><br>मुख्य क्रियापदाला काळ, भाव किंवा प्रश्न/नकार तयार करण्यास मदत करणारे शब्द.<br>१. Primary: Be (am, is, are, was, were), Do (do, does, did), Have (have, has, had)<br>२. Modals: can, could, may, might, must, shall, should, will, would.",
+        def: "<b>सहाय्यकारी क्रियापदे:</b><br>मुख्य क्रियापदाला काळ किंवा भाव व्यक्त करण्यास मदत करणारे शब्द: Be, Do, Have आणि Modals (can, may, should, must)[span_16](start_span)[span_16](end_span).",
         examples: [
-          { en: "1. She is writing a letter.", mr: "'Is' हे चालू काळ दर्शवणारे सहाय्यकारी क्रियापद आहे." },
-          { en: "2. They have won the trophy.", mr: "'Have' हे पूर्ण काळ दर्शवते." },
-          { en: "3. I do not like tea.", mr: "'Do' हे नकारासाठी वापरले आहे." },
-          { en: "4. You can speak English.", mr: "'Can' हे क्षमता दर्शवणारे Modal आहे." },
-          { en: "5. We must obey rules.", mr: "'Must' हे बंधन दर्शवते." },
-          { en: "6. May I come in?", mr: "'May' परवानगीसाठी वापरतात." },
-          { en: "7. You should study daily.", mr: "'Should' सल्ला दर्शवते." },
-          { en: "8. He did not come yesterday.", mr: "'Did' हे भूतकाळी रूप आहे." },
-          { en: "9. Was it raining?", mr: "'Was' भूतकाळात प्रश्न विचारण्यासाठी आहे." },
-          { en: "10. She might join us.", mr: "'Might' शक्यता दर्शवते." }
+          { en: "She is writing a letter.", mr: "'Is' चालू काळ दर्शवते." },
+          { en: "They have won the match.", mr: "'Have' पूर्ण काळ दर्शवते." },
+          { en: "I do not like tea.", mr: "'Do' नकार दर्शवण्यासाठी वापरले आहे." },
+          { en: "You can speak English.", mr: "'Can' क्षमता दर्शवते." },
+          { en: "We must follow rules.", mr: "'Must' बंधन दर्शवते." },
+          { en: "May I come in, sir?", mr: "'May' परवानगीसाठी वापरतात." },
+          { en: "You should respect elders.", mr: "'Should' सल्ला दर्शवते." },
+          { en: "He did not attend class.", mr: "'Did' भूतकाळ दर्शवते." },
+          { en: "Was it raining outside?", mr: "'Was' प्रश्न विचारण्यासाठी आहे." },
+          { en: "She might join us.", mr: "'Might' शक्यता दर्शवते." }
         ],
         quiz: [
-          { q: "Which modal verb indicates strict obligation?", opts: ["May", "Might", "Must", "Could"], ans: 2, exp: "कडक बंधन दर्शवण्यासाठी 'Must' वापरतात." },
-          { q: "'Can' expresses _______.", opts: ["Ability", "Past tense", "Compulsion", "Doubt"], ans: 0, exp: "'Can' क्षमता (Ability) दर्शवते." },
-          { q: "Which is NOT a primary auxiliary verb?", opts: ["Be", "Do", "Have", "Can"], ans: 3, exp: "'Can' हे Modal Auxiliary आहे, Primary नाही." },
-          { q: "We _______ respect our elders.", opts: ["should", "may", "might", "can"], ans: 0, exp: "कर्तव्य किंवा सल्ला दर्शवण्यासाठी 'should' वापरतात." },
-          { q: "Past form of 'can' is _______.", opts: ["could", "canned", "would", "might"], ans: 0, exp: "Can चे भूतकाळी रूप Could होते." }
+          { q: "Which modal verb shows obligation (बंधन)?", opts: ["May", "Might", "Must", "Could"], ans: 2, exp: "बंधन दर्शवण्यासाठी 'Must' वापरतात." }
         ]
       },
-
-      // 15. Forms of Verbs
       "15": {
         title: "15. Present Tense, Past Tense and Past Participles",
-        def: "<b>क्रियापदांची मुख्य ३ रूपे (V1, V2, V3):</b><br>१. V1 = Base/Present form (मूळ रूप)<br>२. V2 = Simple Past form (भूतकाळी रूप)<br>३. V3 = Past Participle (पूर्ण काळात वापरले जाणारे रूप).",
+        def: "<b>क्रियापदांची रूपे (V1, V2, V3):</b><br>V1 = मूल रूप, V2 = भूतकाळ, V3 = Past Participle[span_17](start_span)[span_17](end_span).",
         examples: [
-          { en: "1. Go → Went → Gone", mr: "जाणे (V1, V2, V3)" },
-          { en: "2. Write → Wrote → Written", mr: "लिहिणे" },
-          { en: "3. Eat → Ate → Eaten", mr: "खाणे" },
-          { en: "4. See → Saw → Seen", mr: "पाहणे" },
-          { en: "5. Do → Did → Done", mr: "करणे" },
-          { en: "6. Break → Broke → Broken", mr: "तोडणे" },
-          { en: "7. Take → Took → Taken", mr: "घेणे" },
-          { en: "8. Speak → Spoke → Spoken", mr: "बोलणे" },
-          { en: "9. Play → Played → Played", mr: "खेळणे (Regular)" },
-          { en: "10. Sing → Sang → Sung", mr: "गाणे गाणे" }
+          { en: "Go → Went → Gone", mr: "जाणे (V1, V2, V3)" },
+          { en: "Write → Wrote → Written", mr: "लिहिणे" },
+          { en: "Eat → Ate → Eaten", mr: "खाणे" },
+          { en: "See → Saw → Seen", mr: "पाहणे" },
+          { en: "Do → Did → Done", mr: "करणे" },
+          { en: "Break → Broke → Broken", mr: "तोडणे" },
+          { en: "Take → Took → Taken", mr: "घेणे" },
+          { en: "Speak → Spoke → Spoken", mr: "बोलणे" },
+          { en: "Play → Played → Played", mr: "खेळणे" },
+          { en: "Sing → Sang → Sung", mr: "गाणे गाणे" }
         ],
         quiz: [
-          { q: "Past Participle (V3) of 'Eat' is _______.", opts: ["Ate", "Eating", "Eaten", "Eats"], ans: 2, exp: "Eat चे तिसरे रूप 'Eaten' आहे." },
-          { q: "Past Tense (V2) of 'Write' is _______.", opts: ["Written", "Wrote", "Writing", "Writes"], ans: 1, exp: "Write चे V2 रूप 'Wrote' आहे." },
-          { q: "V3 of 'Break' is _______.", opts: ["Broke", "Broken", "Breaking", "Breaks"], ans: 1, exp: "Break चे V3 रूप 'Broken' होते." },
-          { q: "Which verb has all 3 forms identical?", opts: ["Cut", "Go", "Eat", "Take"], ans: 0, exp: "Cut - Cut - Cut ही तिन्ही रूपे सारखीच असतात." },
-          { q: "Past form (V2) of 'See' is _______.", opts: ["Seen", "Saw", "Seeing", "Sees"], ans: 1, exp: "See चे भूतकाळी रूप 'Saw' आहे." }
+          { q: "What is the Past Participle (V3) of 'Eat'?", opts: ["Ate", "Eating", "Eaten", "Eats"], ans: 2, exp: "Eat चे तिसरे रूप (V3) 'Eaten' आहे." }
         ]
       },
-
-      // 16. Verbals
       "16": {
         title: "16. Verbals : Infinitives, Participles and Gerunds",
-        def: "<b>Verbals:</b><br>क्रियापदापासून बनून इतर कार्य करणारे शब्द:<br>१. <b>Infinitive:</b> to + Verb (उदा. to play)<br>२. <b>Gerund:</b> Verb + ing (नामाचे काम करते)<br>३. <b>Participle:</b> Verb + ing/ed (विशेषणाचे काम करते).",
+        def: "<b>Verbals:</b><br>Infinitive (to + Verb), Gerund (Verb + ing नामासारखे), Participle (विशेषणासारखे)[span_18](start_span)[span_18](end_span).",
         examples: [
-          { en: "1. I want to learn English.", mr: "'To learn' हे Infinitive आहे." },
-          { en: "2. Swimming is good exercise.", mr: "'Swimming' हे Gerund (नामाचे काम) आहे." },
-          { en: "3. I saw a running train.", mr: "'Running' हे Participle (विशेषणाचे काम) आहे." },
-          { en: "4. She loves reading novels.", mr: "'Reading' हे Gerund आहे." },
-          { en: "5. He tried to open the lock.", mr: "'To open' हे Infinitive आहे." },
-          { en: "6. A rolling stone gathers no moss.", mr: "'Rolling' हे Participle आहे." },
-          { en: "7. Smoking is harmful.", mr: "'Smoking' हे Gerund आहे." },
-          { en: "8. We decided to visit Agra.", mr: "'To visit' हे Infinitive आहे." },
-          { en: "9. The crying baby drank milk.", mr: "'Crying' हे Participle आहे." },
-          { en: "10. Teaching is a noble job.", mr: "'Teaching' हे Gerund आहे." }
+          { en: "I want to learn English.", mr: "'To learn' हे Infinitive आहे." },
+          { en: "Swimming is good for health.", mr: "'Swimming' हे Gerund (नाम) आहे." },
+          { en: "I saw a running train.", mr: "'Running' हे Participle (विशेषण) आहे." },
+          { en: "She loves reading novels.", mr: "'Reading' हे Gerund आहे." },
+          { en: "He tried to open the door.", mr: "'To open' हे Infinitive आहे." },
+          { en: "A rolling stone gathers no moss.", mr: "'Rolling' हे Participle आहे." },
+          { en: "Smoking is bad for health.", mr: "'Smoking' हे Gerund आहे." },
+          { en: "We decided to visit Pune.", mr: "'To visit' हे Infinitive आहे." },
+          { en: "The crying baby needed milk.", mr: "'Crying' हे Participle आहे." },
+          { en: "Teaching is a noble job.", mr: "'Teaching' हे Gerund आहे." }
         ],
         quiz: [
-          { q: "In 'Walking is healthy', 'Walking' is a _______.", opts: ["Infinitive", "Gerund", "Participle", "Adverb"], ans: 1, exp: "वाक्याचा कर्ता असणारे 'V-ing' Gerund असते." },
-          { q: "'To err is human.' 'To err' is an _______.", opts: ["Infinitive", "Gerund", "Participle", "Adjective"], ans: 0, exp: "'to + Verb' म्हणजे Infinitive." },
-          { q: "In 'I saw a barking dog', 'barking' is a _______.", opts: ["Gerund", "Participle", "Infinitive", "Noun"], ans: 1, exp: "कुत्र्याची माहिती सांगणारे हे रूप Participle (विशेषण) आहे." },
-          { q: "A Gerund always ends in _______.", opts: ["-ed", "-ing", "-en", "-ly"], ans: 1, exp: "Gerund नेहमी '-ing' ने संपते." },
-          { q: "Identify the Infinitive: 'He promised to come.'", opts: ["He", "promised", "to come", "None"], ans: 2, exp: "'to come' हे Infinitive आहे." }
+          { q: "In 'Walking is healthy', 'Walking' is a _______.", opts: ["Infinitive", "Gerund", "Participle", "Adverb"], ans: 1, exp: "Verb + ing जे कर्त्याचे काम करते त्याला Gerund म्हणतात." }
         ]
       },
-
-      // 17. Negative Sentences
       "17": {
         title: "17. Negative Sentences (नकारार्थी वाक्ये)",
-        def: "<b>नकारार्थी वाक्ये:</b><br>ज्या वाक्यात not, no, never वापरून क्रिया नाकारली जाते. सहाय्यकारी क्रियापदानंतर 'not' लावून किंवा do/does/did वापरून नकार तयार होतो.",
+        def: "<b>नकारार्थी वाक्ये:</b><br>ज्या वाक्यात not, no, never चा वापर करून क्रिया नाकारली जाते[span_19](start_span)[span_19](end_span).",
         examples: [
-          { en: "1. She is clever. → She is not clever.", mr: "ती हुशार नाही." },
-          { en: "2. I like tea. → I do not like tea.", mr: "मला चहा आवडत नाही." },
-          { en: "3. He plays fast. → He does not play fast.", mr: "तो वेगाने खेळत नाही." },
-          { en: "4. We went there. → We did not go there.", mr: "आम्ही तिथे गेलो नाही." },
-          { en: "5. They have finished. → They have not finished.", mr: "त्यांनी संपवलेले नाही." },
-          { en: "6. Never tell a lie.", mr: "कधीही खोटे बोलू नका." },
-          { en: "7. There is no water in the pot.", mr: "भांड्यात पाणी नाही." },
-          { en: "8. He cannot swim.", mr: "तो पोहू शकत नाही." },
-          { en: "9. She does not sing.", mr: "ती गाणे गात नाही." },
-          { en: "10. I am not ready.", mr: "मी तयार नाही." }
+          { en: "She is clever. → She is not clever.", mr: "ती हुशार नाही." },
+          { en: "I like tea. → I do not like tea.", mr: "मला चहा आवडत नाही." },
+          { en: "He speaks fast. → He does not speak fast.", mr: "तो वेगाने बोलत नाही." },
+          { en: "We went there. → We did not go there.", mr: "आम्ही तिथे गेलो नाही." },
+          { en: "They finished. → They have not finished.", mr: "त्यांनी संपवलेले नाही." },
+          { en: "Never tell a lie.", mr: "कधीही खोटे बोलू नका." },
+          { en: "There is no milk.", mr: "दूध शिल्लक नाही." },
+          { en: "He cannot swim.", mr: "तो पोहू शकत नाही." },
+          { en: "She does not dance.", mr: "ती नाचत नाही." },
+          { en: "I am not ready.", mr: "मी तयार नाही." }
         ],
         quiz: [
-          { q: "Negative of 'He wrote a letter' is _______.", opts: ["He not wrote", "He did not write", "He does not write", "He will not write"], ans: 1, exp: "भूतकाळात नकार करताना 'did not + V1' (write) येते." },
-          { q: "Negative of 'She likes apples' is _______.", opts: ["She not likes", "She does not like", "She do not like", "She did not like"], ans: 1, exp: "She साठी 'does not like' येईल." },
-          { q: "Negative of 'They can swim' is _______.", opts: ["They cannot swim", "They do not swim", "They did not swim", "They not swim"], ans: 0, exp: "Can नंतर थेट not (cannot) लागते." },
-          { q: "Which word makes a sentence negative?", opts: ["Always", "Never", "Often", "Usually"], ans: 1, exp: "'Never' (कधीही नाही) हे नकारात्मक दर्शवते." },
-          { q: "Negative of 'I have a car' is _______.", opts: ["I have no car", "I do not have a car", "Both A and B", "I not have car"], ans: 2, exp: "दोन्ही रचना बरोबर आहेत." }
+          { q: "Negative of 'He wrote a letter' is _______.", opts: ["He not wrote", "He did not write", "He does not write", "He will not write"], ans: 1, exp: "भूतकाळात नकारार्थी करताना 'did not + V1' (write) येते." }
         ]
       },
-
-      // 18. Articles
       "18": {
         title: "18. Articles (a, an, the चा वापर)",
-        def: "<b>उपपदे (Articles):</b><br>१. <b>A:</b> व्यंजनाच्या उच्चारापूर्वी (A book, A university)<br>२. <b>An:</b> स्वराच्या उच्चारापूर्वी (An apple, An honest man)<br>३. <b>The:</b> जगात एकमेव किंवा निश्चित घटकांसाठी (The Sun, The Ganga).",
+        def: "<b>उपपदे (Articles):</b><br>व्यंजनाच्या उच्चारापूर्वी 'A', स्वराच्या (a, e, i, o, u) उच्चारापूर्वी 'An', आणि विशिष्ट घटकांसाठी 'The' वापरतात[span_20](start_span)[span_20](end_span).",
         examples: [
-          { en: "1. This is a notebook.", mr: "ही एक वही आहे." },
-          { en: "2. He is an honest officer.", mr: "'ऑ' स्वर उच्चार असल्याने 'An'." },
-          { en: "3. She ate an orange.", mr: "तिने संत्रे खाल्ले." },
-          { en: "4. Wait for an hour.", mr: "'ह' सायलेंट असल्याने 'An hour'." },
-          { en: "5. The Sun shines brightly.", mr: "सूर्य एकमेव असल्याने 'The'." },
-          { en: "6. The Ganga is a sacred river.", mr: "नदीच्या नावापूर्वी 'The'." },
-          { en: "7. He studies in a university.", mr: "'यु' व्यंजन ध्वनी असल्याने 'a'." },
-          { en: "8. This is the best book.", mr: "Superlative degree पूर्वी 'The'." },
-          { en: "9. I saw an elephant.", mr: "मी हत्ती पाहिला." },
-          { en: "10. Look at the sky.", mr: "आकाशाकडे पहा." }
+          { en: "This is a notebook.", mr: "ही एक वही आहे." },
+          { en: "He is an honest officer.", mr: "तो प्रामाणिक अधिकारी आहे." },
+          { en: "She ate an orange.", mr: "तिने संत्रे खाल्ले." },
+          { en: "Wait for an hour.", mr: "एक तास वाट पहा." },
+          { en: "The Sun shines brightly.", mr: "सूर्य प्रखर चमकतो." },
+          { en: "The Ganga is a holy river.", mr: "गंगा ही पवित्र नदी आहे." },
+          { en: "He studies in a university.", mr: "'यु' व्यंजनामुळे 'a' येईल." },
+          { en: "This is the best book.", mr: "Superlative पूर्वी 'the' येते." },
+          { en: "I saw an elephant.", mr: "मी हत्ती पाहिला." },
+          { en: "Look at the moon.", mr: "चंद्राकडे पहा." }
         ],
         quiz: [
-          { q: "He is _______ European citizen.", opts: ["a", "an", "the", "none"], ans: 0, exp: "European चा उच्चार 'य' (व्यंजन ध्वनी) असल्याने 'a' वापरतात." },
-          { q: "Copper is _______ useful metal.", opts: ["a", "an", "the", "no article"], ans: 0, exp: "Useful चा उच्चार 'यु' असल्याने 'a' येईल." },
-          { q: "Wait for _______ hour.", opts: ["a", "an", "the", "none"], ans: 1, exp: "Hour चा उच्चार 'ऑ' (स्वर) असल्याने 'an' येईल." },
-          { q: "_______ Himalaya is in the north of India.", opts: ["A", "An", "The", "No article"], ans: 2, exp: "पर्वतरांगांच्या नावापूर्वी 'The' येते." },
-          { q: "He is _______ best player.", opts: ["a", "an", "the", "none"], ans: 2, exp: "Superlative degree (best) पूर्वी 'the' वापरतात." }
+          { q: "He is _______ European citizen.", opts: ["a", "an", "the", "none"], ans: 0, exp: "European चा उच्चार 'य' (व्यंजन) असल्याने 'a' वापरतात." }
         ]
       },
-
-      // 19. Adverbs
       "19": {
         title: "19. Adverbs (क्रियाविशेषणे)",
-        def: "<b>क्रियाविशेषण:</b><br>क्रियापदाबद्दल, विशेषणाबद्दल किंवा दुसऱ्या क्रियाविशेषणाबद्दल अधिक माहिती देणारा शब्द.<br>उदा. Manner (कसे?), Time (केव्हा?), Place (कुठे?), Frequency (किती वेळा?).",
+        def: "<b>क्रियाविशेषण (Adverb):</b><br>क्रियेबद्दल, विशेषणाबद्दल अधिक माहिती देणारा शब्द[span_21](start_span)[span_21](end_span). (Fast, Slowly, Yesterday, Here).",
         examples: [
-          { en: "1. He runs fast.", mr: "तो वेगाने धावतो. (Manner)" },
-          { en: "2. She sings sweetly.", mr: "ती गोड गाते." },
-          { en: "3. He will come tomorrow.", mr: "तो उद्या येईल. (Time)" },
-          { en: "4. Please stand here.", mr: "कृपया इथे उभे राहा. (Place)" },
-          { en: "5. He speaks very loudly.", mr: "तो खूप मोठ्याने बोलतो." },
-          { en: "6. She always comes on time.", mr: "ती नेहमी वेळेवर येते. (Frequency)" },
-          { en: "7. He solved it easily.", mr: "त्याने सहज सोडवले." },
-          { en: "8. The train arrived late.", mr: "गाडी उशिरा आली." },
-          { en: "9. Look outside.", mr: "बाहेर पहा." },
-          { en: "10. I am extremely happy.", mr: "मी अतिशय आनंदी आहे." }
+          { en: "He runs fast.", mr: "तो वेगाने धावतो." },
+          { en: "She sings sweetly.", mr: "ती गोड गाते." },
+          { en: "He will come tomorrow.", mr: "तो उद्या येईल." },
+          { en: "Please stand here.", mr: "कृपया इथे उभे राहा." },
+          { en: "He speaks very loudly.", mr: "तो खूप मोठ्याने बोलतो." },
+          { en: "She always comes on time.", mr: "ती नेहमी वेळेवर येते." },
+          { en: "He solved it easily.", mr: "त्याने सहज सोडवले." },
+          { en: "The bus arrived late.", mr: "बस उशिरा आली." },
+          { en: "Look outside the door.", mr: "दाराबाहेर पहा." },
+          { en: "I am extremely happy.", mr: "मी अतिशय आनंदी आहे." }
         ],
         quiz: [
-          { q: "Identify the Adverb: 'She answered cleverly.'", opts: ["She", "answered", "cleverly", "none"], ans: 2, exp: "'Cleverly' हे उत्तराची पद्धत सांगणारे Adverb आहे." },
-          { q: "An Adverb modifies a _______.", opts: ["Verb", "Adjective", "Another Adverb", "All of the above"], ans: 3, exp: "Adverb क्रियापद, विशेषण आणि इतर Adverb चे वर्णन करते." },
-          { q: "In 'He came yesterday', 'yesterday' is Adverb of _______.", opts: ["Manner", "Time", "Place", "Degree"], ans: 1, exp: "वेळ दाखवणारा शब्द Adverb of Time असतो." },
-          { q: "Adverb of 'Quick' is _______.", opts: ["Quicker", "Quickly", "Quickest", "Quickful"], ans: 1, exp: "Quick चे क्रियाविशेषण Quickly होते." },
-          { q: "'He looked everywhere.' 'Everywhere' shows _______.", opts: ["Time", "Place", "Manner", "Reason"], ans: 1, exp: "'Everywhere' जागा (Place) दर्शवते." }
+          { q: "Identify the Adverb: 'She answered cleverly.'", opts: ["She", "answered", "cleverly", "none"], ans: 2, exp: "'Cleverly' हे क्रियाविशेषण आहे." }
         ]
       },
-
-      // 20. Prepositions
       "20": {
         title: "20. Prepositions (शब्दयोगी अव्यये)",
-        def: "<b>शब्दयोगी अव्यय:</b><br>नामाचा किंवा सर्वनामाचा इतर शब्दांशी असलेला स्थळ, वेळ किंवा दिशेचा संबंध दर्शवणारा शब्द.<br>उदा. in, on, at, under, into, by, with, for.",
+        def: "<b>Prepositions:</b><br>नामाचा जागेचा किंवा वेळेचा संबंध दर्शवणारे शब्द: In, On, At, Under, By, Into, For[span_22](start_span)[span_22](end_span).",
         examples: [
-          { en: "1. The book is on the table.", mr: "पुस्तक टेबलावर आहे." },
-          { en: "2. Water is in the bottle.", mr: "पाणी बाटलीत आहे." },
-          { en: "3. The cat sat under the chair.", mr: "मांजर खुर्चीखाली बसली." },
-          { en: "4. He goes by bus.", mr: "तो बसने जातो." },
-          { en: "5. She arrived at 5 PM.", mr: "ती ५ वाजता आली." },
-          { en: "6. Cut it with a knife.", mr: "सुरीने कापा." },
-          { en: "7. He jumped into the river.", mr: "त्याने नदीत उडी मारली. (गती)" },
-          { en: "8. We walked through the forest.", mr: "आम्ही जंगलातून गेलो." },
-          { en: "9. This gift is for you.", mr: "ही भेट तुझ्यासाठी आहे." },
-          { en: "10. Stand beside me.", mr: "माझ्या शेजारी उभे राहा." }
+          { en: "The book is on the table.", mr: "पुस्तक टेबलावर आहे." },
+          { en: "The water is in the glass.", mr: "पाणी पेल्यात आहे." },
+          { en: "The cat sat under the chair.", mr: "मांजर खुर्चीखाली बसली." },
+          { en: "He goes to office by bus.", mr: "तो बसने जातो." },
+          { en: "She arrived at 5 PM.", mr: "ती ५ वाजता आली." },
+          { en: "Cut the fruit with a knife.", mr: "सुरीने फळ कापा." },
+          { en: "He jumped into the well.", mr: "त्याने विहिरीत उडी मारली." },
+          { en: "We walked through the garden.", mr: "आम्ही बागेतून चाललो." },
+          { en: "This gift is for you.", mr: "ही भेट तुझ्यासाठी आहे." },
+          { en: "Stand beside me.", mr: "माझ्या शेजारी उभे राहा." }
         ],
         quiz: [
-          { q: "The frog jumped _______ the pond.", opts: ["in", "into", "on", "at"], ans: 1, exp: "गती दर्शवून आत जाण्यासाठी 'into' वापरतात." },
-          { q: "He was born _______ 15th August.", opts: ["in", "at", "on", "by"], ans: 2, exp: "विशिष्ट तारखेसाठी 'on' वापरतात." },
-          { q: "The cat is hiding _______ the bed.", opts: ["under", "between", "into", "of"], ans: 0, exp: "खाटेखाली लपण्यासाठी 'under' योग्य आहे." },
-          { q: "He went to school _______ bus.", opts: ["with", "by", "on", "in"], ans: 1, exp: "वाहनाने प्रवासासाठी 'by' वापरतात." },
-          { q: "Distribute sweets _______ the two brothers.", opts: ["among", "between", "in", "with"], ans: 1, exp: "दोघांमध्ये वाटण्यासाठी 'between' वापरतात." }
+          { q: "The frog jumped _______ the pond.", opts: ["in", "into", "on", "at"], ans: 1, exp: "गतीने आत जाण्यासाठी 'into' वापरतात." }
         ]
       },
-
-      // 21. Conjunctions
       "21": {
         title: "21. Conjunctions (उभयान्वयी अव्यये)",
-        def: "<b>उभयान्वयी अव्यय:</b><br>दोन किंवा अधिक शब्द, वाक्प्रचार किंवा वाक्ये जोडणाऱ्या शब्दाला <b>Conjunction</b> म्हणतात.<br>उदा. and, but, or, because, although, so, if.",
+        def: "<b>Conjunctions:</b><br>दोन शब्द किंवा वाक्ये जोडणारे शब्द: And, But, Or, Because, So, Although[span_23](start_span)[span_23](end_span).",
         examples: [
-          { en: "1. Ram and Shyam are friends.", mr: "राम आणि श्याम मित्र आहेत." },
-          { en: "2. He ran fast but missed the train.", mr: "तो वेगाने धावला पण गाडी चुकली." },
-          { en: "3. Work hard or you will fail.", mr: "मेहनत कर नाहीतर नापास होशील." },
-          { en: "4. I stayed home because it was raining.", mr: "पाऊस असल्याने मी घरी राहिलो." },
-          { en: "5. Although he is rich, he is humble.", mr: "जरी तो श्रीमंत असला तरी नम्र आहे." },
-          { en: "6. Do you want tea or coffee?", mr: "चहा हवा की कॉफी?" },
-          { en: "7. He was tired, so he slept early.", mr: "तो दमला होता म्हणून लवकर झोपला." },
-          { en: "8. Wait until I return.", mr: "मी येईपर्यंत थांबा." },
-          { en: "9. Neither Ram nor his brother came.", mr: "कोणीही आले नाही." },
-          { en: "10. As soon as the bell rang, boys went out.", mr: "घंटा वाजताच मुले बाहेर गेली." }
+          { en: "Ram and Shyam are brothers.", mr: "राम आणि श्याम भाऊ आहेत." },
+          { en: "He ran fast but missed train.", mr: "तो वेगाने धावला पण गाडी चुकली." },
+          { en: "Work hard or you will fail.", mr: "मेहनत करा अन्यथा अनुत्तीर्ण व्हाल." },
+          { en: "I stayed home because it rained.", mr: "पाऊस असल्याने मी घरी राहिलो." },
+          { en: "Although he is poor, he is kind.", mr: "जरी तो गरीब असला तरी दयाळू आहे." },
+          { en: "Do you want tea or milk?", mr: "तुम्हाला चहा हवा की दूध?" },
+          { en: "He was sick, so he rested.", mr: "तो आजारी होता म्हणून त्याने विश्रांती घेतली." },
+          { en: "Wait until I return.", mr: "मी परत येईपर्यंत थांबा." },
+          { en: "Neither Ram nor Sham came.", mr: "कोणीही आले नाही." },
+          { en: "As soon as bell rang, all left.", mr: "घंटा वाजताच सर्वजण गेले." }
         ],
         quiz: [
-          { q: "I like tea _______ I prefer coffee.", opts: ["so", "but", "because", "or"], ans: 1, exp: "विरोधाभासासाठी 'but' वापरतात." },
-          { q: "He failed _______ he did not work hard.", opts: ["because", "so", "but", "and"], ans: 0, exp: "कारण सांगण्यासाठी 'because' येते." },
-          { q: "Walk fast _______ you will miss the bus.", opts: ["and", "or", "so", "but"], ans: 1, exp: "अन्यथा सांगण्यासाठी 'or' वापरतात." },
-          { q: "Both Ram _______ Shyam are clever.", opts: ["or", "and", "but", "nor"], ans: 1, exp: "'Both' सोबत नेहमी 'and' ची जोडी येते." },
-          { q: "Wait here _______ I come back.", opts: ["until", "unless", "so", "because"], ans: 0, exp: "वेळेच्या मर्यादेसाठी 'until' वापरतात." }
+          { q: "I like milk _______ I like tea more.", opts: ["so", "but", "because", "or"], ans: 1, exp: "विरोधाभासासाठी 'but' वापरतात." }
         ]
       },
-
-      // 22. Interjections
       "22": {
         title: "22. Interjections (केवलप्रयोगी अव्यये)",
-        def: "<b>केवलप्रयोगी अव्यय:</b><br>मनातील आनंद, दुःख, आश्चर्य, भीती यासारख्या अचानक उद्भवणाऱ्या तीव्र भावना व्यक्त करणारा शब्द.<br>यानंतर उद्गारवाचक चिन्ह (!) येते.",
+        def: "<b>Interjections:</b><br>आनंद, दुःख किंवा आश्चर्याची तीव्र भावना दर्शवणारे शब्द: Hurrah!, Alas!, Wow!, Ouch[span_24](start_span)[span_24](end_span)!",
         examples: [
-          { en: "1. Hurrah! We won the match.", mr: "आनंद दर्शवण्यासाठी (Hurrah!)." },
-          { en: "2. Alas! The great man is dead.", mr: "दुःख दर्शवण्यासाठी (Alas!)." },
-          { en: "3. Wow! What a beautiful sight.", mr: "आश्चर्य दर्शवण्यासाठी (Wow!)." },
-          { en: "4. Bravo! You played very well.", mr: "शाबासकी देण्यासाठी (Bravo!)." },
-          { en: "5. Ouch! That hurt.", mr: "वेदना दर्शवण्यासाठी (Ouch!)." },
-          { en: "6. Hush! The baby is sleeping.", mr: "शांत राहण्यास सांगताना (Hush!)." },
-          { en: "7. Oh! I forgot my keys.", mr: "जाणीव किंवा खेद व्यक्त करताना." },
-          { en: "8. Hello! How are you?", mr: "संभाषणाची सुरुवात करताना." },
-          { en: "9. Ah! Now I understand.", mr: "समाधान दर्शवण्यासाठी." },
-          { en: "10. Oops! I dropped the glass.", mr: "चूक लक्षात आल्यावर." }
+          { en: "Hurrah! We won the match.", mr: "आनंद (Hurrah!)." },
+          { en: "Alas! The noble man died.", mr: "दुःख (Alas!)." },
+          { en: "Wow! What a beautiful view.", mr: "आश्चर्य (Wow!)." },
+          { en: "Bravo! Well played team.", mr: "शाबासकी (Bravo!)." },
+          { en: "Ouch! It hurts a lot.", mr: "वेदना (Ouch!)." },
+          { en: "Hush! The child is asleep.", mr: "शांतता (Hush!)." },
+          { en: "Oh! I forgot my keys.", mr: "खेद (Oh!)." },
+          { en: "Hello! Nice to meet you.", mr: "संभाषण सुरू करताना." },
+          { en: "Ah! Now I get it.", mr: "समाधान दर्शवण्यासाठी." },
+          { en: "Oops! I dropped the pen.", mr: "चूक लक्षात आल्यावर." }
         ],
         quiz: [
-          { q: "Which word expresses sorrow (दुःख)?", opts: ["Hurrah!", "Bravo!", "Alas!", "Wow!"], ans: 2, exp: "दुःख व्यक्त करण्यासाठी 'Alas!' वापरतात." },
-          { q: "Which mark always follows an Interjection?", opts: [".", "?", "!", ","], ans: 2, exp: "Interjection नंतर उद्गारवाचक चिन्ह (!) येते." },
-          { q: "'Hurrah!' expresses _______.", opts: ["Joy", "Sorrow", "Anger", "Fear"], ans: 0, exp: "'Hurrah!' आनंद दर्शवतो." },
-          { q: "'Bravo!' is used for _______.", opts: ["Praising", "Crying", "Scolding", "Warning"], ans: 0, exp: "शाबासकी किंवा कौतुकासाठी Bravo वापरतात." },
-          { q: "Which of the following is an Interjection?", opts: ["Fast", "Ouch", "And", "Because"], ans: 1, exp: "'Ouch' हा उद्गारवाचक शब्द आहे." }
+          { q: "Which word expresses sorrow (दुःख)?", opts: ["Hurrah!", "Bravo!", "Alas!", "Wow!"], ans: 2, exp: "दुःख व्यक्त करण्यासाठी 'Alas!' वापरतात." }
         ]
       },
-
-      // 23. The Phrase and The Clause
       "23": {
         title: "23. The Phrase and The Clause",
-        def: "<b>Phrase आणि Clause:</b><br>१. <b>Phrase (वाक्प्रचार):</b> शब्दांचा असा समूह ज्याला स्वतःचा कर्ता किंवा क्रियापद नसते (उदा. <i>in the garden</i>).<br>२. <b>Clause (उपवाक्य):</b> शब्दांचा असा समूह ज्याला स्वतःचा कर्ता (Subject) व क्रियापद (Predicate) असते.",
+        def: "<b>Phrase आणि Clause:</b><br>Phrase ला स्वतःचा कर्ता किंवा क्रियापद नसते (उदा. in the east); Clause ला स्वतःचा कर्ता व क्रियापद असते[span_25](start_span)[span_25](end_span).",
         examples: [
-          { en: "1. Phrase: The sun rises in the east.", mr: "'in the east' हा Phrase आहे." },
-          { en: "2. Clause: He returned because he was tired.", mr: "'because he was tired' हा Clause आहे." },
-          { en: "3. Phrase: She lives in a big city.", mr: "'in a big city' हा शब्दसमूह आहे." },
-          { en: "4. Clause: People who work hard succeed.", mr: "'who work hard' हा Clause आहे." },
-          { en: "5. Phrase: With a bright smile, she entered.", mr: "'With a bright smile' हा Phrase आहे." },
-          { en: "6. Clause: When the bell rang, boys went.", mr: "'When the bell rang' हा Clause आहे." },
-          { en: "7. Phrase: At the top of the hill.", mr: "केवळ शब्दसमूह (Phrase)." },
-          { en: "8. Clause: If you run, you will win.", mr: "'If you run' हा Clause आहे." },
-          { en: "9. Phrase: By the river side.", mr: "नदीकाठी (Phrase)." },
-          { en: "10. Clause: This is the car which I bought.", mr: "'which I bought' हा Clause आहे." }
+          { en: "The sun rises in the east.", mr: "'in the east' हा Phrase आहे." },
+          { en: "He returned because he was tired.", mr: "'because he was tired' हा Clause आहे." },
+          { en: "She lives in a big city.", mr: "'in a big city' Phrase." },
+          { en: "People who work hard succeed.", mr: "'who work hard' Clause." },
+          { en: "With a great smile, she came.", mr: "'With a great smile' Phrase." },
+          { en: "When the bell rang, all left.", mr: "'When the bell rang' Clause." },
+          { en: "At the end of the road.", mr: "रस्त्याच्या शेवटी (Phrase)." },
+          { en: "If you study, you pass.", mr: "'If you study' Clause." },
+          { en: "By the river bank.", mr: "नदीकाठी (Phrase)." },
+          { en: "This is the pen which I lost.", mr: "'which I lost' Clause." }
         ],
         quiz: [
-          { q: "A group of words with both Subject and Predicate is a _______.", opts: ["Phrase", "Clause", "Idiom", "Letter"], ans: 1, exp: "कर्ता व क्रियापद असणारा शब्दसमूह Clause असतो." },
-          { q: "In 'at the door', this word group is a _______.", opts: ["Clause", "Phrase", "Sentence", "Predicate"], ans: 1, exp: "यात क्रियापद नसल्याने हा Phrase आहे." },
-          { q: "A Phrase makes _______ sense.", opts: ["Complete", "No sense", "Incomplete", "Negative"], ans: 2, exp: "Phrase मधून अपूर्ण अर्थ निघतो." },
-          { q: "Which of the following contains a finite verb?", opts: ["In the morning", "Clause", "Under the tree", "Phrase"], ans: 1, exp: "Clause मध्ये finite verb असते." },
-          { q: "'because he was sick' is a _______.", opts: ["Phrase", "Clause", "Word", "Predicate"], ans: 1, exp: "यात कर्ता (he) व क्रियापद (was) असल्याने हा Clause आहे." }
+          { q: "A group of words containing a Subject and a Predicate is a _______.", opts: ["Phrase", "Clause", "Idiom", "Letter"], ans: 1, exp: "ज्यात कर्ता व क्रियापद असते त्याला Clause म्हणतात[span_26](start_span)[span_26](end_span)." }
         ]
       },
-
-      // 24. Clauses
       "24": {
         title: "24. Clauses (उपवाक्ये)",
-        def: "<b>Clauses चे मुख्य प्रकार:</b><br>१. <b>Main / Independent Clause:</b> स्वतःचा पूर्ण अर्थ व्यक्त करू शकणारे मुख्य उपवाक्य.<br>२. <b>Subordinate / Dependent Clause:</b> अर्थासाठी मुख्य वाक्यावर अवलंबून असणारे गौण उपवाक्य (Noun Clause, Adjective Clause, Adverb Clause).",
+        def: "<b>उपवाक्ये (Clauses):</b><br>Main Clause (स्वतंत्र अर्थ देणारे) आणि Subordinate Clause (अर्थासाठी अवलंबून असणारे)[span_27](start_span)[span_27](end_span).",
         examples: [
-          { en: "1. I know that he is honest.", mr: "'that he is honest' हा Noun Clause आहे." },
-          { en: "2. This is the boy who helped me.", mr: "'who helped me' हा Adjective Clause आहे." },
-          { en: "3. We left after the rain stopped.", mr: "'after the rain stopped' हा Adverb Clause आहे." },
-          { en: "4. He said that he was busy.", mr: "'He said' हा Main Clause आहे." },
-          { en: "5. Where there is a will, there is a way.", mr: "मिश्र वाक्यातील Clauses." },
-          { en: "6. She did not know what to do.", mr: "'what to do' उपवाक्य." },
-          { en: "7. The car which has red color is mine.", mr: "'which has red color' Adjective Clause." },
-          { en: "8. Although it was dark, we went out.", mr: "Adverb Clause of concession." },
-          { en: "9. Wait until the doctor arrives.", mr: "Adverb Clause of time." },
-          { en: "10. I believe that truth wins.", mr: "Noun Clause." }
+          { en: "I know that he is honest.", mr: "Noun Clause." },
+          { en: "This is the boy who saved the dog.", mr: "Adjective Clause." },
+          { en: "We left after rain stopped.", mr: "Adverb Clause." },
+          { en: "He said that he was busy.", mr: "Noun Clause." },
+          { en: "Where there is a will, there is a way.", mr: "मिश्र वाक्य." },
+          { en: "She knows what to do.", mr: "Noun Clause." },
+          { en: "The book which is red is mine.", mr: "Adjective Clause." },
+          { en: "Although it was cold, we went out.", mr: "Adverb Clause." },
+          { en: "Wait until the bus arrives.", mr: "Adverb Clause." },
+          { en: "I believe that truth wins.", mr: "Noun Clause." }
         ],
         quiz: [
-          { q: "In 'This is the book which I lost', 'which I lost' is an _______ Clause.", opts: ["Noun", "Adjective", "Adverb", "Main"], ans: 1, exp: "पुस्तकाबद्दल (नामाबद्दल) सांगणारा Adjective Clause आहे." },
-          { q: "A clause that can stand alone as a sentence is _______.", opts: ["Subordinate", "Independent / Main", "Dependent", "Minor"], ans: 1, exp: "Main Clause स्वतः पूर्ण अर्थ देतो." },
-          { q: "In 'I know where he lives', the clause is a _______ Clause.", opts: ["Noun", "Adjective", "Adverb", "Relative"], ans: 0, exp: "क्रियापदाचे कर्म असल्याने हा Noun Clause आहे." },
-          { q: "'When the bell rang, we entered.' 'When the bell rang' is _______.", opts: ["Adjective Clause", "Adverb Clause of time", "Noun Clause", "Main Clause"], ans: 1, exp: "वेळ सांगणारा Adverb Clause of time आहे." },
-          { q: "Subordinate clause depends on _______ Clause for complete sense.", opts: ["Relative", "Main", "Minor", "None"], ans: 1, exp: "गौण वाक्य मुख्य वाक्यावर अवलंबून असते." }
+          { q: "In 'This is the book which I lost', the clause 'which I lost' is a _______ Clause.", opts: ["Noun", "Adjective", "Adverb", "Main"], ans: 1, exp: "पुस्तकाबद्दल माहिती देणारा Clause Adjective Clause असतो." }
         ]
       },
-
-      // 25. Simple, Compound and Complex
       "25": {
-        title: "25. Kinds of Sentences : Simple, Compound and Complex",
-        def: "<b>रचनेनुसार वाक्याचे ३ प्रकार:</b><br>१. <b>Simple:</b> एकच स्वतंत्र मुख्य क्रियापद असणारे साधे वाक्य.<br>२. <b>Compound:</b> दोन स्वतंत्र वाक्ये Co-ordinating Conjunction ने जोडलेली असणारे संयुक्त वाक्य.<br>३. <b>Complex:</b> एक मुख्य व किमान एक गौण वाक्य असणारे मिश्र वाक्य.",
+        title: "25. Kinds of Sentences : Simple, Compound, Complex",
+        def: "<b>वाक्याचे ३ प्रकार:</b><br>Simple (एकच स्वतंत्र वाक्य), Compound (दोन स्वतंत्र वाक्ये जोडलेली), Complex (एक मुख्य व एक गौण वाक्य)[span_28](start_span)[span_28](end_span).",
         examples: [
-          { en: "1. Simple: Hearing the sound, the dog barked.", mr: "एकच मुख्य क्रियापद असणारे साधे वाक्य." },
-          { en: "2. Compound: He is poor, but he is honest.", mr: "'But' ने जोडलेले संयुक्त वाक्य." },
-          { en: "3. Complex: When the sun set, they returned.", mr: "एक मुख्य व एक गौण वाक्य असणारे मिश्र वाक्य." },
-          { en: "4. Simple: Despite his illness, he worked hard.", mr: "साधे वाक्य (Simple Sentence)." },
-          { en: "5. Compound: Do your homework or go to sleep.", mr: "संयुक्त वाक्य (Compound Sentence)." },
-          { en: "6. Complex: He confessed that he was guilty.", mr: "मिश्र वाक्य (Complex Sentence)." },
-          { en: "7. Simple: The rising sun looks red.", mr: "साधे वाक्य." },
-          { en: "8. Compound: Night came and the stars appeared.", mr: "संयुक्त वाक्य." },
-          { en: "9. Complex: Since you are tired, take rest.", mr: "मिश्र वाक्य." },
-          { en: "10. Simple: Seeing the police, thief ran.", mr: "साधे वाक्य." }
+          { en: "Hearing the noise, the boy woke up.", mr: "Simple Sentence (साधे वाक्य)" },
+          { en: "He is poor, but he is honest.", mr: "Compound Sentence (संयुक्त वाक्य)" },
+          { en: "When the sun set, we returned.", mr: "Complex Sentence (मिश्र वाक्य)" },
+          { en: "Despite illness, he worked hard.", mr: "Simple Sentence" },
+          { en: "Study well or you will fail.", mr: "Compound Sentence" },
+          { en: "He said that he was innocent.", mr: "Complex Sentence" },
+          { en: "The rising sun looks bright.", mr: "Simple Sentence" },
+          { en: "Night fell and stars appeared.", mr: "Compound Sentence" },
+          { en: "Since you are tired, rest now.", mr: "Complex Sentence" },
+          { en: "In spite of rain, we played.", mr: "Simple Sentence" }
         ],
         quiz: [
-          { q: "'He ran fast and he caught the train' is a _______ sentence.", opts: ["Simple", "Compound", "Complex", "Exclamatory"], ans: 1, exp: "'And' ने जोडलेले हे Compound Sentence आहे." },
-          { q: "'If it rains, we will stay home' is a _______ sentence.", opts: ["Simple", "Compound", "Complex", "Negative"], ans: 2, exp: "If असलेले वाक्य Complex (मिश्र) असते." },
-          { q: "A Simple sentence has _______ Main clause.", opts: ["Only one", "Two", "Three", "No"], ans: 0, exp: "साध्या वाक्यात एकच मुख्य क्लॉज असतो." },
-          { q: "Compound sentences are joined by _______ conjunctions.", opts: ["Subordinating", "Co-ordinating", "Correlative", "None"], ans: 1, exp: "Co-ordinating (FANBOYS) ने जोडले जाते." },
-          { q: "'In spite of his riches, he is unhappy.' is _______.", opts: ["Simple", "Compound", "Complex", "Compound-Complex"], ans: 0, exp: "एकच मुख्य क्रियापद असल्याने हे Simple Sentence आहे." }
+          { q: "'He ran fast and he won' is a _______ sentence.", opts: ["Simple", "Compound", "Complex", "Exclamatory"], ans: 1, exp: "'And' ने दोन स्वतंत्र वाक्ये जोडल्याने हे Compound Sentence आहे." }
         ]
       },
-
-      // 26. Analysis of Simple Sentences
       "26": {
         title: "26. Analysis of Simple Sentences",
-        def: "<b>साध्या वाक्याचे पृथक्करण:</b><br>साध्या वाक्याचे घटक तपासणे: Subject (उद्देश्य), Subject Attribute (उद्देश्यविस्तार), Verb (क्रियापद), Object (कर्म), Object Complement (पूरक), आणि Adverbial Extension (विधेयविस्तार).",
+        def: "<b>साध्या वाक्याचे पृथक्करण:</b><br>Subject, Verb, Object, Complement आणि Adverbial Extension तपासणे[span_29](start_span)[span_29](end_span).",
         examples: [
-          { en: "1. The clever boy solved the puzzle easily.", mr: "Sub: The clever boy | Verb: solved | Obj: puzzle | Ext: easily" },
-          { en: "2. Birds sing sweetly in the morning.", mr: "Extension: in the morning" },
-          { en: "3. My elder brother lives in Pune.", mr: "Brother (Sub), lives (Verb), in Pune (Ext)" },
-          { en: "4. Brave soldiers fought with courage.", mr: "Fought (Verb), with courage (Extension)" },
-          { en: "5. She painted a lovely landscape.", mr: "A lovely landscape (Object)" },
-          { en: "6. Honesty always triumphs.", mr: "Always (Adverbial Extension)" },
-          { en: "7. Heavy rain caused floods.", mr: "Heavy (Attribute to Subject)" },
-          { en: "8. The principal delivered an inspiring speech.", mr: "Delivered (Verb), speech (Object)" },
-          { en: "9. They elected Rahul president.", mr: "President (Complement)" },
-          { en: "10. Time flies silently.", mr: "Silently (Manner extension)" }
+          { en: "The clever boy quickly solved puzzle.", mr: "Subject: The clever boy | Verb: solved." },
+          { en: "Birds sing sweetly in morning.", mr: "Extension: in the morning." },
+          { en: "My brother lives in Pune.", mr: "Brother (Sub), lives (Verb)." },
+          { en: "Soldiers fought with courage.", mr: "With courage (Extension)." },
+          { en: "She painted a lovely landscape.", mr: "A lovely landscape (Object)." },
+          { en: "Honesty always triumphs.", mr: "Always (Extension)." },
+          { en: "Heavy rain caused floods.", mr: "Heavy (Attribute)." },
+          { en: "Principal gave a speech.", mr: "Speech (Object)." },
+          { en: "They made Rahul captain.", mr: "Captain (Complement)." },
+          { en: "Time flies quietly.", mr: "Quietly (Extension)." }
         ],
         quiz: [
-          { q: "In 'The little girl smiled gently', 'The little' is _______.", opts: ["Object", "Attribute to Subject", "Predicate", "Verb"], ans: 1, exp: "कर्त्याचे वर्णन करणारा भाग Attribute असतो." },
-          { q: "In 'He gave me a pen', 'me' is _______ Object.", opts: ["Direct", "Indirect", "Cognate", "Predicate"], ans: 1, exp: "व्यक्तीदर्शक कर्म Indirect Object असते." },
-          { q: "The word expanding the verb is called _______.", opts: ["Attribute", "Adverbial Extension", "Subject", "Complement"], ans: 1, exp: "क्रियापदाचा विस्तार म्हणजे Adverbial Extension." },
-          { q: "In 'They made him captain', 'captain' is _______.", opts: ["Subject", "Complement", "Adverb", "Attribute"], ans: 1, exp: "'Captain' हे कर्माचे पूरक (Complement) आहे." },
-          { q: "Analysis means breaking a sentence into its _______.", opts: ["Letters", "Grammatical parts", "Tenses", "Sounds"], ans: 1, exp: "वाक्याचे व्याकरणिक भाग वेगळे करणे म्हणजे पृथक्करण." }
+          { q: "In 'The brave girl fought well', 'The brave' is _______.", opts: ["Object", "Attribute to Subject", "Verb", "Predicate"], ans: 1, exp: "Subject चे वर्णन करणारा भाग Attribute असतो." }
         ]
       },
-
-      // 27. Analysis of Complex and Compound Sentences
       "27": {
         title: "27. Analysis of Complex and Compound Sentences",
-        def: "<b>मिश्र व संयुक्त वाक्यांचे पृथक्करण:</b><br>Compound वाक्यांमधील Co-ordinate Clauses आणि Complex वाक्यांमधील Main Clause व Subordinate Clauses वेगळे करून त्यांची परस्पर भूमिका तपासणे.",
+        def: "<b>मिश्र व संयुक्त वाक्यांचे पृथक्करण:</b><br>Co-ordinate Clauses आणि Main व Subordinate Clauses वेगळे करणे[span_30](start_span)[span_30](end_span).",
         examples: [
-          { en: "1. Main: I know the place | Sub: where he was born.", mr: "Complex Analysis (Adjective Clause)" },
-          { en: "2. C1: He worked hard | C2: and he succeeded.", mr: "Compound Analysis (Co-ordinate Clauses)" },
-          { en: "3. We eat (Main) so that we may live (Sub).", mr: "Adverb clause of purpose" },
-          { en: "4. She told me (Main) why she was late (Sub).", mr: "Noun clause analysis" },
-          { en: "5. The sun rose (C1) and mist disappeared (C2).", mr: "Compound analysis" },
-          { en: "6. While I was walking (Sub), I saw a deer (Main).", mr: "Adverb clause of time" },
-          { en: "7. If you do not run (Sub), you miss it (Main).", mr: "Adverb clause of condition" },
-          { en: "8. Speak clearly (C1) or leave the stage (C2).", mr: "Compound alternate clause" },
-          { en: "9. He is the man (Main) whom we admire (Sub).", mr: "Adjective clause" },
-          { en: "10. Because it was dark (Sub), we used light (Main).", mr: "Adverb clause of reason" }
+          { en: "I know the place where he lives.", mr: "Main आणि Adjective Clause." },
+          { en: "He worked hard and he passed.", mr: "दोन Co-ordinate Clauses." },
+          { en: "We eat so that we live.", mr: "Adverb clause of purpose." },
+          { en: "She told me why she left.", mr: "Noun clause." },
+          { en: "Sun rose and fog vanished.", mr: "Compound analysis." },
+          { en: "While walking, I found a coin.", mr: "Adverb clause of time." },
+          { en: "If you run, you win.", mr: "Adverb clause of condition." },
+          { en: "Speak truth or be silent.", mr: "Compound alternate." },
+          { en: "He is the boy whom we met.", mr: "Adjective clause." },
+          { en: "Because it was late, we ran.", mr: "Adverb clause of reason." }
         ],
         quiz: [
-          { q: "A compound sentence contains _______ clauses.", opts: ["Dependent", "Co-ordinate", "Subordinate", "Minor"], ans: 1, exp: "संयुक्त वाक्यात Co-ordinate Clauses असतात." },
-          { q: "A complex sentence contains one Main clause and at least one _______ clause.", opts: ["Subordinate", "Co-ordinate", "Equal", "Independent"], ans: 0, exp: "मिश्र वाक्यात Subordinate Clause असतो." },
-          { q: "In 'He works hard so that he may win', the sub-clause shows _______.", opts: ["Time", "Purpose", "Reason", "Place"], ans: 1, exp: "'So that' हे हेतू (Purpose) दर्शवते." },
-          { q: "Co-ordinate clauses are of _______ rank.", opts: ["Unequal", "Equal", "Subordinate", "Zero"], ans: 1, exp: "Co-ordinate Clauses समान दर्जाचे असतात." },
-          { q: "'Do or Die' consists of two _______ clauses.", opts: ["Subordinate", "Co-ordinate", "Noun", "Adverb"], ans: 1, exp: "'Or' ने जोडलेले हे Co-ordinate Clauses आहेत." }
+          { q: "A compound sentence consists of _______ clauses.", opts: ["Dependent", "Co-ordinate", "Subordinate", "Minor"], ans: 1, exp: "संयुक्त वाक्यात Co-ordinate Clauses असतात." }
         ]
       },
-
-      // 28. Transformation of Sentences
       "28": {
         title: "28. Transformation of Sentences",
-        def: "<b>वाक्याचे रूप बदलणे (अर्थ न बदलता):</b><br>वाक्याचा मूळ अर्थ कायम ठेवून त्याची रचना बदलणे.<br>उदा. Affirmative to Negative, Exclamatory to Assertive, Active to Passive, Degree बदलणे.",
+        def: "<b>वाक्य रूपांतर:</b><br>अर्थ न बदलता वाक्याची रचना बदलणे: Affirmative to Negative, Voice, Degree[span_31](start_span)[span_31](end_span).",
         examples: [
-          { en: "1. Aff: He is rich. → Neg: He is not poor.", mr: "अर्थ न बदलता नकारार्थी करणे." },
-          { en: "2. Excl: What a great city! → Assert: It is a very great city.", mr: "उद्गारार्थीचे विधानार्थी करणे." },
-          { en: "3. Active: He wrote a book. → Pass: A book was written by him.", mr: "प्रयोग बदलणे (Voice change)." },
-          { en: "4. Positive: Ram is as tall as Sham. → Comp: Sham is not taller than Ram.", mr: "Degree बदलणे." },
-          { en: "5. He is too weak to walk. → He is so weak that he cannot walk.", mr: "Too...to काढणे." },
-          { en: "6. Every rose has a thorn. → There is no rose without a thorn.", mr: "Affirmative to Negative." },
-          { en: "7. How sweet the song is! → The song is very sweet.", mr: "Assertive रूप." },
-          { en: "8. Who does not love India? → Everyone loves India.", mr: "Interrogative to Assertive." },
-          { en: "9. Iron is more useful than gold. → Gold is not so useful as iron.", mr: "Comparative to Positive." },
-          { en: "10. As soon as bell rang, all left. → No sooner did bell ring than all left.", mr: "No sooner चा वापर." }
+          { en: "He is rich. → He is not poor.", mr: "अर्थ न बदलता नकारार्थी करणे." },
+          { en: "What a great city! → It is a great city.", mr: "विधानार्थी करणे." },
+          { en: "He wrote it. → It was written by him.", mr: "Passive Voice." },
+          { en: "He is as tall as Ram. → Ram is not taller.", mr: "डिग्री बदलणे." },
+          { en: "Too weak to walk. → So weak that he cannot walk.", mr: "Too...to काढणे." },
+          { en: "No rose without a thorn.", mr: "नकारार्थी रूपांतर." },
+          { en: "How sweet! → It is very sweet.", mr: "विधानार्थी रूप." },
+          { en: "Everyone loves freedom.", mr: "Interrogative to Assertive." },
+          { en: "Iron is the most useful metal.", mr: "Superlative degree." },
+          { en: "No sooner did he come than all clapped.", mr: "No sooner चा वापर." }
         ],
         quiz: [
-          { q: "Assertive form of 'How cold the night is!' is _______.", opts: ["The night is very cold.", "Is the night cold?", "The night was cold.", "Cold is night."], ans: 0, exp: "विधानार्थी करताना 'very' वापरले जाते." },
-          { q: "Negative without changing sense: 'I am hopeful.'", opts: ["I am not hopeful.", "I am not hopeless.", "I am hopeless.", "I will be hopeful."], ans: 1, exp: "अर्थ न बदलता 'not hopeless' होईल." },
-          { q: "Remove 'too': 'He is too poor to buy books.'", opts: ["He is so poor that he cannot buy books.", "He is very poor to buy books.", "He cannot buy books because poor.", "He is too much poor."], ans: 0, exp: "'so...that...cannot' ची रचना बरोबर आहे." },
-          { q: "Passive of 'He opened the door' is _______.", opts: ["The door opened him.", "The door was opened by him.", "The door is opened by him.", "He was opened the door."], ans: 1, exp: "साध्या भूतकाळाचा Passive 'was + V3' होतो." },
-          { q: "Assertive of 'Who can count the stars?'", opts: ["No one can count the stars.", "Anyone can count stars.", "Can anyone count stars?", "Stars cannot be counted."], ans: 0, exp: "'Who can...' चा अर्थ 'No one can...' असा होतो." }
+          { q: "Assertive form of 'How cold it is!' is _______.", opts: ["It is very cold.", "Is it cold?", "Cold is it.", "It was cold."], ans: 0, exp: "उद्गारार्थीचे विधानार्थी करताना 'very' वापरतात." }
         ]
       },
-
-      // 29. Synthesis of Sentences
       "29": {
         title: "29. Synthesis of Sentences",
-        def: "<b>वाक्य संश्लेषण (Combine Sentences):</b><br>दोन किंवा अधिक साधी वाक्ये एकत्र करून एकच Simple, Compound किंवा Complex वाक्य तयार करणे.",
+        def: "<b>वाक्य संश्लेषण:</b><br>दोन किंवा अधिक साधी वाक्ये एकत्र करून एकच अर्थपूर्ण वाक्य तयार करणे[span_32](start_span)[span_32](end_span).",
         examples: [
-          { en: "1. He took gun. He shot tiger. → Taking his gun, he shot the tiger.", mr: "Participle वापरून Simple वाक्य." },
-          { en: "2. He is poor. He is honest. → He is poor yet honest.", mr: "Conjunction वापरून एकत्र करणे." },
-          { en: "3. The moon rose. Journey ended. → The moon rose before the journey ended.", mr: "Complex synthesis." },
-          { en: "4. He heard news. He fainted. → On hearing the news, he fainted.", mr: "साधे एकत्रीकरण." },
-          { en: "5. Work hard. You will win. → If you work hard, you will win.", mr: "If वापरून कॉम्प्लेक्स वाक्य." },
-          { en: "6. The sun set. We returned. → The sun having set, we returned home.", mr: "Absolute phrase." },
-          { en: "7. He bought a car. It was black. → He bought a black car.", mr: "विशेषण वापरून साधे वाक्य." },
-          { en: "8. She is weak. She cannot run. → She is too weak to run.", mr: "Infinitive चा वापर." },
-          { en: "9. He went to Agra to see the Taj Mahal.", mr: "Infinitive synthesis." },
-          { en: "10. Speak truth. You need not fear. → If you speak truth, you need not fear.", mr: "Complex synthesis." }
+          { en: "Taking his bag, he left.", mr: "Participle वापरून जोडणे." },
+          { en: "He is poor yet contented.", mr: "Conjunction ने जोडणे." },
+          { en: "Sun rose before journey ended.", mr: "Complex synthesis." },
+          { en: "Hearing news, he was glad.", mr: "एकत्रीकरण." },
+          { en: "If you work hard, you succeed.", mr: "If ने जोडणे." },
+          { en: "Sun set, we returned.", mr: "Absolute phrase." },
+          { en: "He bought a red car.", mr: "विशेषण वापरून साधे वाक्य." },
+          { en: "She is too tired to run.", mr: "Infinitive चा वापर." },
+          { en: "He went there to meet him.", mr: "Infinitive synthesis." },
+          { en: "Speak truth, fear nothing.", mr: "संश्लेषण." }
         ],
         quiz: [
-          { q: "'He is sick. He works hard.' Combined: '_______ he is sick, he works hard.'", opts: ["Although", "Because", "So", "Since"], ans: 0, exp: "विरोधाभास जोडण्यासाठी 'Although' (जरी) वापरतात." },
-          { q: "Combine into Simple: 'He finished work. He went home.'", opts: ["Having finished his work, he went home.", "He finished work and went home.", "When he finished work he went home.", "Because he finished work he went."], ans: 0, exp: "Participle चा वापर करून एकच Simple वाक्य बनते." },
-          { q: "Combine using Infinitive: 'I have some duties. I must perform them.'", opts: ["I have some duties to perform.", "I have duties and perform them.", "I must perform duties.", "Duties are to perform."], ans: 0, exp: "'to perform' वापरून साधे वाक्य बनते." },
-          { q: "Synthesis means _______ of sentences.", opts: ["Separation", "Combination", "Destruction", "Translation"], ans: 1, exp: "Synthesis म्हणजे वाक्य एकत्र करणे (Combination)." },
-          { q: "'Work hard or you will fail' is synthesized into a _______ sentence.", opts: ["Simple", "Compound", "Complex", "Exclamatory"], ans: 1, exp: "'Or' ने जोडल्यामुळे हे Compound वाक्य आहे." }
+          { q: "'He is ill. He works.' Combined: '_______ he is ill, he works.'", opts: ["Although", "Because", "So", "Since"], ans: 0, exp: "विरोधाभासासाठी 'Although' वापरतात." }
         ]
       },
-
-      // 30. Use of Capital Letters
       "30": {
         title: "30. Use of Capital Letters",
-        def: "<b>कॅपिटल अक्षरांचे नियम:</b><br>१. प्रत्येक नवीन वाक्याचे पहिले अक्षर.<br>२. सर्व Proper Nouns (व्यक्ती, शहरे, नद्या, वार, महिने).<br>३. 'I' (मी) हे सर्वनाम नेहमी Capital असते.<br>४. पदव्या, भाषेची नावे आणि संक्षिप्त रूपे.",
+        def: "<b>Capital Letters चे नियम:</b><br>प्रत्येक वाक्याचे पहिले अक्षर, Proper Nouns (नावे, शहरे, वार), आणि 'I' नेहमी कॅपिटल असतो[span_33](start_span)[span_33](end_span).",
         examples: [
-          { en: "1. <u>T</u>his is a computer.", mr: "वाक्याचे पहिले अक्षर Capital." },
-          { en: "2. My friend <u>R</u>ahul lives in <u>P</u>une.", mr: "व्यक्तीचे व शहराचे नाव Capital." },
-          { en: "3. <u>I</u> am learning English.", mr: "'I' नेहमी कॅपिटल असतो." },
-          { en: "4. The <u>G</u>anga is in <u>I</u>ndia.", mr: "नदी आणि देशाचे नाव." },
-          { en: "5. Today is <u>M</u>onday, 15th <u>A</u>ugust.", mr: "वार आणि महिना Capital." },
-          { en: "6. He said, '<u>K</u>nowledge is wealth.'", mr: "अवतरण चिन्हातील पहिले अक्षर." },
-          { en: "7. <u>D</u>iwali is a great festival.", mr: "सणाचे नाव Capital." },
-          { en: "8. The <u>H</u>imalayas are magnificent.", mr: "पर्वताचे नाव." },
-          { en: "9. <u>E</u>nglish is an international language.", mr: "भाषेचे नाव Capital." },
-          { en: "10. <u>D</u>r. <u>A</u>. <u>P</u>. <u>J</u>. Abdul Kalam.", mr: "पदव्यांचे संक्षिप्त रूप." }
+          { en: "This is a mobile phone.", mr: "वाक्याचे पहिले अक्षर Capital." },
+          { en: "My friend Rahul lives in Pune.", mr: "व्यक्तीचे व शहराचे नाव Capital." },
+          { en: "I am learning grammar.", mr: "'I' नेहमी कॅपिटल असतो." },
+          { en: "The Ganga is in India.", mr: "नदी आणि देशाचे नाव." },
+          { en: "Today is Monday, 15th August.", mr: "वार आणि महिना Capital." },
+          { en: "He said, 'Work hard.'", mr: "Direct speech चे पहिले अक्षर." },
+          { en: "Diwali is a festival of lights.", mr: "सणाचे नाव Capital." },
+          { en: "The Himalayas are very high.", mr: "पर्वताचे नाव." },
+          { en: "English is global.", mr: "भाषेचे नाव Capital." },
+          { en: "Dr. A. P. J. Kalam.", mr: "संक्षिप्त नावे कॅपिटल." }
         ],
         quiz: [
-          { q: "Which word must always start with a capital letter?", opts: ["Common Noun", "Proper Noun", "Adverb", "Preposition"], ans: 1, exp: "सर्व Proper Nouns (विशेषनामे) नेहमी Capital अक्षराने सुरू होतात." },
-          { q: "The pronoun _______ is always written in capital letter.", opts: ["He", "She", "I", "We"], ans: 2, exp: "'I' (मी) हे सर्वनाम नेहमी Capital लिहिले जाते." },
-          { q: "Which of the following is capitalized correctly?", opts: ["monday", "Monday", "mOnday", "mondAy"], ans: 1, exp: "वाराचे नाव नेहमी Capital (Monday) असते." },
-          { q: "The first word of a direct speech sentence begins with _______.", opts: ["Small letter", "Capital letter", "Number", "Symbol"], ans: 1, exp: "प्रत्यक्ष कथनाचे पहिले अक्षर Capital असते." },
-          { q: "Language names like English, Marathi should begin with _______.", opts: ["Capital letter", "Small letter", "Italics", "Bold"], ans: 0, exp: "भाषेची नावे नेहमी Capital अक्षराने सुरू होतात." }
+          { q: "Which word must always start with a capital letter?", opts: ["Common Noun", "Proper Noun", "Verb", "Adverb"], ans: 1, exp: "सर्व Proper Nouns (विशेषनामे) नेहमी Capital अक्षराने सुरू होतात[span_34](start_span)[span_34](end_span)." }
         ]
       },
-
-      // 31. Punctuation Guidelines
       "31": {
         title: "31. Punctuation Guidelines (विरामचिन्हे)",
-        def: "<b>विरामचिन्हे:</b><br>Full Stop (.) वाक्याच्या शेवटी, Comma (,) थोडा वेळ थांबण्यासाठी, Question Mark (?) प्रश्नासाठी, Exclamation Mark (!) उद्गारासाठी, Colon (:) आणि Semicolon (;) चा योग्य वापर.",
+        def: "<b>विरामचिन्हे:</b><br>Full Stop (.), Comma (,), Question Mark (?), Exclamation Mark (!), Colon (:), Semicolon (;)[span_35](start_span)[span_35](end_span).",
         examples: [
-          { en: "1. Stop here.", mr: "Full Stop (.) वाक्याच्या शेवटी." },
-          { en: "2. I bought apples, oranges, and bananas.", mr: "Comma (,) यादी वेगळी करण्यासाठी." },
-          { en: "3. What is your plan?", mr: "Question Mark (?) प्रश्नाच्या शेवटी." },
-          { en: "4. Wow, what a catch!", mr: "Exclamation Mark (!) उद्गारासाठी." },
-          { en: "5. He said, 'I will win.'", mr: "Quotation marks अवतरणासाठी." },
-          { en: "6. It's my father's car.", mr: "Apostrophe (') मालकीसाठी." },
-          { en: "7. To err is human; to forgive, divine.", mr: "Semicolon (;) चा वापर." },
-          { en: "8. Please call Mr. Sharma.", mr: "संक्षेपासाठी Full stop." },
-          { en: "9. 'Yes,' she replied.", mr: "संभाषणात विरामचिन्हे." },
-          { en: "10. Life is short: live well.", mr: "Colon (:) चा वापर." }
+          { en: "Stop here now.", mr: "Full Stop (.) वाक्याच्या शेवटी." },
+          { en: "I bought mangoes, apples, and bananas.", mr: "Comma (,) यादीसाठी." },
+          { en: "Where is my book?", mr: "Question Mark (?) प्रश्नासाठी." },
+          { en: "What a nice goal!", mr: "Exclamation Mark (!) उद्गारासाठी." },
+          { en: "He said, 'I agree.'", mr: "Quotation marks." },
+          { en: "It is my brother's bicycle.", mr: "Apostrophe (') मालकीसाठी." },
+          { en: "Life is short; live it well.", mr: "Semicolon (;) चा वापर." },
+          { en: "Please call Dr. Patil.", mr: "Full stop संक्षेपासाठी." },
+          { en: "'Yes,' he said.", mr: "संभाषणात विरामचिन्हे." },
+          { en: "Notice: Keep silent.", mr: "Colon (:) चा वापर." }
         ],
         quiz: [
-          { q: "Which mark is used at the end of a question?", opts: [".", ",", "?", "!"], ans: 2, exp: "प्रश्नाच्या शेवटी Question mark (?) येतो." },
-          { q: "Which punctuation mark shows a sudden strong feeling?", opts: [".", ",", ";", "!"], ans: 3, exp: "तीव्र भावना दर्शवण्यासाठी Exclamation mark (!) वापरतात." },
-          { q: "To separate items in a list, we use _______.", opts: ["Comma (,)", "Colon (:)", "Hyphen (-)", "Period (.)"], ans: 0, exp: "यादीतील घटक वेगळे करण्यासाठी Comma वापरतात." },
-          { q: "Which mark indicates possession in 'Ram's bag'?", opts: ["Hyphen", "Apostrophe", "Comma", "Semicolon"], ans: 1, exp: "मालकी दर्शवण्यासाठी Apostrophe (') वापरतात." },
-          { q: "A declarative sentence ends with a _______.", opts: ["Full stop (.)", "Question mark (?)", "Exclamation (!)", "Colon (:)"], ans: 0, exp: "विधानार्थी वाक्य Full stop ने संपते." }
+          { q: "Which mark is used for a question?", opts: [".", ",", "?", "!"], ans: 2, exp: "प्रश्न विचारण्यासाठी '?' चिन्ह वापरतात." }
         ]
       },
-
-      // 32. Noun-Adjective-Adverb Forms
       "32": {
         title: "32. Noun-Adjective-Adverb Forms",
-        def: "<b>शब्दांची रूपे (Word Formation):</b><br>एकाच मूळ शब्दापासून त्याचे नाम (Noun), विशेषण (Adjective) आणि क्रियाविशेषण (Adverb) तयार करण्याचे नियम.",
+        def: "<b>शब्दांची विविध रूपे:</b><br>एकाच शब्दाचे नाम (Noun), विशेषण (Adjective) आणि क्रियाविशेषण (Adverb) तयार करणे[span_36](start_span)[span_36](end_span).",
         examples: [
-          { en: "1. Beauty (Noun) → Beautiful (Adj) → Beautifully (Adv)", mr: "सौंदर्य → सुंदर → सुंदरतेने" },
-          { en: "2. Honesty (Noun) → Honest (Adj) → Honestly (Adv)", mr: "प्रामाणिकपणा → प्रामाणिक → प्रामाणिकपणे" },
-          { en: "3. Courage (Noun) → Courageous (Adj) → Courageously (Adv)", mr: "धैर्य → धैर्यवान → धैर्याने" },
-          { en: "4. Strength (Noun) → Strong (Adj) → Strongly (Adv)", mr: "सामर्थ्य → सशक्त → सामर्थ्याने" },
-          { en: "5. Success (Noun) → Successful (Adj) → Successfully (Adv)", mr: "यश → यशस्वी → यशस्वीरीत्या" },
-          { en: "6. Quickness (Noun) → Quick (Adj) → Quickly (Adv)", mr: "वेग → वेगवान → वेगाने" },
-          { en: "7. Brightness (Noun) → Bright (Adj) → Brightly (Adv)", mr: "तेज → तेजस्वी → तेजस्वीपणे" },
-          { en: "8. Joy (Noun) → Joyful (Adj) → Joyfully (Adv)", mr: "आनंद → आनंदी → आनंदाने" },
-          { en: "9. Care (Noun) → Careful (Adj) → Carefully (Adv)", mr: "काळजी → सावध → सावधगिरीने" },
-          { en: "10. Silence (Noun) → Silent (Adj) → Silently (Adv)", mr: "शांतता → शांत → शांतपणे" }
+          { en: "Beauty → Beautiful → Beautifully", mr: "सौंदर्य → सुंदर → सुंदरतेने" },
+          { en: "Honesty → Honest → Honestly", mr: "प्रामाणिकपणा → प्रामाणिक → प्रामाणिकपणे" },
+          { en: "Courage → Courageous → Courageously", mr: "धैर्य → धैर्यवान → धैर्याने" },
+          { en: "Strength → Strong → Strongly", mr: "सामर्थ्य → सशक्त → सामर्थ्याने" },
+          { en: "Success → Successful → Successfully", mr: "यश → यशस्वी → यशस्वीरीत्या" },
+          { en: "Quickness → Quick → Quickly", mr: "वेग → वेगवान → वेगाने" },
+          { en: "Brightness → Bright → Brightly", mr: "तेज → तेजस्वी → तेजस्वीपणे" },
+          { en: "Joy → Joyful → Joyfully", mr: "आनंद → आनंदी → आनंदाने" },
+          { en: "Care → Careful → Carefully", mr: "काळजी → सावध → सावधगिरीने" },
+          { en: "Silence → Silent → Silently", mr: "शांतता → शांत → शांतपणे" }
         ],
         quiz: [
-          { q: "Adverb form of 'Honest' is _______.", opts: ["Honesty", "Honestly", "Honestful", "Dishonest"], ans: 1, exp: "Honest चे क्रियाविशेषण 'Honestly' होते." },
-          { q: "Noun form of 'Strong' is _______.", opts: ["Strength", "Strongly", "Strongness", "Strengthen"], ans: 0, exp: "Strong चे नाम (Noun) 'Strength' आहे." },
-          { q: "Adjective form of 'Beauty' is _______.", opts: ["Beautify", "Beautiful", "Beautifully", "Beautiness"], ans: 1, exp: "Beauty चे विशेषण 'Beautiful' होते." },
-          { q: "Adverb form of 'Quick' is _______.", opts: ["Quickly", "Quicker", "Quickness", "Quickest"], ans: 0, exp: "योग्य Adverb 'Quickly' आहे." },
-          { q: "Noun form of 'Succeed' is _______.", opts: ["Success", "Successful", "Successfully", "Succeeded"], ans: 0, exp: "Succeed या क्रियापदाचे नाम 'Success' (यश) आहे." }
+          { q: "What is the Adverb of 'Honest'?", opts: ["Honesty", "Honestly", "Honestful", "Dishonest"], ans: 1, exp: "Honest चे क्रियाविशेषण 'Honestly' होते." }
         ]
       },
-
-      // 33. Direct-Indirect Speech
       "33": {
         title: "33. Direct-Indirect Speech",
-        def: "<b>प्रत्यक्ष व अप्रत्यक्ष कथन:</b><br>१. <b>Direct:</b> बोलणाऱ्याचे शब्द जसेच्या तसे अवतरण चिन्हात ठेवणे.<br>२. <b>Indirect:</b> बोलणाऱ्याच्या वाक्याचा आशय स्वतःच्या शब्दात व्यक्त करणे. (काळ भूतकाळात बदलतो, अवतरण चिन्हे निघून जातात).",
+        def: "<b>Direct व Indirect Speech:</b><br>बोलणाऱ्याचे शब्द जसेच्या तसे सांगणे (Direct), आणि बोलण्याचा आशय स्वतःच्या शब्दात सांगणे (Indirect)[span_37](start_span)[span_37](end_span).",
         examples: [
-          { en: "1. Direct: He said, 'I am ready.' → Indirect: He said that he was ready.", mr: "साधे विधान." },
-          { en: "2. Direct: She said, 'I like music.' → Indirect: She said that she liked music.", mr: "काळ भूतकाळात बदलतो." },
-          { en: "3. Direct: Teacher said, 'The sun is hot.' → Indirect: Teacher said that the sun is hot.", mr: "त्रिकालबाधित सत्य बदलत नाही." },
-          { en: "4. Direct: He said, 'Where are you going?' → Indirect: He asked where I was going.", mr: "प्रश्नार्थी वाक्य." },
-          { en: "5. Direct: She said to him, 'Please help me.' → Indirect: She requested him to help her.", mr: "आज्ञार्थी विनंती." },
-          { en: "6. Direct: Rohan said, 'I have won.' → Indirect: Rohan said that he had won.", mr: "Have चे had होते." },
-          { en: "7. Direct: 'I will come,' she said. → Indirect: She said that she would come.", mr: "Will चे would होते." },
-          { en: "8. Direct: Father said, 'Work hard.' → Indirect: Father advised to work hard.", mr: "सल्ला." },
-          { en: "9. Direct: 'Are you ready?' he asked. → Indirect: He asked if I was ready.", mr: "If/whether चा वापर." },
-          { en: "10. Direct: He said, 'Hurrah! We won.' → Indirect: He exclaimed with joy that they had won.", mr: "उद्गारार्थी वाक्य." }
+          { en: "Direct: He said, 'I am ready.' → Indirect: He said that he was ready.", mr: "विधानार्थी रूपांतर." },
+          { en: "Direct: She said, 'I like tea.' → Indirect: She said that she liked tea.", mr: "भूतकाळात रूपांतर." },
+          { en: "Direct: He said, 'The sun is hot.' → Indirect: He said that the sun is hot.", mr: "सत्य बदलत नाही." },
+          { en: "Direct: He asked, 'Where are you going?' → Indirect: He asked where I was going.", mr: "प्रश्नार्थी वाक्य." },
+          { en: "Direct: She said, 'Please help.' → Indirect: She requested to help.", mr: "विनंती." },
+          { en: "Direct: Rohan said, 'I won.' → Indirect: Rohan said that he had won.", mr: "Past Perfect होतो." },
+          { en: "Direct: 'I will come,' she said. → Indirect: She said that she would come.", mr: "Will चे would होते." },
+          { en: "Direct: Teacher said, 'Study.' → Indirect: Teacher advised to study.", mr: "सल्ला." },
+          { en: "Direct: 'Are you coming?' he asked. → Indirect: He asked if I was coming.", mr: "If चा वापर." },
+          { en: "Direct: 'Hurrah! We won,' he said. → Indirect: He exclaimed with joy that they had won.", mr: "उद्गारार्थी वाक्य." }
         ],
         quiz: [
-          { q: "In Indirect speech, 'will' usually changes to _______.", opts: ["shall", "would", "can", "may"], ans: 1, exp: "Indirect Speech मध्ये 'will' चे 'would' होते." },
-          { q: "In Indirect speech, 'said to' changes into _______ in statements.", opts: ["told", "asked", "ordered", "advised"], ans: 0, exp: "विधानात 'said to' चे 'told' होते." },
-          { q: "Universal truths _______ in indirect speech.", opts: ["Change to past", "Remain unchanged", "Change to future", "Omitted"], ans: 1, exp: "त्रिकालबाधित सत्याचा काळ बदलत नाही." },
-          { q: "'Where are you going?' changes with the reporting verb _______.", opts: ["told", "asked", "said", "exclaimed"], ans: 1, exp: "प्रश्नात reporting verb 'asked' येते." },
-          { q: "'Now' changes to _______ in Indirect Speech.", opts: ["Then", "Today", "Before", "Ago"], ans: 0, exp: "'Now' चे 'Then' होते." }
+          { q: "In Indirect speech, 'will' usually becomes _______.", opts: ["shall", "would", "can", "may"], ans: 1, exp: "Indirect Speech मध्ये 'will' चे 'would' होते." }
         ]
       },
-
-      // 34. Figures of Speech
       "34": {
         title: "34. Figures of Speech (अलंकार)",
-        def: "<b>भाषेचे अलंकार:</b><br>१. <b>Simile:</b> like किंवा as वापरून केलेली तुलना.<br>२. <b>Metaphor:</b> थेट केलेली रूपक तुलना.<br>३. <b>Personification:</b> निर्जीव वस्तूंना मानवी गुण देणे.<br>४. <b>Alliteration:</b> एकाच ध्वनीची पुनरावृत्ती (अनुप्रास).",
+        def: "<b>भाषेचे अलंकार:</b><br>Simile (उपमा - like/as), Metaphor (रूपक - थेट तुलना), Personification (चेतनागुणोक्ती), Alliteration (अनुप्रास)[span_38](start_span)[span_38](end_span).",
         examples: [
-          { en: "1. Simile: He is as brave as a lion.", mr: "'as...as' वापरून तुलना (Simile)." },
-          { en: "2. Metaphor: The camel is the ship of the desert.", mr: "थेट तुलना (Metaphor)." },
-          { en: "3. Personification: Flowers danced in the breeze.", mr: "फुलांना नाचण्याचा मानवी गुण दिला आहे." },
-          { en: "4. Alliteration: Peter Piper picked pickled peppers.", mr: "'P' अक्षराची पुनरावृत्ती." },
-          { en: "5. Hyperbole: I have told you a thousand times.", mr: "अतिशयोक्ती (Hyperbole)." },
-          { en: "6. Onomatopoeia: Bees buzzed loudly.", mr: "नाद दर्शवणारा शब्द (Buzzed)." },
-          { en: "7. Oxymoron: It is an open secret.", mr: "विरोधाभासी शब्द एकत्र." },
-          { en: "8. Simile: She sings like an angel.", mr: "'Like' वापरून तुलना." },
-          { en: "9. Metaphor: Time is money.", mr: "थेट रूपक तुलना." },
-          { en: "10. Alliteration: She sells sea shells.", mr: "'S' ध्वनीची पुनरावृत्ती." }
+          { en: "He is as brave as a lion.", mr: "Simile (उपमा - as...as)" },
+          { en: "The camel is the ship of desert.", mr: "Metaphor (रूपक - थेट तुलना)" },
+          { en: "Flowers danced in the gentle breeze.", mr: "Personification (मानवी गुण)" },
+          { en: "Peter Piper picked pickled peppers.", mr: "Alliteration (अनुप्रास - P ध्वनी)" },
+          { en: "I told you a thousand times.", mr: "Hyperbole (अतिशयोक्ती)" },
+          { en: "Bees buzzed in the garden.", mr: "Onomatopoeia (ध्वनीदर्शक)" },
+          { en: "It is an open secret.", mr: "Oxymoron (विरोधाभास)" },
+          { en: "She sings like a nightingale.", mr: "Simile (like वापरून)" },
+          { en: "Time is money.", mr: "Metaphor (वेळ म्हणजे पैसा)" },
+          { en: "She sells sea shells.", mr: "Alliteration (S ध्वनी)" }
         ],
         quiz: [
-          { q: "'He is as brave as a lion' is an example of _______.", opts: ["Metaphor", "Simile", "Personification", "Hyperbole"], ans: 1, exp: "'As...as' वापरल्याने हा Simile अलंकार आहे." },
-          { q: "'Time is money' is an example of _______.", opts: ["Metaphor", "Simile", "Oxymoron", "Alliteration"], ans: 0, exp: "थेट तुलना केल्याने हा Metaphor अलंकार आहे." },
-          { q: "Giving human qualities to non-living things is _______.", opts: ["Hyperbole", "Personification", "Simile", "Metaphor"], ans: 1, exp: "निर्जीवाला मानवी गुण देणे म्हणजे Personification." },
-          { q: "Repetition of initial consonant sounds is _______.", opts: ["Simile", "Alliteration", "Oxymoron", "Punt"], ans: 1, exp: "सुरुवातीच्या ध्वनीची पुनरावृत्ती म्हणजे Alliteration." },
-          { q: "'An open secret' is an example of _______.", opts: ["Oxymoron", "Hyperbole", "Simile", "Metaphor"], ans: 0, exp: "दोन परस्परविरोधी शब्द एकत्र म्हणजे Oxymoron." }
+          { q: "'He fought like a tiger' uses which Figure of Speech?", opts: ["Metaphor", "Simile", "Hyperbole", "Oxymoron"], ans: 1, exp: "'Like' वापरल्यामुळे हा Simile (उपमा) अलंकार आहे." }
         ]
       },
-
-      // 35. Essay-Writing
       "35": {
         title: "35. Essay-Writing (निबंध लेखन)",
-        def: "<b>निबंध लेखन:</b><br>आपले विचार सलग, तर्कशुद्ध आणि सुटसुटीत परिच्छेदांमध्ये मांडणे.<br>मुख्य ३ भाग असतात: १. <b>Introduction</b> (प्रस्तावना), २. <b>Body Paragraphs</b> (मुख्य मुद्दे व विस्तार), ३. <b>Conclusion</b> (समारोप/निष्कर्ष).",
+        def: "<b>निबंध लेखन:</b><br>Introduction (प्रस्तावना), Body (मुख्य मुद्दे), आणि Conclusion (निष्कर्ष)[span_39](start_span)[span_39](end_span).",
         examples: [
-          { en: "1. My Favorite Leader", mr: "नेतृत्व, गुण आणि त्यांचे विचार." },
-          { en: "2. The Importance of Trees", mr: "पर्यावरण, ऑक्सिजन आणि संवर्धन." },
-          { en: "3. Science: A Boon or Bane?", mr: "विज्ञानाचे फायदे व गैरवापर." },
-          { en: "4. My Dream India", mr: "प्रगती, एकता आणि तंत्रज्ञान." },
-          { en: "5. Value of Discipline", mr: "विद्यार्थी जीवन आणि शिस्त." },
-          { en: "6. Clean India, Green India", mr: "स्वच्छतेचे महत्त्व." },
-          { en: "7. If I were the Prime Minister", mr: "काल्पनिक निबंध." },
-          { en: "8. Yoga for Healthy Life", mr: "आरोग्य आणि योगासने." },
-          { en: "9. Impact of Social Media", mr: "सोशल मीडियाचे परिणाम." },
-          { en: "10. Save Water, Save Earth", mr: "जलसंधारण आणि पाणीबचत." }
+          { en: "My Favorite Leader", mr: "माझा आवडता नेता" },
+          { en: "Importance of Trees", mr: "वृक्षांचे महत्त्व" },
+          { en: "Science: Boon or Curse", mr: "विज्ञान: शाप की वरदान" },
+          { en: "My Dream India", mr: "माझ्या स्वप्नातील भारत" },
+          { en: "Value of Discipline", mr: "शिस्तीचे महत्त्व" },
+          { en: "Cleanliness Campaign", mr: "स्वच्छतेचे महत्त्व" },
+          { en: "If I were a Bird", mr: "काल्पनिक निबंध" },
+          { en: "Yoga for Good Health", mr: "आरोग्य व योगासने" },
+          { en: "Social Media Impact", mr: "सोशल मीडियाचे परिणाम" },
+          { en: "Save Water, Save Life", mr: "पाणीबचत" }
         ],
         quiz: [
-          { q: "The opening paragraph of an essay is called _______.", opts: ["Body", "Conclusion", "Introduction", "Summary"], ans: 2, exp: "निबंधाच्या सुरुवातीला Introduction (प्रस्तावना) म्हणतात." },
-          { q: "An essay should ideally have _______ main parts.", opts: ["One", "Two", "Three", "Five"], ans: 2, exp: "Introduction, Body, आणि Conclusion हे ३ मुख्य भाग असतात." },
-          { q: "The final concluding part of an essay is _______.", opts: ["Heading", "Conclusion", "Intro", "Points"], ans: 1, exp: "शेवटचा भाग Conclusion (समारोप) असतो." },
-          { q: "Good essays maintain coherent _______ between paragraphs.", opts: ["Fighting", "Flow and link", "Arguments only", "Grammar errors"], ans: 1, exp: "परिच्छेदांमध्ये चांगला सुसंगत प्रवाह (Flow) असावा." },
-          { q: "A suitable _______ should be given at the top of an essay.", opts: ["Title", "Moral", "Address", "Date"], ans: 0, exp: "निबंधाच्या सुरुवातीला योग्य Title (शीर्षक) द्यावे." }
+          { q: "The beginning paragraph of an essay is the _______.", opts: ["Body", "Conclusion", "Introduction", "Summary"], ans: 2, exp: "सुरुवातीच्या भागाला Introduction (प्रस्तावना) म्हणतात." }
         ]
       },
-
-      // 36. Story-Writing
       "36": {
         title: "36. Story-Writing (गोष्ट लेखन)",
-        def: "<b>गोष्ट लेखन:</b><br>मुद्द्यांवरून काल्पनिक किंवा बोधप्रद कथा तयार करणे. कथा सामान्यतः <b>भूतकाळात (Past Tense)</b> असावी आणि शेवटी एक चांगला संदेश (Moral) असावा.",
+        def: "<b>गोष्ट लेखन:</b><br>गोष्ट भूतकाळात (Past Tense) असावी आणि शेवटी संदेश (Moral) असावा[span_40](start_span)[span_40](end_span).",
         examples: [
-          { en: "1. The Thirsty Crow", mr: "Moral: Where there is a will, there is a way." },
-          { en: "2. The Lion and the Mouse", mr: "Moral: Kindness never goes waste." },
-          { en: "3. The Honest Woodcutter", mr: "Moral: Honesty is the best policy." },
-          { en: "4. The Tortoise and the Hare", mr: "Moral: Slow and steady wins the race." },
-          { en: "5. Union is Strength", mr: "Moral: Unity gives power." },
-          { en: "6. The Greedy Dog", mr: "Moral: Greed brings grief." },
-          { en: "7. The Boy Who Cried Wolf", mr: "Moral: Liars are not believed." },
-          { en: "8. Two Friends and the Bear", mr: "Moral: A friend in need is a friend indeed." },
-          { en: "9. The Fox and the Grapes", mr: "Moral: It is easy to despise what you cannot get." },
-          { en: "10. King Midas and Golden Touch", mr: "Moral: Too much greed ruins life." }
+          { en: "The Thirsty Crow", mr: "कष्टाने यश (Where there is a will, there is a way.)" },
+          { en: "The Lion and the Mouse", mr: "दयाळूपणा (Kindness never goes waste.)" },
+          { en: "The Honest Woodcutter", mr: "प्रामाणिकपणाचे फळ." },
+          { en: "The Tortoise and Hare", mr: "सातत्य हवे (Slow and steady wins)." },
+          { en: "Union is Strength", mr: "एकतेत ताकद असते." },
+          { en: "The Boy Who Cried Wolf", mr: "खोटेपणाचा तोटा." },
+          { en: "The Greedy Dog", mr: "अति लोभ वाईट." },
+          { en: "Two Friends and Bear", mr: "खरा मित्र संकटात उपयोगी पडतो." },
+          { en: "The Fox and Grapes", mr: "नावे ठेवणे." },
+          { en: "King Midas Golden Touch", mr: "धनाचा मोह हानिकारक." }
         ],
         quiz: [
-          { q: "Stories are traditionally written in which tense?", opts: ["Present Tense", "Past Tense", "Future Tense", "Present Continuous"], ans: 1, exp: "गोष्टी सामान्यतः भूतकाळात (Past Tense) लिहिल्या जातात." },
-          { q: "The lesson learned from a story is called the _______.", opts: ["Title", "Moral", "Summary", "Plot"], ans: 1, exp: "गोष्टीतून मिळणाऱ्या शिकवणीला Moral म्हणतात." },
-          { q: "Every good story must have a suitable _______ at the start.", opts: ["Title", "Moral", "Ending", "Question"], ans: 0, exp: "गोष्टीला योग्य शीर्षक (Title) देणे आवश्यक आहे." },
-          { q: "'Slow and steady wins the race' is moral of which story?", opts: ["Thirsty Crow", "Hare and Tortoise", "Greedy Dog", "Lion & Mouse"], ans: 1, exp: "ससा आणि कासवाच्या गोष्टीचा हा बोध आहे." },
-          { q: "Characters, setting, and plot are key elements of _______.", opts: ["Notice", "Story-writing", "Precis", "Application"], ans: 1, exp: "हे सर्व गोष्ट लेखनाचे (Story writing) मुख्य घटक आहेत." }
+          { q: "Stories are primarily narrated in which tense?", opts: ["Present Tense", "Past Tense", "Future Tense", "Continuous"], ans: 1, exp: "गोष्टी सामान्यतः भूतकाळात (Past Tense) लिहिल्या जातात." }
         ]
       },
-
-      // 37. Letter-Writing
       "37": {
         title: "37. Letter-Writing (पत्र लेखन)",
-        def: "<b>पत्र लेखन:</b><br>१. <b>Formal Letters:</b> कार्यालयीन, व्यावसायिक, तक्रार किंवा विनंती पत्रे (शिष्ट व थेट भाषा).<br>२. <b>Informal Letters:</b> मित्र, आई-वडील व नातेवाईकांना लिहिलेली पत्रे (आपुलकीची भाषा).",
+        def: "<b>पत्र लेखन:</b><br>Formal (कार्यालयीन/तक्रार पत्रे) आणि Informal (मित्र/नातेवाईकांना लिहिलेली पत्रे)[span_41](start_span)[span_41](end_span).",
         examples: [
-          { en: "1. Leave Application to Principal", mr: "रजेचा अर्ज (Formal)" },
-          { en: "2. Letter to Friend inviting for Birthday", mr: "वाढदिवसाचे आमंत्रण (Informal)" },
-          { en: "3. Complaint letter about water supply", mr: "पाणीपुरवठ्याबाबत तक्रार अर्ज (Formal)" },
-          { en: "4. Letter to Father asking for books allowance", mr: "पुस्तकांसाठी पैसे मागणे (Informal)" },
-          { en: "5. Congratulating a friend on his success", mr: "अभिनंदन पत्र (Informal)" },
-          { en: "6. Letter to Municipal Commissioner", mr: "स्वच्छतेबाबत पालिकेला पत्र (Formal)" },
-          { en: "7. Placing an order for sports goods", mr: "खेळ साहित्याची मागणी (Formal)" },
-          { en: "8. Apology letter to teacher", mr: "शिक्षकांची माफी मागणारे पत्र" },
-          { en: "9. Letter to Editor about road safety", mr: "संपादकांना पत्र (Formal)" },
-          { en: "10. Thank you letter to uncle for gift", mr: "काकांना आभार पत्र" }
+          { en: "Leave Application to Headmaster", mr: "मुख्याध्यापकांना रजेचा अर्ज (Formal)" },
+          { en: "Invitation Letter to a Friend", mr: "मित्राला आमंत्रण (Informal)" },
+          { en: "Complaint about Water Supply", mr: "पाणी समस्येबाबत तक्रार" },
+          { en: "Letter to Father for Study Expenses", mr: "वडिलांना पत्र" },
+          { en: "Congratulating Friend on Success", mr: "अभिनंदन पत्र" },
+          { en: "Letter to City Commissioner", mr: "स्वच्छतेसाठी अर्ज" },
+          { en: "Order Letter for Library Books", mr: "पुस्तकांची मागणी" },
+          { en: "Apology Letter to Teacher", mr: "माफी मागणारे पत्र" },
+          { en: "Letter to Newspaper Editor", mr: "संपादकांना पत्र" },
+          { en: "Thank You Letter to Uncle", mr: "आभार पत्र" }
         ],
         quiz: [
-          { q: "'Yours faithfully' is typically used in which letter?", opts: ["Informal", "Formal", "Friendly", "Personal"], ans: 1, exp: "'Yours faithfully' हे Formal (कार्यालयीन) पत्रात वापरतात." },
-          { q: "Letters written to friends and family are _______ letters.", opts: ["Formal", "Informal", "Official", "Business"], ans: 1, exp: "नातेवाईक व मित्रांना लिहिलेली पत्रे Informal असतात." },
-          { q: "Which of the following is essential in a Formal letter?", opts: ["Subject line", "Slang words", "Jokes", "Informal greetings"], ans: 0, exp: "Formal पत्रात 'Subject' (विषय) असणे अनिवार्य आहे." },
-          { q: "'Dear Father' is used in which letter?", opts: ["Formal", "Informal", "Official", "Business"], ans: 1, exp: "वडिलांना पत्र Informal असते." },
-          { q: "A leave application to the Principal is a _______ letter.", opts: ["Formal", "Informal", "Friendly", "Private"], ans: 0, exp: "मुख्याध्यापकांना दिलेला अर्ज Formal प्रकारात मोडतो." }
+          { q: "'Yours faithfully' is used in which letter type?", opts: ["Informal", "Formal", "Friendly", "Casual"], ans: 1, exp: "'Yours faithfully' हे Formal (कार्यालयीन) पत्रात वापरले जाते." }
         ]
       },
-
-      // 38. Comprehension
       "38": {
         title: "38. Comprehension (उतारा आकलन)",
-        def: "<b>उतारा आकलन:</b><br>दिलेला इंग्रजी उतारा लक्षपूर्वक वाचणे, त्यातील मध्यवर्ती कल्पना समजून घेणे आणि त्यावर विचारलेल्या प्रश्नांची अचूक व पूर्ण वाक्यात उत्तरे लिहिणे.",
+        def: "<b>उतारा आकलन:</b><br>उतारा काळजीपूर्वक वाचून त्यावर आधारित विचारलेल्या प्रश्नांची अचूक उत्तरे लिहिणे[span_42](start_span)[span_42](end_span).",
         examples: [
-          { en: "1. Read the passage twice carefully.", mr: "उतारा काळजीपूर्वक दोनदा वाचा." },
-          { en: "2. Understand vocabulary and main idea.", mr: "नवीन शब्दांचे अर्थ आणि मुख्य कल्पना समजून घ्या." },
-          { en: "3. Locate key facts in the text.", mr: "उत्तरे उताऱ्यात नेमकी शोधा." },
-          { en: "4. Answer in complete and clear sentences.", mr: "उत्तरे नेहमी पूर्ण वाक्यात लिहा." },
-          { en: "5. Do not add outside assumptions.", mr: "उताऱ्याबाहेरची माहिती स्वतःहून जोडू नका." },
-          { en: "6. Give a suitable title if asked.", mr: "समर्पक शीर्षक द्या." },
-          { en: "7. Find synonyms/antonyms from passage.", mr: "समानार्थी व विरुद्धार्थी शब्द उताऱ्यातून शोधा." },
-          { en: "8. Follow the tense of the question.", mr: "प्रश्नाच्या काळातच उत्तर लिहा." },
-          { en: "9. Summarize short paragraphs in mind.", mr: "मनात लहान सारांश तयार करा." },
-          { en: "10. Re-check answers before submitting.", mr: "शेवटी उत्तरे पुन्हा तपासून घ्या." }
+          { en: "Read the given passage twice.", mr: "उतारा दोनदा नीट वाचा." },
+          { en: "Understand the main idea.", mr: "मध्यवर्ती कल्पना समजून घ्या." },
+          { en: "Locate answers inside the text.", mr: "उत्तरे उताऱ्यात शोधा." },
+          { en: "Write in full grammatically correct sentences.", mr: "पूर्ण वाक्यात उत्तरे द्या." },
+          { en: "Do not invent outside information.", mr: "उताऱ्याबाहेरची माहिती जोडू नका." },
+          { en: "Suggest an appropriate title.", mr: "योग्य शीर्षक द्या." },
+          { en: "Find opposite words from passage.", mr: "विरुद्धार्थी शब्द शोधा." },
+          { en: "Match the tense of the question.", mr: "प्रश्नाच्या काळातच उत्तर द्या." },
+          { en: "Keep answers crisp and clear.", mr: "उत्तरे सुटसुटीत ठेवा." },
+          { en: "Re-check answers before finishing.", mr: "शेवटी उत्तरे तपासून घ्या." }
         ],
         quiz: [
-          { q: "While answering comprehension, we should primarily rely on _______.", opts: ["Own imagination", "The given passage", "Friend's advice", "General news"], ans: 1, exp: "सर्व उत्तरे दिलेल्या उताऱ्यावर आधारित असावीत." },
-          { q: "Comprehension tests your ability to _______.", opts: ["Sing", "Understand and interpret text", "Draw", "Memorize blindly"], ans: 1, exp: "हे उतारा समजून घेण्याची क्षमता तपासते." },
-          { q: "How many times should one ideally read the passage?", opts: ["Never", "At least twice", "Once very fast", "Ten times"], ans: 1, exp: "उतारा किमान दोनदा काळजीपूर्वक वाचावा." },
-          { q: "Answers to comprehension questions should be in _______ sentences.", opts: ["Incomplete", "Complete and correct", "Single words only", "Marathi only"], ans: 1, exp: "उत्तरे पूर्ण व शुद्ध इंग्रजी वाक्यात असावीत." },
-          { q: "Vocabulary questions in comprehension ask for _______.", opts: ["Synonyms / Antonyms", "Drawings", "Numbers", "Dates only"], ans: 0, exp: "उताऱ्यातील शब्दांचे समानार्थी/विरुद्धार्थी शब्द विचारले जातात." }
+          { q: "Answers in comprehension should come from _______.", opts: ["Imagination", "The given passage", "Dictionary", "Internet"], ans: 1, exp: "सर्व उत्तरे दिलेल्या उताऱ्यावर आधारित असावीत." }
         ]
       },
-
-      // 39. Precis-Writing
       "39": {
         title: "39. Precis-Writing (सारांश लेखन)",
-        def: "<b>सारांश लेखन:</b><br>दिलेल्या मोठ्या उताऱ्यातील अनावश्यक दाखले गाळून मूळ विचारांना धक्का न लावता सुमारे <b>एक तृतीयांश (1/3rd)</b> शब्दात संक्षिप्त रूप तयार करणे आणि योग्य शीर्षक देणे.",
+        def: "<b>सारांश लेखन:</b><br>दिलेल्या मोठ्या उताऱ्याचा सुमारे एक तृतीयांश (1/3rd) संक्षिप्त भाग स्वतःच्या भाषेत लिहिणे व शीर्षक देणे[span_43](start_span)[span_43](end_span).",
         examples: [
-          { en: "1. Rule: Length should be approx 1/3 of original.", mr: "मूळ मजकुराच्या १/३ लांबी असावी." },
-          { en: "2. Rule: Give a short, catchy title.", mr: "समर्पक व संक्षिप्त शीर्षक द्या." },
-          { en: "3. Rule: Use your own words.", mr: "शक्यतो स्वतःचे शब्द वापरा." },
-          { en: "4. Rule: Avoid illustrations and examples.", mr: "उदाहरणे व दाखले गाळून टाका." },
-          { en: "5. Rule: Write in indirect speech and third person.", mr: "नेहमी तृतीयपुरुषी कथनात लिहावे." },
-          { en: "6. Rule: Keep the core idea intact.", mr: "मुख्य संदेश बदलू नये." },
-          { en: "7. Rule: No personal opinions.", mr: "स्वतःची मते मांडू नयेत." },
-          { en: "8. Rule: Maintain coherent flow.", mr: "वाक्यांमध्ये सुसंगती असावी." },
-          { en: "9. Rule: Count approximate word count.", mr: "शब्दसंख्या तपासा." },
-          { en: "10. Rule: Read final draft for clarity.", mr: "अंतिम सारांश वाचून खात्री करा." }
+          { en: "Length should be 1/3rd of the passage.", mr: "मूळ मजकुराच्या १/३ लांबी असावी." },
+          { en: "Provide a suitable short title.", mr: "समर्पक शीर्षक द्या." },
+          { en: "Use simple words of your own.", mr: "स्वतःचे शब्द वापरा." },
+          { en: "Remove examples and quotations.", mr: "दाखले व उदाहरणे वगळा." },
+          { en: "Write in third person indirect speech.", mr: "तृतीयपुरुषी भाषेत लिहावे." },
+          { en: "Retain the original main thought.", mr: "मूळ विचार बदलू नये." },
+          { en: "Do not add your own comments.", mr: "स्वतःचे मत मांडू नये." },
+          { en: "Maintain good flow between lines.", mr: "सुसंगती ठेवा." },
+          { en: "Check word count roughly.", mr: "शब्दसंख्या तपासा." },
+          { en: "Review for spelling and grammar.", mr: "व्याकरण तपासा." }
         ],
         quiz: [
-          { q: "A precis should ideally be _______ of the original passage length.", opts: ["1/2", "1/3", "1/4", "3/4"], ans: 1, exp: "सारांश मूळ उताऱ्याच्या साधारण १/३ असावा." },
-          { q: "A good precis must always have a suitable _______.", opts: ["Moral", "Title", "Address", "Date"], ans: 1, exp: "सारांशाला योग्य Title (शीर्षक) देणे अनिवार्य आहे." },
-          { q: "In precis writing, one should avoid _______.", opts: ["Main ideas", "Examples and illustrations", "Good grammar", "Own words"], ans: 1, exp: "उदाहरणे व दाखले सारांशात गाळावे लागतात." },
-          { q: "A precis should be written in _______ person.", opts: ["First person (I)", "Third person (He/They)", "Second person (You)", "Any"], ans: 1, exp: "सारांश नेहमी तृतीयपुरुषी (Third person) कथनात लिहावा." },
-          { q: "Can we add personal comments in a precis?", opts: ["Yes, always", "No, never", "Only at the end", "If asked"], ans: 1, exp: "सारांशात स्वतःचे वैयक्तिक मत मांडू नये." }
+          { q: "A precis is approximately _______ of original text.", opts: ["1/2", "1/3", "1/4", "Full"], ans: 1, exp: "सारांश साधारणपणे एक तृतीयांश (1/3) असावा." }
         ]
       },
-
-      // 40. Translation
       "40": {
         title: "40. Translation (भाषांतर सराव)",
-        def: "<b>भाषांतर सराव:</b><br>मराठी वाक्याचे इंग्रजीत भाषांतर करताना केवळ शब्दाला शब्द न बदलता वाक्याचा मूळ अर्थ, योग्य काळ आणि व्याकरणिक वाक्यरचना <b>(Subject + Verb + Object)</b> सांभाळणे आवश्यक असते.",
+        def: "<b>भाषांतर सराव:</b><br>मराठी वाक्याचे इंग्रजीत भाषांतर करताना काळ आणि वाक्यरचना (Subject + Verb + Object) लक्षात घेणे[span_44](start_span)[span_44](end_span).",
         examples: [
-          { en: "1. I like to read books.", mr: "मला पुस्तके वाचायला आवडतात." },
-          { en: "2. The sun sets in the west.", mr: "सूर्य पश्चिमेला मावळतो." },
-          { en: "3. She is learning English.", mr: "ती इंग्रजी शिकत आहे." },
-          { en: "4. We went to school yesterday.", mr: "आम्ही काल शाळेत गेलो." },
-          { en: "5. Hard work leads to success.", mr: "कष्टाने यश मिळते." },
-          { en: "6. Water is essential for life.", mr: "पाणी जीवनासाठी अत्यावश्यक आहे." },
-          { en: "7. He will come tomorrow.", mr: "तो उद्या येईल." },
-          { en: "8. India is my country.", mr: "भारत माझा देश आहे." },
-          { en: "9. Respect your parents.", mr: "आपल्या पालकांचा आदर करा." },
-          { en: "10. Truth always triumphs.", mr: "सत्याचा नेहमीच विजय होतो." }
+          { en: "I like to read books.", mr: "मला पुस्तके वाचायला आवडतात." },
+          { en: "The sun sets in the west.", mr: "सूर्य पश्चिमेला मावळतो." },
+          { en: "She is learning English.", mr: "ती इंग्रजी शिकत आहे." },
+          { en: "We went to school yesterday.", mr: "आम्ही काल शाळेत गेलो." },
+          { en: "Hard work brings great success.", mr: "कष्टाने यश मिळते." },
+          { en: "Water is necessary for life.", mr: "पाणी जीवनासाठी आवश्यक आहे." },
+          { en: "He will come here tomorrow.", mr: "तो उद्या येईल." },
+          { en: "India is my motherland.", mr: "भारत माझी मातृभूमी आहे." },
+          { en: "Always respect parents.", mr: "नेहमी पालकांचा आदर करा." },
+          { en: "Truth always wins in the end.", mr: "सत्याचा नेहमीच विजय होतो." }
         ],
         quiz: [
-          { q: "Translate: 'तो वेगाने धावतो.'", opts: ["He runs fast.", "He running fast.", "He run fast.", "He is run fast."], ans: 0, exp: "'He runs fast.' हे वर्तमानकाळातील अचूक भाषांतर आहे." },
-          { q: "Translate: 'सूर्य पूर्वेला उगवतो.'", opts: ["The sun rose in the east.", "The sun rises in the east.", "The sun is rising in the east.", "Sun rise in east."], ans: 1, exp: "त्रिकालबाधित सत्य असल्याने Simple Present (rises) येईल." },
-          { q: "Translate: 'आम्ही काल सामना जिंकला.'", opts: ["We win match yesterday.", "We won the match yesterday.", "We will win match.", "We have won match."], ans: 1, exp: "कालची क्रिया असल्याने Simple Past (won) येईल." },
-          { q: "Basic English sentence word order is _______.", opts: ["S + O + V", "S + V + O", "V + S + O", "O + S + V"], ans: 1, exp: "इंग्रजी वाक्यरचना Subject + Verb + Object (S+V+O) अशी असते." },
-          { q: "Translate: 'नेहमी खरे बोला.'", opts: ["Always tell a lie.", "Always speak the truth.", "Never speak truth.", "Truth always tell."], ans: 1, exp: "'Always speak the truth.' हे अचूक भाषांतर आहे." }
+          { q: "Translate: 'तो वेगाने धावतो.'", opts: ["He runs fast.", "He running fast.", "He run fast.", "He is run fast."], ans: 0, exp: "'He runs fast.' हे वर्तमानकाळातील अचूक भाषांतर आहे." }
         ]
       }
     };
@@ -1443,24 +937,28 @@
 
     function renderApp() {
       const val = document.getElementById("topicDropdown").value;
-      const item = allTopics[val];
+      const item = allTopics[val] || allTopics["13"];
 
-      if (item) {
-        document.getElementById("lessonTitle").innerText = item.title;
-        document.getElementById("lessonDefinition").innerHTML = item.def;
-        
-        document.getElementById("lessonExamples").innerHTML = item.examples.map(e => `
-          <div class="example-item">
-            <b>${e.en}</b>
-            <span>${e.mr}</span>
+      document.getElementById("lessonTitle").innerText = item.title;
+      document.getElementById("lessonDefinition").innerHTML = item.def;
+      
+      document.getElementById("lessonExamples").innerHTML = item.examples.map(e => `
+        <div class="example-item">
+          <div class="example-text">
+            <b onclick="playAudio('${e.en.replace(/'/g, "\\'")}', 'en')">${e.en}</b>
+            <span onclick="playAudio('${e.mr.replace(/'/g, "\\'")}', 'mr')">${e.mr}</span>
           </div>
-        `).join("");
+          <div class="voice-buttons">
+            <button class="speaker-btn" onclick="playAudio('${e.en.replace(/'/g, "\\'")}', 'en')" title="इंग्रजी ऐका">🔊 EN</button>
+            <button class="speaker-btn" onclick="playAudio('${e.mr.replace(/'/g, "\\'")}', 'mr')" title="मराठी ऐका">🔊 MR</button>
+          </div>
+        </div>
+      `).join("");
 
-        currentQuestions = item.quiz;
-        currIdx = 0;
-        score = 0;
-        loadQuestion();
-      }
+      currentQuestions = item.quiz;
+      currIdx = 0;
+      score = 0;
+      loadQuestion();
     }
 
     function loadQuestion() {
@@ -1502,11 +1000,13 @@
         feedback.className = "feedback good";
         feedback.innerText = "बरोबर उत्तर! 🎉 " + q.exp;
         score += 10;
+        playAudio("Correct answer!", "en");
       } else {
         btn.classList.add("wrong");
         feedback.className = "feedback bad";
         feedback.innerText = "चुकीचे उत्तर! ❌ " + q.exp;
         allBtns[q.ans].classList.add("correct");
+        playAudio("Wrong answer!", "en");
       }
       document.getElementById("score").innerText = `Score: ${score}`;
     }
@@ -1516,10 +1016,10 @@
         currIdx++;
         loadQuestion();
       } else {
-        document.getElementById("qtext").innerText = `क्विझ पूर्ण झाली! तुमचा एकूण स्कोअर: ${score} / ${currentQuestions.length * 10}`;
+        document.getElementById("qtext").innerText = `क्विझ पूर्ण झाली! एकूण स्कोअर: ${score} / ${currentQuestions.length * 10}`;
         document.getElementById("optbox").innerHTML = "";
         document.getElementById("feedback").className = "feedback good";
-        document.getElementById("feedback").innerText = "अभिनंदन! तुम्ही या घटकातील सर्व ५ प्रश्नांचा सराव पूर्ण केला आहे. आता वरील ड्रॉपडाऊनमधून पुढील घटक निवडा.";
+        document.getElementById("feedback").innerText = "अभिनंदन! तुम्ही पुढील घटक निवडून सराव करू शकता.";
         document.getElementById("nextbtn").innerText = "पुन्हा सोडवा (Restart Quiz)";
         document.getElementById("nextbtn").onclick = () => {
           currIdx = 0;
