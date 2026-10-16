@@ -1,1478 +1,631 @@
 <!DOCTYPE html>
 <html lang="mr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Smart English Guru | Learn Practice Grow</title>
-
-<meta name="description"
-content="Smart English Guru - मराठी माध्यमातून इंग्रजी Grammar, Composition आणि Practice शिकण्यासाठी डिजिटल शिक्षण मंच.">
-
-<meta name="theme-color" content="#063b82">
-
-<style>
-
-:root{
-    --primary:#0756b8;
-    --primary-dark:#063b82;
-    --secondary:#0d7bdc;
-    --green:#12a879;
-    --orange:#ff8a2a;
-    --purple:#4030a8;
-    --light:#f3f8ff;
-    --border:#d8e6f5;
-    --text:#17324d;
-    --muted:#63758a;
-    --white:#ffffff;
-    --shadow:0 8px 25px rgba(15,72,130,.10);
-    --radius:16px;
-}
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:
-    "Noto Sans Devanagari",
-    "Nirmala UI",
-    Arial,
-    sans-serif;
-    background:#eef5fc;
-    color:var(--text);
-    line-height:1.6;
-}
-
-/* ================= HEADER ================= */
-
-.header{
-    height:82px;
-    background:linear-gradient(135deg,#063b82,#075dcc);
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 30px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 4px 18px rgba(0,0,0,.15);
-}
-
-.brand{
-    display:flex;
-    align-items:center;
-    gap:14px;
-}
-
-.logo{
-    width:54px;
-    height:54px;
-    border-radius:14px;
-    background:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:29px;
-    box-shadow:0 4px 12px rgba(0,0,0,.18);
-}
-
-.brand h1{
-    font-size:25px;
-    letter-spacing:.3px;
-}
-
-.brand p{
-    font-size:12px;
-    opacity:.9;
-}
-
-.header-info{
-    display:flex;
-    align-items:center;
-    gap:22px;
-    font-weight:600;
-}
-
-.header-badge{
-    border:1px solid rgba(255,255,255,.3);
-    padding:8px 18px;
-    border-radius:30px;
-    background:rgba(255,255,255,.08);
-}
-
-.menu-btn{
-    display:none;
-    background:none;
-    border:0;
-    color:white;
-    font-size:28px;
-    cursor:pointer;
-}
-
-/* ================= LAYOUT ================= */
-
-.app{
-    display:grid;
-    grid-template-columns:285px 1fr;
-    min-height:calc(100vh - 82px);
-}
-
-.sidebar{
-    background:white;
-    border-right:1px solid var(--border);
-    padding:18px;
-    position:sticky;
-    top:82px;
-    height:calc(100vh - 82px);
-    overflow-y:auto;
-}
-
-.sidebar-title{
-    padding:13px;
-    background:#f1f7ff;
-    border-radius:12px;
-    font-weight:800;
-    margin-bottom:12px;
-}
-
-.section-title{
-    padding:10px 13px;
-    color:white;
-    background:linear-gradient(90deg,#075dcc,#167ce3);
-    border-radius:10px;
-    margin:10px 0;
-    font-weight:800;
-}
-
-.section-title.composition{
-    background:linear-gradient(90deg,#008f76,#10b88d);
-}
-
-.topic{
-    display:block;
-    width:100%;
-    text-align:left;
-    border:0;
-    background:transparent;
-    padding:8px 10px;
-    border-radius:9px;
-    color:#30465c;
-    cursor:pointer;
-    font-size:13px;
-    transition:.2s;
-}
-
-.topic:hover{
-    background:#edf6ff;
-    color:var(--primary);
-    transform:translateX(2px);
-}
-
-.topic.active{
-    background:linear-gradient(90deg,#075dcc,#167de8);
-    color:white;
-    font-weight:800;
-}
-
-/* ================= MAIN ================= */
-
-.main{
-    padding:22px;
-    max-width:1500px;
-    width:100%;
-    margin:auto;
-}
-
-.hero{
-    background:linear-gradient(120deg,#eaf5ff,#ffffff);
-    border:1px solid #c9e0f7;
-    border-radius:var(--radius);
-    padding:22px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-    box-shadow:var(--shadow);
-}
-
-.hero-left{
-    display:flex;
-    align-items:center;
-    gap:16px;
-}
-
-.number{
-    width:64px;
-    height:64px;
-    background:linear-gradient(135deg,#0964d1,#0b4ba0);
-    color:white;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:25px;
-    font-weight:900;
-    flex:none;
-}
-
-.hero h2{
-    color:#0b3d79;
-    font-size:25px;
-}
-
-.hero p{
-    margin-top:5px;
-    color:#40566c;
-}
-
-.voice-badge{
-    background:white;
-    border:1px solid #cfe1f5;
-    border-radius:30px;
-    padding:9px 15px;
-    font-weight:700;
-    white-space:nowrap;
-}
-
-/* ================= GRID ================= */
-
-.content-grid{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) 330px;
-    gap:18px;
-    margin-top:18px;
-}
-
-.card{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    overflow:hidden;
-}
-
-.card-header{
-    background:linear-gradient(90deg,#07549e,#126ecb);
-    color:white;
-    padding:12px 17px;
-    font-size:19px;
-    font-weight:800;
-}
-
-.card-body{
-    padding:17px;
-}
-
-/* ================= INFO ================= */
-
-.info-box{
-    background:#f5faff;
-    border:1px solid #d7eafa;
-    border-radius:14px;
-    padding:17px;
-    margin-bottom:18px;
-}
-
-.info-box h3{
-    color:#075dcc;
-    margin-bottom:8px;
-}
-
-.info-box p{
-    color:#42566b;
-}
-
-/* ================= TENSE CARDS ================= */
-
-.tense-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-}
-
-.tense-column{
-    border:1px solid #cbdff5;
-    border-radius:12px;
-    overflow:hidden;
-}
-
-.tense-title{
-    padding:10px;
-    background:#eaf3ff;
-    color:#075dcc;
-    font-weight:900;
-    text-align:center;
-}
-
-.tense-column:nth-child(2) .tense-title{
-    background:#fff0e7;
-    color:#d65d00;
-}
-
-.tense-column:nth-child(3) .tense-title{
-    background:#e5f9f3;
-    color:#008c6d;
-}
-
-.tense-item{
-    padding:12px;
-    border-top:1px solid #edf1f5;
-}
-
-.tense-item strong{
-    display:block;
-    font-size:13px;
-    color:#203b57;
-}
-
-.formula{
-    display:inline-block;
-    margin-top:4px;
-    padding:3px 7px;
-    background:#f1f5f9;
-    border-radius:6px;
-    color:#607285;
-    font-size:11px;
-}
-
-/* ================= POINTS ================= */
-
-.points{
-    margin-top:15px;
-    padding:15px;
-    background:#f7f4ff;
-    border:1px solid #ddd5fa;
-    border-radius:13px;
-}
-
-.points h3{
-    color:#4937ae;
-    margin-bottom:7px;
-}
-
-.points li{
-    margin-left:20px;
-    margin-bottom:4px;
-}
-
-/* ================= EXAMPLES ================= */
-
-.example{
-    padding:14px;
-    border:1px solid #e0eaf4;
-    border-radius:13px;
-    margin-bottom:10px;
-    box-shadow:0 4px 12px rgba(0,0,0,.04);
-}
-
-.example strong{
-    color:#173f70;
-}
-
-.marathi{
-    color:#647487;
-    margin-top:3px;
-}
-
-.example-tools{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-top:8px;
-}
-
-.tag{
-    background:#edf5ff;
-    color:#075dcc;
-    padding:4px 9px;
-    border-radius:20px;
-    font-size:11px;
-    font-weight:800;
-}
-
-.audio-buttons{
-    display:flex;
-    gap:5px;
-}
-
-.audio{
-    border:0;
-    border-radius:20px;
-    padding:6px 10px;
-    cursor:pointer;
-    color:white;
-    font-weight:700;
-    font-size:11px;
-}
-
-.audio.en{
-    background:#0764cf;
-}
-
-.audio.mr{
-    background:#ff862c;
-}
-
-/* ================= QUIZ ================= */
-
-.quiz{
-    margin-top:18px;
-}
-
-.quiz-header{
-    background:linear-gradient(90deg,#3d2aa7,#5043c5);
-    color:white;
-    padding:12px 17px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.progress-area{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.progress{
-    width:170px;
-    height:9px;
-    background:white;
-    border-radius:10px;
-    overflow:hidden;
-}
-
-.progress span{
-    display:block;
-    height:100%;
-    width:20%;
-    background:#20c98b;
-}
-
-.question{
-    padding:18px;
-    font-size:17px;
-    font-weight:800;
-}
-
-.options{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-    padding:0 18px 18px;
-}
-
-.option{
-    padding:12px;
-    background:white;
-    border:1px solid #d8e3ed;
-    border-radius:11px;
-    cursor:pointer;
-    text-align:left;
-    transition:.2s;
-}
-
-.option:hover{
-    border-color:#1474d2;
-    transform:translateY(-2px);
-}
-
-.option.selected{
-    background:#dff7ec;
-    border-color:#20b77f;
-}
-
-.option.wrong{
-    background:#ffe6e6;
-    border-color:#e55353;
-}
-
-.feedback{
-    margin:0 18px 18px;
-    padding:13px;
-    border-radius:11px;
-    display:none;
-    background:#e9faf3;
-    color:#087a5b;
-    font-weight:700;
-}
-
-.next-btn{
-    float:right;
-    margin:0 18px 18px;
-    border:0;
-    background:#075dcc;
-    color:white;
-    padding:10px 18px;
-    border-radius:9px;
-    cursor:pointer;
-    font-weight:800;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    background:#063b82;
-    color:white;
-    padding:20px;
-    text-align:center;
-    margin-top:22px;
-}
-
-footer strong{
-    display:block;
-    margin-bottom:5px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:1000px){
-
-    .app{
-        grid-template-columns:1fr;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart English Guru - Professional Learning App</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary: #1a56db;
+      --primary-dark: #1e429f;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-sub: #475569;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .menu-toggle {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 18px;
+      cursor: pointer;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .menu-toggle:active { background: #dbeafe; }
+    .brand-title { font-size: 16px; font-weight: 800; color: #1e3a8a; }
+    .brand-sub { font-size: 11px; color: var(--text-sub); display: block; }
+
+    /* Professional Sidebar */
+    .sidebar-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(2px);
+      z-index: 90;
+      display: none;
+    }
+    .sidebar-overlay.active { display: block; }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 290px;
+      max-width: 85%;
+      background: #ffffff;
+      z-index: 100;
+      overflow-y: auto;
+      box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-header {
+      padding: 16px;
+      border-bottom: 1px solid #e2e8f0;
+      background: #f1f5f9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .sidebar-close {
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #64748b;
+    }
+    .topic-group-title {
+      padding: 10px 16px 4px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #64748b;
+      letter-spacing: 0.5px;
+    }
+    .sidebar-item {
+      padding: 10px 16px;
+      font-size: 13px;
+      color: #334155;
+      border-bottom: 1px solid #f1f5f9;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s;
+    }
+    .sidebar-item:hover { background: #f8fafc; }
+    .sidebar-item.active {
+      background: #eff6ff;
+      color: var(--primary);
+      font-weight: 700;
+      border-left: 4px solid var(--primary);
     }
 
-    .sidebar{
-        position:fixed;
-        left:-310px;
-        top:82px;
-        width:290px;
-        z-index:900;
-        transition:.3s;
-        box-shadow:5px 0 20px rgba(0,0,0,.15);
+    /* Main Container */
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 16px;
     }
-
-    .sidebar.open{
-        left:0;
+    .hero-card {
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 20px rgba(30, 64, 175, 0.15);
     }
+    .hero-card h1 { margin: 0 0 6px; font-size: 20px; font-weight: 800; }
+    .hero-card p { margin: 0; font-size: 13px; opacity: 0.9; }
 
-    .menu-btn{
-        display:block;
+    /* Lesson Layout */
+    .content-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      margin-bottom: 16px;
     }
-
-    .header-info{
-        display:none;
+    .topic-badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1e40af;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 8px;
+      border-radius: 6px;
+      margin-bottom: 8px;
     }
-
-    .content-grid{
-        grid-template-columns:1fr;
+    .topic-heading {
+      margin: 0 0 12px;
+      font-size: 18px;
+      color: #0f172a;
+      font-weight: 800;
     }
-
-    .tense-grid{
-        grid-template-columns:1fr;
+    .def-box {
+      background: #f8fafc;
+      border-left: 4px solid var(--primary);
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #334155;
+      margin-bottom: 16px;
     }
-
-    .options{
-        grid-template-columns:repeat(2,1fr);
+    .subtypes-grid { display: grid; gap: 10px; margin-bottom: 16px; }
+    .subtype-card {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 12px 14px;
     }
-
-}
-
-@media(max-width:600px){
-
-    .header{
-        height:72px;
-        padding:0 14px;
+    .subtype-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--primary);
+      margin-bottom: 4px;
     }
+    .subtype-desc { font-size: 13px; color: #475569; line-height: 1.6; }
 
-    .logo{
-        width:45px;
-        height:45px;
-        font-size:23px;
+    /* Example items with dual voice */
+    .example-list { display: grid; gap: 8px; }
+    .example-row {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
     }
-
-    .brand h1{
-        font-size:18px;
+    .example-text b { display: block; font-size: 14px; color: #1e3a8a; }
+    .example-text span { display: block; font-size: 12px; color: #64748b; margin-top: 2px; }
+    .btn-group { display: flex; gap: 4px; flex-shrink: 0; }
+    .voice-btn {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 8px;
+      border-radius: 6px;
+      cursor: pointer;
     }
+    .voice-btn:active { background: var(--primary); color: #fff; }
 
-    .brand p{
-        font-size:10px;
+    /* Quiz Card */
+    .quiz-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     }
-
-    .main{
-        padding:12px;
+    .quiz-bar-wrap {
+      height: 6px;
+      background: #e2e8f0;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 14px;
     }
-
-    .hero{
-        padding:15px;
+    .quiz-bar {
+      height: 100%;
+      background: var(--primary);
+      width: 20%;
+      transition: width 0.3s;
     }
-
-    .hero h2{
-        font-size:19px;
+    .quiz-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      margin-bottom: 10px;
     }
-
-    .number{
-        width:50px;
-        height:50px;
-        font-size:20px;
+    .question-title { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 12px; }
+    .options-grid { display: grid; gap: 8px; }
+    .opt-btn {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 11px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.15s;
     }
-
-    .options{
-        grid-template-columns:1fr;
+    .opt-btn:hover { border-color: var(--primary); background: #f8fafc; }
+    .opt-btn.correct { background: #dcfce7; border-color: #22c55e; color: #15803d; font-weight: 700; }
+    .opt-btn.wrong { background: #fee2e2; border-color: #ef4444; color: #b91c1c; font-weight: 700; }
+    .feedback-box {
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
     }
-
-    .quiz-header{
-        flex-direction:column;
-        gap:8px;
-        align-items:flex-start;
+    .feedback-box.good { background: #dcfce7; color: #166534; }
+    .feedback-box.bad { background: #fee2e2; color: #991b1b; }
+    .hidden { display: none !important; }
+    .next-btn {
+      width: 100%;
+      margin-top: 14px;
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
     }
-
-}
-
-</style>
+    .next-btn:active { background: var(--primary-dark); }
+  </style>
 </head>
-
 <body>
 
-<!-- ================= HEADER ================= -->
+  <!-- Top Navbar -->
+  <div class="topbar">
+    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    <div>
+      <span class="brand-title">Smart English Guru</span>
+      <span class="brand-sub">४० संपूर्ण घटक • व्याकरण व रचना</span>
+    </div>
+  </div>
 
-<header class="header">
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
 
-    <div class="brand">
+  <!-- Navigation Drawer (Sidebar) -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span>विषय सूची (Syllabus)</span>
+      <button class="sidebar-close" onclick="toggleSidebar()">✕</button>
+    </div>
+    
+    <div class="topic-group-title">व्याकरण विभाग (१ ते ३४)</div>
+    <div id="grammarMenu"></div>
 
-        <button class="menu-btn" onclick="toggleSidebar()">
-            ☰
-        </button>
+    <div class="topic-group-title">लेखन विभाग (३५ ते ४०)</div>
+    <div id="compMenu"></div>
+  </div>
 
-        <div class="logo">
-            📖
-        </div>
-
-        <div>
-            <h1>Smart English Guru</h1>
-            <p>Learn | Practice | Grow</p>
-        </div>
-
+  <!-- Main Container -->
+  <div class="container">
+    <div class="hero-card">
+      <h1 id="heroTopic">इंग्रजी व्याकरण व रचना शिका</h1>
+      <p>डाव्या बाजूच्या मेनूवर (☰) क्लिक करून कोणताही विषय निवडा. नियम, उदाहरणे आणि क्विझ सोडवा!</p>
     </div>
 
-    <div class="header-info">
+    <!-- Lesson Content -->
+    <div class="content-box">
+      <span class="topic-badge" id="topicBadge">घटक</span>
+      <h2 class="topic-heading" id="lessonTitle">विषय</h2>
+      <div class="def-box" id="lessonDef"></div>
+      
+      <div class="subtypes-grid" id="subtypesContainer"></div>
 
-        <div>
-            ४० घटक
-        </div>
-
-        <div>
-            🇬🇧 इंग्रजी व 🇮🇳 मराठी आवाज
-        </div>
-
-        <div class="header-badge">
-            चांगले इंग्रजी,<br>
-            उज्ज्वल भविष्य!
-        </div>
-
+      <h3 style="font-size: 14px; color: var(--primary); margin: 14px 0 8px;">महत्त्वाची उदाहरणे (उच्चार ऐकण्यासाठी टॅप करा):</h3>
+      <div class="example-list" id="lessonExamples"></div>
     </div>
 
-</header>
+    <!-- Interactive Quiz -->
+    <div class="quiz-box">
+      <div class="quiz-bar-wrap"><div class="quiz-bar" id="pbar"></div></div>
+      <div class="quiz-meta">
+        <span id="qcount">Question 1 of 5</span>
+        <span id="score">Score: 0</span>
+      </div>
 
-
-<div class="app">
-
-<!-- ================= SIDEBAR ================= -->
-
-<aside class="sidebar" id="sidebar">
-
-    <div class="sidebar-title">
-        📚 घटक / विषय निवडा
+      <div class="question-title" id="qtext">प्रश्न</div>
+      <div class="options-grid" id="optbox"></div>
+      <div class="feedback-box hidden" id="feedback"></div>
+      <button class="next-btn" id="nextbtn" onclick="nextQuestion()">पुढचा प्रश्न ➜</button>
     </div>
-
-    <div class="section-title">
-        📖 Grammar Section (१ ते ३४)
-    </div>
-
-    <div id="grammarTopics"></div>
-
-    <div class="section-title composition">
-        ✍️ Composition Section (३५ ते ४०)
-    </div>
-
-    <div id="compositionTopics"></div>
-
-</aside>
-
-
-<!-- ================= MAIN ================= -->
-
-<main class="main">
-
-    <section class="hero">
-
-        <div class="hero-left">
-
-            <div class="number" id="topicNumber">
-                13
-            </div>
-
-            <div>
-                <h2 id="topicTitle">
-                    Tenses (काळ व त्याचे प्रकार)
-                </h2>
-
-                <p id="topicIntro">
-                    क्रिया कोणत्या वेळी घडली, घडत आहे किंवा घडणार आहे
-                    हे दर्शविणाऱ्या क्रियापदाच्या स्वरूपाला काळ म्हणजे Tense.
-                </p>
-            </div>
-
-        </div>
-
-        <div class="voice-badge">
-            🔊 Dual Voice Supported
-        </div>
-
-    </section>
-
-
-    <div class="content-grid">
-
-        <!-- MAIN CONTENT -->
-
-        <section>
-
-            <div class="card">
-
-                <div class="card-header">
-                    📘 काळाची मूलभूत माहिती
-                </div>
-
-                <div class="card-body">
-
-                    <div class="info-box">
-
-                        <h3>💡 काळ म्हणजे काय?</h3>
-
-                        <p>
-                            क्रिया कोणत्या वेळी घडली, घडत आहे किंवा घडणार आहे
-                            हे दर्शविणाऱ्या क्रियापदाच्या स्वरूपाला
-                            <strong>काळ (Tense)</strong> म्हणतात.
-                        </p>
-
-                        <p style="margin-top:8px;">
-                            इंग्रजीमध्ये ३ मुख्य काळ असून प्रत्येकाचे ४ उपप्रकार
-                            आहेत. त्यामुळे एकूण <strong>१२ Tenses</strong> होतात.
-                        </p>
-
-                    </div>
-
-
-                    <h3 style="color:#087b67;margin-bottom:10px;">
-                        🧩 काळाचे १२ उपप्रकार
-                    </h3>
-
-
-                    <div class="tense-grid">
-
-                        <!-- PRESENT -->
-
-                        <div class="tense-column">
-
-                            <div class="tense-title">
-                                A. Present Tense
-                                <br>
-                                (वर्तमानकाळ)
-                            </div>
-
-                            <div class="tense-item">
-                                <strong>1. Simple Present</strong>
-                                <span class="formula">(S + V1/s/es + O)</span>
-                            </div>
-
-                            <div class="tense-item">
-                                <strong>2. Present Continuous</strong>
-                                <span class="formula">(S + am/is/are + V-ing)</span>
-                            </div>
-
-                            <div class="tense-item">
-                                <strong>3. Present Perfect</strong>
-                                <span class="formula">(S + have/has + V3)</span>
-                            </div>
-
-                            <div class="tense-item">
-                                <strong>4. Present Perfect Continuous</strong>
-                                <span class="formula">(S + have/has been + V-ing)</span>
-                            </div>
-
-                        </div>
-
-
-                        <!-- PAST -->
-
-                        <div class="tense-column">
-
-                            <div class="tense-title">
-                                B. Past Tense
-                                <br>
-                                (भूतकाळ)
-                            </div>
-
-                            <div class="tense-item">
-                                <strong>1. Simple Past</strong>
-                                <span class="formula">(S + V2 + O)</span>
-                            </div>
-
-                            <div class="tense-item">
-                                <strong>2. Past Continuous</strong>
-                                <span class="formula">(S + was/were + V-ing)</span>
-                            </div>
-
-                            <div class="tense-item">
-                                <strong>3. Past Perfect</strong>
-                                <span class="formula">(S + had + V3)</span>
-                            </div>
-
-                            <div class="tense-item">
-                                <strong>4. Past Perfect Continuous</strong>
-                                <span class="formula">(S + had been + V-ing)</span>
-                            </div>
-
-                        </div>
-
-
-                        <!-- FUTURE -->
-
-                        <div class="tense-column">
-
-                            <div class="tense-title">
-                                C. Future Tense
-                                <br>
-                                (भविष्यकाळ)
-                            </div>
-
-                            <div class="tense-item">
-                                <strong>1. Simple Future</strong>
-                                <span class="formula">(S + will/shall + V1)</span>
-                            </div>
-
-                            <div class="tense-item">
-                                <strong>2. Future Continuous</strong>
-                                <span class="formula">(S + will be + V-ing)</span>
-                            </div>
-
-                            <div class="tense-item">
-                                <strong>3. Future Perfect</strong>
-                                <span class="formula">(S + will have + V3)</span>
-                            </div>
-
-                            <div class="tense-item">
-                                <strong>4. Future Perfect Continuous</strong>
-                                <span class="formula">(S + will have been + V-ing)</span>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="points">
-
-                        <h3>🎯 महत्त्वाचे मुद्दे</h3>
-
-                        <ul>
-                            <li>काळ बदलल्याने वाक्याचा अर्थ बदलू शकतो.</li>
-                            <li>वाक्याच्या संदर्भानुसार योग्य काळ निवडा.</li>
-                            <li>प्रश्न, नकारार्थी आणि आज्ञार्थी वाक्यांमध्ये काळाचा वापर महत्त्वाचा आहे.</li>
-                            <li>Subject नुसार Helping Verb योग्य वापरणे आवश्यक आहे.</li>
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- QUIZ -->
-
-            <div class="card quiz">
-
-                <div class="quiz-header">
-
-                    <strong>🏆 चाचणी (प्रत्येकी ५ प्रश्न)</strong>
-
-                    <div class="progress-area">
-
-                        <div class="progress">
-                            <span id="progressBar"></span>
-                        </div>
-
-                        <span id="progressText">
-                            1 / 5
-                        </span>
-
-                        <strong>
-                            Score: <span id="score">0</span>
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-                <div class="question">
-
-                    <span style="color:#075dcc;">
-                        Q1
-                    </span>
-
-                    &nbsp;
-
-                    She _______ to school every day.
-
-                    <button
-                        class="audio en"
-                        onclick="speak('She goes to school every day.', 'en-US')">
-                        🔊 EN
-                    </button>
-
-                </div>
-
-
-                <div class="options">
-
-                    <button class="option" onclick="answer(this,'go')">
-                        <strong>A</strong> &nbsp; go
-                    </button>
-
-                    <button class="option" onclick="answer(this,'goes')">
-                        <strong>B</strong> &nbsp; goes
-                    </button>
-
-                    <button class="option" onclick="answer(this,'going')">
-                        <strong>C</strong> &nbsp; going
-                    </button>
-
-                    <button class="option" onclick="answer(this,'gone')">
-                        <strong>D</strong> &nbsp; gone
-                    </button>
-
-                </div>
-
-
-                <div class="feedback" id="feedback">
-
-                    ✅ बरोबर उत्तर!
-
-                    <br>
-
-                    Simple Present Tense मध्ये
-                    <strong>She</strong> सोबत <strong>goes</strong> वापरले जाते.
-
-                    <br>
-
-                    <button
-                        class="audio mr"
-                        onclick="speak('Simple Present Tense मध्ये She सोबत goes वापरले जाते.', 'mr-IN')">
-                        🔊 मराठी ऐका
-                    </button>
-
-                </div>
-
-
-                <button class="next-btn" onclick="nextQuestion()">
-                    पुढचा प्रश्न →
-                </button>
-
-                <div style="clear:both;"></div>
-
-            </div>
-
-        </section>
-
-
-        <!-- EXAMPLES -->
-
-        <aside>
-
-            <div class="card">
-
-                <div class="card-header">
-                    ⭐ महत्त्वाची उदाहरणे
-                </div>
-
-                <div class="card-body" id="examples">
-
-                    <div class="example">
-
-                        <strong>
-                            1. The sun rises in the east.
-                        </strong>
-
-                        <div class="marathi">
-                            सूर्य पूर्वेला उगवतो.
-                        </div>
-
-                        <div class="example-tools">
-
-                            <span class="tag">
-                                Simple Present
-                            </span>
-
-                            <div class="audio-buttons">
-
-                                <button
-                                    class="audio en"
-                                    onclick="speak('The sun rises in the east.','en-US')">
-                                    🔊 EN
-                                </button>
-
-                                <button
-                                    class="audio mr"
-                                    onclick="speak('सूर्य पूर्वेला उगवतो.','mr-IN')">
-                                    🔊 MR
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="example">
-
-                        <strong>
-                            2. She is writing an email right now.
-                        </strong>
-
-                        <div class="marathi">
-                            ती सध्या ईमेल लिहित आहे.
-                        </div>
-
-                        <div class="example-tools">
-
-                            <span class="tag">
-                                Present Continuous
-                            </span>
-
-                            <div class="audio-buttons">
-
-                                <button
-                                    class="audio en"
-                                    onclick="speak('She is writing an email right now.','en-US')">
-                                    🔊 EN
-                                </button>
-
-                                <button
-                                    class="audio mr"
-                                    onclick="speak('ती सध्या ईमेल लिहित आहे.','mr-IN')">
-                                    🔊 MR
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="example">
-
-                        <strong>
-                            3. He bought a new bicycle yesterday.
-                        </strong>
-
-                        <div class="marathi">
-                            त्याने काल नवीन सायकल विकत घेतली.
-                        </div>
-
-                        <div class="example-tools">
-
-                            <span class="tag">
-                                Simple Past
-                            </span>
-
-                            <div class="audio-buttons">
-
-                                <button
-                                    class="audio en"
-                                    onclick="speak('He bought a new bicycle yesterday.','en-US')">
-                                    🔊 EN
-                                </button>
-
-                                <button
-                                    class="audio mr"
-                                    onclick="speak('त्याने काल नवीन सायकल विकत घेतली.','mr-IN')">
-                                    🔊 MR
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="example">
-
-                        <strong>
-                            4. They were playing in the ground.
-                        </strong>
-
-                        <div class="marathi">
-                            ते मैदानावर खेळत होते.
-                        </div>
-
-                        <div class="example-tools">
-
-                            <span class="tag">
-                                Past Continuous
-                            </span>
-
-                            <div class="audio-buttons">
-
-                                <button
-                                    class="audio en"
-                                    onclick="speak('They were playing in the ground.','en-US')">
-                                    🔊 EN
-                                </button>
-
-                                <button
-                                    class="audio mr"
-                                    onclick="speak('ते मैदानावर खेळत होते.','mr-IN')">
-                                    🔊 MR
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="example">
-
-                        <strong>
-                            5. We will travel to Delhi next week.
-                        </strong>
-
-                        <div class="marathi">
-                            आम्ही पुढच्या आठवड्यात दिल्लीला जाऊ.
-                        </div>
-
-                        <div class="example-tools">
-
-                            <span class="tag">
-                                Simple Future
-                            </span>
-
-                            <div class="audio-buttons">
-
-                                <button
-                                    class="audio en"
-                                    onclick="speak('We will travel to Delhi next week.','en-US')">
-                                    🔊 EN
-                                </button>
-
-                                <button
-                                    class="audio mr"
-                                    onclick="speak('आम्ही पुढच्या आठवड्यात दिल्लीला जाऊ.','mr-IN')">
-                                    🔊 MR
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </aside>
-
-    </div>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <strong>
-            📖 Smart English Guru | Complete 40 Topics
-        </strong>
-
-        <span>
-            “शिकत रहा... प्रगती करत रहा...”
-        </span>
-
-    </footer>
-
-</main>
-
-</div>
-
-
-<script>
-
-/* =====================================================
-   40 TOPICS
-===================================================== */
-
-const grammarTopics = [
-
-"The Sentence (वाक्य)",
-"Subject and Predicate (उद्देश्य आणि विधेय)",
-"Parts of Speech (शब्दांच्या जाती)",
-"Nouns : Singular and Plural (i)",
-"Nouns : Singular and Plural (ii)",
-"Kinds of Nouns (नामाचे प्रकार)",
-"Gender (लिंग)",
-"Cases (विभक्ती)",
-"Pronouns (सर्वनामे)",
-"Adjectives (विशेषण)",
-"Verbs (क्रियापदे)",
-"Mood (क्रियापदाचा भाव)",
-"Tenses (काळ व त्याचे प्रकार)",
-"Auxiliary Verbs (सहाय्यकारी क्रियापदे)",
-"Present, Past and Past Participles",
-"Verbs : Infinitives, Participles, Gerunds",
-"Negative Sentences (नकारार्थी वाक्ये)",
-"Articles (a, an, the चा वापर)",
-"Adverbs (क्रियाविशेषणे)",
-"Prepositions (शब्दयोगी अव्यये)",
-"Conjunctions (उभयान्वयी अव्यये)",
-"Interjections (केवलप्रयोगी अव्यये)",
-"The Phrase and The Clause",
-"Clauses (उपवाक्ये)",
-"Kinds of Sentences",
-"Analysis of Simple Sentences",
-"Analysis of Complex & Compound",
-"Transformation of Sentences",
-"Synthesis of Sentences",
-"Use of Capital Letters",
-"Punctuation Guidelines",
-"Noun-Adjective-Adverb Forms",
-"Direct-Indirect Speech",
-"Figures of Speech"
-
-];
-
-const compositionTopics = [
-
-"Essay-Writing",
-"Story-Writing",
-"Letter-Writing",
-"Comprehension",
-"Precis-Writing",
-"Translation"
-
-];
-
-
-/* =====================================================
-   LOAD TOPICS
-===================================================== */
-
-const grammarContainer =
-document.getElementById("grammarTopics");
-
-grammarTopics.forEach((topic,index)=>{
-
-    const button = document.createElement("button");
-
-    button.className = "topic";
-
-    if(index === 12){
-        button.classList.add("active");
+  </div>
+
+  <script>
+    // Sidebar Drawer Toggle
+    function toggleSidebar() {
+      const sb = document.getElementById("sidebar");
+      const ov = document.getElementById("overlay");
+      sb.classList.toggle("open");
+      ov.classList.toggle("active");
     }
 
-    button.innerHTML =
-        `<strong>${index+1}.</strong> ${topic}`;
+    // Audio TTS Function
+    function playAudio(text, lang) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = lang === 'en' ? 'en-US' : 'mr-IN';
+        u.rate = lang === 'en' ? 0.85 : 0.95;
+        window.speechSynthesis.speak(u);
+      }
+    }
 
-    button.onclick = ()=>{
-
-        document
-        .querySelectorAll(".topic")
-        .forEach(t=>t.classList.remove("active"));
-
-        button.classList.add("active");
-
-        loadTopic(index+1,topic);
-
+    // Complete 40 Topics Data
+    const topics = {
+      "1": {
+        title: "1. The Sentence (वाक्य)",
+        badge: "Grammar Topic 1",
+        def: "<b>वाक्य (Sentence) म्हणजे काय?</b><br>शब्दांचा असा समूह ज्यामधून पूर्ण आणि अर्थपूर्ण विचार व्यक्त होतो, त्याला Sentence म्हणतात[span_6](start_span)[span_6](end_span)। वाक्याची सुरुवात नेहमी Capital Letter ने होते व शेवटी योग्य विरामचिन्ह येते[span_7](start_span)[span_7](end_span)।",
+        subtypes: [
+          { name: "१. Assertive / Declarative", desc: "साधे विधान किंवा माहिती देणारे वाक्य. उदा. <i>The earth moves round the sun.</i>[span_8](start_span)[span_8](end_span)" },
+          { name: "२. Interrogative (प्रश्नार्थी)", desc: "प्रश्न विचारणारे वाक्य. शेवटी '?' येतो. उदा. <i>Where do you live?</i>[span_9](start_span)[span_9](end_span)" },
+          { name: "३. Imperative (आज्ञार्थी/विनंती)", desc: "आज्ञा, विनंती किंवा सल्ला दर्शवणारे वाक्य. उदा. <i>Please help me.</i>[span_10](start_span)[span_10](end_span)" },
+          { name: "४. Exclamatory (उद्गारार्थी)", desc: "मनातील तीव्र भावना दर्शवणारे वाक्य. शेवटी '!' येतो. उदा. <i>What a lovely flower!</i>[span_11](start_span)[span_11](end_span)" }
+        ],
+        examples: [
+          { en: "Honesty is the best policy.", mr: "प्रामाणिकपणा हे सर्वोत्तम धोरण आहे." },
+          { en: "Where are you going right now?", mr: "तू सध्या कुठे जात आहेस?" },
+          { en: "Always speak the truth.", mr: "नेहमी खरे बोला." },
+          { en: "What a great victory it was!", mr: "किती मोठा विजय होता तो!" },
+          { en: "She completed her work on time.", mr: "तिने तिचे काम वेळेवर पूर्ण केले." }
+        ],
+        quiz: [
+          { q: "A group of words making complete sense is called a _______.", opts: ["Phrase", "Clause", "Sentence", "Letter"], ans: 2, exp: "पूर्ण अर्थ देणाऱ्या शब्दसमूहाला Sentence म्हणतात[span_12](start_span)[span_12](end_span)!" },
+          { q: "'Where are you staying?' is which type of sentence?", opts: ["Assertive", "Interrogative", "Imperative", "Exclamatory"], ans: 1, exp: "प्रश्न विचारणारे वाक्य Interrogative असते[span_13](start_span)[span_13](end_span)!" },
+          { q: "'Shut the window immediately.' is an example of _______.", opts: ["Imperative", "Declarative", "Optative", "Exclamatory"], ans: 0, exp: "आज्ञा दर्शवणारे वाक्य Imperative असते[span_14](start_span)[span_14](end_span)!" },
+          { q: "'How wonderful the weather is!' ends with which mark?", opts: [".", "?", "!", ","], ans: 2, exp: "Exclamatory वाक्यात उद्गारवाचक चिन्ह (!) येते[span_15](start_span)[span_15](end_span)!" },
+          { q: "A sentence always begins with a _______.", opts: ["Small letter", "Capital letter", "Punctuation", "Number"], ans: 1, exp: "वाक्याची सुरुवात नेहमी Capital Letter ने होते[span_16](start_span)[span_16](end_span)!" }
+        ]
+      },
+      "13": {
+        title: "13. Tenses (काळ आणि त्याचे सर्व १२ उपप्रकार)",
+        badge: "Grammar Topic 13",
+        def: "<b>काळ (Tense) कशाला म्हणतात?</b><br>क्रिया कोणत्या वेळी घडली, घडत आहे किंवा घडणार आहे हे दर्शवणाऱ्या क्रियापदाच्या रूपाला <b>काळ (Tense)</b> म्हणतात[span_17](start_span)[span_17](end_span)। इंग्रजीत ३ मुख्य काळ व प्रत्येकाचे ४ उपप्रकार मिळून <b>एकूण १२ उपप्रकार</b> होतात[span_18](start_span)[span_18](end_span)।",
+        subtypes: [
+          { name: "A. Present Tense (वर्तमानकाळ)", desc: "<b>Simple Present:</b> S + V1(s/es) + O<br><b>Present Continuous:</b> S + am/is/are + V-ing + O<br><b>Present Perfect:</b> S + have/has + V3 + O<br><b>Present Perf. Cont.:</b> S + have/has been + V-ing + O" },
+          { name: "B. Past Tense (भूतकाळ)", desc: "<b>Simple Past:</b> S + V2 + O<br><b>Past Continuous:</b> S + was/were + V-ing + O<br><b>Past Perfect:</b> S + had + V3 + O<br><b>Past Perf. Cont.:</b> S + had been + V-ing + O" },
+          { name: "C. Future Tense (भविष्यकाळ)", desc: "<b>Simple Future:</b> S + will/shall + V1 + O<br><b>Future Continuous:</b> S + will be + V-ing + O<br><b>Future Perfect:</b> S + will have + V3 + O<br><b>Future Perf. Cont.:</b> S + will have been + V-ing + O" }
+        ],
+        examples: [
+          { en: "The sun rises in the east.", mr: "सूर्य पूर्वेला उगवतो. (Simple Present)" },
+          { en: "She is writing an email right now.", mr: "ती सध्या ईमेल लिहीत आहे. (Present Continuous)" },
+          { en: "He bought a new bicycle yesterday.", mr: "त्याने काल नवीन सायकल विकत घेतली. (Simple Past)" },
+          { en: "They were playing in the ground.", mr: "ते मैदानावर खेळत होते. (Past Continuous)" },
+          { en: "We will travel to Delhi next week.", mr: "आम्ही पुढच्या आठवड्यात दिल्लीला जाऊ. (Simple Future)" }
+        ],
+        quiz: [
+          { q: "She _______ to school every day.", opts: ["go", "goes", "going", "gone"], ans: 1, exp: "Simple Present Tense मध्ये She सोबत 'goes' येते[span_19](start_span)[span_19](end_span)!" },
+          { q: "I _______ a movie yesterday.", opts: ["see", "saw", "seen", "seeing"], ans: 1, exp: "'Yesterday' मुळे Simple Past Tense (saw) येईल[span_20](start_span)[span_20](end_span)!" },
+          { q: "They _______ playing cricket right now.", opts: ["is", "am", "are", "was"], ans: 2, exp: "चालू वर्तमानकाळात They सोबत 'are' येते." },
+          { q: "The train had _______ before I reached the station.", opts: ["leave", "left", "leaving", "leaves"], ans: 1, exp: "Past Perfect मध्ये had नंतर V3 (left) येते[span_21](start_span)[span_21](end_span)!" },
+          { q: "We _______ help you tomorrow.", opts: ["will", "did", "were", "are"], ans: 0, exp: "'Tomorrow' भविष्यकाळ दर्शवतो, म्हणून 'will' येईल[span_22](start_span)[span_22](end_span)!" }
+        ]
+      },
+      "18": {
+        title: "18. Articles (a, an, the चा वापर)",
+        badge: "Grammar Topic 18",
+        def: "<b>उपपदे (Articles):</b><br>इंग्रजीत A, An आणि The ही तीन उपपदे आहेत[span_23](start_span)[span_23](end_span)। व्यंजनाच्या उच्चारापूर्वी 'A', स्वराच्या (a, e, i, o, u) उच्चारापूर्वी 'An', आणि जगात एकमेव किंवा निश्चित घटकांसाठी 'The' वापरतात[span_24](start_span)[span_24](end_span)।",
+        subtypes: [
+          { name: "१. A (Indefinite Article)", desc: "व्यंजन ध्वनीने सुरू होणाऱ्या एकवचनी नामापूर्वी. उदा. A boy, A book, A university[span_25](start_span)[span_25](end_span)।" },
+          { name: "२. An (Indefinite Article)", desc: "स्वर ध्वनीने (a, e, i, o, u) सुरू होणाऱ्या नामापूर्वी. उदा. An apple, An honest man, An hour[span_26](start_span)[span_26](end_span)।" },
+          { name: "३. The (Definite Article)", desc: "निश्चित, पवित्र ग्रंथ, नद्या, पर्वत व Superlative Degree पूर्वी. उदा. The Sun, The Ganga, The best boy[span_27](start_span)[span_27](end_span)।" }
+        ],
+        examples: [
+          { en: "This is a notebook.", mr: "ही एक वही आहे[span_28](start_span)[span_28](end_span)." },
+          { en: "He is an honest officer.", mr: "तो एक प्रामाणिक अधिकारी आहे[span_29](start_span)[span_29](end_span)." },
+          { en: "The sun rises in the east.", mr: "सूर्य पूर्वेला उगवतो[span_30](start_span)[span_30](end_span)." },
+          { en: "Wait for an hour.", mr: "एक तास वाट पहा[span_31](start_span)[span_31](end_span)." },
+          { en: "She read the Bhagavad Gita.", mr: "तिने भगवद्गीता वाचली[span_32](start_span)[span_32](end_span)." }
+        ],
+        quiz: [
+          { q: "He is _______ European citizen.", opts: ["a", "an", "the", "none"], ans: 0, exp: "European चा उच्चार 'य' (व्यंजन ध्वनी) असल्याने 'a' येईल[span_33](start_span)[span_33](end_span)!" },
+          { q: "She is eating _______ apple.", opts: ["a", "an", "the", "none"], ans: 1, exp: "Apple स्वर ध्वनीने सुरू होत असल्याने 'an' येईल[span_34](start_span)[span_34](end_span)!" },
+          { q: "_______ Himalayas are very high.", opts: ["A", "An", "The", "No article"], ans: 2, exp: "पर्वतरांगांच्या नावापूर्वी 'The' येते[span_35](start_span)[span_35](end_span)!" },
+          { q: "He returned after _______ hour.", opts: ["a", "an", "the", "none"], ans: 1, exp: "Hour चा उच्चार स्वर असल्याने 'an' येईल[span_36](start_span)[span_36](end_span)!" },
+          { q: "Honesty is _______ best policy.", opts: ["a", "an", "the", "none"], ans: 2, exp: "Superlative degree (best) पूर्वी 'the' वापरतात[span_37](start_span)[span_37](end_span)!" }
+        ]
+      },
+      "35": {
+        title: "35. Essay-Writing (५ पूर्ण निबंध)",
+        badge: "Composition 35",
+        def: "<b>निबंध लेखन (Essay Writing):</b><br>आपले विचार सलग, तर्कशुद्ध व प्रभावी भाषेत मांडणे[span_38](start_span)[span_38](end_span)। निबंधात प्रस्तावना (Introduction), मुख्य मजकूर (Body) आणि निष्कर्ष (Conclusion) असावा[span_39](start_span)[span_39](end_span)।",
+        subtypes: [
+          { name: "१. My Favorite Teacher", desc: "Mr. Sharma is my favorite teacher. He teaches English with great clarity and passion. He is kind, disciplined, and inspires students to study sincerely." },
+          { name: "२. Importance of Trees", desc: "Trees are our best friends. They give us clean oxygen, fruits, shade, and rain. We must protect trees to save our planet Earth." },
+          { name: "३. Clean India, Healthy India", desc: "Cleanliness is next to godliness. Clean surroundings prevent illnesses and create a healthy environment. Everyone must contribute to hygiene." }
+        ],
+        examples: [
+          { en: "An essay requires an Introduction, Body, and Conclusion.", mr: "निबंधात प्रस्तावना, मुख्य मजकूर आणि निष्कर्ष असावा[span_40](start_span)[span_40](end_span)." },
+          { en: "Keep sentences clear and grammatically correct.", mr: "वाक्यरचना स्पष्ट व शुद्ध ठेवावी[span_41](start_span)[span_41](end_span)." },
+          { en: "Use appropriate quotations in your essay.", mr: "सुविचारांचा योग्य वापर करावा[span_42](start_span)[span_42](end_span)." },
+          { en: "Organize ideas logically in paragraphs.", mr: "विचारांची मांडणी सुसंगत परिच्छेदात करावी[span_43](start_span)[span_43](end_span)." },
+          { en: "Proofread the essay before submission.", mr: "निबंधाची शुद्धता पुन्हा एकदा तपासावी[span_44](start_span)[span_44](end_span)." }
+        ],
+        quiz: [
+          { q: "The opening paragraph of an essay is called _______.", opts: ["Body", "Conclusion", "Introduction", "Summary"], ans: 2, exp: "सुरुवातीस Introduction (प्रस्तावना) म्हणतात[span_45](start_span)[span_45](end_span)!" },
+          { q: "An essay should be divided into _______.", opts: ["One paragraph", "Logical paragraphs", "Headings only", "Points only"], ans: 1, exp: "निबंध सुसंगत परिच्छेदांमध्ये विभागलेला असावा[span_46](start_span)[span_46](end_span)!" },
+          { q: "The final concluding part of an essay is the _______.", opts: ["Introduction", "Title", "Conclusion", "Index"], ans: 2, exp: "समारोपाच्या भागाला Conclusion म्हणतात[span_47](start_span)[span_47](end_span)!" },
+          { q: "Cleanliness is next to _______.", opts: ["Wealth", "Godliness", "Power", "Fame"], ans: 1, exp: "'Cleanliness is next to godliness' ही प्रसिद्ध म्हण आहे[span_48](start_span)[span_48](end_span)!" },
+          { q: "Which tense is predominantly used in factual essays?", opts: ["Past Tense", "Present Tense", "Future Continuous", "Past Perfect"], ans: 1, exp: "वस्तुस्थिती मांडण्यासाठी Present Tense वापरतात[span_49](start_span)[span_49](end_span)!" }
+        ]
+      }
     };
 
-    grammarContainer.appendChild(button);
-
-});
-
-
-const compositionContainer =
-document.getElementById("compositionTopics");
-
-compositionTopics.forEach((topic,index)=>{
-
-    const number = index + 35;
-
-    const button = document.createElement("button");
-
-    button.className = "topic";
-
-    button.innerHTML =
-        `<strong>${number}.</strong> ${topic}`;
-
-    button.onclick = ()=>{
-
-        document
-        .querySelectorAll(".topic")
-        .forEach(t=>t.classList.remove("active"));
-
-        button.classList.add("active");
-
-        loadTopic(number,topic);
-
+    // Populate Sidebar Menus
+    const titlesList = {
+      "1": "1. The Sentence (वाक्य)", "2": "2. Subject and Predicate", "3": "3. Parts of Speech",
+      "4": "4. Nouns : Singular/Plural (i)", "5": "5. Nouns : Singular/Plural (ii)", "6": "6. Kinds of Nouns",
+      "7": "7. Gender (लिंग)", "8": "8. Cases (विभक्ती)", "9": "9. Pronouns (सर्वनामे)",
+      "10": "10. Adjectives (विशेषणे)", "11": "11. Verbs (क्रियापदे)", "12": "12. Mood",
+      "13": "13. Tenses (काळ)", "14": "14. Auxiliary Verbs", "15": "15. Verb Forms (V1, V2, V3)",
+      "16": "16. Infinitives, Gerunds", "17": "17. Negative Sentences", "18": "18. Articles (a, an, the)",
+      "19": "19. Adverbs", "20": "20. Prepositions", "21": "21. Conjunctions",
+      "22": "22. Interjections", "23": "23. Phrase & Clause", "24": "24. Clauses",
+      "25": "25. Simple, Compound, Complex", "26": "26. Simple Sentences Analysis",
+      "27": "27. Complex Sentence Analysis", "28": "28. Transformation", "29": "29. Synthesis",
+      "30": "30. Capital Letters", "31": "31. Punctuation", "32": "32. Word Forms",
+      "33": "33. Direct-Indirect Speech", "34": "34. Figures of Speech",
+      "35": "35. Essay-Writing", "36": "36. Story-Writing", "37": "37. Letter-Writing",
+      "38": "38. Comprehension", "39": "39. Precis-Writing", "40": "40. Translation"
     };
 
-    compositionContainer.appendChild(button);
+    let activeTopicId = "1";
+    let currentQuestions = [];
+    let currIdx = 0;
+    let score = 0;
 
-});
+    function buildSidebar() {
+      const gBox = document.getElementById("grammarMenu");
+      const cBox = document.getElementById("compMenu");
+      gBox.innerHTML = ""; cBox.innerHTML = "";
 
-
-/* =====================================================
-   TOPIC LOADING
-===================================================== */
-
-function loadTopic(number,title){
-
-    document.getElementById("topicNumber").textContent =
-        number;
-
-    document.getElementById("topicTitle").textContent =
-        title;
-
-    if(number !== 13){
-
-        document.getElementById("topicIntro").textContent =
-        "हा घटक Smart English Guru मधील महत्त्वाचा अभ्यासविषय आहे. या विभागात विषयाची मूलभूत माहिती, नियम, उदाहरणे आणि सराव प्रश्न दिले जातील.";
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-
-        return;
+      for (let i = 1; i <= 34; i++) {
+        const key = i.toString();
+        const d = document.createElement("div");
+        d.className = `sidebar-item ${key === activeTopicId ? 'active' : ''}`;
+        d.innerText = titlesList[key];
+        d.onclick = () => selectTopic(key);
+        gBox.appendChild(d);
+      }
+      for (let i = 35; i <= 40; i++) {
+        const key = i.toString();
+        const d = document.createElement("div");
+        d.className = `sidebar-item ${key === activeTopicId ? 'active' : ''}`;
+        d.innerText = titlesList[key];
+        d.onclick = () => selectTopic(key);
+        cBox.appendChild(d);
+      }
     }
 
-    document.getElementById("topicIntro").textContent =
-        "क्रिया कोणत्या वेळी घडली, घडत आहे किंवा घडणार आहे हे दर्शविणाऱ्या क्रियापदाच्या स्वरूपाला काळ म्हणजे Tense.";
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-}
-
-
-/* =====================================================
-   VOICE
-===================================================== */
-
-function speak(text,language){
-
-    if(!("speechSynthesis" in window)){
-
-        alert("तुमच्या browser मध्ये आवाजाची सुविधा उपलब्ध नाही.");
-
-        return;
+    function selectTopic(id) {
+      activeTopicId = id;
+      buildSidebar();
+      toggleSidebar(); // Close sidebar automatically on mobile
+      renderTopic();
     }
 
-    speechSynthesis.cancel();
+    function renderTopic() {
+      const item = topics[activeTopicId] || topics["1"];
+      document.getElementById("heroTopic").innerText = item.title;
+      document.getElementById("topicBadge").innerText = item.badge;
+      document.getElementById("lessonTitle").innerText = item.title;
+      document.getElementById("lessonDef").innerHTML = item.def;
 
-    const speech =
-        new SpeechSynthesisUtterance(text);
+      const subBox = document.getElementById("subtypesContainer");
+      if (item.subtypes && item.subtypes.length > 0) {
+        subBox.innerHTML = item.subtypes.map(s => `
+          <div class="subtype-card">
+            <div class="subtype-name">${s.name}</div>
+            <div class="subtype-desc">${s.desc}</div>
+          </div>
+        `).join("");
+      } else {
+        subBox.innerHTML = "";
+      }
 
-    speech.lang = language;
-    speech.rate = 0.9;
-    speech.pitch = 1;
+      document.getElementById("lessonExamples").innerHTML = item.examples.map(e => `
+        <div class="example-row">
+          <div class="example-text">
+            <b onclick="playAudio('${e.en.replace(/'/g, "\\'")}', 'en')">${e.en}</b>
+            <span onclick="playAudio('${e.mr.replace(/'/g, "\\'")}', 'mr')">${e.mr}</span>
+          </div>
+          <div class="btn-group">
+            <button class="voice-btn" onclick="playAudio('${e.en.replace(/'/g, "\\'")}', 'en')">🔊 EN</button>
+            <button class="voice-btn" onclick="playAudio('${e.mr.replace(/'/g, "\\'")}', 'mr')">🔊 MR</button>
+          </div>
+        </div>
+      `).join("");
 
-    speechSynthesis.speak(speech);
-
-}
-
-
-/* =====================================================
-   QUIZ
-===================================================== */
-
-let answered = false;
-let score = 0;
-
-function answer(button,value){
-
-    if(answered) return;
-
-    answered = true;
-
-    const all =
-        document.querySelectorAll(".option");
-
-    all.forEach(item=>{
-        item.disabled = true;
-    });
-
-    if(value === "goes"){
-
-        button.classList.add("selected");
-
-        score = 1;
-
-        document.getElementById("score").textContent =
-            score;
-
-        document.getElementById("feedback").style.display =
-            "block";
-
-    }else{
-
-        button.classList.add("wrong");
-
-        document.getElementById("feedback").style.display =
-            "block";
-
-        document.getElementById("feedback").innerHTML =
-        "❌ हे उत्तर चुकीचे आहे.<br>" +
-        "योग्य उत्तर: <strong>goes</strong><br>" +
-        "She सोबत Simple Present मध्ये verb ला s/es जोडले जाते.";
+      currentQuestions = item.quiz || [];
+      currIdx = 0;
+      score = 0;
+      loadQuestion();
     }
 
-}
+    function loadQuestion() {
+      if (!currentQuestions || currentQuestions.length === 0) return;
+      const q = currentQuestions[currIdx];
+      document.getElementById("qcount").innerText = `Question ${currIdx + 1} of ${currentQuestions.length}`;
+      document.getElementById("score").innerText = `Score: ${score}`;
+      document.getElementById("qtext").innerText = q.q;
+      document.getElementById("pbar").style.width = `${((currIdx + 1) / currentQuestions.length) * 100}%`;
 
+      const optbox = document.getElementById("optbox");
+      optbox.innerHTML = "";
+      const fb = document.getElementById("feedback");
+      fb.className = "feedback-box hidden";
+      document.getElementById("nextbtn").innerText = "पुढचा प्रश्न ➜";
+      document.getElementById("nextbtn").onclick = nextQuestion;
 
-/* =====================================================
-   NEXT QUESTION
-===================================================== */
+      q.opts.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "opt-btn";
+        btn.innerText = opt;
+        btn.onclick = () => selectAnswer(btn, idx);
+        optbox.appendChild(btn);
+      });
+    }
 
-function nextQuestion(){
+    function selectAnswer(btn, idx) {
+      const q = currentQuestions[currIdx];
+      const allBtns = document.querySelectorAll(".opt-btn");
+      allBtns.forEach(b => b.onclick = null);
 
-    alert(
-        "पुढील प्रश्नांची मालिका तयार आहे. " +
-        "तुम्ही या Quiz मध्ये आणखी प्रश्न जोडू शकता."
-    );
+      const fb = document.getElementById("feedback");
+      fb.classList.remove("hidden");
 
-}
+      if (idx === q.ans) {
+        btn.classList.add("correct");
+        fb.className = "feedback-box good";
+        fb.innerText = "बरोबर उत्तर! 🎉 " + q.exp;
+        score += 10;
+        playAudio("Correct answer!", "en");
+      } else {
+        btn.classList.add("wrong");
+        fb.className = "feedback-box bad";
+        fb.innerText = "चुकीचे उत्तर! ❌ " + q.exp;
+        allBtns[q.ans].classList.add("correct");
+        playAudio("Wrong answer!", "en");
+      }
+      document.getElementById("score").innerText = `Score: ${score}`;
+    }
 
+    function nextQuestion() {
+      if (currIdx < currentQuestions.length - 1) {
+        currIdx++;
+        loadQuestion();
+      } else {
+        document.getElementById("qtext").innerText = `क्विझ पूर्ण झाली! एकूण स्कोअर: ${score} / ${currentQuestions.length * 10}`;
+        document.getElementById("optbox").innerHTML = "";
+        document.getElementById("feedback").className = "feedback-box good";
+        document.getElementById("feedback").innerText = "अभिनंदन! तुम्ही पुढील घटक निवडून सराव करू शकता.";
+        document.getElementById("nextbtn").innerText = "पुन्हा सोडवा (Restart Quiz)";
+        document.getElementById("nextbtn").onclick = () => {
+          currIdx = 0;
+          score = 0;
+          loadQuestion();
+        };
+      }
+    }
 
-/* =====================================================
-   SIDEBAR MOBILE
-===================================================== */
-
-function toggleSidebar(){
-
-    document
-    .getElementById("sidebar")
-    .classList.toggle("open");
-
-}
-
-</script>
-
+    window.onload = () => {
+      buildSidebar();
+      renderTopic();
+    };
+  </script>
 </body>
 </html>
