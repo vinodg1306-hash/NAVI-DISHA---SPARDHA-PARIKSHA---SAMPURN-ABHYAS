@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="नवी दिशा — स्पर्धा परीक्षा संपूर्ण अभ्यास. विज्ञान, भूगोल, इतिहास, नागरिकशास्त्र, समाजशास्त्र, गणित आणि इंग्रजी अभ्यासासाठी डिजिटल अॅप.">
+<meta name="theme-color" content="#183b72">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>नवी दिशा — स्पर्धा परीक्षा संपूर्ण अभ्यास</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+<button class="btn" onclick="drawer()">☰ अभ्यासक्रम</button>
+<div class="brand">
+<b>नवी दिशा — स्पर्धा परीक्षा संपूर्ण अभ्यास</b>
+<small>विज्ञान • भूगोल • इतिहास • नागरिकशास्त्र • समाजशास्त्र • गणित • इंग्रजी</small>
+</div>
+<button class="btn" onclick="font(-1)">A−</button>
+<button class="btn" onclick="font(1)">A+</button>
+<button class="btn" onclick="window.print()">PDF</button>
+</header>
+
+<div id="dr" class="drawer" onclick="drawer()">
+ <div class="panel" onclick="event.stopPropagation()">
+  <button class="close" onclick="drawer()">✕</button>
+  <h3>📚 अभ्यासक्रम</h3>
+  <div id="dnav"></div>
+ </div>
+</div>
+
+<section class="hero">
+ <h1>नवी दिशा — स्पर्धा परीक्षा संपूर्ण अभ्यास</h1>
+ <p>एकाच अॅपमध्ये विषयवार नोट्स • व्याख्या • उदाहरणे • मराठी अर्थ • MCQ सराव • PDF / Print</p>
+</section>
+
+<section class="subjects">
+ <div class="subjects-head">
+  <h2>📚 विषय निवडा</h2>
+  <span class="tag">सर्व विषय एकाच ठिकाणी</span>
+ </div>
+ <div id="subjectGrid" class="subject-grid"></div>
+ <div class="project-note"><b>अभ्यासाची दिशा:</b> इंग्रजीचे विद्यमान ४० घटक जतन केले आहेत. विज्ञान, भूगोल, इतिहास, नागरिकशास्त्र, समाजशास्त्र आणि गणित यांच्यासाठी स्वतंत्र विभागाची रचना जोडली आहे.</div>
+</section>
+
+<main class="wrap">
+<input id="search" class="search" placeholder="🔎 घटक शोधा — Tenses, Articles, Translation..." oninput="filter()">
+<div class="layout">
+<aside class="side"><h3>📖 इंग्रजी अभ्यासक्रम</h3><div id="nav"></div></aside>
+<section id="main"></section>
+</div>
+<div class="foot">नवी दिशा — स्पर्धा परीक्षा संपूर्ण अभ्यास • ज्ञान, सराव आणि प्रगती</div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

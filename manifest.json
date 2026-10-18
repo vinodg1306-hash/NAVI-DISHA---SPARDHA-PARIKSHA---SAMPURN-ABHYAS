@@ -1,0 +1,18 @@
+{
+  "name": "नवी दिशा — स्पर्धा परीक्षा संपूर्ण अभ्यास",
+  "short_name": "नवी दिशा अभ्यास",
+  "description": "विज्ञान, भूगोल, इतिहास, नागरिकशास्त्र, समाजशास्त्र, गणित आणि इंग्रजी अभ्यासासाठी डिजिटल अॅप.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#eef3f9",
+  "theme_color": "#183b72",
+  "lang": "mr",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
