@@ -1,1 +1,15 @@
-{"name":"Smart English Guru","short_name":"English Guru","start_url":".","display":"standalone","background_color":"#f4f7ff","theme_color":"#3157d5","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml"}]}
+{
+  "name": "नवी दिशा — संपूर्ण अभ्यास व स्पर्धा परीक्षा",
+  "short_name": "नवी दिशा",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d6efd",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
