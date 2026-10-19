@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>नवी दिशा - स्पर्धा परीक्षा संपूर्ण अभ्यास</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1a237e">
+<link rel="icon" href="icon.svg">
+<style>
+:root{--p:#1a237e;--a:#ff6f00;--bg:#f5f7ff}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Noto Sans Devanagari',system-ui}
+body{background:var(--bg);color:#222}
+header{background:linear-gradient(135deg,var(--p),#3949ab);color:#fff;padding:18px;position:sticky;top:0;z-index:10}
+.subjects{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;padding:12px}
+.sub-card{background:#fff;border-radius:16px;padding:16px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.06);cursor:pointer;border-left:4px solid var(--a);transition:.2s}
+.sub-card:hover{transform:translateY(-3px)}
+.chapter{background:#fff;border-radius:14px;padding:16px;margin:12px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.chapter h2{color:var(--p);display:flex;justify-content:space-between;align-items:center}
+.chapter h2 button{background:var(--a);color:#fff;border:none;padding:6px 10px;border-radius:20px;cursor:pointer}
+.eng-box{background:#fff3e0;border-left:4px solid var(--a);padding:10px;border-radius:8px;margin:8px 0}
+.toolbar{display:flex;gap:8px;margin:12px}
+.toolbar button,.toolbar input{padding:10px 14px;border-radius:10px;border:1px solid #ccc}
+.toolbar button{background:var(--p);color:#fff;border:none;cursor:pointer}
+.speak{cursor:pointer}
+ul{margin-left:18px;margin-top:6px}li{margin:5px 0;line-height:1.6}
+</style>
+</head>
+<body>
+<header><h1 style="text-align:center">🚀 नवी दिशा - स्पर्धा परीक्षा</h1><p style="text-align:center;font-size:.85rem">MPSC/UPSC/पोलीस भरती/तलाठी संपूर्ण</p></header>
+<div class="toolbar">
+<input id="searchBox" placeholder="शोधा... उदा. कलम 32, Tense" style="flex:1">
+<button onclick="speakAll()">🔊 सर्व वाचा</button>
+<button onclick="stopSpeak()" style="background:#fff;color:var(--p);border:1px solid var(--p)">⏹️ थांबवा</button>
+</div>
+<div class="subjects" id="subjectGrid"></div>
+<div id="mainContent"></div>
+<script>
+const subjects=[{id:'english',name:'इंग्रजी',icon:'🇬🇧'},{id:'geography',name:'भूगोल',icon:'🌍'},{id:'history',name:'इतिहास',icon:'🏛️'},{id:'constitution',name:'संविधान',icon:'⚖️'},{id:'science',name:'विज्ञान',icon:'🔬'},{id:'math',name:'गणित',icon:'➗'},{id:'reasoning',name:'बुद्धिमत्ता',icon:'🧠'},{id:'current',name:'चालू घडामोडी',icon:'📰'}];
+const data={
+english:[{title:'1. Tenses - भाषांतरासह',en:['Present: I go to school - मी शाळेत जातो','Past: I went - मी गेलो','Future: I will go - मी जाईन','Have: I have a book - माझ्याकडे पुस्तक आहे','Where are you going? - तू कुठे जात आहेस?'],mr:'रोज 5 वाक्ये मराठीतून इंग्रजीत करा.'},{title:'2. Vocabulary',en:['Abandon - सोडणे','Brave - शूर','Honest - प्रामाणिक','Diligent - मेहनती','Abundant - विपुल'],mr:'5000 शब्द MPSC ला विचारतात.'}],
+geography:[{title:'महाराष्ट्र भूगोल',points:['क्षेत्रफळ 3,07,713 चौ.किमी - 3रा क्रमांक','सह्याद्री 740 किमी लांब','5 नद्या: गोदावरी 1450 किमी, कृष्णा, तापी, नर्मदा, भीमा','4 विभाग: कोकण, पश्चिम महाराष्ट्र, मराठवाडा, विदर्भ','काळी माती - कापूस','धरण: कोयना, जायकवाडी, उजनी']},{title:'भारत भूगोल',points:['हिमालय 3 रांगा, किनारपट्टी 7516 किमी, मान्सून 80% पाऊस']}],
+history:[{title:'छत्रपती शिवाजी महाराज',points:['1630-1680, स्वराज्य स्थापना','1674 राज्याभिषेक, अष्टप्रधान मंडळ','पुरंदर, सिंहगड, रायगड किल्ले']},{title:'आधुनिक भारत',points:['1857 पहिला उठाव','1885 काँग्रेस, 1947 स्वातंत्र्य','1960 संयुक्त महाराष्ट्र - 1 मे महाराष्ट्र दिन']}],
+constitution:[{title:'संविधान मूलभूत',points:['26 Nov 1949 अंगीकृत, 26 Jan 1950 लागू','395 कलमे, 12 परिशिष्टे','घटनाकार डॉ. आंबेडकर','उद्देशिका: सार्वभौम, समाजवादी, धर्मनिरपेक्ष, लोकशाही, प्रजासत्ताक']},{title:'महत्वाची कलमे',points:['कलम 32 - घटनात्मक उपाय - SC','कलम 44 - समान नागरी संहिता','कलम 356 - राष्ट्रपती राजवट','कलम 51A - 11 कर्तव्ये']}],
+science:[{title:'विज्ञान',points:['न्यूटन 3 नियम, E=mc², V=IR','118 मूलद्रव्ये, pH 0-14, H2O, NaCl','पेशी - जीवनाचा घटक, 206 हाडे, DNA, प्रकाश संश्लेषण']}],
+math:[{title:'बेसिक गणित ट्रिक',points:['% = भाग/एकूण*100','नफा=विक्री-खरेदी, SI=P*R*T/100','वेग=अंतर/वेळ','त्रिकोण=1/2*पाया*उंची, वर्तुळ=πr²']}],
+reasoning:[{title:'बुद्धिमत्ता',points:['4 दिशा, रक्त संबंध: वडिलांचे वडील=आजोबा','मालिका: 2,4,6,8... , A,C,E...','घड्याळ 30 अंश/तास, लीप वर्ष 4 ने भाग']}],
+current:[{title:'चालू घडामोडी Oct 2026',points:['महाराष्ट्र: मुख्यमंत्री युवा कार्य प्रशिक्षण','ISRO चंद्रयान 4 तयारी','G20 डिजिटल इंडिया','दररोज सकाळी अपडेट']}]
+};
+let voice=true;
+function render(){const g=document.getElementById('subjectGrid');g.innerHTML='';subjects.forEach(s=>{const d=document.createElement('div');d.className='sub-card';d.innerHTML=`<span style="font-size:28px">${s.icon}</span><h3 style="color:var(--p)">${s.name}</h3>`;d.onclick=()=>openS(s.id);g.appendChild(d);});}
+function openS(id){document.getElementById('subjectGrid').classList.add('hidden');const sub=subjects.find(x=>x.id===id);let h=`<div class=chapter><h2>${sub.icon} ${sub.name} <button onclick="speakText('${sub.name}')">🔊</button></h2></div>`;(data[id]||[]).forEach((ch,i)=>{h+=`<div class=chapter><h2>${ch.title} <button onclick="speakChapter('${id}',${i})">🔊</button></h2>`;if(ch.en){ch.en.forEach(l=>{const p=l.split(' - ');h+=`<div class=eng-box><b>🇬🇧 ${p[0]}</b> <span class=speak onclick="speakText('${p[0].replace(/'/g,'')}')">🔊</span><div>🇮🇳 ${p[1]||''} <span class=speak onclick="speakText('${(p[1]||'').replace(/'/g,'')}')">🔊</span></div></div>`;});}else{h+=`<ul>`;ch.points.forEach(pt=>{h+=`<li>${pt} <span class=speak onclick="speakText('${pt.replace(/'/g,'')}')">🔊</span></li>`;});h+=`</ul>`;}h+=`</div>`;});h+=`<button onclick="showHome()" style="margin:12px;padding:12px 20px;background:var(--p);color:#fff;border:none;border-radius:10px;width:90%">⬅️ मागे</button>`;document.getElementById('mainContent').innerHTML=h;window.scrollTo(0,0);}
+function showHome(){document.getElementById('subjectGrid').classList.remove('hidden');document.getElementById('mainContent').innerHTML='';render();}
+function speakText(t){if(!voice)return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=/[a-zA-Z]/.test(t)?'en-IN':'mr-IN';u.rate=0.9;speechSynthesis.speak(u);}
+function speakChapter(id,i){const ch=data[id][i];let f=ch.title+'. '+(ch.en?ch.en.join('. '):ch.points.join('. '));speakText(f);}
+function speakAll(){speakText(document.getElementById('mainContent').innerText.slice(0,4000));}
+function stopSpeak(){speechSynthesis.cancel();}
+document.getElementById('searchBox').addEventListener('input',e=>{const q=e.target.value.toLowerCase();if(!q){showHome();return;}let h=`<div class=chapter><h2>🔍 ${q}</h2></div>`;Object.keys(data).forEach(k=>{data[k].forEach(ch=>{const txt=(ch.title+' '+(ch.points||ch.en||[]).join(' ')).toLowerCase();if(txt.includes(q))h+=`<div class=chapter><h2>${ch.title}</h2><button onclick="openS('${k}')">उघडा</button></div>`;});});document.getElementById('subjectGrid').classList.add('hidden');document.getElementById('mainContent').innerHTML=h;});
+render();
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}
+</script>
+</body>
+</html>
