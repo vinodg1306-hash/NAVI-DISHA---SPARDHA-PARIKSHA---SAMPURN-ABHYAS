@@ -1,0 +1,15 @@
+{
+  "name": "नवी दिशा - स्पर्धा परीक्षा",
+  "short_name": "नवी दिशा",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f5f7ff",
+  "theme_color": "#1a237e",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
