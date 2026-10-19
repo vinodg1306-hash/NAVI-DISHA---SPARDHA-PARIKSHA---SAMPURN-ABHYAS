@@ -92,12 +92,6 @@ h3{color:#bf360c;border-left:5px solid #ff6f00;padding-left:10px;margin:14px 0 8
 </div>
 </div>
 
-<div class="card" style="background:#1a237e;color:#fff;text-align:center">
-<b>📘 File 1 - Vertical Fix - आता एका Page वर उभं दिसेल!</b><br>
-हा Code टाकून Commit करा - लगेच उभं येईल - मग File 2 देतो!<br>
-सातारा - नवी दिशा - 2026
-</div>
-
 </div>
 <script>
 function check(btn){let card=btn.closest('.quiz');let qs=card.querySelectorAll('.q');let correct=0;qs.forEach(q=>{let ans=q.dataset.ans;let sel=null;q.querySelectorAll('input').forEach(r=>{if(r.checked) sel=r.value;});q.querySelectorAll('.opt').forEach(o=>{o.classList.remove('correct','wrong');let vv=o.querySelector('input').value;if(vv===sel){if(vv===ans){o.classList.add('correct');correct++;}else o.classList.add('wrong');}else if(vv===ans && sel!==null) o.classList.add('correct');});});card.querySelector('.score').innerHTML='गुण: '+correct+' / '+qs.length+' '+(correct===qs.length?'🎉 एकदम बरोबर!':'💪 पुन्हा प्रयत्न');}
