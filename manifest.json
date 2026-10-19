@@ -1,15 +1,16 @@
 {
-  "name": "नवी दिशा - स्पर्धा परीक्षा",
+  "name": "नवी दिशा - स्पर्धा परीक्षा - सातारा",
   "short_name": "नवी दिशा",
-  "start_url": ".",
+  "description": "MPSC UPSC पोलीस भरती - इंग्रजी 1-10 Pro - सातारा",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#f5f7ff",
+  "background_color": "#1a237e",
   "theme_color": "#1a237e",
   "icons": [
     {
-      "src": "icon.svg",
+      "src": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
       "sizes": "512x512",
-      "type": "image/svg+xml"
+      "type": "image/png"
     }
   ]
 }
