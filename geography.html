@@ -249,7 +249,6 @@ const lessonsContent = {
       }
     ]
   },
-  
   3: {
     title: "३. पृथ्वीच्या हालचाली (परिवलन व परिभ्रमण)",
     content: `
@@ -288,7 +287,6 @@ const lessonsContent = {
       }
     ]
   },
-
   4: {
     title: "४. अक्षांश व महत्त्वाचे अक्षवृत्ते",
     content: `
@@ -323,7 +321,6 @@ const lessonsContent = {
       }
     ]
   },
-
   5: {
     title: "५. रेखांश व वेळ प्रणाली",
     content: `
@@ -355,7 +352,6 @@ const lessonsContent = {
       }
     ]
   },
-
   6: {
     title: "६. प्रमाण वेळ, स्थानिक वेळ व आंतरराष्ट्रीय वाररेषा",
     content: `
@@ -387,7 +383,6 @@ const lessonsContent = {
       }
     ]
   },
-
   7: {
     title: "७. खडक व खडकांचे प्रकार (अग्निज, गाळाचे, रूपांतरित)",
     content: `
@@ -419,7 +414,6 @@ const lessonsContent = {
       }
     ]
   },
-
   8: {
     title: "८. खडकचक्र, अपक्षय व अपरदन",
     content: `
@@ -447,7 +441,6 @@ const lessonsContent = {
       }
     ]
   },
-
   9: {
     title: "९. अंतर्जन्य शक्ती व भूपृष्ठावरील हालचाली",
     content: `
@@ -478,7 +471,6 @@ const lessonsContent = {
       }
     ]
   },
-
   10: {
     title: "१०. ज्वालामुखी व ज्वालामुखीजन्य भूरूपे",
     content: `
@@ -507,7 +499,6 @@ const lessonsContent = {
       }
     ]
   },
-
   11: {
     title: "११. भूकंप, लहरी (P, S, L) व छाया प्रदेश",
     content: `
@@ -536,7 +527,6 @@ const lessonsContent = {
       }
     ]
   },
-
   12: {
     title: "१२. पर्वतांचे प्रकार (वली, ब्लॉक, अवशिष्ट)",
     content: `
@@ -557,7 +547,7 @@ const lessonsContent = {
         ans: 2,
         exp: "अरवली हा अपरदनाने झिजलेला भारतातील सर्वात प्राचीन अवशिष्ट पर्वत आहे."
       },
-            {
+      {
         q: "हिमालय पर्वताची निर्मिती खालीलपैकी कोणत्या प्रक्रियेतून झाली आहे?",
         options: ["ज्वालामुखी उद्रेक", "गाळाचे वलयीकरण (Fold Mountains)", "जमीन खचून", "उल्कापाताने"],
         ans: 1,
@@ -565,7 +555,6 @@ const lessonsContent = {
       }
     ]
   },
-    ,
   13: {
     title: "१३. पठारे व जगातील प्रमुख पठारी प्रदेश",
     content: `
@@ -620,7 +609,6 @@ const lessonsContent = {
       }
     ]
   },
-
   14: {
     title: "१४. मैदाने व गाळाची भूरूपे",
     content: `
@@ -672,7 +660,6 @@ const lessonsContent = {
       }
     ]
   },
-
   15: {
     title: "१५. नदीची उत्पत्ती व नदीप्रणालीचे स्वरूप",
     content: `
@@ -724,7 +711,6 @@ const lessonsContent = {
       }
     ]
   },
-
   16: {
     title: "१६. नदीचे कार्य (खनन, वहन, निक्षेपण भूरूपे)",
     content: `
@@ -776,7 +762,6 @@ const lessonsContent = {
       }
     ]
   },
-
   17: {
     title: "१७. भारतातील प्रमुख नदीप्रणाली (हिमालयीन व द्वीपकल्पीय)",
     content: `
@@ -826,7 +811,6 @@ const lessonsContent = {
       }
     ]
   },
-
   18: {
     title: "१८. महाराष्ट्रातील नदीप्रणाली (गोदावरी, भीमा, कृष्णा)",
     content: `
@@ -871,7 +855,6 @@ const lessonsContent = {
       }
     ]
   },
-
   19: {
     title: "१९. वातावरण व वातावरणातील थर",
     content: `
@@ -920,7 +903,6 @@ const lessonsContent = {
       }
     ]
   },
-
   20: {
     title: "२०. तापमान व तापमानावर परिणाम करणारे घटक",
     content: `
@@ -968,7 +950,6 @@ const lessonsContent = {
       }
     ]
   },
-
   21: {
     title: "२१. हवेचा दाब व जागतिक दाबपट्टे",
     content: `
@@ -1019,7 +1000,6 @@ const lessonsContent = {
       }
     ]
   },
-
   22: {
     title: "२२. वारे (व्यापारी, पश्चिमी, ध्रुवीय व स्थानिक)",
     content: `
@@ -1072,7 +1052,6 @@ const lessonsContent = {
       }
     ]
   }
-
 };
 
 let currentCat = 'all';
@@ -1097,7 +1076,6 @@ function filterCat(cat, elem) {
   const filtered = cat === 'all' ? syllabus : syllabus.filter(t => t.cat === cat);
   renderList(filtered);
 }
-
 
 function searchTopics() {
   const q = document.getElementById('search').value.toLowerCase();
