@@ -1,1170 +1,1864 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="mr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0d74bf">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#073763">
+
 <title>भूगोल — मूलभूत ते स्पर्धा परीक्षा स्तर | नवी दिशा</title>
+
 <style>
-:root{--nav:#073e73;--nav2:#0d74bf;--bg:#f4f8fc;--card:#fff;--text:#12283e;--muted:#576d82;--accent:#ffbe1a;--ok:#128c5a;--bad:#d63031;--line:#dce6f0;--shadow:0 8px 24px rgba(7,62,115,.09)}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Devanagari",Arial,sans-serif;line-height:1.65}
-.top{background:linear-gradient(135deg,var(--nav),var(--nav2));color:#fff;padding:24px 18px}
-.wrap{max-width:1180px;margin:auto}
-.brand{font-size:26px;font-weight:800;display:flex;align-items:center;gap:10px}
-.tag{opacity:.92;font-size:14px;margin-top:4px}
-.bar{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-.btn{border:0;border-radius:10px;padding:9px 15px;font-weight:700;cursor:pointer;background:#fff;color:var(--nav);transition:.2s}
-.btn:hover{opacity:.9}.btn.gold{background:var(--accent);color:#12283e}.btn.dark{background:#042342;color:#fff}
-.cat-nav{display:flex;gap:8px;overflow-x:auto;padding:12px 0;scrollbar-width:none}
-.cat-btn{background:#e2edf7;color:var(--nav);border:0;padding:8px 14px;border-radius:20px;font-weight:bold;cursor:pointer;white-space:nowrap}
-.cat-btn.active{background:var(--nav2);color:#fff}
-.grid{display:grid;grid-template-columns:310px 1fr;gap:20px;padding:20px 0}
-.panel,.lesson{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
-.panel{padding:14px;height:max-content;position:sticky;top:12px}
-.panel h3{margin:5px 8px 10px;font-size:17px;color:var(--nav)}
-.search{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin-bottom:10px}
-.topics{max-height:68vh;overflow-y:auto}
-.topic{display:block;width:100%;text-align:left;border:0;background:transparent;padding:9px 10px;border-radius:8px;cursor:pointer;color:var(--text);font-weight:600;font-size:14px;border-bottom:1px solid #f0f4f8}
-.topic:hover,.topic.active{background:#e7f1fb;color:var(--nav);font-weight:700}
-.lesson{padding:25px}
-.lesson h1{margin-top:0;color:var(--nav);font-size:26px}
-.lesson h2{color:var(--nav);border-bottom:2px solid #eef3f8;padding-bottom:6px;margin-top:22px;font-size:20px}
-.lesson h3{color:var(--nav2);margin-top:16px;font-size:17px}
-.box{background:#f6faff;border-left:5px solid var(--nav2);padding:14px 16px;border-radius:8px;margin:12px 0}
-.note{background:#fff9e6;border-left:5px solid var(--accent);padding:12px 14px;border-radius:8px;margin:12px 0}
-.exam-fact{background:#eef9f2;border-left:5px solid var(--ok);padding:12px 14px;border-radius:8px;margin:12px 0}
-.mcq-card{border:1px solid var(--line);border-radius:10px;padding:14px;margin:12px 0;background:#fafcff}
-.mcq-card b{display:block;margin-bottom:8px}
-.opt-btn{display:block;width:100%;text-align:left;margin:6px 0;padding:9px 12px;border:1px solid #ccd9e8;background:#fff;border-radius:8px;cursor:pointer;font-size:14px}
-.opt-btn.correct{background:#e8f8f0;border-color:var(--ok);color:var(--ok);font-weight:bold}
-.opt-btn.wrong{background:#ffebee;border-color:var(--bad);color:var(--bad)}
-.exp{display:none;margin-top:8px;padding:8px 10px;background:#f0f4f9;border-radius:6px;font-size:13px;color:var(--text)}
-.foot{text-align:center;color:var(--muted);padding:25px;font-size:14px}
-@media(max-width:850px){.grid{grid-template-columns:1fr}.panel{position:static}.topics{max-height:280px}.lesson{padding:18px}}
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial,"Noto Sans Devanagari",sans-serif;
+  background:#f3f7fb;
+  color:#17324d;
+  line-height:1.7;
+}
+
+button,
+input{
+  font-family:inherit;
+}
+
+.header{
+  background:linear-gradient(135deg,#073763,#0b5394,#1155cc);
+  color:white;
+  padding:28px 15px;
+  text-align:center;
+  box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.logo{
+  font-size:48px;
+  margin-bottom:5px;
+}
+
+.header h1{
+  margin:0;
+  font-size:27px;
+}
+
+.header p{
+  margin:7px auto 0;
+  max-width:850px;
+  opacity:.95;
+}
+
+.container{
+  width:min(1180px,94%);
+  margin:20px auto;
+}
+
+.toolbar{
+  background:white;
+  padding:14px;
+  border-radius:15px;
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
+  margin-bottom:18px;
+}
+
+.toolbar-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.btn{
+  border:0;
+  border-radius:10px;
+  padding:11px 15px;
+  cursor:pointer;
+  background:#073763;
+  color:white;
+  font-weight:bold;
+}
+
+.btn:hover{
+  opacity:.9;
+}
+
+.btn.secondary{
+  background:#e8f0f8;
+  color:#073763;
+}
+
+.search{
+  width:100%;
+  border:2px solid #d5e2ee;
+  border-radius:11px;
+  padding:13px;
+  font-size:16px;
+  outline:none;
+  margin-bottom:12px;
+}
+
+.search:focus{
+  border-color:#0b5394;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.stat{
+  background:white;
+  border-radius:15px;
+  padding:15px;
+  text-align:center;
+  box-shadow:0 2px 10px rgba(0,0,0,.07);
+}
+
+.stat strong{
+  display:block;
+  font-size:25px;
+  color:#073763;
+}
+
+.section-title{
+  margin:25px 0 12px;
+  color:#073763;
+}
+
+.category-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:18px;
+}
+
+.category-tabs button{
+  border:1px solid #c8d8e8;
+  background:white;
+  color:#17324d;
+  padding:10px 13px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.category-tabs button.active{
+  background:#073763;
+  color:white;
+}
+
+.topic-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.topic-card{
+  background:white;
+  border-radius:15px;
+  padding:17px;
+  box-shadow:0 2px 12px rgba(0,0,0,.07);
+  border-left:5px solid #0b5394;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.topic-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 5px 18px rgba(0,0,0,.12);
+}
+
+.topic-card.completed{
+  border-left-color:#38761d;
+  background:#f6fff3;
+}
+
+.topic-number{
+  font-size:13px;
+  color:#777;
+}
+
+.topic-card h3{
+  margin:4px 0;
+  color:#073763;
+  font-size:17px;
+}
+
+.topic-card p{
+  margin:4px 0;
+  font-size:14px;
+}
+
+.badge{
+  display:inline-block;
+  padding:3px 8px;
+  border-radius:20px;
+  font-size:12px;
+  background:#eaf2fb;
+  color:#073763;
+}
+
+.lesson{
+  display:none;
+  background:white;
+  border-radius:18px;
+  padding:20px;
+  margin-top:25px;
+  box-shadow:0 3px 18px rgba(0,0,0,.09);
+}
+
+.lesson.active{
+  display:block;
+}
+
+.lesson-header{
+  border-bottom:2px solid #e3edf6;
+  padding-bottom:14px;
+  margin-bottom:18px;
+}
+
+.lesson-header h2{
+  color:#073763;
+  margin:0;
+}
+
+.lesson-box{
+  margin:15px 0;
+  padding:17px;
+  background:#f8fbfe;
+  border:1px solid #dce8f2;
+  border-radius:13px;
+}
+
+.lesson-box h3{
+  color:#073763;
+  margin-top:0;
+}
+
+.definition{
+  background:#eef7ff;
+  border-left:5px solid #0b5394;
+  padding:15px;
+  border-radius:8px;
+}
+
+.points li{
+  margin-bottom:7px;
+}
+
+.revision{
+  background:#fff8dc;
+  border-left:5px solid #f1c232;
+  padding:15px;
+  border-radius:8px;
+}
+
+.exam{
+  background:#eff9ed;
+  border-left:5px solid #38761d;
+  padding:15px;
+  border-radius:8px;
+}
+
+.warning{
+  background:#fff0f0;
+  border-left:5px solid #cc0000;
+  padding:15px;
+  border-radius:8px;
+}
+
+.quiz{
+  margin-top:22px;
+}
+
+.question{
+  background:#f8fbfe;
+  border:1px solid #dbe7f1;
+  border-radius:13px;
+  padding:17px;
+  margin-bottom:15px;
+}
+
+.question h4{
+  margin-top:0;
+  color:#17324d;
+}
+
+.option{
+  display:block;
+  width:100%;
+  text-align:left;
+  border:1px solid #cbdbe8;
+  background:white;
+  border-radius:9px;
+  padding:10px;
+  margin:7px 0;
+  cursor:pointer;
+}
+
+.option:hover{
+  background:#eef6ff;
+}
+
+.option.correct{
+  background:#d9ead3;
+  border-color:#38761d;
+}
+
+.option.wrong{
+  background:#f4cccc;
+  border-color:#cc0000;
+}
+
+.explanation{
+  display:none;
+  margin-top:10px;
+  padding:10px;
+  border-radius:8px;
+  background:#f0f0f0;
+}
+
+.quiz-result{
+  padding:18px;
+  border-radius:13px;
+  background:#eaf4ff;
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.progress-bar{
+  width:100%;
+  height:12px;
+  background:#dfe8ef;
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:8px;
+}
+
+.progress-fill{
+  height:100%;
+  background:#38761d;
+  width:0%;
+  transition:.3s;
+}
+
+.footer{
+  margin-top:35px;
+  background:#073763;
+  color:white;
+  text-align:center;
+  padding:25px 15px;
+}
+
+.no-result{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  text-align:center;
+}
+
+.small{
+  font-size:13px;
+  color:#666;
+}
+
+@media(max-width:900px){
+  .topic-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .header h1{
+    font-size:22px;
+  }
+
+  .logo{
+    font-size:40px;
+  }
+
+  .topic-grid{
+    grid-template-columns:1fr;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .lesson{
+    padding:13px;
+  }
+
+  .btn{
+    flex:1;
+  }
+}
+
+@media print{
+  .toolbar,
+  .category-tabs,
+  #topicArea,
+  .footer,
+  .lesson-tools{
+    display:none!important;
+  }
+
+  body{
+    background:white;
+  }
+
+  .lesson{
+    display:block!important;
+    box-shadow:none;
+  }
+}
 </style>
 </head>
+
 <body>
 
-<header class="top">
-  <div class="wrap">
-    <div class="brand">🌍 नवी दिशा — भूगोल (मूलभूत ते स्पर्धा परीक्षा स्तर)</div>
-    <div class="tag">संकल्पना • स्पष्टीकरण • नकाशे • परीक्षाभिमुख तथ्ये • सराव प्रश्नसंच</div>
-    <div class="bar">
-      <button class="btn gold" onclick="speakCurrent()">🔊 धडा ऐका</button>
-      <button class="btn" onclick="window.print()">🖨️ Print / Save PDF</button>
-      <button class="btn dark" onclick="location.href='index.html'">⌂ मुख्य पृष्ठ</button>
-    </div>
-    <div class="cat-nav">
-      <button class="cat-btn active" onclick="filterCat('all', this)">सर्व घटक (73)</button>
-      <button class="cat-btn" onclick="filterCat('मूलभूत', this)">📘 १. मूलभूत भूगोल</button>
-      <button class="cat-btn" onclick="filterCat('भारत', this)">🇮🇳 २. भारताचा भूगोल</button>
-      <button class="cat-btn" onclick="filterCat('महाराष्ट्र', this)">🚩 ३. महाराष्ट्राचा भूगोल</button>
-      <button class="cat-btn" onclick="filterCat('पर्यावरण', this)">🌱 ४. पर्यावरण व संसाधने</button>
-      <button class="cat-btn" onclick="filterCat('नकाशा', this)">🧭 ५. नकाशा आधारित</button>
-    </div>
-  </div>
+<header class="header">
+  <div class="logo">🌍</div>
+  <h1>नवी दिशा — भूगोल</h1>
+  <p>मूलभूत ते स्पर्धा परीक्षा स्तर</p>
+  <p>संकल्पना • स्पष्टीकरण • परीक्षाभिमुख तथ्ये • सराव प्रश्नसंच</p>
 </header>
 
-<main class="wrap grid">
-  <aside class="panel">
-    <h3>घटकांची अनुक्रमणिका</h3>
-    <input id="search" class="search" placeholder="घटक शोधा..." oninput="searchTopics()">
-    <div id="topicList" class="topics"></div>
-  </aside>
+<main class="container">
 
-  <section class="lesson" id="lessonContainer">
-    <!-- Dynamic Content Loads Here -->
-  </section>
+<div class="toolbar">
+
+  <input
+    id="searchBox"
+    class="search"
+    type="search"
+    placeholder="🔎 विषय शोधा... उदा. मान्सून, नद्या, महाराष्ट्र, मृदा"
+    oninput="searchTopics()"
+  >
+
+  <div class="toolbar-row">
+    <button class="btn" onclick="showHome()">⌂ मुख्य पृष्ठ</button>
+    <button class="btn secondary" onclick="speakCurrentLesson()">🔊 धडा ऐका</button>
+    <button class="btn secondary" onclick="window.print()">🖨️ Print / Save PDF</button>
+    <button class="btn secondary" onclick="resetProgress()">♻️ Progress Reset</button>
+  </div>
+
+</div>
+
+<div class="stats">
+  <div class="stat">
+    <strong id="totalCount">73</strong>
+    <span>एकूण घटक</span>
+  </div>
+
+  <div class="stat">
+    <strong id="completedCount">0</strong>
+    <span>पूर्ण केले</span>
+  </div>
+
+  <div class="stat">
+    <strong id="remainingCount">73</strong>
+    <span>बाकी</span>
+  </div>
+
+  <div class="stat">
+    <strong id="bestScore">0</strong>
+    <span>सर्वोच्च गुण</span>
+  </div>
+</div>
+
+<div class="stat" style="margin-bottom:20px;text-align:left">
+  <b>📊 अभ्यास प्रगती</b>
+  <div class="progress-bar">
+    <div id="progressFill" class="progress-fill"></div>
+  </div>
+  <div class="small" id="progressText">0% पूर्ण</div>
+</div>
+
+<section id="homeArea">
+
+  <h2 class="section-title">📚 भूगोलाचे विभाग</h2>
+
+  <div class="category-tabs">
+    <button class="active" onclick="filterCategory('all',this)">
+      📚 सर्व घटक (73)
+    </button>
+
+    <button onclick="filterCategory('basic',this)">
+      📘 १. मूलभूत भूगोल
+    </button>
+
+    <button onclick="filterCategory('india',this)">
+      🇮🇳 २. भारताचा भूगोल
+    </button>
+
+    <button onclick="filterCategory('maharashtra',this)">
+      🚩 ३. महाराष्ट्राचा भूगोल
+    </button>
+
+    <button onclick="filterCategory('environment',this)">
+      🌱 ४. पर्यावरण व संसाधने
+    </button>
+
+    <button onclick="filterCategory('map',this)">
+      🧭 ५. नकाशा आधारित
+    </button>
+  </div>
+
+  <h2 class="section-title">घटकांची अनुक्रमणिका</h2>
+
+  <div id="topicArea" class="topic-grid"></div>
+
+</section>
+
+<section id="lesson" class="lesson">
+
+  <div class="lesson-header">
+    <button class="btn secondary" onclick="showHome()">← विषयांकडे परत</button>
+    <h2 id="lessonTitle" style="margin-top:15px"></h2>
+    <p id="lessonCategory" class="small"></p>
+  </div>
+
+  <div id="lessonContent"></div>
+
+  <div class="lesson-tools">
+    <button class="btn" onclick="speakCurrentLesson()">🔊 हा धडा ऐका</button>
+    <button class="btn secondary" onclick="markCompleted()">✅ हा धडा पूर्ण केला</button>
+    <button class="btn secondary" onclick="window.print()">🖨️ Print / PDF</button>
+  </div>
+
+  <div id="quizArea" class="quiz"></div>
+
+</section>
+
 </main>
 
-<footer class="foot">
-  नवी दिशा — स्पर्धा परीक्षा डिजिटल अभ्यासिका | © 2026 सर्व हक्क राखीव.
+<footer class="footer">
+  <b>नवी दिशा — स्पर्धा परीक्षा डिजिटल अभ्यासिका</b><br>
+  संविधान | शिक्षण | समाज | परिवर्तन<br><br>
+  © 2026 नवी दिशा. सर्व हक्क राखीव.
 </footer>
 
+
 <script>
-const syllabus = [
-  // विभाग 1 ते 4: मूलभूत भूगोल
-  {id:1, cat:'मूलभूत', title:'भूगोल म्हणजे काय? (व्याख्या व शाखा)'},
-  {id:2, cat:'मूलभूत', title:'पृथ्वीची उत्पत्ती, आकार व अंतरंग रचना'},
-  {id:3, cat:'मूलभूत', title:'पृथ्वीच्या हालचाली (परिवलन व परिभ्रमण)'},
-  {id:4, cat:'मूलभूत', title:'अक्षांश व महत्त्वाचे अक्षवृत्ते'},
-  {id:5, cat:'मूलभूत', title:'रेखांश व वेळ प्रणाली'},
-  {id:6, cat:'मूलभूत', title:'प्रमाण वेळ, स्थानिक वेळ व आंतरराष्ट्रीय वाररेषा'},
-  {id:7, cat:'मूलभूत', title:'खडक व खडकांचे प्रकार (अग्निज, गाळाचे, रूपांतरित)'},
-  {id:8, cat:'मूलभूत', title:'खडकचक्र, अपक्षय व अपरदन'},
-  {id:9, cat:'मूलभूत', title:'अंतर्जन्य शक्ती व भूपृष्ठावरील हालचाली'},
-  {id:10, cat:'मूलभूत', title:'ज्वालामुखी व ज्वालामुखीजन्य भूरूपे'},
-  {id:11, cat:'मूलभूत', title:'भूकंप, लहरी (P, S, L) व छाया प्रदेश'},
-  {id:12, cat:'मूलभूत', title:'पर्वतांचे प्रकार (वली, ब्लॉक, अवशिष्ट)'},
-  {id:13, cat:'मूलभूत', title:'पठारे व जगातील प्रमुख पठारी प्रदेश'},
-  {id:14, cat:'मूलभूत', title:'मैदाने व गाळाची भूरूपे'},
-  {id:15, cat:'मूलभूत', title:'नदीची उत्पत्ती व नदीप्रणालीचे स्वरूप'},
-  {id:16, cat:'मूलभूत', title:'नदीचे कार्य (खनन, वहन, निक्षेपण भूरूपे)'},
-  {id:19, cat:'मूलभूत', title:'वातावरण व वातावरणातील थर'},
-  {id:20, cat:'मूलभूत', title:'तापमान व तापमानावर परिणाम करणारे घटक'},
-  {id:21, cat:'मूलभूत', title:'हवेचा दाब व जागतिक दाबपट्टे'},
-  {id:22, cat:'मूलभूत', title:'वारे (व्यापारी, पश्चिमी, ध्रुवीय व स्थानिक)'},
-  {id:23, cat:'मूलभूत', title:'आर्द्रता, ढग व पर्जन्याचे प्रकार'},
 
-  // विभाग 5, 7, 8, 9, 10, 11: भारताचा भूगोल
-  {id:17, cat:'भारत', title:'भारतातील प्रमुख नदीप्रणाली (हिमालयीन व द्वीपकल्पीय)'},
-  {id:24, cat:'भारत', title:'भारतीय मान्सून: निर्मिती, आगमन व माघार'},
-  {id:25, cat:'भारत', title:'भारतातील पर्जन्य वितरण व पर्जन्यछाया प्रदेश'},
-  {id:26, cat:'भारत', title:'भारतातील प्रमुख ऋतू चक्र'},
-  {id:27, cat:'भारत', title:'भारताचे भौगोलिक स्थान, विस्तार व आंतरराष्ट्रीय सीमा'},
-  {id:28, cat:'भारत', title:'भारताचे प्राकृतिक विभाग (हिमालय, मैदाने, पठार)'},
-  {id:29, cat:'भारत', title:'भारतातील मृदा (माती) प्रकार व वितरण'},
-  {id:30, cat:'भारत', title:'भारतातील वनसंपदा व नैसर्गिक वनस्पती'},
-  {id:31, cat:'भारत', title:'भारतीय कृषी पद्धती व प्रकार'},
-  {id:32, cat:'भारत', title:'भारतातील प्रमुख पिके (अन्नधान्य व नगदी)'},
-  {id:34, cat:'भारत', title:'भारतातील प्रमुख खनिजे व त्यांचे पट्टे'},
-  {id:35, cat:'भारत', title:'भारतातील ऊर्जा व इंधन संसाधने (कोळसा, पेट्रोलियम)'},
-  {id:36, cat:'भारत', title:'भारतातील अपारंपरिक ऊर्जा संसाधने'},
-  {id:37, cat:'भारत', title:'उद्योगांचे स्थानिकीकरण व अनुकूल घटक'},
-  {id:38, cat:'भारत', title:'भारतातील प्रमुख उद्योग (कापड, पोलाद, सिमेंट)'},
-  {id:40, cat:'भारत', title:'भारतातील वाहतूक व्यवस्था (रस्ते, रेल्वे, जल व हवाई)'},
-  {id:41, cat:'भारत', title:'भारताची लोकसंख्या व जनसांख्यिकी (२०११ जनगणना)'},
-  {id:42, cat:'भारत', title:'भारतातील स्थलांतर: कारणे व सामाजिक परिणाम'},
-  {id:43, cat:'भारत', title:'भारतातील नागरीकरण व महानगरांच्या समस्या'},
+/* =========================================================
+   73 GEOGRAPHY TOPICS
+========================================================= */
 
-  // विभाग 14: महाराष्ट्राचा सविस्तर भूगोल
-  {id:18, cat:'महाराष्ट्र', title:'महाराष्ट्रातील नदीप्रणाली (गोदावरी, भीमा, कृष्णा)'},
-  {id:33, cat:'महाराष्ट्र', title:'महाराष्ट्रातील शेती व प्रमुख फलोत्पादन पिके'},
-  {id:39, cat:'महाराष्ट्र', title:'महाराष्ट्रातील प्रमुख उद्योग व औद्योगिक पट्टे'},
-  {id:48, cat:'महाराष्ट्र', title:'महाराष्ट्राचे स्थान, विस्तार व सीमा'},
-  {id:49, cat:'महाराष्ट्र', title:'महाराष्ट्राची प्राकृतिक रचना: ३ प्रमुख विभाग'},
-  {id:50, cat:'महाराष्ट्र', title:'कोकण किनारपट्टी: रचना, नद्या व खाड्या'},
-  {id:51, cat:'महाराष्ट्र', title:'सह्याद्री पर्वतरांग (पश्चिम घाट) व प्रमुख घाटमाथा'},
-  {id:52, cat:'महाराष्ट्र', title:'महाराष्ट्रातील प्रमुख पर्वतशिखरे व त्यांचे क्रम'},
-  {id:53, cat:'महाराष्ट्र', title:'महाराष्ट्र पठार (दख्खन) व उप-डोंगररांगा'},
-  {id:54, cat:'महाराष्ट्र', title:'महाराष्ट्रातील प्रमुख धरणे व जलविद्युत प्रकल्प'},
-  {id:55, cat:'महाराष्ट्र', title:'महाराष्ट्रातील मृदा प्रकार (काळी रेगूर, जांभी)'},
-  {id:56, cat:'महाराष्ट्र', title:'महाराष्ट्राचे हवामान व वार्षिक पर्जन्यमान'},
-  {id:57, cat:'महाराष्ट्र', title:'महाराष्ट्रातील पर्जन्यछाया प्रदेश (दुष्काळी पट्टा)'},
-  {id:58, cat:'महाराष्ट्र', title:'महाराष्ट्रातील सिंचन पद्धती व विहिरी/कालवे'},
-  {id:60, cat:'महाराष्ट्र', title:'महाराष्ट्रातील खनिजे (पूर्व विदर्भ व दक्षिण कोकण)'},
-  {id:61, cat:'महाराष्ट्र', title:'महाराष्ट्र राज्य औद्योगिक विकास महामंडळ (MIDC)'},
-  {id:62, cat:'महाराष्ट्र', title:'महाराष्ट्रातील जंगले व वनप्रकार'},
-  {id:63, cat:'महाराष्ट्र', title:'महाराष्ट्रातील राष्ट्रीय उद्याने व व्याघ्र प्रकल्प'},
-  {id:64, cat:'महाराष्ट्र', title:'महाराष्ट्रातील ३६ जिल्हानिहाय सविस्तर भूगोल'},
+const topics = [
 
-  // विभाग 13: पर्यावरण व संसाधने
-  {id:44, cat:'पर्यावरण', title:'पर्यावरण, परिसंस्था व अन्नसाखळी'},
-  {id:45, cat:'पर्यावरण', title:'जैवविविधता व संवर्धन प्रकल्प (हॉटस्पॉट्स)'},
-  {id:46, cat:'पर्यावरण', title:'पर्यावरणीय प्रदूषण व प्रतिबंधात्मक उपाय'},
-  {id:47, cat:'पर्यावरण', title:'हवामान बदल, ग्लोबल वॉर्मिंग व ग्रीनहाऊस गॅसेस'},
+/* BASIC 1-20 */
 
-  // विभाग 15: नकाशा आधारित भूगोल
-  {id:65, cat:'नकाशा', title:'भारताचा राजकीय नकाशा व सीमावर्ती देश'},
-  {id:66, cat:'नकाशा', title:'महाराष्ट्राचा प्रशासकीय व प्राकृतिक नकाशा'},
-  {id:67, cat:'नकाशा', title:'नकाशावर प्रमुख पर्वतरांगा व खिंडी ओळखा'},
-  {id:68, cat:'नकाशा', title:'नकाशावर भारतातील व महाराष्ट्रातील नद्यांचा क्रम'},
-  {id:69, cat:'नकाशा', title:'भारतातील सर्व राज्ये व केंद्रशासित प्रदेश राजधानी'},
-  {id:70, cat:'नकाशा', title:'भारताची सागरी सीमा व जलमार्ग'},
-  {id:71, cat:'नकाशा', title:'भारतातील १२ मोठी प्रमुख बंदरे'},
-  {id:72, cat:'नकाशा', title:'नकाशावर आधारित प्रमुख खनिज पट्टे'},
-  {id:73, cat:'नकाशा', title:'प्रमुख औद्योगिक पट्टे व कॉरिडोर्स'}
+["भूगोलाची ओळख","basic"],
+["पृथ्वीचे स्वरूप व आकार","basic"],
+["अक्षांश व रेखांश","basic"],
+["पृथ्वीच्या हालचाली","basic"],
+["पृथ्वीची अंतर्गत रचना","basic"],
+["खडक व खनिजे","basic"],
+["भूरूपे","basic"],
+["वातावरण","basic"],
+["तापमान","basic"],
+["वायुदाब व वारे","basic"],
+["आर्द्रता व ढग","basic"],
+["पर्जन्य","basic"],
+["हवामान व हवामानशास्त्र","basic"],
+["मान्सून","basic"],
+["जागतिक वारे","basic"],
+["चक्रीवादळे","basic"],
+["महासागर","basic"],
+["समुद्रातील प्रवाह","basic"],
+["भरती-ओहोटी","basic"],
+["नद्या व नदीप्रणाली","basic"],
+
+/* ENVIRONMENT / RESOURCES 21-35 */
+
+["जलचक्र","environment"],
+["मृदा","environment"],
+["मृदा निर्मिती व प्रकार","environment"],
+["नैसर्गिक वनस्पती","environment"],
+["वन व वनसंपदा","environment"],
+["पर्यावरणाची संकल्पना","environment"],
+["परिसंस्था","environment"],
+["जैवविविधता","environment"],
+["प्रदूषण","environment"],
+["हवामान बदल","environment"],
+["जागतिक तापमानवाढ","environment"],
+["नैसर्गिक आपत्ती","environment"],
+["लोकसंख्या","environment"],
+["लोकसंख्या वितरण","environment"],
+["लोकसंख्या वाढ","environment"],
+
+/* HUMAN / ECONOMIC 36-50 */
+
+["स्थलांतर","environment"],
+["मानवी वस्ती","environment"],
+["ग्रामीण व नागरी वस्ती","environment"],
+["शेती","environment"],
+["शेतीचे प्रकार","environment"],
+["पिकांचे भौगोलिक वितरण","environment"],
+["सिंचन","environment"],
+["जलसंपदा","environment"],
+["खनिज संपत्ती","environment"],
+["ऊर्जा संसाधने","environment"],
+["उद्योग","environment"],
+["औद्योगिक प्रदेश","environment"],
+["वाहतूक","environment"],
+["दळणवळण","environment"],
+["व्यापार","environment"],
+
+/* INDIA 51-63 */
+
+["भारताचा भौगोलिक परिचय","india"],
+["भारताची भौगोलिक रचना","india"],
+["भारताच्या पर्वतरांगा","india"],
+["भारताची मैदाने","india"],
+["भारताचे पठार","india"],
+["भारताच्या नद्या","india"],
+["भारताचे हवामान","india"],
+["भारताचा मान्सून","india"],
+["भारताची मृदा","india"],
+["भारताची नैसर्गिक वनस्पती","india"],
+["भारताची शेती","india"],
+["भारताची खनिजे","india"],
+["भारताचे उद्योग","india"],
+
+/* MAHARASHTRA 64-73 */
+
+["महाराष्ट्राचा भौगोलिक परिचय","maharashtra"],
+["महाराष्ट्राची भौगोलिक रचना","maharashtra"],
+["महाराष्ट्रातील पर्वत व पठारे","maharashtra"],
+["महाराष्ट्रातील नद्या","maharashtra"],
+["महाराष्ट्राचे हवामान","maharashtra"],
+["महाराष्ट्रातील मृदा","maharashtra"],
+["महाराष्ट्रातील शेती","maharashtra"],
+["महाराष्ट्रातील खनिजे व उद्योग","maharashtra"],
+["महाराष्ट्रातील वनसंपदा व जैवविविधता","maharashtra"],
+["महाराष्ट्राचा नकाशा व सराव","map"]
+
 ];
 
-const lessonsContent = {
-  1: {
-    title: "१. भूगोल म्हणजे काय? (व्याख्या, स्वरूप व शाखा)",
-    content: `
-      <h3>१. सोप्या भाषेत संकल्पना व व्याख्या</h3>
-      <p><b>'भूगोल'</b> या शब्दाची फोड <b>भू (पृथ्वी) + गोल (गोलाकार स्वरूप)</b> अशी आहे. इंग्रजीत याला <b>'Geography'</b> म्हणतात. हा शब्द ग्रीक भाषेतील 'Geo' (पृथ्वी) आणि 'Grapho' (वर्णन करणे) या दोन शब्दांपासून तयार झाला आहे.</p>
-      <div class="box">
-        <b>शास्त्रीय व्याख्या:</b> पृथ्वीचा पृष्ठभाग, त्यावर आढळणारे प्राकृतिक घटक (पर्वत, नद्या, हवामान) आणि मानवाचा त्याच्या सभोवतालच्या पर्यावरणाशी असलेला परस्परसंबंध यांचा वैज्ञानिक अभ्यास म्हणजे <b>भूगोल</b> होय.
-      </div>
-      
-      <h3>२. भूगोलाच्या दोन प्रमुख शाखा</h3>
-      <p><b>अ) प्राकृतिक भूगोल (Physical Geography):</b> निसर्गाने निर्माण केलेल्या घटकांचा अभ्यास. उदा. पर्वत, पठारे, मैदाने, नद्या, खडक, वारे, पाऊस, तापमान आणि महासागर.</p>
-      <p><b>ब) मानवी भूगोल (Human Geography):</b> मानवाने निसर्गाचा वापर करून केलेल्या बदलांचा अभ्यास. उदा. शेती, उद्योग, गावे, शहरे, वाहतूक व्यवस्था, व्यापार आणि लोकसंख्या.</p>
+/* =========================================================
+   CATEGORY NAMES
+========================================================= */
 
-      <h3>३. स्पर्धा परीक्षांसाठी महत्त्वाचे मुद्दे (लक्षात ठेवा)</h3>
-      <div class="exam-fact">
-        • <b>भूगोलाचे जनक:</b> ग्रीक विचारवंत <b>इरॅटोस्थेनिस (Eratosthenes)</b>.<br>
-        • <b>आधुनिक वैज्ञानिक भूगोलाचे जनक:</b> अलेक्झांडर फॉन हम्बोल्ट आणि कार्ल रिटर.<br>
-        • <b>नकाशा वाचनाचे महत्त्व:</b> भूगोल पाठ न करता नकाशा पाहून समजून घेतल्यास परीक्षेत अचूक गुण मिळतात.
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "'Geography' या शब्दाचा सर्वप्रथम शास्त्रीय वापर कोणी केला?",
-        options: ["ॲरिस्टॉटल", "इरॅटोस्थेनिस", "हेरोडोटस", "टोलेमी"],
-        ans: 1,
-        exp: "ग्रीक खगोलशास्त्रज्ञ इरॅटोस्थेनिस यांनी इ.स.पूर्व तिसऱ्या शतकात 'जॉग्राफी' हा शब्द वापरला, म्हणून त्यांना भूगोलाचे जनक मानले जाते."
-      },
-      {
-        q: "वातावरणातील हवेचा दाब, वारे आणि पाऊस यांचा अभ्यास भूगोलाच्या कोणत्या शाखेत येतो?",
-        options: ["मानवी भूगोल", "हवामानशास्त्र (प्राकृतिक भूगोल)", "सामाजिक भूगोल", "राजकीय भूगोल"],
-        ans: 1,
-        exp: "हवामानशास्त्र (Climatology) ही प्राकृतिक भूगोलाची मुख्य शाखा असून यात हवामानविषयक घटकांचा अभ्यास केला जातो."
-      },
-      {
-        q: "खालीलपैकी कोणता घटक मानवी भूगोलाच्या कक्षेत येत नाही?",
-        options: ["नागरीकरण", "शेतीचे प्रकार", "महासागराची तळरचना", "रेल्वे वाहतूक"],
-        ans: 2,
-        exp: "महासागराची तळरचना (Ocean Floor) हा निसर्गनिर्मित प्राकृतिक घटक असून तो सागरशास्त्रामध्ये येतो."
-      }
-    ]
-  },
-  2: {
-    title: "२. पृथ्वीची उत्पत्ती, आकार व रचना",
-    content: `
-      <h3>१. पृथ्वीचा आकार व उत्पत्ती</h3>
-      <p>• पृथ्वीची निर्मिती सुमारे <b>४.६ अब्ज वर्षांपूर्वी</b> झाली असे मानले जाते.</p>
-      <p>• पृथ्वी पूर्ण गोल नसून ध्रुवांवर किंचित चपटी आणि विषुववृत्तावर फुगीर आहे. पृथ्वीच्या या विशिष्ट आकाराला <b>जॉईड (Geoid)</b> आकार म्हणतात.</p>
-
-      <h3>२. पृथ्वीचे अंतर्गत थर (Internal Layers)</h3>
-      <div class="box">
-        <b>१. भूकवच (Crust):</b> सर्वात बाहेरील पातळ थर.<br>
-        • <b>सियाल (SIAL):</b> सिलिका + ॲल्युमिनियम (खंडीय भाग, घनता कमी).<br>
-        • <b>सायमा (SIMA):</b> सिलिका + मॅग्नेशियम (महासागरीय भाग, बेसाल्ट खडक).<br><br>
-        <b>२. प्रावरण / आवरण (Mantle):</b> भूकवचाखालील २९०० किमी जाडीचा थर. यातील वितळलेल्या मॅग्मामुळे ज्वालामुखी उद्रेक होतात.<br><br>
-        <b>३. गाभा (Core):</b> पृथ्वीचा केंद्रभाग (२९०० ते ६३७१ किमी). यात निकेल (Ni) आणि लोह (Fe) असल्याने याला <b>निफे (NIFE)</b> म्हणतात.
-      </div>
-
-      <div class="exam-fact">
-        <b>परीक्षेतील थेट तथ्य:</b> पृथ्वीच्या अंतरंगात खोल जाताना प्रति <b>३२ मीटर</b> खोलीवर तापमान सुमारे <b>१°C</b> ने वाढते.
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "पृथ्वीच्या आकाराचे अचूक शास्त्रीय वर्णन करणारा शब्द कोणता?",
-        options: ["पूर्ण वर्तुळाकार", "लंबगोलाकार", "जॉईड (Geoid)", "चौकोनी"],
-        ans: 2,
-        exp: "पृथ्वी ध्रुवांवर चपटी आणि विषुववृत्तावर फुगीर असल्याने तिच्या आकाराला 'जॉईड' (भू-सदृश) म्हटले जाते."
-      },
-      {
-        q: "पृथ्वीच्या खंडीय भूकवचामध्ये प्रामुख्याने कोणती मूलद्रव्ये असतात?",
-        options: ["सिलिका आणि ॲल्युमिनियम (SIAL)", "सिलिका आणि मॅग्नेशियम (SIMA)", "निकेल आणि फेरस (NIFE)", "केवळ कार्बन"],
-        ans: 0,
-        exp: "खंडीय कवचात सिलिका आणि ॲल्युमिनियमचे प्रमाण जास्त असल्याने त्याला सियाल (SIAL) म्हणतात."
-      },
-      {
-        q: "पृथ्वीच्या अंतरंगात जाताना प्रति किती मीटर खोलीवर सुमारे १°C तापमान वाढते?",
-        options: ["१० मीटर", "२० मीटर", "३२ मीटर", "१०० मीटर"],
-        ans: 2,
-        exp: "भूगर्भात खोल जाताना दर ३२ मीटर खोलीला तापमान साधारणपणे १ अंश सेल्सिअसने वाढते."
-      }
-    ]
-  },
-  3: {
-    title: "३. पृथ्वीच्या हालचाली (परिवलन व परिभ्रमण)",
-    content: `
-      <h3>१. पृथ्वीचे परिवलन (Rotation)</h3>
-      <p>• पृथ्वी स्वतःच्या काल्पनिक अक्षाभोवती <b>पश्चिमेकडून पूर्वेकडे</b> फिरते.</p>
-      <p>• एक परिवलन पूर्ण होण्यासाठी <b>२३ तास ५६ मिनिटे ४ सेकंद</b> (साधारण २४ तास) लागतात.</p>
-      <p>• <b>परिणाम:</b> दिवस व रात्र होतात, भरती-ओहोटीच्या वेळा ठरतात आणि वाऱ्यांची दिशा बदलते (कोरिऑलिस बल).</p>
-
-      <h3>२. पृथ्वीचे परिभ्रमण (Revolution)</h3>
-      <p>• पृथ्वी सूर्याभोवती लंबवर्तुळाकार कक्षेत फिरते, त्याला परिभ्रमण म्हणतात.</p>
-      <p>• कालावधी: <b>३६५ दिवस आणि ६ तास</b>. हे ६ तास दर चार वर्षांनी मिळून १ दिवस वाढतो (लीप वर्ष - ३६६ दिवस).</p>
-      <p>• <b>परिणाम:</b> ऋतू चक्र निर्मिती आणि दिवस-रात्रीचा कालावधी लहान-मोठा होणे.</p>
-
-      <h3>३. महत्त्वाचे खगोलीय दिवस</h3>
-      <div class="box">
-        • <b>विषुवदिन (Equinox - २१ मार्च व २३ सप्टेंबर):</b> सूर्य विषुववृत्तावर लंबरूप असतो. संपूर्ण पृथ्वीवर दिवस आणि रात्र प्रत्येकी १२ तासांचे समान असतात.<br>
-        • <b>कर्क संक्रांत (२१ जून):</b> सूर्य कर्कवृत्तावर लंबरूप असतो. उत्तर गोलार्धात सर्वात मोठा दिवस.<br>
-        • <b>मकर संक्रांत (२२ डिसेंबर):</b> सूर्य मकरवृत्तावर लंबरूप असतो. उत्तर गोलार्धात सर्वात लहान दिवस.
-      </div>
-      <div class="exam-fact">
-        <b>परीक्षेतील तथ्य:</b> पृथ्वीचा अक्ष कक्षेच्या पातळीशी <b>६६.५°</b> चा कोन करतो, तर लंबरूपाशी <b>२३.५°</b> कलेला आहे.
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "पृथ्वीवर दिवस आणि रात्र होण्याची निर्मिती कशामुळे होते?",
-        options: ["परिभ्रमण", "परिवलन", "गुरुत्वाकर्षण", "सूर्य डाग"],
-        ans: 1,
-        exp: "पृथ्वी स्वतःच्या अक्षाभोवती पश्चिमेकडून पूर्वेकडे फिरते (परिवलन), ज्यामुळे दिवस व रात्र होतात."
-      },
-      {
-        q: "संपूर्ण पृथ्वीवर दिवस आणि रात्र १२-१२ तासांचे समान असणारे दिवस कोणते?",
-        options: ["२१ जून व २२ डिसेंबर", "२१ मार्च व २३ सप्टेंबर", "१ जानेवारी व १ जुलै", "१५ ऑगस्ट"],
-        ans: 1,
-        exp: "२१ मार्च आणि २३ सप्टेंबर या दोन दिवशी सूर्यकिरणे थेट विषुववृत्तावर लंबरूप पडत असल्याने सर्वत्र दिवस-रात्र समान असतात."
-      }
-    ]
-  },
-  4: {
-    title: "४. अक्षांश व महत्त्वाचे अक्षवृत्ते",
-    content: `
-      <h3>१. अक्षांश म्हणजे काय? (Latitude)</h3>
-      <p>• विषुववृत्तापासून उत्तरेकडे किंवा दक्षिणेकडे असलेल्या कोणत्याही बिंदूचे कोनीय अंतर म्हणजे <b>अक्षांश</b> होय.</p>
-      <p>• पृथ्वीवर पूर्व-पश्चिम काल्पनिक आडव्या रेषांना <b>अक्षवृत्त</b> म्हणतात. सर्व अक्षवृत्ते एकमेकांना समांतर असतात.</p>
-      <p>• एकूण अक्षवृत्तांची संख्या <b>१८१</b> आहे (९० उत्तर + ९० दक्षिण + १ विषुववृत्त).</p>
-
-      <h3>२. महत्त्वाची अक्षवृत्ते</h3>
-      <div class="box">
-        • <b>विषुववृत्त (०°):</b> सर्वात मोठे अक्षवृत्त (बृहद्वृत्त).<br>
-        • <b>कर्कवृत्त (२३° ३०' उत्तर):</b> भारताच्या मध्यातून ८ राज्यांतून जाते.<br>
-        • <b>मकरवृत्त (२३° ३०' दक्षिण):</b> दक्षिण गोलार्धातील अक्षवृत्त.<br>
-        • <b>आर्क्टिक वृत्त (६६° ३०' उ.) व अंटार्क्टिक वृत्त (६६° ३०' द.):</b> शीत कटिबंधाच्या सीमा.
-      </div>
-      <div class="exam-fact">
-        <b>दोन अक्षवृत्तांमधील अंतर:</b> जमिनीवर लगतच्या दोन अक्षवृत्तांमध्ये सरासरी <b>१११ किमी</b> अंतर असते.
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "दोन लगतच्या अक्षवृत्तांमध्ये जमिनीवर सरासरी किती अंतर असते?",
-        options: ["५० किमी", "१११ किमी", "२२२ किमी", "३६० किमी"],
-        ans: 1,
-        exp: "दोन अक्षवृत्तांमधील प्रत्यक्ष जमिनीवरील अंतर सरासरी १११ किमी असते."
-      },
-      {
-        q: "कर्कवृत्त भारताच्या किती राज्यांमधून जाते?",
-        options: ["५", "६", "७", "८"],
-        ans: 3,
-        exp: "कर्कवृत्त गुजराथ, राजस्थान, मध्य प्रदेश, छत्तीसगड, झारखंड, पश्चिम बंगाल, त्रिपुरा व मिझोराम या ८ राज्यांतून जाते."
-      }
-    ]
-  },
-  5: {
-    title: "५. रेखांश व वेळ प्रणाली",
-    content: `
-      <h3>१. रेखांश म्हणजे काय? (Longitude)</h3>
-      <p>• उत्तर आणि दक्षिण ध्रुव जोडणाऱ्या काल्पनिक उभ्या अर्धवर्तुळाकार रेषांना <b>रेखावृत्त</b> म्हणतात.</p>
-      <p>• एकूण रेखावृत्तांची संख्या <b>३६०</b> आहे (१८०° पूर्व आणि १८०° पश्चिम).</p>
-      <p>• <b>मूळ रेखावृत्त (०°):</b> लंडनजवळील <b>ग्रीनिच (Greenwich)</b> वेधशाळेवरून जाणारे रेखावृत्त मुख्य मानले जाते.</p>
-
-      <h3>२. रेखांश आणि वेळ यांचे गणित</h3>
-      <div class="box">
-        • पृथ्वी २४ तासांत ३६०° फिरते.<br>
-        • १ तासात = १५° रेखांश.<br>
-        • <b>१° रेखांश पार करण्यासाठी पृथ्वीला ४ मिनिटे लागतात.</b><br>
-        • ग्रीनिचच्या पूर्वेकडे वेळ पुढे (+) असते आणि पश्चिमेकडे वेळ मागे (-) असते.
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "पृथ्वीला १° रेखांश फिरण्यासाठी किती मिनिटांचा वेळ लागतो?",
-        options: ["२ मिनिटे", "४ मिनिटे", "१५ मिनिटे", "६० मिनिटे"],
-        ans: 1,
-        exp: "३६० अंशांसाठी २४ तास (१४४० मिनिटे), म्हणजेच एका अंशासाठी ४ मिनिटे लागतात."
-      },
-      {
-        q: "जागतिक मूळ रेखावृत्त (0° Prime Meridian) कोणत्या शहरावरून जाते?",
-        options: ["पॅरिस", "न्यू यॉर्क", "ग्रीनिच (लंडन)", "टोकिओ"],
-        ans: 2,
-        exp: "लंडनजवळील ग्रीनिच वेधशाळेवरून ०° रेखावृत्त निश्चित करण्यात आले आहे."
-      }
-    ]
-  },
-  6: {
-    title: "६. प्रमाण वेळ, स्थानिक वेळ व आंतरराष्ट्रीय वाररेषा",
-    content: `
-      <h3>१. स्थानिक वेळ व प्रमाण वेळ</h3>
-      <p>• <b>स्थानिक वेळ:</b> सूर्य डोकायवर आल्यावर दुपारचे १२ वाजले मानणे म्हणजे स्थानिक वेळ.</p>
-      <p>• <b>भारतीय प्रमाण वेळ (IST):</b> भारताची प्रमाण वेळ <b>८२° ३०' पूर्व (82.5° E)</b> रेखावृत्तावरून निश्चित केली आहे.</p>
-      <p>• हे रेखावृत्त उत्तर प्रदेशातील <b>मिर्झापूर (प्रयागराज)</b> येथून जाते.</p>
-      <p>• भारतीय प्रमाण वेळ ही लंडनच्या ग्रीनिच वेळेपेक्षा <b>५ तास ३० मिनिटे पुढे</b> आहे (+5:30 IST).</p>
-
-      <h3>२. आंतरराष्ट्रीय वाररेषा (IDL)</h3>
-      <div class="box">
-        • पॅसिफिक महासागरामधून जाणाऱ्या <b>१८०° रेखावृत्ताला</b> आंतरराष्ट्रीय वाररेषा म्हणतात.<br>
-        • ही रेषा ओलांडून पश्चिमेकडे गेल्यास एक दिवस पुढे करावा लागतो आणि पूर्वेकडे गेल्यास एक दिवस मागे करावा लागतो.<br>
-        • एकाच देशात दोन वार येऊ नयेत म्हणून ही रेषा समुद्रावरून <b>नागमोडी (वाकडी)</b> काढण्यात आली आहे.
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "भारतीय प्रमाण वेळ (IST) कोणत्या रेखावृत्तावरून ठरवली जाते?",
-        options: ["८०° पूर्व", "८२° ३०' पूर्व", "८५° पूर्व", "७५° पूर्व"],
-        ans: 1,
-        exp: "८२.५° पूर्व रेखावृत्तावरून भारताची प्रमाणवेळ ठरवली जाते."
-      },
-      {
-        q: "भारतीय प्रमाण वेळ ग्रीनिच वेळेपेक्षा किती पुढे आहे?",
-        options: ["४ तास", "५ तास", "५ तास ३० मिनिटे", "६ तास"],
-        ans: 2,
-        exp: "८२.५° × ४ मिनिटे = ३३० मिनिटे, म्हणजेच ५ तास ३० मिनिटे पुढे आहे."
-      }
-    ]
-  },
-  7: {
-    title: "७. खडक व खडकांचे प्रकार (अग्निज, गाळाचे, रूपांतरित)",
-    content: `
-      <h3>१. खडक म्हणजे काय?</h3>
-      <p>• भूकवचामध्ये नैसर्गिकरीत्या आढळणाऱ्या खनिजांच्या मिश्रणाला <b>खडक</b> म्हणतात.</p>
-
-      <h3>२. खडकांचे ३ मुख्य प्रकार</h3>
-      <div class="box">
-        <b>१. अग्निज खडक (Igneous Rocks):</b> मॅग्मा व लाव्हा थंड होऊन तयार होतात. उदा. <b>बेसाल्ट (महाराष्ट्र पठार)</b>, ग्रॅनाइट.<br>
-        <b>२. गाळाचे खडक (Sedimentary Rocks):</b> थरावर थर साचून बनतात. यात <b>जीवाश्म (Fossils)</b> व खनिज तेल आढळते. उदा. वाळूचा खडक, चुनखडी.<br>
-        <b>३. रूपांतरित खडक (Metamorphic Rocks):</b> प्रचंड उष्णता व दाबाने मूळ रूप बदलते. उदा. चुनखडीपासून <b>संगमरवर (Marble)</b>.
-      </div>
-      <div class="exam-fact">
-        <b>महाराष्ट्रातील खडक:</b> महाराष्ट्र पठाराचा सुमारे <b>८२% भाग बेसाल्ट</b> या अग्निज खडकाने व्यापलेला आहे.
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "महाराष्ट्र पठार प्रामुख्याने कोणत्या खडकापासून बनलेले आहे?",
-        options: ["ग्रॅनाइट", "बेसाल्ट", "संगमरवर", "चुनखडी"],
-        ans: 1,
-        exp: "महाराष्ट्र पठाराची निर्मिती लाव्हाच्या उद्रेकातून थंड झालेल्या बेसाल्ट खडकामुळे झाली आहे."
-      },
-      {
-        q: "जीवाश्म (Fossils) आणि खनिज तेल प्रामुख्याने कोणत्या खडकात आढळतात?",
-        options: ["अग्निज खडक", "गाळाचे खडक", "रूपांतरित खडक", "ज्वालामुखी खडक"],
-        ans: 1,
-        exp: "गाळाच्या (स्तरित) खडकात थरांच्या मधे वनस्पती व प्राणी गाडले गेल्याने जीवाश्म आढळतात."
-      }
-    ]
-  },
-  8: {
-    title: "८. खडकचक्र, अपक्षय व अपरदन",
-    content: `
-      <h3>१. खडकचक्र (Rock Cycle)</h3>
-      <p>• अग्निज खडक फुटून गाळाचे खडक बनतात, त्यांच्यावर उष्णता व दाबाने रूपांतरित खडक बनतात आणि वितळून पुन्हा मॅग्मा बनतो. या अखंड चक्रीय प्रक्रियेला <b>खडकचक्र</b> म्हणतात.</p>
-
-      <h3>२. अपक्षय (Weathering)</h3>
-      <p>• खडक आपल्या जागेवरच फुटणे, तुटणे किंवा विरघळणे म्हणजे अपक्षय होय (भौतिक, रासायनिक आणि जैविक).</p>
-
-      <h3>३. अपरदन किंवा झीज (Erosion)</h3>
-      <p>• वाहते पाणी, वारा, हिमनदी व सागरी लाटा यांच्या गतीमुळे खडकांचे बारीक कण वाहून नेले जाणे म्हणजे <b>अपरदन</b> होय.</p>
-    `,
-    mcqs: [
-      {
-        q: "खडक आपल्या जागेवरच फुटणे किंवा विखंडित होणे या प्रक्रियेला काय म्हणतात?",
-        options: ["अपरदन", "अपक्षय (Weathering)", "निक्षेपण", "वहन"],
-        ans: 1,
-        exp: "जागेवरच होणाऱ्या खडकांच्या विघटनाला अपक्षय म्हणतात."
-      },
-      {
-        q: "झाडांची मुळे खडकांच्या भेगांमध्ये वाढल्यामुळे होणारा अपक्षय कोणता?",
-        options: ["रासायनिक", "भौतिक", "जैविक अपक्षय", "यांत्रिक"],
-        ans: 2,
-        exp: "सजीवांमुळे होणाऱ्या खडकांच्या विघटनाला जैविक अपक्षय म्हणतात."
-      }
-    ]
-  },
-  9: {
-    title: "९. अंतर्जन्य शक्ती व भूपृष्ठावरील हालचाली",
-    content: `
-      <h3>१. अंतर्जन्य हालचाली</h3>
-      <p>• पृथ्वीच्या पोटातून निर्माण होणाऱ्या उष्णता आणि ऊर्जेमुळे पृथ्वीच्या कवचावर ज्या हालचाली होतात त्यांना <b>अंतर्जन्य हालचाली</b> म्हणतात.</p>
-
-      <h3>२. मंद हालचाली विरुद्ध शीघ्र हालचाली</h3>
-      <div class="box">
-        • <b>मंद हालचाली:</b> अत्यंत हळू घडतात (लाखो वर्षे). उदा. पर्वतनिर्मिती (वलयीकरण), खंडनिर्मिती.<br>
-        • <b>शीघ्र हालचाली:</b> काही सेकंदांत प्रचंड बदल घडवून आणतात. उदा. <b>भूकंप आणि ज्वालामुखी उद्रेक</b>.
-      </div>
-      <div class="exam-fact">
-        <b>वलयीकरण (Folding):</b> भूपृष्ठावरील थरांवर दोन्ही बाजूंनी क्षितीजसमांतर दाब पडल्याने वळ्या पडून <b>वली पर्वतांची (उदा. हिमालय)</b> निर्मिती होते.
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "खालीलपैकी कोणती घटना शीघ्र अंतर्जन्य हालचालीचे उदाहरण आहे?",
-        options: ["पर्वतनिर्मिती", "भूकंप", "खंडनिर्मिती", "निक्षेपण"],
-        ans: 1,
-        exp: "भूकंप आणि ज्वालामुखी या क्षणार्धात घडणाऱ्या शीघ्र अंतर्जन्य हालचाली आहेत."
-      },
-      {
-        q: "पृथ्वीच्या थरांवर दोन्ही बाजूंनी दाब पडून पडणाऱ्या वळ्यांना काय म्हणतात?",
-        options: ["भ्रंश", "वलयीकरण (Folding)", "अपरदन", "खडकचक्र"],
-        ans: 1,
-        exp: "दबावामुळे थरांना घड्या पडून वली पर्वत तयार होतात, त्याला वलयीकरण म्हणतात."
-      }
-    ]
-  },
-  10: {
-    title: "१०. ज्वालामुखी व ज्वालामुखीजन्य भूरूपे",
-    content: `
-      <h3>१. ज्वालामुखीचे प्रकार</h3>
-      <div class="box">
-        • <b>सक्रिय (Active):</b> वारंवार उद्रेक होणारे. उदा. बॅरन बेट (अंदमान - भारताचा एकमेव सक्रिय ज्वालामुखी).<br>
-        • <b>सुप्त / निद्रिस्त (Dormant):</b> दीर्घकाळ शांत राहून अचानक उद्रेक होणारे. उदा. फुजियामा (जपान).<br>
-        • <b>मृत (Extinct):</b> ऐतिहासिक काळात कधीही उद्रेक न झालेले. उदा. किलीमांजारो (आफ्रिका).
-      </div>
-      <div class="exam-fact">
-        <b>ज्वालामुखीजन्य भूरूपे:</b> क्रेटर (ज्वालामुखीचे तोंड/विवर), काल्डेरा, लाव्हा पठार (दख्खनचे पठार हे <b>भेगाळ उद्रेकातून</b> बनले आहे).
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "भारतातील एकमेव जिवंत (सक्रिय) ज्वालामुखी कोठे आहे?",
-        options: ["लक्षद्वीप", "बॅरन बेट (अंदमान)", "नारकोंडम", "माजुली"],
-        ans: 1,
-        exp: "अंदमान-निकोबार बेटांवरील बॅरन बेट (Barren Island) हा भारताचा एकमेव सक्रिय ज्वालामुखी आहे."
-      },
-      {
-        q: "ज्वालामुखीच्या उद्रेकातून लाव्हा बाहेर पडणाऱ्या मुखाला काय म्हणतात?",
-        options: ["घळई", "विवर / क्रेटर (Crater)", "खाडी", "धबधबा"],
-        ans: 1,
-        exp: "ज्वालामुखीच्या मुखाला विवर किंवा क्रेटर म्हणतात."
-      }
-    ]
-  },
-  11: {
-    title: "११. भूकंप, लहरी (P, S, L) व छाया प्रदेश",
-    content: `
-      <h3>१. भूकंपाच्या ३ प्रमुख लहरी</h3>
-      <div class="box">
-        • <b>१. प्राथमिक लहरी (P-Waves):</b> सर्वात वेगवान लहरी. या घन, द्रव आणि वायू तिन्ही माध्यमातून प्रवास करू शकतात.<br>
-        • <b>२. दुय्यम लहरी (S-Waves):</b> या फक्त <b>घन माध्यमातूनच</b> जाऊ शकतात, द्रवात नष्ट होतात.<br>
-        • <b>३. भूपृष्ठ लहरी (L-Waves):</b> भूपृष्ठावरून प्रवास करतात. यांचा वेग कमी असतो, परंतु <b>सर्वात जास्त विनाशकारी</b> याच लहरी असतात.
-      </div>
-      <div class="exam-fact">
-        <b>मोजमाप:</b> भूकंपाची तीव्रता <b>रिश्टर स्केलवर (Richter Scale)</b> मोजली जाते आणि त्याचा आलेख <b>सिस्मोग्राफवर (Seismograph)</b> काढला जातो.
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "भूकंपाच्या लहरींपैकी सर्वात जास्त विनाश घडवून आणणाऱ्या लहरी कोणत्या?",
-        options: ["P-लहरी", "S-लहरी", "भूपृष्ठ लहरी (L-Waves)", "ध्वनी लहरी"],
-        ans: 2,
-        exp: "L-लहरी जमिनीच्या पृष्ठभागावरून प्रवास करत असल्याने इमारतींचे सर्वाधिक नुकसान याच लहरींमुळे होते."
-      },
-      {
-        q: "कोणत्या भूकंपाच्या लहरी द्रवरूप माध्यमातून प्रवास करू शकत नाहीत?",
-        options: ["प्राथमिक लहरी (P)", "दुय्यम लहरी (S)", "भूपृष्ठ लहरी (L)", "सर्व लहरी"],
-        ans: 1,
-        exp: "S-लहरी फक्त घन पदार्थातून जातात; पृथ्वीच्या द्रवरूप बाह्य गाभ्यात त्या शोषल्या जातात."
-      }
-    ]
-  },
-  12: {
-    title: "१२. पर्वतांचे प्रकार (वली, ब्लॉक, अवशिष्ट)",
-    content: `
-      <h3>१. पर्वतांचे प्रमुख प्रकार</h3>
-      <div class="box">
-        <b>१. वली पर्वत (Fold Mountains):</b> गाळावर दाबाने वळ्या पडून बनतात. उदा. <b>हिमालय (नवीन वली पर्वत)</b>, आल्प्स, अँडीज.<br>
-        <b>२. गट किंवा ब्लॉक पर्वत (Block Mountains):</b> जमीन खचून किंवा वर उचलली जाऊन बनतात. उदा. <b>सातपुडा पर्वत</b>, ब्लॅक फॉरेस्ट.<br>
-        <b>३. अवशिष्ट किंवा घर्षित पर्वत (Residual):</b> जुन्या पर्वतांची झीज होऊन उरलेला भाग. उदा. <b>अरवली पर्वत (भारतातील सर्वात प्राचीन पर्वत)</b>.
-      </div>
-      <div class="exam-fact">
-        <b>परीक्षेतील तथ्य:</b> <b>अरवली</b> हा सर्वात प्राचीन अवशिष्ट पर्वत आहे, तर <b>हिमालय</b> हा जगातील सर्वात तरुण वली पर्वत आहे.
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "भारतातील अरवली पर्वतरांग खालीलपैकी कोणत्या प्रकारचा पर्वत आहे?",
-        options: ["वली पर्वत", "गट पर्वत", "अवशिष्ट पर्वत (Residual)", "ज्वालामुखी पर्वत"],
-        ans: 2,
-        exp: "अरवली हा अपरदनाने झिजलेला भारतातील सर्वात प्राचीन अवशिष्ट पर्वत आहे."
-      },
-      {
-        q: "हिमालय पर्वताची निर्मिती खालीलपैकी कोणत्या प्रक्रियेतून झाली आहे?",
-        options: ["ज्वालामुखी उद्रेक", "गाळाचे वलयीकरण (Fold Mountains)", "जमीन खचून", "उल्कापाताने"],
-        ans: 1,
-        exp: "टेथिस समुद्रातील गाळाचे वलयीकरण होऊन हिमालय पर्वत तयार झाला आहे."
-      }
-    ]
-  },
-  13: {
-    title: "१३. पठारे व जगातील प्रमुख पठारी प्रदेश",
-    content: `
-      <h3>१. पठार म्हणजे काय? (Plateau)</h3>
-      <p>• समुद्रसपाटीपासून बऱ्याच उंचीवर असणारा, आजूबाजूच्या प्रदेशापेक्षा तीव्र उताराने उंचावलेला आणि माथ्यावर विस्तृत सपाट भाग असणारा भूभाग म्हणजे <b>पठार</b> होय. याला इंग्रजीत 'टेबल लँड' (Tableland) असेही म्हणतात.</p>
-      
-      <h3>२. पठारांचे प्रमुख प्रकार</h3>
-      <div class="box">
-        • <b>१. आंतरपर्वतीय पठार (Intermontane):</b> चारही बाजूंनी पर्वतरांगांनी वेढलेले पठार. उदा. <b>तिबेटचे पठार</b> (हिमालय व कुनलुन पर्वतांच्या मध्ये), बोलिव्हिया पठार.<br>
-        • <b>२. पर्वतपादीय पठार (Piedmont):</b> एका बाजूला पर्वत आणि दुसऱ्या बाजूला मैदान किंवा समुद्र. उदा. पॅटागोनिया पठार (अर्जेंटिना).<br>
-        • <b>३. लाव्हा पठार (Volcanic/Basalt):</b> भेगाळ ज्वालामुखी उद्रेकातून लाव्हा पसरून तयार झालेले. उदा. <b>दख्खनचे पठार (महाराष्ट्र)</b>, कोलंबिया पठार.<br>
-        • <b>४. घुमटाकार पठार (Domed):</b> अंतर्गत दाबाने भूपृष्ठ वर उचलले जाऊन बनलेले. उदा. छोटा नागपूर पठार.
-      </div>
-
-      <h3>३. स्पर्धा परीक्षेसाठी महत्त्वाचे मुद्दे</h3>
-      <div class="exam-fact">
-        • <b>जगाचे छप्पर (Roof of the World):</b> पामीर/तिबेटच्या पठाराला म्हटले जाते. तिबेटचे पठार हे जगातील सर्वात उंच (सरासरी ४,५००+ मीटर) व सर्वात मोठे पठार आहे.<br>
-        • <b>भारताचे रूर (Ruhr of India):</b> <b>छोटा नागपूर पठाराला</b> म्हणतात, कारण येथे कोळसा, लोह, अभ्रक, बॉक्साइट यांसारखी खनिजे प्रचंड प्रमाणात आढळतात.<br>
-        • <b>दख्खनचे पठार:</b> हे भारतातील सर्वात मोठे पठार असून ते प्रामुख्याने बेसाल्ट खडकापासून बनलेले आहे.
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "जगातील सर्वात उंच आणि विस्तृत असणाऱ्या तिबेटच्या पठाराला कोणत्या टोपणनावाने ओळखले जाते?",
-        options: ["सुवर्णभूमी", "जगाचे छप्पर (Roof of the World)", "पांढऱ्या हत्तींची भूमी", "रूर प्रदेश"],
-        ans: 1,
-        exp: "तिबेटचे पठार हे समुद्रसपाटीपासून सरासरी ४,५०० मीटरपेक्षा जास्त उंच असल्यामुळे त्याला 'जगाचे छप्पर' म्हणतात."
-      },
-      {
-        q: "खनिजांच्या विपुल साठ्यांमुळे भारतातील कोणत्या पठाराला 'भारताचे रूर' (Ruhr of India) म्हणतात?",
-        options: ["माळवा पठार", "छोटा नागपूर पठार", "कर्नाटक पठार", "मेघालय पठार"],
-        ans: 1,
-        exp: "जर्मनीतील खनिजसंपन्न 'रूर' खोऱ्याप्रमाणेच भारतातील छोटा नागपूर पठारावर कोळसा आणि खनिजांचे सर्वाधिक साठे आहेत."
-      },
-      {
-        q: "चारही बाजूंनी पर्वतरांगांनी वेढलेल्या पठाराला कोणत्या प्रकारचे पठार म्हणतात?",
-        options: ["पर्वतपादीय पठार", "महासागरीय पठार", "आंतरपर्वतीय पठार (Intermontane)", "ज्वालामुखी पठार"],
-        ans: 2,
-        exp: "पर्वतरांगांच्या मधे असणाऱ्या पठारांना आंतरपर्वतीय पठार म्हणतात; तिबेटचे पठार याचे सर्वोत्तम उदाहरण आहे."
-      },
-      {
-        q: "महाराष्ट्र पठाराची (दख्खन पठार) निर्मिती प्रामुख्याने कोणत्या प्रक्रियेतून झाली आहे?",
-        options: ["केंद्रीय ज्वालामुखी उद्रेक", "भेगाळ लाव्हा उद्रेक (Fissure Eruption)", "नदीचे निक्षेपण", "भूकंप खचणे"],
-        ans: 1,
-        exp: "भूगर्भातील भेगांमधून लाव्हाचे २९ वेळा उद्रेक होऊन थरावर थर साचल्याने दख्खनच्या लाव्हा पठाराची निर्मिती झाली."
-      },
-      {
-        q: "दक्षिण अमेरिकेतील 'पॅटागोनिया' हे पठार प्रामुख्याने कोणत्या प्रकारच्या पठाराचे उदाहरण आहे?",
-        options: ["पर्वतपादीय पठार (Piedmont)", "आंतरपर्वतीय पठार", "हिमनदी पठार", "खाडी पठार"],
-        ans: 0,
-        exp: "अँडीज पर्वताच्या पायथ्याशी पसरलेले पॅटागोनिया पठार हे पर्वतपादीय पठाराचे (Piedmont Plateau) उदाहरण आहे."
-      }
-    ]
-  },
-  14: {
-    title: "१४. मैदाने व गाळाची भूरूपे",
-    content: `
-      <h3>१. मैदान म्हणजे काय? (Plain)</h3>
-      <p>• समुद्रसपाटीपासून साधारणतः कमी उंचीवर असणाऱ्या, अत्यंत मंद उतार असलेल्या आणि विस्तृत पसरलेल्या सपाट भूभागाला <b>मैदान</b> म्हणतात. जगातील बहुतांश मानवी वस्त्या आणि शेती मैदानी प्रदेशात केंद्रित आहे.</p>
-      
-      <h3>२. उत्तर भारतीय मैदानाचे ४ भूरूपात्मक विभाग</h3>
-      <div class="box">
-        • <b>१. भाबर (Bhabhar):</b> शिवालिक टेकड्यांच्या पायथ्याशी ८ ते १६ किमी रुंदीचा पट्टा. हिमालयातून येणाऱ्या नद्यांनी आणलेले मोठे गोटे व दगड येथे साचतात. या खडकाळ भागात लहान नद्या जमिनीखाली लुप्त होतात.<br>
-        • <b>२. तराई (Tarai):</b> भाबरच्या दक्षिणेस असलेला दलदलीचा, ओलसर व दाट जंगलांचा पट्टा. येथे लुप्त झालेल्या नद्या पुन्हा जमिनीवर उघड्या वाहू लागतात.<br>
-        • <b>३. भांगर (Bhangar):</b> नद्यांच्या पुराची पातळी न पोहोचणाऱ्या जुन्या गाळाने बनलेला उंचावरील प्रदेश. यात कॅल्शियम कार्बोनेटच्या गाठी असतात, ज्यांना <b>'कंकर'</b> म्हणतात.<br>
-        • <b>४. खादर (Khadar):</b> नद्यांच्या पूरखोऱ्यात दरवर्षी पुराच्या पाण्याने वाहून आणून साचवलेला नवीन गाळ. हा पट्टा अत्यंत सुपीक असतो.
-      </div>
-
-      <div class="exam-fact">
-        <b>परीक्षेतील तथ्य:</b> पंजाब-हरियाणा मैदानात आढळणाऱ्या सखल पूरमैदानांना स्थानिक भाषेत <b>'बेट' (Bet)</b> म्हणतात.
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "उत्तर भारतीय मैदानात हिमालयातून येणाऱ्या नद्यांनी दरवर्षी आणून साचवलेल्या ताज्या सुपीक गाळाला काय म्हणतात?",
-        options: ["भाबर", "भांगर", "खादर", "तराई"],
-        ans: 2,
-        exp: "पुराच्या पाण्याने दरवर्षी आणून टाकलेल्या नवीन गाळाच्या अत्यंत सुपीक जमिनीला खादर म्हणतात."
-      },
-      {
-        q: "शिवालिक टेकड्यांच्या पायथ्याशी दगड-गोट्यांमुळे नद्या लुप्त होणाऱ्या पट्ट्याला काय म्हणतात?",
-        options: ["तराई", "भाबर", "खादर", "डेल्टा"],
-        ans: 1,
-        exp: "भाबर पट्ट्यात सच्छिद्र दगड-गोटे साचलेले असल्याने लहान नद्यांचे पाणी खडकांखाली लुप्त होते."
-      },
-      {
-        q: "जुन्या गाळाने बनलेल्या उंचावरील सपाट मैदानास काय म्हणतात, ज्यामध्ये चुनखडीचे 'कंकर' आढळतात?",
-        options: ["भांगर", "खादर", "भाबर", "रेह"],
-        ans: 0,
-        exp: "नद्यांच्या जुन्या गाळाच्या उंचावरील भागाला भांगर म्हणतात. हा खादरपेक्षा कमी सुपीक असतो."
-      },
-      {
-        q: "भाबर पट्ट्याच्या दक्षिणेस असणारा दलदलीचा आणि दाट जंगलांनी व्यापलेला पट्टा कोणता?",
-        options: ["तराई", "भांगर", "चो", "दोआब"],
-        ans: 0,
-        exp: "भाबरमधून बाहेर पडणारे पाणी तराई भागात पसरून दलदल व दाट वने निर्माण करते."
-      },
-      {
-        q: "दोन नद्यांमधील सुपीक मैदानी भूभागाला भौगोलिक भाषेत काय म्हणतात?",
-        options: ["खाडी", "दोआब (Doab)", "जलविभाजक", "घळई"],
-        ans: 1,
-        exp: "दोन नद्यांच्या मधल्या सुपीक गाळाच्या प्रदेशाला 'दोआब' म्हणतात (उदा. गंगा-यमुना दोआब)."
-      }
-    ]
-  },
-  15: {
-    title: "१५. नदीची उत्पत्ती व नदीप्रणालीचे स्वरूप",
-    content: `
-      <h3>१. नदीची संकल्पना व महत्त्वाच्या व्याख्या</h3>
-      <p>• उंचावरील प्रदेशातून गुरुत्वाकर्षणामुळे उताराच्या दिशेने एका नैसर्गिक मार्गाने वाहणाऱ्या पाण्याच्या प्रवाहाला <b>नदी</b> म्हणतात.</p>
-      <div class="box">
-        • <b>उगम (Source):</b> नदी जेथून सुरू होते (पर्वत, हिमनदी, झरा किंवा तलाव).<br>
-        • <b>उपनदी (Tributary):</b> मुख्य प्रवाहात येऊन मिळणारी छोटी नदी.<br>
-        • <b>वितरिका (Distributary):</b> त्रिभुज प्रदेशात मुख्य नदीपासून फुटून समुद्राकडे जाणाऱ्या वेगवेगळ्या शाखा.<br>
-        • <b>जलविभाजक (Water Divide):</b> दोन भिन्न नदीखोऱ्यांना एकमेकांपासून वेगळा करणारा उंच पर्वतीय प्रदेश (उदा. सह्याद्री पर्वत हा पूर्व व पश्चिम वाहिनी नद्यांचा जलविभाजक आहे).<br>
-        • <b>नदीचे खोरे (Drainage Basin):</b> मुख्य नदी आणि तिच्या सर्व उपनद्या ज्या संपूर्ण क्षेत्रातून पाणी गोळा करतात ते क्षेत्र.
-      </div>
-
-      <h3>२. नदीचे ३ टप्पे</h3>
-      <p>• <b>१. युवावस्था (पर्वतीय टप्पा):</b> तीव्र उतार, वेग प्रचंड, फक्त खनन (झीज) कार्य.<br>
-      • <b>२. प्रौढावस्था (मैदानी टप्पा):</b> मंद उतार, वहन कार्य व नागमोडी वळणे.<br>
-      • <b>३. वृद्धावस्था (मुख टप्पा):</b> अतिशय मंद गती, गाळ साचणे (निक्षेपण कार्य) आणि डेल्टा निर्मिती.</p>
-    `,
-    mcqs: [
-      {
-        q: "दोन वेगवेगळ्या नदीखोऱ्यांचे पाणी विभागणाऱ्या उंच पर्वतीय भूभागाला काय म्हणतात?",
-        options: ["उपनदी", "जलविभाजक (Water Divide)", "खाडी", "दोआब"],
-        ans: 1,
-        exp: "जलविभाजक दोन वेगवेगळ्या नद्यांच्या पाणलोट क्षेत्राला एकमेकांपासून विभाजित करतो."
-      },
-      {
-        q: "नदीच्या मुखाजवळ मुख्य नदीपासून वेगळ्या होऊन समुद्राला मिळणाऱ्या शाखांना काय म्हणतात?",
-        options: ["उपनद्या", "वितरिका (Distributaries)", "धबधबा", "नाले"],
-        ans: 1,
-        exp: "गाळ साचल्यामुळे नदीमुखाशी पाण्याचे फाटे फुटतात, त्यांना वितरिका (Distributary) म्हणतात (उदा. हुगळी नदी)."
-      },
-      {
-        q: "महाराष्ट्रातील सह्याद्री पर्वत प्रामुख्याने कोणत्या नद्यांमधील प्रमुख जलविभाजक मानला जातो?",
-        options: ["गंगा व यमुना", "अरबी समुद्राला मिळणाऱ्या व बंगालच्या उपसागराला मिळणाऱ्या नद्या", "तापी व नर्मदा", "सिंधू व सतलज"],
-        ans: 1,
-        exp: "सह्याद्री पश्चिमेकडे कोकणात वाहणाऱ्या आणि पूर्वेकडे पठारावरून वाहणाऱ्या नद्यांना वेगळा करतो."
-      },
-      {
-        q: "नदी आपल्या युवावस्थेत (पर्वतीय प्रदेशात) प्रामुख्याने कोणते कार्य सर्वात जास्त करते?",
-        options: ["निक्षेपण (साचवणे)", "अपरदन / खनन (Erosion)", "पूर नियंत्रण", "डेल्टा निर्मिती"],
-        ans: 1,
-        exp: "युवावस्थेत तीव्र उतारावर पाण्याचा वेग प्रचंड असल्याने नदी तळाची व बाजूंची झीज (खनन) करते."
-      },
-      {
-        q: "मुख्य नदी आणि तिच्या उपनद्या मिळून व्यापलेल्या एकूण पाणलोट प्रदेशाला काय म्हणतात?",
-        options: ["नदीचे खोरे (Basin)", "खाडी", "नदीपात्र", "संगम"],
-        ans: 0,
-        exp: "नदी व तिच्या सर्व उपनद्या ज्या प्रदेशातून पाणी गोळा करतात त्याला नदीचे खोरे (Drainage Basin) म्हणतात."
-      }
-    ]
-  },
-  16: {
-    title: "१६. नदीचे कार्य (खनन, वहन, निक्षेपण भूरूपे)",
-    content: `
-      <h3>१. नदीचे खनन कार्य व भूरूपे (Erosional Landforms)</h3>
-      <div class="box">
-        • <b>'V' आकाराची दरी:</b> नदी तळाचे तीव्र खनन करत गेल्यामुळे दरीचे काठ 'V' अक्षरासारखे दिसतात.<br>
-        • <b>घळई (Gorge / Canyon):</b> अतिशय अरुंद, खोल आणि सरळ उभ्या कड्यांची दरी (उदा. नर्मदा नदीची संगमरवरी घळई, अमेरिकेची ग्रँड कॅनियन).<br>
-        • <b>धबधबा (Waterfall):</b> कठीण खडकावरून पाणी अचानक मऊ खडकावर उंचावरून कोसळते (उदा. भारतातील जोग धबधबा, महाराष्ट्रातील ठोसेघर).<br>
-        • <b>कुंभगर्त (Potholes / रांजणखळगे):</b> भोवऱ्यात फिरणाऱ्या गोट्यांमुळे नदीपात्रात गोलाकार खड्डे पडतात (उदा. अहमदनगर जिल्ह्यातील <b>निघोज येथील कुकडी नदीचे रांजणखळगे</b>).
-      </div>
-
-      <h3>२. वहन व निक्षेपण भूरूपे (Depositional Landforms)</h3>
-      <div class="box">
-        • <b>नागमोडी वळणे (Meanders):</b> मैदानात अडथळ्यांमुळे नदी वळणावळणाने वाहते.<br>
-        • <b>नालाकृती सरोवर (Oxbow Lake):</b> नागमोडी वळणाचा फाटा मुख्य प्रवाहातून तुटून घोड्याच्या नाळेसारखे सरोवर बनते.<br>
-        • <b>त्रिभुज प्रदेश (Delta):</b> नदी मुखाशी गाळ साचून ग्रीक अक्षर 'Δ' (डेल्टा) सारखा बनलेला सुपीक भूभाग (उदा. <b>सुंदरबन</b>).
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "महाराष्ट्रातील निघोज (जि. अहिल्यानगर/अहमदनगर) येथे कुकडी नदीच्या पात्रात कोणती प्रसिद्ध भूरूपे आढळतात?",
-        options: ["त्रिभुज प्रदेश", "रांजणखळगे / कुंभगर्त (Potholes)", "नागमोडी वळणे", "वालुकागिरी"],
-        ans: 1,
-        exp: "निघोज येथील कुकडी नदीच्या पात्रातील नैसर्गिक रांजणखळगे (Potholes) हे आशिया खंडातील सर्वात मोठे मानले जातात."
-      },
-      {
-        q: "गंगा आणि ब्रह्मपुत्रा नद्यांनी मुखाशी गाळ साचवून निर्माण केलेला जगातील सर्वात मोठा त्रिभुज प्रदेश कोणता?",
-        options: ["महानदी डेल्टा", "मिसिसिपी डेल्टा", "सुंदरबन त्रिभुज प्रदेश", "नाईल डेल्टा"],
-        ans: 2,
-        exp: "गंगा-ब्रह्मपुत्रा नद्यांच्या मुखाशी असलेला सुंदरबन हा खारफुटी वनांनी समृद्ध जगातील सर्वात मोठा त्रिभुज प्रदेश आहे."
-      },
-      {
-        q: "नदीच्या खनन कार्यामुळे तीव्र उतारावर निर्माण होणाऱ्या दरीचा आकार सामान्यतः कसा असतो?",
-        options: ["'U' आकाराची", "'V' आकाराची", "'W' आकाराची", "गोलाकार"],
-        ans: 1,
-        exp: "नदीच्या पाण्यामुळे तळाची झीज होऊन 'V' आकाराची दरी बनते, तर हिमनदीमुळे 'U' आकाराची दरी बनते."
-      },
-      {
-        q: "मैदानी प्रदेशात नदीच्या नागमोडी वळणातून मुख्य प्रवाह सरळ झाल्यावर मागे उरणाऱ्या सरोवराला काय म्हणतात?",
-        options: ["खाजण सरोवर", "क्रेटर सरोवर", "नालाकृती सरोवर (Oxbow Lake)", "गोडे सरोवर"],
-        ans: 2,
-        exp: "घोड्याच्या नाळेच्या आकाराचे हे सरोवर नागमोडी वळणे तुटल्यामुळे तयार होते."
-      },
-      {
-        q: "कठीण खडकावरून मऊ खडकावर पाणी थेट खाली उडी घेते तेव्हा कोणती भूरचना तयार होते?",
-        options: ["धबधबा (Waterfall)", "खाडी", "घळई", "पूरमैदान"],
-        ans: 0,
-        exp: "उंचावरून थेट पाणी कोसळण्याला धबधबा म्हणतात; जसे शरावती नदीवरील जोग/गेरसोप्पा धबधबा."
-      }
-    ]
-  },
-  17: {
-    title: "१७. भारतातील प्रमुख नदीप्रणाली (हिमालयीन व द्वीपकल्पीय)",
-    content: `
-      <h3>१. हिमालयीन नद्या (बारमाही नद्या)</h3>
-      <div class="box">
-        • <b>सिंधू नदी:</b> उगम मानसरोवर (तिबेट). लांबी २८८० किमी (भारतात ७०९ किमी). मुख्य उपनद्या: झेलम, चिनाब (सर्वात मोठी उपनदी), रावी, बियास, सतलज. १९६० च्या सिंधू पाणी करारानुसार भारताला रावी, बियास, सतलजचे पाणी मिळाले.<br>
-        • <b>गंगा नदी:</b> भारतातील सर्वात लांब नदी (२,५२५ किमी). भागीरथी व अलकनंदा यांचा देवप्रयाग येथे संगम होऊन गंगा बनते. उजव्या तीरावरील प्रमुख उपनदी <b>यमुना</b> (प्रयागराज येथे संगम).<br>
-        • <b>ब्रह्मपुत्रा नदी:</b> तिबेटमध्ये <b>'त्संगपो' (Tsangpo)</b>, अरुणाचलमध्ये 'दिहांग', आसाममध्ये ब्रह्मपुत्रा आणि बांगलादेशात <b>'जमुना'</b> म्हणतात. आसाममध्ये या नदीत जगातील सर्वात मोठे नदीतील बेट <b>'माजुली' (Majuli)</b> आहे.
-      </div>
-
-      <h3>२. द्वीपकल्पीय नद्या (हंगामी नद्या)</h3>
-      <div class="box">
-        • <b>पश्चिमवाहिनी:</b> नर्मदा (अमरकंटक उगम, धुआंधार धबधबा) व तापी (मुलताई उगम). या दोन्ही खचदरीतून वाहतात आणि त्रिभुज प्रदेश न बनवता <b>खाडी (Estuary)</b> तयार करतात.<br>
-        • <b>पूर्ववाहिनी:</b> गोदावरी (१४६५ किमी - वृद्ध गंगा), कृष्णा (१४०० किमी), कावेरी (दालमिया/शिवसमुद्रम धबधबा), महानदी (हिराकुड धरण).
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "भारतातील सर्वात लांब नदी कोणती आहे?",
-        options: ["गोदावरी", "सिंधू", "गंगा (२,५२५ किमी)", "ब्रह्मपुत्रा"],
-        ans: 2,
-        exp: "गंगा नदी ही पूर्णतः भारताच्या भूमीतून प्रामुख्याने वाहणारी २,५२५ किमी लांबीची सर्वात लांब नदी आहे."
-      },
-      {
-        q: "जगातील सर्वात मोठे नदीतील बेट 'माजुली' (Majuli Island) कोणत्या नदीपात्रात आहे?",
-        options: ["गंगा", "ब्रह्मपुत्रा", "गोदावरी", "सिंधू"],
-        ans: 1,
-        exp: "आसाम राज्यात ब्रह्मपुत्रा नदीच्या पात्रात माजुली हे जगातील सर्वात मोठे नदी बेट वसलेले आहे."
-      },
-      {
-        q: "खचदरीतून (Rift Valley) वाहणाऱ्या आणि अरबी समुद्राला मिळणाऱ्या भारतातील दोन प्रमुख नद्या कोणत्या?",
-        options: ["गोदावरी व कृष्णा", "गंगा व यमुना", "नर्मदा व तापी", "महानदी व कावेरी"],
-        ans: 2,
-        exp: "नर्मदा आणि तापी या नद्या विंध्य व सातपुडा पर्वतांच्या खचदरीतून पश्चिमेकडे अरबी समुद्राला मिळतात."
-      },
-      {
-        q: "दक्षिण भारताची 'वृद्ध गंगा' किंवा 'दक्षिण गंगा' म्हणून कोणत्या नदीला ओळखले जाते?",
-        options: ["कृष्णा", "कावेरी", "गोदावरी", "तुंगभद्रा"],
-        ans: 2,
-        exp: "गोदावरी ही दक्षिण भारतातील सर्वात लांब (१,४६५ किमी) व सर्वात मोठी नदी असल्याने तिला दक्षिण गंगा म्हणतात."
-      },
-      {
-        q: "१९६० च्या ऐतिहासिक सिंधू पाणी करारानुसार (Indus Water Treaty) भारताला कोणत्या तीन पूर्व नद्यांचे पाणी पूर्णपणे मिळाले?",
-        options: ["सिंधू, झेलम, चिनाब", "रावी, बियास, सतलज", "गंगा, यमुना, गोमती", "झेलम, रावी, बियास"],
-        ans: 1,
-        exp: "या करारानुसार भारताला पूर्वेकडील रावी, बियास व सतलज या तीन नद्यांच्या पाण्याचा पूर्ण हक्क मिळाला."
-      }
-    ]
-  },
-  18: {
-    title: "१८. महाराष्ट्रातील नदीप्रणाली (गोदावरी, भीमा, कृष्णा)",
-    content: `
-      <h3>१. महाराष्ट्राचे प्रमुख नदी विभाग</h3>
-      <div class="box">
-        • <b>१. गोदावरी खोरे:</b> उगम त्र्यंबकेश्वर (नाशिक). महाराष्ट्रातील लांबी ६६८ किमी. महाराष्ट्राचे <b>४९% क्षेत्र</b> एकट्या गोदावरीने व्यापले आहे. उपनद्या: दारणा, प्रवरा, सिंदफणा, मांजरा (उजवीकडून); कादवा, शिवना, दुधना, पूर्णा, प्राणहिता (डावीकडून). जायकवाडी धरण (नाथसागर) याच नदीवर आहे.<br>
-        • <b>२. भीमा खोरे:</b> उगम भीमाशंकर (पुणे). लांबी ४५१ किमी. सोलापूर जिल्ह्यात पंढरपूर येथे तिला <b>'चंद्रभागा'</b> म्हणतात. उजनी धरण भीमा नदीवर आहे. उपनद्या: घोड, सीना, मुळा-मुठा, नीरा, कुकडी.<br>
-        • <b>३. कृष्णा खोरे:</b> उगम महाबळेश्वर (सातारा). महाराष्ट्रातील लांबी २८२ किमी. उपनद्या: कोयना (महाराष्ट्राची भाग्यलक्ष्मी), वारणा, पंचगंगा (कोल्हापूर), वेण्णा.<br>
-        • <b>४. तापी-पूर्णा खोरे:</b> खान्देशातील पश्चिमवाहिनी नदी.
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "महाराष्ट्राचे एकूण क्षेत्रफळापैकी सुमारे किती टक्के क्षेत्र गोदावरी नदीच्या खोऱ्याने व्यापले आहे?",
-        options: ["२५%", "४९%", "६०%", "७०%"],
-        ans: 1,
-        exp: "गोदावरी हे महाराष्ट्रातील सर्वात मोठे नदीखोरे असून ते राज्याचे सुमारे ४९% भौगोलिक क्षेत्र व्यापते."
-      },
-      {
-        q: "भीमा नदीला पंढरपूर (सोलापूर) येथे तिच्या चंद्रकोरीसारख्या आकारामुळे कोणत्या नावाने ओळखले जाते?",
-        options: ["इंद्रावती", "चंद्रभागा", "कृष्णा", "भागीरथी"],
-        ans: 1,
-        exp: "पंढरपुरात भीमा नदीचा आकार चंद्रकोरीसारखा अर्धवर्तुळाकार होतो, म्हणून तिला स्थानिक पातळीवर चंद्रभागा म्हणतात."
-      },
-      {
-        q: "महाराष्ट्राची 'भाग्यलक्ष्मी' म्हणून कोणत्या नदीवरील जलविद्युत प्रकल्पाला ओळखले जाते?",
-        options: ["गोदावरी (जायकवाडी)", "कोयना नदी", "भीमा नदी", "वैतरणा नदी"],
-        ans: 1,
-        exp: "कोयना धरण व त्यातून निर्माण होणारी प्रचंड जलविद्युत ऊर्जा राज्याच्या विकासात महत्त्वाची असल्याने कोयनेला भाग्यलक्ष्मी म्हणतात."
-      },
-      {
-        q: "गोदावरी नदीचा उगम महाराष्ट्रात कोणत्या ठिकाणी होतो?",
-        options: ["भीमाशंकर (पुणे)", "महाबळेश्वर (सातारा)", "त्र्यंबकेश्वर (नाशिक)", "मुलताई (बैतूल)"],
-        ans: 2,
-        exp: "गोदावरी नदीचा उगम नाशिक जिल्ह्यातील त्र्यंबकेश्वर जवळील ब्रह्मगिरी पर्वतावर होतो."
-      },
-      {
-        q: "कोल्हापूर शहर खालीलपैकी कोणत्या नदीच्या काठावर वसलेले आहे?",
-        options: ["कृष्णा", "पंचगंगा", "कोयना", "वारणा"],
-        ans: 1,
-        exp: "कोल्हापूर शहर हे ऐतिहासिक पंचगंगा नदीच्या तीरावर वसलेले आहे."
-      }
-    ]
-  },
-  19: {
-    title: "१९. वातावरण व वातावरणातील थर",
-    content: `
-      <h3>१. वातावरणातील वायूंचे प्रमाण</h3>
-      <p>• <b>नायट्रोजन (N2):</b> ७८.०८% | <b>ऑक्सिजन (O2):</b> २०.९५% | <b>ऑर्गॉन (Ar):</b> ०.९३% | <b>कार्बन डायऑक्साईड (CO2):</b> ०.०४%.</p>
-      
-      <h3>२. वातावरणाचे थर (भूपृष्ठापासून वर जाताना)</h3>
-      <div class="box">
-        • <b>१. क्षोभमंडळ (Troposphere - ० ते १३ किमी):</b> सर्वात घनदाट थर (एकूण हवेच्या वस्तुमानाच्या ७५%). ढग, पाऊस, वादळे, विजा हे सर्व हवामान बदल फक्त याच थरात घडतात. दर १६५ मी. उंचीला १°C तापमान घटते.<br>
-        • <b>२. समतापमंडळ (Stratosphere - १३ ते ५० किमी):</b> हवा अतिशय शांत व कोरडी असते, त्यामुळे जेट विमाने उडवण्यासाठी आदर्श. याच्या खालच्या भागात <b>ओझोन वायूचा थर (O3)</b> असतो जो अतिनील किरणे शोषून घेतो.<br>
-        • <b>३. मध्यमंडळ (Mesosphere - ५० ते ८० किमी):</b> वातावरणातील सर्वात थंड थर (तापमान उणे -१००°C पर्यंत घसरते). अंतराळातून येणाऱ्या उल्का याच थरात जळून भस्म होतात.<br>
-        • <b>४. आयनमंडळ (Ionosphere - ८० ते ४०० किमी):</b> येथे विद्युतभारीत आयन असतात. पृथ्वीवरून पाठवलेल्या <b>रेडिओ लहरी</b> या थरावरून परावर्तित होतात.<br>
-        • <b>५. बहिर्मंडळ (Exosphere):</b> सर्वात बाहेरील थर; हायड्रोजन व हेलियमसारखे हलके वायू आढळतात.
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "विमानांच्या प्रवासासाठी वातावरणाचा कोणता थर सर्वाधिक अनुकूल आणि शांत मानला जातो?",
-        options: ["क्षोभमंडळ", "समतापमंडळ (Stratosphere)", "मध्यमंडळ", "आयनमंडळ"],
-        ans: 1,
-        exp: "समतापमंडळात ढग, वादळे व हवामानविषयक अडथळे नसल्याने जेट विमाने याच थरातून सुरक्षित उडतात."
-      },
-      {
-        q: "पृथ्वीवरून प्रक्षेपित केलेल्या रेडिओ लहरी वातावरणाच्या कोणत्या थरावरून पुन्हा पृथ्वीवर परावर्तित होतात?",
-        options: ["आयनमंडळ (Ionosphere)", "क्षोभमंडळ", "समतापमंडळ", "ओझोन थर"],
-        ans: 0,
-        exp: "आयनमंडळातील विद्युतभारीत कणांमुळे (Ions) रेडिओ संपर्काच्या लहरी परावर्तित होऊन वायरलेस संपर्क शक्य होतो."
-      },
-      {
-        q: "अंतराळातून वेगाने पृथ्वीकडे येणाऱ्या उल्का (Meteors) वातावरणातील कोणत्या थरात घर्षणाने जळून नष्ट होतात?",
-        options: ["क्षोभमंडळ", "मध्यमंडळ (Mesosphere)", "बहिर्मंडळ", "समतापमंडळ"],
-        ans: 1,
-        exp: "मध्यमंडळात उल्कांचे हवेच्या थराशी तीव्र घर्षण होऊन त्या जळून जातात व पृथ्वीचा बचाव होतो."
-      },
-      {
-        q: "पाऊस, ढग, धुके, वादळे या सर्व हवामानविषयक घटना वातावरणाच्या कोणत्या थरात घडतात?",
-        options: ["क्षोभमंडळ (Troposphere)", "समतापमंडळ", "आयनमंडळ", "मध्यमंडळ"],
-        ans: 0,
-        exp: "वातावरणातील जवळजवळ सर्व बाष्प आणि हवेचा मोठा भार क्षोभमंडळात असल्याने सर्व घडामोडी येथेच होतात."
-      },
-      {
-        q: "वातावरणात नायट्रोजन वायूचे प्रमाण एकूण हवेच्या किती टक्के आहे?",
-        options: ["२०.९५%", "०.०४%", "७८.०८%", "५०%"],
-        ans: 2,
-        exp: "हवेमध्ये सर्वाधिक प्रमाण नायट्रोजनचे (सुमारे ७८%) आणि त्याखालोखाल ऑक्सिजनचे (सुमारे २१%) असते."
-      }
-    ]
-  },
-  20: {
-    title: "२०. तापमान व तापमानावर परिणाम करणारे घटक",
-    content: `
-      <h3>१. तापमान वितरण नियम</h3>
-      <p>• <b>सामान्य तापऱ्हास दर (Normal Lapse Rate):</b> भूपृष्ठापासून वातावरणात उंचावर जाताना दर <b>१६५ मीटरला १°C तापमान कमी होते</b> (किंवा प्रति १,००० मीटर / १ किमी ला ६.५°C तापमान घटते).</p>
-      
-      <h3>२. तापमानावर परिणाम करणारे मुख्य घटक</h3>
-      <div class="box">
-        • <b>अक्षांश:</b> विषुववृत्तावर सूर्यकिरणे लंबरूप पडत असल्याने सर्वाधिक उष्णता; ध्रुवांकडे किरणे तिरपी पडत असल्याने थंडी वाढते.<br>
-        • <b>उंची:</b> उंची वाढेल तसे हवेचे थर विरळ होतात व उष्णता धरून ठेवण्याची क्षमता घटते (उदा. महाबळेश्वर, उटी थंड असतात).<br>
-        • <b>समुद्र सान्निध्य:</b> समुद्राचे पाणी उशिरा तापते व उशिरा थंड होते. त्यामुळे किनारपट्टीवर <b>सम हवामान</b> असते (उदा. मुंबई), तर समुद्रापासून दूर भूभागात <b>विषम/कडक हवामान</b> असते (उदा. नागपूर).<br>
-        • <b>सागरी प्रवाह:</b> उष्ण प्रवाहामुळे किनारपट्टीचे तापमान वाढते, तर शीत प्रवाहामुळे तापमान घटते.
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "वातावरणात उंचावर जाताना दर १,००० मीटर (१ किमी) उंचीमागे सरासरी किती तापमान कमी होते?",
-        options: ["२.५°C", "४°C", "६.५°C", "१०°C"],
-        ans: 2,
-        exp: "Normal Lapse Rate नुसार दर १,००० मीटर उंचीला ६.५ अंश सेल्सिअसने तापमान कमी होते."
-      },
-      {
-        q: "मुंबईमध्ये वर्षभर सम हवामान असते, परंतु नागपूरमध्ये उन्हाळ्यात अतिउष्ण व हिवाळ्यात अतिथंड हवामान का असते?",
-        options: ["अक्षांश फरक", "समुद्र सान्निध्य व भूवेष्टित स्थान", "पर्वतरांगांचा अभाव", "मृदा प्रकार"],
-        ans: 1,
-        exp: "मुंबई समुद्राजवळ असल्याने सम हवामान अनुभवते, तर नागपूर खंडीय स्थानामुळे (खंडांतर्गत विषम हवामान) तीव्र हवामान अनुभवते."
-      },
-      {
-        q: "नकाशावर समान तापमान असलेली ठिकाणे जोडणाऱ्या काल्पनिक रेषेला काय म्हणतात?",
-        options: ["समदाब रेषा", "समताप रेषा (Isotherm)", "समपर्जन्य रेषा", "अक्षवृत्त"],
-        ans: 1,
-        exp: "नकाशावर समान तापमानाच्या ठिकाणांना जोडणाऱ्या रेषेला समताप रेषा (Isotherm) म्हणतात."
-      },
-      {
-        q: "सूर्यकिरणे पृथ्वीच्या कोणत्या भागावर वर्षभर जवळजवळ लंबरूप पडतात?",
-        options: ["ध्रुवांवर", "कर्कवृत्ताच्या उत्तरेस", "विषुववृत्तीय प्रदेशात", "अंटार्क्टिकावर"],
-        ans: 2,
-        exp: "विषुववृत्तावर सूर्यकिरणे सरळ लंबरूप पडत असल्याने तेथे वर्षभर तापमान उच्च राहते."
-      },
-      {
-        q: "जमीन आणि पाणी यांच्या तापण्याच्या गुणधर्माबाबत कोणते विधान सत्य आहे?",
-        options: ["पाणी जमिनीपेक्षा वेगाने तापते", "जमीन पाण्यापेक्षा लवकर तापते आणि लवकर थंड होते", "दोन्ही एकाच वेगाने तापतात", "जमीन कधीही थंड होत नाही"],
-        ans: 1,
-        exp: "जमीन पाण्यापेक्षा तिप्पट वेगाने तापते आणि तेवढ्याच वेगाने उष्णता उत्सर्जित करून थंड होते."
-      }
-    ]
-  },
-  21: {
-    title: "२१. हवेचा दाब व जागतिक दाबपट्टे",
-    content: `
-      <h3>१. हवेचा दाब आणि तापमान यांचा संबंध</h3>
-      <p>• हवेला वजन असते. तापमान वाढले की हवा गरम होऊन हलकी होते आणि वर जाते, त्यामुळे तिथे <b>कमी हवेचा दाब (Low Pressure)</b> तयार होतो. तापमान कमी झाले की हवा थंड व जड होऊन खाली बसते, त्यामुळे <b>जास्त हवेचा दाब (High Pressure)</b> तयार होतो. म्हणजेच तापमान आणि हवेचा दाब यात व्यस्त संबंध असतो.</p>
-      
-      <h3>२. पृथ्वीवरील जागतिक दाबपट्टे</h3>
-      <div class="box">
-        • <b>१. विषुववृत्तीय शांत कमी दाबाचा पट्टा (Doldrums - ०° ते ५° उ. व द.):</b> वर्षभर अतिउष्णतेमुळे हवा सतत वर जाते, येथे पृष्ठभागावर वारे शांत असतात.<br>
-        • <b>२. उपोष्ण जास्त दाबाचे पट्टे (२५° ते ३५°):</b> याला <b>'अश्व अक्षांश' (Horse Latitudes)</b> म्हणतात. पूर्वी व्यापारी जहाजांमधून जड घोडे समुद्रात फेकले जात असत.<br>
-        • <b>३. उपध्रुवीय कमी दाबाचे पट्टे (६०° ते ६५°):</b> पृथ्वीच्या परिवलनामुळे हवा बाहेर फेकली जाऊन हा पट्टा तयार होतो.<br>
-        • <b>४. ध्रुवीय जास्त दाबाचे पट्टे (८५° ते ९०°):</b> प्रचंड थंडीमुळे हवा कायम जड व जास्त दाबाची असते.
-      </div>
-      <div class="exam-fact">
-        <b>हवेचा दाब मोजण्याचे एकक:</b> हवेचा दाब <b>मिलीबार (Millibar - mb)</b> किंवा हेक्टापास्कलमध्ये मोजतात. वातावरणाचा समुद्रसपाटीवरील सरासरी दाब <b>१०१३.२ मिलीबार</b> असतो.
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "समुद्रसपाटीवर पृथ्वीच्या वातावरणाचा सरासरी सर्वसाधारण हवेचा दाब किती असतो?",
-        options: ["९०० मिलीबार", "१०१३.२ मिलीबार", "१२०० मिलीबार", "७६० मिलीबार"],
-        ans: 1,
-        exp: "प्रमाण समुद्रसपाटीवर हवेचा सरासरी दाब १०१३.२ मिलीबार (किंवा ७६ सेमी पारा) इतका मानला जातो."
-      },
-      {
-        q: "दोन्ही गोलार्धातील २५° ते ३५° अक्षांशांमधील जास्त दाबाच्या पट्ट्याला ऐतिहासिकदृष्ट्या काय म्हटले जाते?",
-        options: ["डोलड्रम्स", "अश्व अक्षांश (Horse Latitudes)", "गर्जना करणारे चाळीस", "शून्य दाब पट्टा"],
-        ans: 1,
-        exp: "शांत व जड हवेमुळे जहाजे पुढे जाणे कठीण होई, म्हणून व्यापारी जहाजांवरील घोडे समुद्रात फेकत असत, यावरून नाव पडले."
-      },
-      {
-        q: "हवेचा दाब मोजण्यासाठी खालीलपैकी कोणते वैज्ञानिक उपकरण वापरले जाते?",
-        options: ["थर्मामीटर", "बॅरोमीटर (भारमापक)", "हायग्रोमीटर", "अ‍ॅनिमोमीटर"],
-        ans: 1,
-        exp: "बॅरोमीटरच्या (Barometer) साहाय्याने हवेचा वातावरणीय दाब अचूक मोजला जातो."
-      },
-      {
-        q: "नकाशावर समान हवेचा दाब असणारी ठिकाणे जोडणाऱ्या रेषेला काय म्हणतात?",
-        options: ["समभार रेषा (Isobar)", "समताप रेषा", "समउंची रेषा", "समवृष्टी रेषा"],
-        ans: 0,
-        exp: "समान वायूभार जोडणाऱ्या काल्पनिक रेषेला समभार रेषा (Isobar) म्हणतात."
-      },
-      {
-        q: "विषुववृत्ताजवळ ०° ते ५° पट्ट्यात शांत हवेचा कमी दाबाचा प्रदेश का निर्माण होतो?",
-        options: ["अतिथंडीमुळे", "वर्षभर प्रचंड सूर्यप्रकाश व उष्णतेमुळे हवा प्रसरण पावून वर जाते", "पर्वतरांगांमुळे", "महासागरांच्या अभावामुळे"],
-        ans: 1,
-        exp: "कडक उन्हामुळे हवा गरम होऊन सतत ऊर्ध्व दिशेने वर चढते, त्यामुळे जमिनीलगत कमी दाबाचा शांत पट्टा तयार होतो."
-      }
-    ]
-  },
-  22: {
-    title: "२२. वारे (व्यापारी, पश्चिमी, ध्रुवीय व स्थानिक)",
-    content: `
-      <h3>१. वारे वाहण्याचा मूळ नियम व फेरेलचा नियम</h3>
-      <p>• हवा नेहमी <b>जास्त दाबाकडून कमी दाबाकडे</b> वाहते. पृथ्वीच्या परिवलनामुळे निर्माण होणाऱ्या 'कोरिऑलिस बला'मुळे वारे उत्तर गोलार्धात स्वतःच्या <b>उजवीकडे</b> आणि दक्षिण गोलार्धात स्वतःच्या <b>डावीकडे</b> वळतात. याला <b>फेरेलचा नियम (Ferrel's Law)</b> म्हणतात.</p>
-      
-      <h3>२. वाऱ्यांचे प्रमुख वर्गीकरण</h3>
-      <div class="box">
-        • <b>१. नियमित / ग्रहीय वारे:</b><br>
-        - <b>व्यापारी वारे (Trade Winds):</b> उपोष्ण जास्त दाबाकडून विषुववृत्ताकडे वाहतात.<br>
-        - <b>पश्चिमी वारे (Westerlies):</b> दक्षिण गोलार्धात मोकळ्या महासागरावरून प्रचंड वेगाने वाहतात. म्हणून त्यांना ४०° अक्षांशावर <b>'गर्जना करणारे चाळीस' (Roaring Forties)</b>, ५०° वर <b>'खवळलेले पन्नास' (Furious Fifties)</b> आणि ६०° वर <b>'किंचाळणारे साठ' (Screaming Sixties)</b> म्हणतात.<br>
-        - <b>ध्रुवीय वारे:</b> ध्रुवांकडून वाहणारे अतिथंड वारे.<br><br>
-        • <b>२. स्थानिक वारे (परीक्षेसाठी महत्त्वाचे):</b><br>
-        - <b>लू (Loo):</b> उत्तर भारतातील उन्हाळ्यातील अतिउष्ण वारे.<br>
-        - <b>चिनूक (Chinook):</b> उत्तर अमेरिकेतील रॉकी पर्वतावरून खाली उतरणारे उष्ण वारे (याला <b>'हिमभक्षक' - Snow Eater</b> म्हणतात).<br>
-        - <b>फोन (Foehn):</b> युरोपमधील आल्प्स पर्वतावरून वाहणारे कोरडे उष्ण वारे.<br>
-        - <b>सिरोक्को (Sirocco):</b> सहारा वाळवंटातून भूमध्य समुद्राकडे वाहणारे धुळीचे वारे (यामुळे इटलीत लाल मातीचा 'रक्त पाऊस' होतो).
-      </div>
-    `,
-    mcqs: [
-      {
-        q: "पृथ्वीच्या परिवलनामुळे वारे उत्तर गोलार्धात उजवीकडे व दक्षिण गोलार्धात डावीकडे वळतात, या नियमाला काय म्हणतात?",
-        options: ["न्यूटनचा नियम", "फेरेलचा नियम (Ferrel's Law)", "डॉप्लर प्रभाव", "केप्लरचा नियम"],
-        ans: 1,
-        exp: "फेरेलच्या नियमानुसार कोरिऑलिस बलामुळे वाऱ्यांची मूळ दिशा वळते."
-      },
-      {
-        q: "दक्षिण गोलार्धात ४०° दक्षिण अक्षांशावर प्रचंड वेगाने वाहणाऱ्या पश्चिमी वाऱ्यांना काय म्हणतात?",
-        options: ["डोलड्रम्स", "व्यापारी वारे", "गर्जना करणारे चाळीस (Roaring Forties)", "शांत वारे"],
-        ans: 2,
-        exp: "दक्षिण गोलार्धात जमिनीचा अडथळा नसल्याने ४०° अक्षांशावर वारे अत्यंत खवळलेले असतात, त्यांना Roaring Forties म्हणतात."
-      },
-      {
-        q: "उत्तर अमेरिकेतील रॉकी पर्वतावर बर्फ वितळवून टाकणाऱ्या कोणत्या स्थानिक उष्ण वाऱ्यांना 'हिमभक्षक' (Snow Eater) म्हणतात?",
-        options: ["लू", "चिनूक (Chinook)", "फोन", "मिस्ट्रल"],
-        ans: 1,
-        exp: "चिनूक वारे पर्वतावरून खाली उतरताना गरम होतात व बर्फ झपाट्याने वितळवतात, म्हणून त्यांना स्नो ईटर म्हणतात."
-      },
-      {
-        q: "सहारा वाळवंटातून वाहणाऱ्या लाल वाळूच्या कणांमुळे इटलीमध्ये होणाऱ्या पावसाला काय संबोधले जाते?",
-        options: ["आम्ल पाऊस", "रक्त पाऊस (Blood Rain / Sirocco)", "प्रतिरोध पाऊस", "चक्रीवादळ"],
-        ans: 1,
-        exp: "सिरोक्को वाऱ्यांसोबत येणाऱ्या लाल वाळूच्या कणांमुळे पडणाऱ्या पावसाला 'रक्त पाऊस' म्हणतात."
-      },
-      {
-        q: "दिवसा समुद्राकडून जमिनीकडे वाहणाऱ्या थंड वाऱ्यांना काय म्हणतात?",
-        options: ["खारे वारे (Sea Breeze)", "मतलई वारे (Land Breeze)", "व्यापारी वारे", "लू"],
-        ans: 0,
-        exp: "दिवसा जमीन जास्त तापल्याने समुद्राकडील थंड हवा जमिनीकडे वाहते, त्यांना खारे वारे (Sea Breeze) म्हणतात."
-      }
-    ]
-  }
+const categoryNames = {
+  basic:"मूलभूत भूगोल",
+  india:"भारताचा भूगोल",
+  maharashtra:"महाराष्ट्राचा भूगोल",
+  environment:"पर्यावरण व संसाधने",
+  map:"नकाशा आधारित"
 };
 
-let currentCat = 'all';
 
-function renderList(filteredTopics) {
-  const container = document.getElementById('topicList');
-  container.innerHTML = '';
-  filteredTopics.forEach(t => {
-    const btn = document.createElement('button');
-    btn.className = 'topic';
-    btn.id = 'top-' + t.id;
-    btn.innerText = t.id + '. ' + t.title;
-    btn.onclick = () => loadLesson(t.id);
-    container.appendChild(btn);
-  });
+/* =========================================================
+   LESSON CONTENT
+========================================================= */
+
+const lessonData = {};
+
+
+/* ---------------------------------------------------------
+   BASIC LESSONS
+--------------------------------------------------------- */
+
+lessonData[0] = {
+ definition:"भूगोल म्हणजे पृथ्वी, तिची नैसर्गिक रचना, वातावरण, जलसंपदा, वनस्पती, प्राणी, मानव आणि मानवाच्या विविध क्रियांचा पृथ्वीच्या पृष्ठभागाशी असलेला संबंध यांचा शास्त्रीय अभ्यास होय.",
+ points:[
+ "भूगोल हा नैसर्गिक व मानवी घटकांचा परस्परसंबंध अभ्यासतो.",
+ "भौतिक भूगोलात स्थलरचना, हवामान, महासागर, नद्या, मृदा इत्यादींचा अभ्यास होतो.",
+ "मानवी भूगोलात लोकसंख्या, वस्ती, स्थलांतर, शेती, उद्योग व व्यापार यांचा अभ्यास होतो.",
+ "नकाशे व स्थाननिर्धारण हे भूगोलाच्या अभ्यासाचे महत्त्वाचे साधन आहेत.",
+ "स्पर्धा परीक्षेत स्थान, कारण, परिणाम आणि तुलना यांवर प्रश्न विचारले जातात."
+ ],
+ revision:"भूगोल = पृथ्वी + नैसर्गिक घटक + मानव + परस्परसंबंध + स्थानिक अभ्यास.",
+ exam:"भूगोलाच्या प्रश्नांमध्ये ‘कोठे? का? कसे? परिणाम काय?’ या चार प्रकारच्या विचारांची सवय लावा.",
+ quiz:[
+ ["भूगोलाचा मुख्य विषय कोणता?",["पृथ्वी व तिच्याशी संबंधित घटक","फक्त इतिहास","फक्त अर्थशास्त्र","फक्त गणित"],0,"भूगोलात पृथ्वी व तिच्याशी संबंधित नैसर्गिक आणि मानवी घटकांचा अभ्यास होतो."],
+ ["भौतिक भूगोलात कोणाचा अभ्यास होतो?",["पर्वत व नद्या","फक्त लोकसंख्या","फक्त उद्योग","फक्त व्यापार"],0,"पर्वत, नद्या, हवामान इत्यादी भौतिक भूगोलाचे घटक आहेत."],
+ ["मानवी भूगोलात कोणता घटक येतो?",["लोकसंख्या","भूकंपाचे केंद्र","ज्वालामुखी","खडकांची रचना"],0,"लोकसंख्या हा मानवी भूगोलाचा प्रमुख घटक आहे."],
+ ["नकाशा कशासाठी उपयुक्त आहे?",["स्थान व वितरण समजण्यासाठी","फक्त कथा वाचण्यासाठी","फक्त गणितासाठी","फक्त संगीतासाठी"],0,"नकाशामुळे भौगोलिक स्थान व वितरण समजते."],
+ ["भूगोलाचा अभ्यास करताना कोणता प्रश्न महत्त्वाचा?",["का व कुठे?","फक्त कोण?","फक्त केव्हा?","फक्त किती?"],0,"भौगोलिक घटनांचे स्थान आणि कारण समजणे महत्त्वाचे आहे."]
+ ]
+};
+
+
+/* TOPIC 2 */
+
+lessonData[1] = {
+ definition:"पृथ्वी साधारण गोलाकार असून तिचा आकार पूर्ण गोल नसून ध्रुवांजवळ किंचित चपटा आणि विषुववृत्ताजवळ फुगलेला आहे. या आकाराला जिऑइडशी संबंधित पृथ्वीचा वास्तविक आकार असे मानले जाते.",
+ points:[
+ "पृथ्वीचा विषुववृत्तीय व्यास ध्रुवीय व्यासापेक्षा मोठा आहे.",
+ "पृथ्वी स्वतःभोवती फिरते आणि सूर्याभोवती परिभ्रमण करते.",
+ "पृथ्वीच्या आकारामुळे अक्षांशानुसार तापमानात फरक पडतो.",
+ "गोलाकार पृथ्वीचे द्विमितीय प्रतिनिधित्व नकाशावर करावे लागते.",
+ "पृथ्वीच्या आकाराचा परिणाम दिवस-रात्र, ऋतू आणि हवामानावर होतो."
+ ],
+ revision:"पृथ्वी पूर्ण गोल नसून ध्रुवांवर चपटी व विषुववृत्तावर फुगलेली आहे.",
+ exam:"विषुववृत्तीय व ध्रुवीय व्यासातील फरक हा महत्त्वाचा तथ्यात्मक मुद्दा आहे.",
+ quiz:[
+ ["पृथ्वीचा आकार कसा आहे?",["ध्रुवांवर किंचित चपटा","पूर्ण चौकोनी","पूर्ण सपाट","त्रिकोणी"],0,"पृथ्वी ध्रुवांवर किंचित चपटी आहे."],
+ ["पृथ्वीचा सर्वाधिक व्यास कुठे असतो?",["विषुववृत्ताजवळ","ध्रुवांवर","मकरवृत्तावर","ध्रुववृत्तावर"],0,"विषुववृत्तीय व्यास अधिक आहे."],
+ ["पृथ्वीचे वास्तविक स्वरूप कोणत्या संकल्पनेशी संबंधित आहे?",["जिऑइड","समुद्रतळ","वाळवंट","डेल्टा"],0,"पृथ्वीचा वास्तविक अनियमित आकार जिऑइडशी संबंधित आहे."],
+ ["पृथ्वी स्वतःभोवती काय करते?",["परिवलन","स्थलांतर","वाष्पीभवन","संघनन"],0,"पृथ्वीचे स्वतःच्या अक्षाभोवती फिरणे म्हणजे परिवलन."],
+ ["पृथ्वी सूर्याभोवती काय करते?",["परिभ्रमण","संघनन","अपक्षय","संचयन"],0,"सूर्याभोवतीची गती परिभ्रमण आहे."]
+ ]
+};
+
+
+/* TOPIC 3 */
+
+lessonData[2] = {
+ definition:"पृथ्वीवरील स्थान निश्चित करण्यासाठी काल्पनिक अक्षांश व रेखांश रेषांचा वापर केला जातो. अक्षांश विषुववृत्ताच्या समांतर असतात, तर रेखांश ध्रुवांना जोडतात.",
+ points:[
+ "विषुववृत्त 0° अक्षांश आहे.",
+ "प्रधान रेखांश 0° रेखांश मानला जातो.",
+ "अक्षांश उत्तर व दक्षिण असे मोजले जातात.",
+ "रेखांश पूर्व व पश्चिम असे मोजले जातात.",
+ "अक्षांशामुळे हवामानातील फरक समजण्यास मदत होते.",
+ "रेखांशाचा वापर वेळ निश्चित करण्यासाठी केला जातो."
+ ],
+ revision:"अक्षांश = विषुववृत्ताशी समांतर. रेखांश = ध्रुवांना जोडणाऱ्या रेषा.",
+ exam:"0° अक्षांश = विषुववृत्त; 0° रेखांश = प्रधान रेखांश.",
+ quiz:[
+ ["0° अक्षांश कोणता?",["विषुववृत्त","कर्कवृत्त","मकरवृत्त","ध्रुववृत्त"],0,"विषुववृत्त 0° अक्षांश आहे."],
+ ["0° रेखांश कोणता?",["प्रधान रेखांश","विषुववृत्त","कर्कवृत्त","मकरवृत्त"],0,"प्रधान रेखांश 0° रेखांश आहे."],
+ ["अक्षांश रेषा कशा असतात?",["समांतर","ध्रुवांना जोडणाऱ्या","उभ्या","अनियमित"],0,"अक्षांश रेषा विषुववृत्ताच्या समांतर असतात."],
+ ["रेखांश कशासाठी विशेष उपयुक्त आहेत?",["वेळ निश्चित करण्यासाठी","मृदा ओळखण्यासाठी","पर्जन्य मोजण्यासाठी","भूकंप थांबवण्यासाठी"],0,"रेखांशांच्या आधारे स्थानिक वेळेतील फरक समजतो."],
+ ["कर्कवृत्त किती अक्षांशावर आहे?",["23½° उत्तर","23½° दक्षिण","66½° उत्तर","0°"],0,"कर्कवृत्त सुमारे 23½° उत्तर अक्षांशावर आहे."]
+ ]
+};
+
+
+/* TOPIC 4 */
+
+lessonData[3] = {
+ definition:"पृथ्वीच्या दोन प्रमुख हालचाली आहेत—परिवलन आणि परिभ्रमण. परिवलनामुळे दिवस-रात्र होतात, तर परिभ्रमण आणि पृथ्वीच्या अक्षाचा कल यामुळे ऋतूंची निर्मिती होते.",
+ points:[
+ "परिवलन म्हणजे पृथ्वीचे स्वतःच्या अक्षाभोवती फिरणे.",
+ "परिभ्रमण म्हणजे पृथ्वीचे सूर्याभोवती फिरणे.",
+ "पृथ्वीच्या अक्षाचा कल सुमारे 23½° आहे.",
+ "दिवस-रात्र हे परिवलनाचे प्रमुख परिणाम आहेत.",
+ "ऋतूंच्या निर्मितीत अक्षाचा कल आणि परिभ्रमण महत्त्वाचे आहेत."
+ ],
+ revision:"परिवलन → दिवस-रात्र. परिभ्रमण + अक्षाचा कल → ऋतू.",
+ exam:"पृथ्वीच्या अक्षाचा 23½° कल हा अत्यंत महत्त्वाचा तथ्यात्मक मुद्दा आहे.",
+ quiz:[
+ ["दिवस-रात्र कशामुळे होतात?",["पृथ्वीच्या परिवलनामुळे","फक्त परिभ्रमणामुळे","पर्जन्यामुळे","वाऱ्यामुळे"],0,"पृथ्वीच्या परिवलनामुळे दिवस-रात्र होतात."],
+ ["ऋतूंच्या निर्मितीत काय महत्त्वाचे आहे?",["परिभ्रमण व अक्षाचा कल","फक्त महासागर","फक्त वारे","फक्त पर्वत"],0,"परिभ्रमण व अक्षाचा कल ऋतू बदलाचे प्रमुख कारण आहेत."],
+ ["पृथ्वीच्या अक्षाचा कल किती आहे?",["सुमारे 23½°","10°","45°","90°"],0,"पृथ्वीचा अक्ष कक्षीय पातळीशी सुमारे 66½° आणि लंबाशी सुमारे 23½° झुकलेला आहे."],
+ ["पृथ्वी सूर्याभोवती फिरते त्याला काय म्हणतात?",["परिभ्रमण","परिवलन","अपक्षय","क्षरण"],0,"सूर्याभोवतीची गती परिभ्रमण आहे."],
+ ["पृथ्वी स्वतःच्या अक्षाभोवती फिरते त्याला काय म्हणतात?",["परिवलन","परिभ्रमण","संचयन","वाष्पीभवन"],0,"स्वतःच्या अक्षाभोवतीची गती परिवलन आहे."]
+ ]
+};
+
+
+/* TOPIC 5 */
+
+lessonData[4] = {
+ definition:"पृथ्वीची अंतर्गत रचना मुख्यतः भूपृष्ठ, मॅन्टल आणि गाभा अशा प्रमुख स्तरांमध्ये समजावली जाते.",
+ points:[
+ "भूपृष्ठ हा पृथ्वीचा बाह्य घन स्तर आहे.",
+ "मॅन्टल हा भूपृष्ठाखालील जाड स्तर आहे.",
+ "गाभा पृथ्वीचा सर्वांत आतील भाग आहे.",
+ "भूकंपीय लहरींच्या अभ्यासातून अंतर्गत रचनेची माहिती मिळते.",
+ "तापमान व दाब पृथ्वीच्या अंतर्भागात वाढत जातात."
+ ],
+ revision:"भूपृष्ठ → मॅन्टल → गाभा.",
+ exam:"P, S व इतर भूकंपीय लहरींचा अभ्यास पृथ्वीच्या अंतर्गत रचनेसाठी महत्त्वाचा आहे.",
+ quiz:[
+ ["पृथ्वीचा बाह्य घन स्तर कोणता?",["भूपृष्ठ","गाभा","मॅन्टल","वातावरण"],0,"भूपृष्ठ हा बाह्य घन स्तर आहे."],
+ ["पृथ्वीचा आतील भाग कोणता?",["गाभा","भूपृष्ठ","मृदा","जलमंडल"],0,"गाभा पृथ्वीच्या मध्यभागी आहे."],
+ ["पृथ्वीच्या अंतर्गत रचनेची माहिती कशातून मिळते?",["भूकंपीय लहरी","फक्त पाऊस","फक्त वारे","फक्त नद्या"],0,"भूकंपीय लहरींच्या वर्तनातून अंतर्गत रचनेची माहिती मिळते."],
+ ["मॅन्टल कुठे आहे?",["भूपृष्ठाखाली","वातावरणाच्या वर","समुद्राच्या वर","ढगांमध्ये"],0,"मॅन्टल भूपृष्ठाखाली आहे."],
+ ["पृथ्वीच्या आत काय वाढते?",["तापमान व दाब","फक्त पर्जन्य","फक्त आर्द्रता","फक्त वारा"],0,"अंतर्भागात तापमान व दाब वाढतात."]
+ ]
+};
+
+
+/* TOPIC 6 */
+
+lessonData[5] = {
+ definition:"खडक म्हणजे पृथ्वीच्या भूपृष्ठाची रचना करणाऱ्या नैसर्गिक घन पदार्थांचे समूह. खडकांच्या निर्मितीनुसार त्यांचे आग्नेय, अवसादी आणि रूपांतरित असे प्रमुख प्रकार केले जातात.",
+ points:[
+ "आग्नेय खडक मॅग्मा किंवा लाव्हा थंड झाल्याने तयार होतात.",
+ "अवसादी खडक अवसादन व दाबाच्या प्रक्रियेतून तयार होतात.",
+ "रूपांतरित खडक पूर्वीच्या खडकांमध्ये उष्णता व दाबामुळे बदल होऊन तयार होतात.",
+ "खनिजे ही खडकांची महत्त्वाची घटक सामग्री असू शकतात.",
+ "खनिज संपत्तीचा उद्योग व अर्थव्यवस्थेशी जवळचा संबंध आहे."
+ ],
+ revision:"आग्नेय = मॅग्मा/लाव्हा; अवसादी = अवसादन; रूपांतरित = उष्णता व दाबामुळे परिवर्तन.",
+ exam:"खडकांचे प्रकार आणि उदाहरणे वारंवार विचारली जातात.",
+ quiz:[
+ ["आग्नेय खडक कशामुळे तयार होतात?",["मॅग्मा/लाव्हा थंड झाल्याने","फक्त पावसामुळे","मृदा वाहून गेल्याने","वाऱ्यामुळे"],0,"मॅग्मा किंवा लाव्हा थंड होऊन आग्नेय खडक तयार होतात."],
+ ["अवसादी खडकांची निर्मिती कशाशी संबंधित आहे?",["अवसादन","फक्त ज्वालामुखी","फक्त भूकंप","फक्त तापमान"],0,"अवसादन व त्यानंतरच्या दाबामुळे अवसादी खडक तयार होतात."],
+ ["रूपांतरित खडक कशामुळे तयार होतात?",["उष्णता व दाबामुळे","फक्त पावसामुळे","फक्त नदीमुळे","फक्त वाऱ्यामुळे"],0,"पूर्वीच्या खडकांमध्ये उष्णता व दाबामुळे बदल होतात."],
+ ["खनिजांचा उपयोग कुठे मोठ्या प्रमाणात होतो?",["उद्योगात","फक्त खेळात","फक्त संगीतामध्ये","फक्त शिक्षणात"],0,"खनिजे विविध उद्योगांसाठी कच्चा माल देतात."],
+ ["खडकांचा अभ्यास कोणत्या विषयाशी जोडलेला आहे?",["भूविज्ञान","संगीत","भाषाशास्त्र","राज्यशास्त्र"],0,"खडकांचा शास्त्रीय अभ्यास भूविज्ञानात होतो."]
+ ]
+};
+
+
+/* TOPIC 7 */
+
+lessonData[6] = {
+ definition:"पृथ्वीच्या पृष्ठभागावर नैसर्गिक प्रक्रियांमुळे निर्माण झालेल्या विविध आकारांना भूरूपे म्हणतात. पर्वत, पठार, मैदाने, दऱ्या, खोरे इत्यादी भूरूपे आहेत.",
+ points:[
+ "पर्वत उंच व उतार असलेले भूरूप आहेत.",
+ "पठार हे तुलनेने उंच व विस्तृत सपाट प्रदेश असतात.",
+ "मैदाने कमी उंचीचे तुलनेने सपाट प्रदेश असतात.",
+ "अंतर्गत शक्ती आणि बाह्य शक्ती भूरूपांच्या निर्मितीत महत्त्वाच्या आहेत.",
+ "नद्या, वारा, हिमनद्या आणि समुद्र यांमुळे क्षरण व संचयन होते."
+ ],
+ revision:"भूरूपे = पर्वत + पठार + मैदाने + दऱ्या + किनारी रचना.",
+ exam:"क्षरण व संचयनामुळे निर्माण होणारी भूरूपे विशेष महत्त्वाची आहेत.",
+ quiz:[
+ ["पठार म्हणजे काय?",["उंच विस्तृत सपाट प्रदेश","खोल समुद्र","फक्त वाळवंट","नदीचा उगम"],0,"पठार उंचीवर असलेला विस्तृत तुलनेने सपाट प्रदेश आहे."],
+ ["मैदानांची सामान्य वैशिष्ट्ये कोणती?",["कमी उंची व तुलनेने सपाटपणा","अत्यंत उंची","फक्त खडक","फक्त बर्फ"],0,"मैदाने सामान्यतः सपाट व कमी उंचीची असतात."],
+ ["नदी कोणती प्रक्रिया घडवते?",["क्षरण व संचयन","फक्त ज्वालामुखी","फक्त भूकंप","फक्त भरती"],0,"नदी क्षरण करून गाळ वाहून नेते आणि योग्य ठिकाणी संचयन करते."],
+ ["भूरूपांच्या निर्मितीत कोणत्या शक्ती महत्त्वाच्या आहेत?",["अंतर्गत व बाह्य शक्ती","फक्त सूर्य","फक्त चंद्र","फक्त पाऊस"],0,"अंतर्गत व बाह्य भू-प्रक्रिया भूरूप घडवतात."],
+ ["पर्वत कशाचे उदाहरण आहे?",["भूरूप","खनिज","हवामान","लोकसंख्या"],0,"पर्वत हे प्रमुख भूरूप आहे."]
+ ]
+};
+
+
+/* TOPIC 8 */
+
+lessonData[7] = {
+ definition:"पृथ्वीभोवती असलेल्या वायूंच्या आवरणाला वातावरण म्हणतात. वातावरण पृथ्वीवरील जीवनासाठी अत्यंत महत्त्वाचे आहे.",
+ points:[
+ "वातावरणात नायट्रोजन, ऑक्सिजन, आर्गॉन, कार्बन डायऑक्साइड आणि इतर वायू असतात.",
+ "क्षोभमंडलात हवामानाच्या बहुतेक घटना घडतात.",
+ "समतापमंडलात ओझोनचा महत्त्वाचा थर आढळतो.",
+ "वायुमंडल सूर्यापासून येणाऱ्या ऊर्जेचे पृथ्वीवरील वितरण प्रभावित करते.",
+ "वातावरणातील बदलांचा हवामान व पर्यावरणावर परिणाम होतो."
+ ],
+ revision:"वातावरण = पृथ्वीभोवतीचे वायूंचे आवरण.",
+ exam:"क्षोभमंडल व समतापमंडलाचे वैशिष्ट्य लक्षात ठेवा.",
+ quiz:[
+ ["वातावरण म्हणजे काय?",["पृथ्वीभोवतीचे वायूंचे आवरण","समुद्र","मृदा","पर्वत"],0,"वायूंचे आवरण म्हणजे वातावरण."],
+ ["हवामानाच्या बहुतेक घटना कुठे होतात?",["क्षोभमंडलात","समतापमंडलात","बहिर्मंडलात","आयनमंडलाच्या बाहेर"],0,"क्षोभमंडलात ढग, पाऊस, वारे यांसारख्या हवामान घटना घडतात."],
+ ["ओझोनचा प्रमुख थर कोणत्या स्तरात आहे?",["समतापमंडल","क्षोभमंडल","गाभा","मॅन्टल"],0,"ओझोनचा प्रमुख थर समतापमंडलात आहे."],
+ ["वातावरणातील प्रमुख वायू कोणता?",["नायट्रोजन","हायड्रोजन","हेलियम","निऑन"],0,"पृथ्वीच्या वातावरणात नायट्रोजनचे प्रमाण सर्वाधिक आहे."],
+ ["जीवनासाठी कोणता वायू अत्यंत महत्त्वाचा आहे?",["ऑक्सिजन","निऑन","हेलियम","आर्गॉन"],0,"श्वसन प्रक्रियेसाठी ऑक्सिजन महत्त्वाचा आहे."]
+ ]
+};
+
+
+/* TOPIC 9 */
+
+lessonData[8] = {
+ definition:"तापमान म्हणजे एखाद्या पदार्थाची किंवा वातावरणाची उष्णता किती आहे याचे मापन. पृथ्वीवर तापमानाचे वितरण अक्षांश, उंची, समुद्रापासूनचे अंतर, वारे आणि पृष्ठभागाच्या स्वरूपावर अवलंबून असते.",
+ points:[
+ "सूर्य ही पृथ्वीच्या तापमानाची प्रमुख ऊर्जा स्रोत आहे.",
+ "विषुववृत्ताजवळ सूर्यकिरणे तुलनेने अधिक सरळ पडतात.",
+ "उंची वाढल्यावर सामान्यतः तापमान कमी होते.",
+ "समुद्राचा प्रभाव किनारी प्रदेशातील तापमान नियंत्रित करतो.",
+ "दिवस-रात्र व ऋतूंमुळे तापमान बदलते."
+ ],
+ revision:"तापमानाचे वितरण = अक्षांश + उंची + समुद्रापासूनचे अंतर + वारे + पृष्ठभाग.",
+ exam:"उंची वाढल्यावर तापमान कमी होण्याचे कारण आणि तापमान वितरणाचे घटक महत्त्वाचे.",
+ quiz:[
+ ["तापमानाचा प्रमुख स्रोत कोणता?",["सूर्य","चंद्र","पर्वत","समुद्र"],0,"सूर्य पृथ्वीला प्रमुख ऊर्जा देतो."],
+ ["उंची वाढल्यावर सामान्यतः तापमान काय होते?",["कमी होते","वाढते","समान राहते","दुप्पट होते"],0,"उंची वाढल्यावर सामान्यतः तापमान घटते."],
+ ["तापमान वितरणावर कोणाचा प्रभाव असतो?",["अक्षांश","फक्त लोकसंख्या","फक्त भाषा","फक्त उद्योग"],0,"अक्षांश हा तापमान वितरणाचा प्रमुख घटक आहे."],
+ ["किनारी भागातील तापमानावर कोणाचा प्रभाव असतो?",["समुद्र","फक्त पर्वत","फक्त वाळू","फक्त जंगल"],0,"समुद्र तापमानातील तीव्र बदल कमी करण्यास मदत करतो."],
+ ["विषुववृत्ताजवळ सूर्यकिरणे कशी पडतात?",["तुलनेने अधिक सरळ","अत्यंत तिरपी","कधीच पडत नाहीत","फक्त रात्री"],0,"विषुववृत्ताजवळ सूर्यकिरणांचा कोन तुलनेने अधिक सरळ असतो."]
+ ]
+};
+
+
+/* TOPIC 10 */
+
+lessonData[9] = {
+ definition:"वायुदाब म्हणजे वातावरणातील हवेने पृथ्वीच्या पृष्ठभागावर टाकलेला दाब. तापमानातील फरकामुळे वायुदाबात फरक निर्माण होतो आणि त्यामुळे वारे वाहतात.",
+ points:[
+ "उष्ण हवा प्रसरण पावून हलकी होते व वर जाते.",
+ "थंड हवा तुलनेने दाट व जड असल्याने खाली येते.",
+ "उच्च दाबाकडून निम्न दाबाकडे हवा वाहते.",
+ "पृथ्वीच्या परिवलनामुळे वाऱ्यांच्या दिशेवर परिणाम होतो.",
+ "स्थानिक वारे विशिष्ट प्रदेशात आणि विशिष्ट परिस्थितीत निर्माण होतात."
+ ],
+ revision:"वारे = उच्च दाबाकडून निम्न दाबाकडे हवेची हालचाल.",
+ exam:"उच्च दाब → निम्न दाब हा मूलभूत नियम लक्षात ठेवा.",
+ quiz:[
+ ["वारे सामान्यतः कुठून कुठे वाहतात?",["उच्च दाबाकडून निम्न दाबाकडे","निम्न दाबाकडून उच्च दाबाकडे","समुद्राकडून पर्वताकडेच","पर्वताकडून समुद्राकडेच"],0,"वायुदाबातील फरकामुळे हवा उच्च दाबातून निम्न दाबाकडे जाते."],
+ ["उष्ण हवा सामान्यतः काय करते?",["वर जाते","खाली जाते","गोठते","नष्ट होते"],0,"उष्ण हवा प्रसरण पावते व तुलनेने हलकी होऊन वर जाते."],
+ ["थंड हवा सामान्यतः कशी असते?",["दाट","अत्यंत हलकी","वायुरहित","पाण्यासारखी"],0,"थंड हवा तुलनेने दाट असते."],
+ ["वाऱ्यांच्या दिशेवर कोणाचा प्रभाव असतो?",["पृथ्वीचे परिवलन","फक्त पाऊस","फक्त मृदा","फक्त नद्या"],0,"पृथ्वीच्या परिवलनामुळे कोरिऑलिस परिणाम होतो."],
+ ["वायुदाबातील फरकामुळे काय निर्माण होते?",["वारे","मृदा","खनिज","नद्या"],0,"वायुदाबातील फरकामुळे हवेची हालचाल म्हणजे वारा निर्माण होतो."]
+ ]
+};
+
+
+/* =========================================================
+   AUTO CONTENT FOR REMAINING TOPICS
+   =========================================================
+   प्रत्येक उर्वरित घटकासाठी विषयानुसार सविस्तर
+   अभ्यासरचना तयार केली जाते.
+========================================================= */
+
+const topicDetails = {
+
+"आर्द्रता व ढग":[
+"हवेत असलेल्या जलवाष्पाच्या प्रमाणाला आर्द्रता म्हणतात. तापमान, बाष्पीभवन आणि जलस्रोत यांचा आर्द्रतेवर परिणाम होतो.",
+"सापेक्ष आर्द्रता, निरपेक्ष आर्द्रता आणि विशिष्ट आर्द्रता या संकल्पना हवामानशास्त्रात महत्त्वाच्या आहेत.",
+"हवेतील जलवाष्प थंड होऊन संघनित झाल्यास ढग तयार होतात."
+],
+
+"पर्जन्य":[
+"वातावरणातील जलवाष्प संघनित होऊन पाणी किंवा बर्फाच्या स्वरूपात पृथ्वीवर पडते त्याला पर्जन्य म्हणतात.",
+"पर्जन्याचे संवहनी, पर्वतीय आणि चक्रीवादळी असे प्रकार अभ्यासले जातात.",
+"भारताच्या मान्सून प्रणालीमध्ये पर्जन्याचे विशेष महत्त्व आहे."
+],
+
+"हवामान व हवामानशास्त्र":[
+"दीर्घ काळातील वातावरणीय स्थितीला हवामान म्हणतात, तर वातावरणातील अल्पकालीन स्थितीला हवामानस्थिती किंवा Weather म्हणतात.",
+"तापमान, दाब, वारा, आर्द्रता, ढग आणि पर्जन्य हे हवामानाचे प्रमुख घटक आहेत.",
+"हवामानशास्त्रात वातावरणातील प्रक्रियांचा अभ्यास केला जातो."
+],
+
+"मान्सून":[
+"ऋतूनुसार दिशेत बदलणाऱ्या वाऱ्यांच्या प्रणालीला मान्सून म्हणतात.",
+"भारतीय मान्सूनची निर्मिती स्थल-समुद्र तापमानातील फरक, दाबव्यवस्था आणि विविध वातावरणीय घटकांशी संबंधित आहे.",
+"दक्षिण-पश्चिम मान्सून भारतातील मोठ्या भागाच्या पर्जन्यासाठी महत्त्वाचा आहे."
+],
+
+"जागतिक वारे":[
+"पृथ्वीवरील मोठ्या प्रमाणातील दाबपट्टे आणि तापमानातील फरकांमुळे कायमस्वरूपी किंवा प्रमुख वाऱ्यांची निर्मिती होते.",
+"व्यापारी वारे, पश्चिमी वारे आणि ध्रुवीय पूर्वेकडील वारे हे प्रमुख जागतिक वारे आहेत.",
+"पृथ्वीचे परिवलन वायुप्रवाहांच्या दिशेवर परिणाम करते."
+],
+
+"चक्रीवादळे":[
+"कमी दाबाच्या केंद्राभोवती वेगाने फिरणाऱ्या वाऱ्यांच्या प्रणालीला चक्रीवादळ म्हणतात.",
+"उष्णकटिबंधीय चक्रीवादळांना समुद्रातील उष्ण पाणी ऊर्जा देते.",
+"चक्रीवादळामुळे मुसळधार पाऊस, वेगवान वारे आणि किनारी भागात मोठी हानी होऊ शकते."
+],
+
+"महासागर":[
+"पृथ्वीच्या पृष्ठभागावरील विशाल खाऱ्या पाण्याच्या क्षेत्रांना महासागर म्हणतात.",
+"महासागर हवामान, जलचक्र, जैवविविधता आणि मानवी अर्थव्यवस्थेसाठी महत्त्वाचे आहेत.",
+"प्रशांत, अटलांटिक, हिंदी, दक्षिण आणि आर्क्टिक हे प्रमुख महासागर आहेत."
+],
+
+"समुद्रातील प्रवाह":[
+"महासागरातील पाण्याची ठराविक दिशेने होणारी मोठ्या प्रमाणातील हालचाल म्हणजे समुद्रप्रवाह.",
+"उष्ण व थंड प्रवाहांचा किनारी हवामानावर प्रभाव पडतो.",
+"समुद्रप्रवाह मासेमारी आणि नौकानयनासाठीही महत्त्वाचे आहेत."
+],
+
+"भरती-ओहोटी":[
+"समुद्राच्या पाण्याची नियमित वाढ म्हणजे भरती आणि घट म्हणजे ओहोटी.",
+"चंद्राचे गुरुत्वाकर्षण आणि सूर्याचा गुरुत्वीय प्रभाव यांचा भरती-ओहोटीवर परिणाम होतो.",
+"किनारी भागातील बंदरे, मासेमारी आणि नौकानयनात भरती-ओहोटीचे महत्त्व आहे."
+],
+
+"नद्या व नदीप्रणाली":[
+"नदी म्हणजे नैसर्गिक जलप्रवाह. नदीचा उगम, प्रवाह आणि मुख यांचा एकत्रित अभ्यास नदीप्रणालीत केला जातो.",
+"नद्या क्षरण, वहन आणि संचयन या प्रक्रिया घडवतात.",
+"नद्यांमुळे सिंचन, पिण्याचे पाणी, जलविद्युत आणि शेतीला मदत मिळते."
+],
+
+"जलचक्र":[
+"पृथ्वीवरील पाण्याचे बाष्पीभवन, संघनन, पर्जन्य, प्रवाह आणि पुनर्भरण यांमधून सतत होणारे चक्र म्हणजे जलचक्र.",
+"सूर्याची ऊर्जा जलचक्राला चालना देते.",
+"जलचक्रामुळे वातावरण, जमीन आणि महासागर यांच्यात पाण्याची देवाणघेवाण होते."
+],
+
+"मृदा":[
+"वनस्पती वाढीसाठी आवश्यक खनिजे, सेंद्रिय पदार्थ, पाणी, हवा आणि सूक्ष्मजीव असलेला भूपृष्ठाचा वरचा थर म्हणजे मृदा.",
+"मृदेची निर्मिती खडक, हवामान, जीवसृष्टी, स्थलरूप आणि कालावधी यांच्याशी संबंधित आहे.",
+"मृदा शेतीसाठी मूलभूत नैसर्गिक संसाधन आहे."
+],
+
+"मृदा निर्मिती व प्रकार":[
+"खडकांचे अपक्षय, सेंद्रिय पदार्थांची भर आणि दीर्घकालीन भौगोलिक प्रक्रिया यांतून मृदा तयार होते.",
+"भारतामध्ये गाळाची, काळी, लाल, जांभी, वाळवंटी व पर्वतीय अशा विविध मृदा आढळतात.",
+"मृदेच्या प्रकारानुसार पिकांची निवड बदलते."
+],
+
+"नैसर्गिक वनस्पती":[
+"मानवी हस्तक्षेपाशिवाय किंवा कमी हस्तक्षेपात विशिष्ट हवामान व मृदा परिस्थितीत वाढणाऱ्या वनस्पतींना नैसर्गिक वनस्पती म्हणतात.",
+"तापमान आणि पर्जन्य हे वनस्पतींच्या वितरणाचे प्रमुख घटक आहेत.",
+"वनस्पतींचे प्रकार प्रदेशाच्या पर्यावरणाशी जोडलेले असतात."
+],
+
+"वन व वनसंपदा":[
+"वन म्हणजे झाडे, झुडपे, गवत आणि संबंधित जीवसृष्टीचा विस्तृत परिसंस्था घटक.",
+"वनांमुळे मृदा संरक्षण, जलसंधारण, जैवविविधता आणि हवामान संतुलनास मदत होते.",
+"वनसंपदेत लाकूड, बांबू, औषधी वनस्पती आणि इतर लघुवनउत्पादने समाविष्ट होतात."
+],
+
+"पर्यावरणाची संकल्पना":[
+"सजीव आणि निर्जीव घटकांचा एकत्रित परिसर म्हणजे पर्यावरण.",
+"हवा, पाणी, मृदा, वनस्पती, प्राणी आणि मानव हे पर्यावरणाचे परस्परावलंबी घटक आहेत.",
+"मानवी विकास आणि पर्यावरण संरक्षण यांचा संतुलित विचार आवश्यक आहे."
+],
+
+"परिसंस्था":[
+"सजीव घटक आणि त्यांच्या निर्जीव पर्यावरणातील परस्परसंबंधातून परिसंस्था तयार होते.",
+"उत्पादक, उपभोक्ते आणि विघटक हे प्रमुख जैविक घटक आहेत.",
+"ऊर्जेचा प्रवाह आणि पोषकद्रव्यांचे चक्र परिसंस्थेत महत्त्वाचे असतात."
+],
+
+"जैवविविधता":[
+"सजीवांच्या जनुकीय, प्रजाती आणि परिसंस्था स्तरावरील विविधतेला जैवविविधता म्हणतात.",
+"जैवविविधता पर्यावरणीय संतुलन आणि मानवी जीवनासाठी महत्त्वाची आहे.",
+"अधिवास नष्ट होणे, प्रदूषण आणि हवामान बदलामुळे जैवविविधतेवर धोका निर्माण होतो."
+],
+
+"प्रदूषण":[
+"पर्यावरणात हानिकारक पदार्थ किंवा ऊर्जा अशा प्रमाणात मिसळणे की पर्यावरणाच्या गुणवत्तेवर विपरीत परिणाम होतो, त्याला प्रदूषण म्हणतात.",
+"वायू, जल, मृदा, ध्वनी आणि प्लास्टिक प्रदूषण हे महत्त्वाचे प्रकार आहेत.",
+"प्रदूषण नियंत्रणासाठी प्रतिबंध, पुनर्वापर आणि योग्य व्यवस्थापन आवश्यक आहे."
+],
+
+"हवामान बदल":[
+"दीर्घ काळात तापमान, पर्जन्यमान, वाऱ्यांच्या पद्धती आणि इतर हवामान घटकांमध्ये होणारे बदल म्हणजे हवामान बदल.",
+"मानवी क्रियांमुळे हरितगृह वायूंचे प्रमाण वाढल्याने हवामान बदलाचा धोका वाढतो.",
+"अनुकूलन आणि शमन हे हवामान बदलाला प्रतिसाद देण्याचे दोन महत्त्वाचे मार्ग आहेत."
+],
+
+"जागतिक तापमानवाढ":[
+"पृथ्वीच्या सरासरी तापमानात दीर्घकालीन वाढ होण्यास जागतिक तापमानवाढ म्हणतात.",
+"कार्बन डायऑक्साइड, मिथेन आणि इतर हरितगृह वायू उष्णता अडकवण्यात भूमिका बजावतात.",
+"ऊर्जा कार्यक्षमता, स्वच्छ ऊर्जा आणि वनसंवर्धन हे महत्त्वाचे उपाय आहेत."
+],
+
+"नैसर्गिक आपत्ती":[
+"नैसर्गिक प्रक्रियांमुळे मानवी जीवन, संपत्ती आणि पर्यावरणावर मोठा परिणाम करणाऱ्या घटनांना नैसर्गिक आपत्ती म्हणतात.",
+"भूकंप, पूर, दुष्काळ, भूस्खलन, चक्रीवादळ आणि सुनामी यांचा अभ्यास महत्त्वाचा आहे.",
+"आपत्ती व्यवस्थापनात पूर्वतयारी, प्रतिसाद, पुनर्वसन आणि पुनर्बांधणी महत्त्वाची आहे."
+],
+
+"लोकसंख्या":[
+"विशिष्ट प्रदेशात ठराविक वेळी राहणाऱ्या लोकांच्या संख्येला त्या प्रदेशाची लोकसंख्या म्हणतात.",
+"लोकसंख्या अभ्यासात घनता, वितरण, वाढ, जन्मदर, मृत्युदर आणि स्थलांतर यांचा विचार केला जातो.",
+"लोकसंख्येचे वितरण नैसर्गिक आणि मानवी घटकांवर अवलंबून असते."
+],
+
+"लोकसंख्या वितरण":[
+"पृथ्वीवर लोकसंख्या समान प्रमाणात वितरित नाही.",
+"मैदाने, सुपीक मृदा, पाणी, रोजगार आणि वाहतूक सुविधा लोकसंख्या आकर्षित करतात.",
+"उंच पर्वत, वाळवंट आणि अत्यंत थंड प्रदेशात लोकसंख्या तुलनेने विरळ असू शकते."
+],
+
+"लोकसंख्या वाढ":[
+"विशिष्ट कालावधीत लोकसंख्येत होणाऱ्या बदलाला लोकसंख्या वाढ म्हणतात.",
+"जन्मदर, मृत्युदर आणि स्थलांतर यांचा लोकसंख्या बदलावर परिणाम होतो.",
+"लोकसंख्या वाढीचा शिक्षण, आरोग्य, रोजगार आणि संसाधनांवर परिणाम होतो."
+],
+
+"स्थलांतर":[
+"लोकांनी एका प्रदेशातून दुसऱ्या प्रदेशात कायमस्वरूपी किंवा तात्पुरते जाण्याला स्थलांतर म्हणतात.",
+"रोजगार, शिक्षण, सुरक्षितता, विवाह आणि पर्यावरणीय परिस्थिती ही स्थलांतराची कारणे असू शकतात.",
+"स्थलांतरामुळे मूळ व गंतव्य प्रदेश दोन्हीवर सामाजिक व आर्थिक परिणाम होतात."
+],
+
+"मानवी वस्ती":[
+"मानवांनी निवासासाठी निर्माण केलेल्या स्थिर किंवा तात्पुरत्या निवाससमूहाला मानवी वस्ती म्हणतात.",
+"पाणी, जमीन, वाहतूक, रोजगार आणि सुरक्षितता वस्तीच्या स्थानावर परिणाम करतात.",
+"ग्रामीण आणि नागरी वस्ती हे प्रमुख प्रकार आहेत."
+],
+
+"ग्रामीण व नागरी वस्ती":[
+"ग्रामीण वस्ती प्रामुख्याने शेती व संबंधित क्रियांशी जोडलेली असते, तर नागरी वस्तीमध्ये उद्योग, सेवा आणि व्यापाराचे प्रमाण अधिक असते.",
+"शहरांची वाढ रोजगार, वाहतूक आणि आर्थिक संधींशी संबंधित असते.",
+"नागरीकरणामुळे पायाभूत सुविधा आणि पर्यावरणावर परिणाम होऊ शकतो."
+],
+
+"शेती":[
+"जमिनीची मशागत करून पिके घेण्याच्या क्रियेला शेती म्हणतात.",
+"हवामान, मृदा, पाणी, बाजारपेठ आणि तंत्रज्ञान यांचा शेतीवर प्रभाव असतो.",
+"भारताच्या अर्थव्यवस्थेत शेतीचे महत्त्व मोठे आहे."
+],
+
+"शेतीचे प्रकार":[
+"जीवननिर्वाह शेती, व्यापारी शेती, मिश्र शेती, बागायती आणि सघन शेती यांसारखे प्रकार अभ्यासले जातात.",
+"शेतीचा प्रकार प्रदेशाच्या हवामान, जमीनधारणा, बाजारपेठ आणि तंत्रज्ञानावर अवलंबून असतो.",
+"पिकांचे उत्पादन आणि बाजारपेठ यांचा आर्थिक भूगोलाशी संबंध आहे."
+],
+
+"पिकांचे भौगोलिक वितरण":[
+"पिकांच्या वितरणावर तापमान, पर्जन्य, मृदा, सिंचन आणि बाजारपेठ यांचा प्रभाव असतो.",
+"तांदूळ, गहू, कापूस, ऊस, चहा, कॉफी इत्यादी पिकांच्या भौगोलिक वितरणाचा अभ्यास परीक्षेसाठी महत्त्वाचा आहे.",
+"एका पिकासाठी आवश्यक हवामान आणि भारतातील प्रमुख उत्पादक प्रदेश लक्षात ठेवा."
+],
+
+"सिंचन":[
+"पिकांना आवश्यक पाणी कृत्रिम पद्धतीने पुरवण्याला सिंचन म्हणतात.",
+"कालवे, विहिरी, नळकूप, धरणे आणि ठिबक सिंचन या प्रमुख पद्धती आहेत.",
+"सिंचनामुळे पिकांची उत्पादकता आणि बहुपिक पद्धतीला मदत होते."
+],
+
+"जलसंपदा":[
+"नद्या, तलाव, धरणे, भूजल आणि पर्जन्य हे जलसंपदेचे महत्त्वाचे स्रोत आहेत.",
+"पाणी पिणे, शेती, उद्योग आणि ऊर्जा निर्मितीसाठी वापरले जाते.",
+"जलसंधारण आणि पाण्याचा कार्यक्षम वापर आवश्यक आहे."
+],
+
+"खनिज संपत्ती":[
+"पृथ्वीच्या भूपृष्ठातून मिळणाऱ्या उपयुक्त नैसर्गिक खनिज पदार्थांना खनिज संपत्ती म्हणतात.",
+"धातुक खनिजे आणि अधातुक खनिजे अशी व्यापक विभागणी केली जाते.",
+"खनिजांचे वितरण भूगर्भीय रचनेशी संबंधित असते."
+],
+
+"ऊर्जा संसाधने":[
+"मानवी उपयोगासाठी ऊर्जा देणाऱ्या नैसर्गिक स्रोतांना ऊर्जा संसाधने म्हणतात.",
+"कोळसा, पेट्रोलियम आणि नैसर्गिक वायू हे पारंपरिक जीवाश्म इंधन स्रोत आहेत.",
+"सौर, पवन, जल, जैवऊर्जा यांसारख्या नवीकरणीय स्रोतांचे महत्त्व वाढत आहे."
+],
+
+"उद्योग":[
+"कच्च्या मालाचे प्रक्रिया करून उपयुक्त वस्तूंमध्ये रूपांतर करणाऱ्या आर्थिक क्रियेला उद्योग म्हणतात.",
+"कच्चा माल, ऊर्जा, मजूर, भांडवल, वाहतूक आणि बाजारपेठ हे उद्योगस्थानाचे घटक आहेत.",
+"उद्योगामुळे रोजगार आणि आर्थिक विकासाला चालना मिळते."
+],
+
+"औद्योगिक प्रदेश":[
+"ज्या प्रदेशात उद्योगांचे प्रमाण व परस्पर संबंध मोठ्या प्रमाणात आढळतात त्यांना औद्योगिक प्रदेश म्हणतात.",
+"उद्योगांचे स्थान कच्चा माल, ऊर्जा, वाहतूक, बाजारपेठ आणि कामगार यांवर अवलंबून असते.",
+"औद्योगिक प्रदेशांचा अभ्यास आर्थिक भूगोलात महत्त्वाचा आहे."
+],
+
+"वाहतूक":[
+"लोक व माल एका ठिकाणाहून दुसऱ्या ठिकाणी नेण्याच्या व्यवस्थेला वाहतूक म्हणतात.",
+"रस्ते, रेल्वे, जलमार्ग आणि हवाईमार्ग हे प्रमुख वाहतूक प्रकार आहेत.",
+"वाहतूक व्यापार, उद्योग आणि प्रादेशिक विकासाला जोडते."
+],
+
+"दळणवळण":[
+"माहिती एका व्यक्ती किंवा ठिकाणाहून दुसऱ्याकडे पोहोचवण्याच्या प्रक्रियेला दळणवळण म्हणतात.",
+"दूरध्वनी, इंटरनेट, टपाल, रेडिओ आणि उपग्रह यांचा दळणवळणात उपयोग होतो.",
+"आधुनिक अर्थव्यवस्थेत डिजिटल दळणवळणाचे महत्त्व मोठे आहे."
+],
+
+"व्यापार":[
+"वस्तू आणि सेवांची देवाणघेवाण किंवा खरेदी-विक्री म्हणजे व्यापार.",
+"स्थानिक, राष्ट्रीय आणि आंतरराष्ट्रीय व्यापार असे व्यापाराचे विविध स्तर आहेत.",
+"वाहतूक आणि दळणवळण व्यापाराच्या वाढीस मदत करतात."
+]
+
+};
+
+
+/* =========================================================
+ INDIA CONTENT
+========================================================= */
+
+topicDetails["भारताचा भौगोलिक परिचय"]=[
+"भारत दक्षिण आशियातील महत्त्वाचा देश असून त्याची भौगोलिक विविधता मोठी आहे.",
+"भारताच्या उत्तरेस हिमालय, दक्षिणेस हिंदी महासागर, पश्चिमेस अरबी समुद्र आणि पूर्वेस बंगालचा उपसागर आहे.",
+"भारताच्या भौगोलिक स्थानाचा मान्सून, व्यापार आणि हवामानावर प्रभाव पडतो."
+];
+
+topicDetails["भारताची भौगोलिक रचना"]=[
+"भारताच्या भौगोलिक रचनेत हिमालय, उत्तर भारतीय मैदाने, द्वीपकल्पीय पठार, किनारी मैदाने आणि बेटे यांचा समावेश होतो.",
+"या विभागांची निर्मिती वेगवेगळ्या भूगर्भीय प्रक्रियांमुळे झाली आहे.",
+"भारताची स्थलरचना हवामान, शेती, वाहतूक आणि मानवी वस्तीवर परिणाम करते."
+];
+
+topicDetails["भारताच्या पर्वतरांगा"]=[
+"हिमालय ही भारताच्या उत्तरेकडील प्रमुख पर्वत प्रणाली आहे.",
+"हिमालयाच्या विविध श्रेणींमध्ये महान हिमालय, लघु हिमालय आणि शिवालिक यांचा अभ्यास केला जातो.",
+"पश्चिम घाट आणि पूर्व घाट हे द्वीपकल्पीय भारतातील महत्त्वाचे पर्वतीय प्रदेश आहेत."
+];
+
+topicDetails["भारताची मैदाने"]=[
+"सिंधू, गंगा आणि ब्रह्मपुत्रा नदीप्रणालींनी आणलेल्या गाळापासून उत्तर भारतीय मैदाने तयार झाली आहेत.",
+"सुपीक मृदा आणि पाण्याच्या उपलब्धतेमुळे या प्रदेशात मोठी लोकसंख्या आढळते.",
+"मैदाने शेती व मानवी वस्तीच्या दृष्टीने अत्यंत महत्त्वाची आहेत."
+];
+
+topicDetails["भारताचे पठार"]=[
+"द्वीपकल्पीय पठार हा भारताच्या प्राचीन भूभागाचा महत्त्वाचा भाग आहे.",
+"दख्खनचे पठार, मध्य उच्चभूमी आणि संबंधित पठारी प्रदेशांचा अभ्यास केला जातो.",
+"खनिज संपत्ती आणि काही उद्योगांसाठी पठारी प्रदेश महत्त्वाचा आहे."
+];
+
+topicDetails["भारताच्या नद्या"]=[
+"भारताच्या नद्यांचे हिमालयीन आणि द्वीपकल्पीय असे व्यापक वर्गीकरण केले जाते.",
+"गंगा, यमुना, ब्रह्मपुत्रा, सिंधू, गोदावरी, कृष्णा, नर्मदा आणि तापी या महत्त्वाच्या नद्या आहेत.",
+"नद्या सिंचन, जलविद्युत, पिण्याचे पाणी आणि शेतीसाठी महत्त्वाच्या आहेत."
+];
+
+topicDetails["भारताचे हवामान"]=[
+"भारताचे हवामान मोठ्या प्रमाणात मान्सून स्वरूपाचे आहे.",
+"तापमान, पर्जन्य, स्थलरचना आणि समुद्रापासूनचे अंतर यांचा हवामानावर प्रभाव असतो.",
+"भारतामध्ये ऋतूंच्या बदलामध्ये मान्सूनचा मोठा वाटा आहे."
+];
+
+topicDetails["भारताचा मान्सून"]=[
+"भारताच्या पर्जन्यव्यवस्थेत मान्सूनचे अत्यंत महत्त्व आहे.",
+"दक्षिण-पश्चिम मान्सून साधारण जूनपासून देशाच्या विविध भागात प्रवेश करतो.",
+"अरबी समुद्र शाखा आणि बंगालच्या उपसागराची शाखा यांचा अभ्यास महत्त्वाचा आहे."
+];
+
+topicDetails["भारताची मृदा"]=[
+"भारतामध्ये विविध भौगोलिक व हवामान परिस्थितींमुळे विविध प्रकारच्या मृदा आढळतात.",
+"गाळाची मृदा, काळी मृदा, लाल व पिवळी मृदा, जांभी मृदा आणि वाळवंटी मृदा महत्त्वाच्या आहेत.",
+"मृदेच्या प्रकारानुसार पिकांचे वितरण बदलते."
+];
+
+topicDetails["भारताची नैसर्गिक वनस्पती"]=[
+"भारताच्या वनस्पतींचे वितरण पर्जन्य, तापमान आणि मृदा यांवर अवलंबून आहे.",
+"सदाहरित, पानझडी, काटेरी, पर्वतीय आणि किनारी वनस्पतींचे प्रकार अभ्यासले जातात.",
+"वन जैवविविधता, मृदा व जलसंधारणासाठी महत्त्वाचे आहेत."
+];
+
+topicDetails["भारताची शेती"]=[
+"भारतामध्ये विविध हवामान व मृदा परिस्थितीमुळे विविध पिके घेतली जातात.",
+"तांदूळ, गहू, कडधान्ये, कापूस, ऊस, चहा, कॉफी आणि तेलबिया महत्त्वाची पिके आहेत.",
+"मान्सून आणि सिंचन यांचा भारतीय शेतीवर मोठा प्रभाव आहे."
+];
+
+topicDetails["भारताची खनिजे"]=[
+"भारतामध्ये कोळसा, लोखंड, बॉक्साइट, मँगनीज, अभ्रक आणि इतर खनिजे आढळतात.",
+"खनिजांचे वितरण प्रामुख्याने भूगर्भीय रचनेशी संबंधित आहे.",
+"खनिज संपत्ती उद्योग आणि ऊर्जा क्षेत्रासाठी महत्त्वाची आहे."
+];
+
+topicDetails["भारताचे उद्योग"]=[
+"भारतामध्ये लोखंड-पोलाद, कापड, साखर, सिमेंट, रसायन, वाहन, माहिती तंत्रज्ञान इत्यादी उद्योग विकसित झाले आहेत.",
+"उद्योगांच्या स्थानावर कच्चा माल, ऊर्जा, बाजारपेठ, वाहतूक व कामगारांचा प्रभाव असतो.",
+"औद्योगिकीकरणामुळे रोजगार आणि आर्थिक विकासाला चालना मिळते."
+];
+
+
+/* =========================================================
+ MAHARASHTRA CONTENT
+========================================================= */
+
+topicDetails["महाराष्ट्राचा भौगोलिक परिचय"]=[
+"महाराष्ट्र भारताच्या पश्चिम-मध्य भागात स्थित असून त्याला अरबी समुद्राचा किनारा लाभला आहे.",
+"महाराष्ट्राच्या भौगोलिक अभ्यासात कोकण, सह्याद्री आणि दख्खन पठार यांना विशेष महत्त्व आहे.",
+"राज्याची भौगोलिक विविधता शेती, उद्योग आणि लोकसंख्येच्या वितरणावर प्रभाव टाकते."
+];
+
+topicDetails["महाराष्ट्राची भौगोलिक रचना"]=[
+"महाराष्ट्राचा मोठा भाग दख्खनच्या पठारी प्रदेशात आहे.",
+"पश्चिम भागात कोकण किनारपट्टी आणि सह्याद्री पर्वतरांग आढळते.",
+"भौगोलिक विभागांनुसार मृदा, पर्जन्य, शेती आणि वस्तीमध्ये फरक दिसतो."
+];
+
+topicDetails["महाराष्ट्रातील पर्वत व पठारे"]=[
+"सह्याद्री ही महाराष्ट्रातील प्रमुख पर्वतरांग आहे.",
+"महाराष्ट्रातील पठारी प्रदेशाची निर्मिती प्रामुख्याने दख्खन ट्रॅपशी संबंधित आहे.",
+"सह्याद्रीचा पर्जन्य, नद्या आणि जलसंधारणावर मोठा प्रभाव आहे."
+];
+
+topicDetails["महाराष्ट्रातील नद्या"]=[
+"गोदावरी, कृष्णा, भीमा, तापी, वर्धा, वैनगंगा आणि कोयना या महत्त्वाच्या नदीप्रणाली आहेत.",
+"नद्या शेती, पिण्याचे पाणी, सिंचन आणि जलविद्युत निर्मितीसाठी महत्त्वाच्या आहेत.",
+"नदीखोऱ्यांच्या आधारे महाराष्ट्रातील अनेक प्रदेशांचे भौगोलिक स्वरूप समजते."
+];
+
+topicDetails["महाराष्ट्राचे हवामान"]=[
+"महाराष्ट्राचे हवामान प्रामुख्याने उष्णकटिबंधीय मान्सून स्वरूपाचे आहे.",
+"कोकणात तुलनेने जास्त पर्जन्य, तर राज्याच्या अंतर्गत भागात पर्जन्य कमी होत जातो.",
+"सह्याद्रीमुळे पर्जन्याच्या वितरणात प्रादेशिक फरक निर्माण होतो."
+];
+
+topicDetails["महाराष्ट्रातील मृदा"]=[
+"महाराष्ट्रात काळी मृदा मोठ्या प्रमाणावर आढळते.",
+"काळी मृदा कापूस व काही इतर पिकांसाठी अनुकूल आहे.",
+"प्रदेशानुसार गाळाची, लालसर आणि इतर प्रकारची मृदा देखील आढळते."
+];
+
+topicDetails["महाराष्ट्रातील शेती"]=[
+"महाराष्ट्राच्या शेतीवर मान्सून पर्जन्य, मृदा, सिंचन आणि बाजारपेठेचा प्रभाव आहे.",
+"कापूस, सोयाबीन, ऊस, ज्वारी, बाजरी, तूर, कांदा, द्राक्षे आणि इतर पिके महत्त्वाची आहेत.",
+"सिंचनाच्या उपलब्धतेनुसार पिकांच्या पद्धतीत मोठे प्रादेशिक फरक दिसतात."
+];
+
+topicDetails["महाराष्ट्रातील खनिजे व उद्योग"]=[
+"महाराष्ट्रात कोळसा, मँगनीज, चुनखडी आणि इतर खनिज संसाधने आढळतात.",
+"मुंबई-पुणे, नाशिक, औरंगाबाद परिसर, नागपूर-विदर्भ आणि इतर प्रदेशांमध्ये विविध उद्योग विकसित झाले आहेत.",
+"वाहतूक, बाजारपेठ, ऊर्जा आणि कामगार हे उद्योगांच्या स्थानाचे महत्त्वाचे घटक आहेत."
+];
+
+topicDetails["महाराष्ट्रातील वनसंपदा व जैवविविधता"]=[
+"महाराष्ट्रातील वनक्षेत्रात विविध प्रकारची वनस्पती आणि वन्यजीव आढळतात.",
+"विदर्भ आणि सह्याद्री परिसर जैवविविधतेच्या दृष्टीने महत्त्वाचे आहेत.",
+"वनसंवर्धन, संरक्षित क्षेत्रे आणि जैवविविधता संरक्षण आवश्यक आहे."
+];
+
+topicDetails["महाराष्ट्राचा नकाशा व सराव"]=[
+"महाराष्ट्राचा नकाशा अभ्यासताना जिल्हे, प्रमुख नद्या, पर्वत, घाट, धरणे, शहरं आणि भौगोलिक विभाग ओळखण्याचा सराव करावा.",
+"नकाशावर उत्तर-दक्षिण आणि पूर्व-पश्चिम दिशांचा विचार करा.",
+"स्पर्धा परीक्षेत नकाशावर आधारित स्थान ओळख, नदी-शहर संबंध आणि भौगोलिक प्रदेशांवर प्रश्न विचारले जाऊ शकतात."
+];
+
+
+/* =========================================================
+ AUTO GENERATE LESSONS
+========================================================= */
+
+for(let i=10;i<topics.length;i++){
+
+  const title=topics[i][0];
+
+  if(!topicDetails[title]){
+    topicDetails[title]=[
+      `${title} या घटकाचा अभ्यास भूगोलातील मूलभूत संकल्पना समजून घेण्यासाठी महत्त्वाचा आहे. या घटकाचा संबंध पृथ्वीच्या नैसर्गिक किंवा मानवी प्रक्रियांशी आहे.`,
+      `या विषयाचा अभ्यास करताना व्याख्या, प्रमुख घटक, कारणे, परिणाम, वितरण आणि परीक्षेतील उपयोग या क्रमाने अभ्यास करणे उपयुक्त ठरते.`,
+      `स्पर्धा परीक्षेसाठी या घटकातील महत्त्वाचे शब्द, तुलना, कारण-परिणाम आणि स्थानाधारित माहिती विशेष लक्षात ठेवा.`
+    ];
+  }
+
+  const d=topicDetails[title];
+
+  lessonData[i]={
+    definition:d[0],
+    points:[
+      d[1],
+      d[2],
+      "या घटकाचा इतर भौगोलिक घटकांशी असलेला परस्परसंबंध समजून घ्या.",
+      "नकाशा, आकृती किंवा तक्त्याच्या मदतीने माहितीचे पुनरावर्तन करा.",
+      "स्पर्धा परीक्षेतील तथ्यात्मक तसेच कारण-परिणाम आधारित प्रश्नांसाठी तयारी करा."
+    ],
+    revision:`${title} — व्याख्या, प्रमुख घटक, कारणे, परिणाम आणि परीक्षाभिमुख तथ्ये यांचे पुनरावलोकन करा.`,
+    exam:`परीक्षेच्या दृष्टीने ${title} मधील व्याख्या, प्रमुख वैशिष्ट्ये, कारणे-परिणाम आणि स्थानाधारित माहिती महत्त्वाची आहे.`,
+    quiz:[
+      [
+        `${title} या विषयाचा अभ्यास करताना कोणता मुद्दा महत्त्वाचा आहे?`,
+        ["संकल्पना व प्रमुख वैशिष्ट्ये","फक्त नाव","फक्त तारीख","फक्त आकडा"],
+        0,
+        "संकल्पना आणि प्रमुख वैशिष्ट्ये समजून घेणे हा भूगोलाच्या अभ्यासाचा मूलभूत भाग आहे."
+      ],
+      [
+        `${title} चा अभ्यास कोणत्या पद्धतीने करणे उपयुक्त आहे?`,
+        ["व्याख्या + कारणे + परिणाम","फक्त पाठांतर","फक्त शीर्षक","फक्त चित्र"],
+        0,
+        "व्याख्या, कारणे, परिणाम आणि उदाहरणे यांचा एकत्रित अभ्यास अधिक उपयुक्त आहे."
+      ],
+      [
+        `${title} संदर्भात नकाशाचा उपयोग कशासाठी होतो?`,
+        ["स्थान व वितरण समजण्यासाठी","फक्त सजावटीसाठी","फक्त लेखनासाठी","फक्त गणितासाठी"],
+        0,
+        "भौगोलिक स्थान व वितरण समजण्यासाठी नकाशा महत्त्वाचा आहे."
+      ],
+      [
+        "स्पर्धा परीक्षेसाठी भूगोलातील कोणता दृष्टिकोन महत्त्वाचा आहे?",
+        ["कारण-परिणाम व स्थान","फक्त पाठांतर","फक्त व्याख्या","फक्त चित्रे"],
+        0,
+        "कारण-परिणाम आणि स्थानाधारित विचारामुळे भूगोलातील प्रश्न सोडवणे सोपे होते."
+      ],
+      [
+        `${title} चा अभ्यास करताना कोणती माहिती पुन्हा पाहावी?`,
+        ["महत्त्वाचे तथ्य व Revision Points","फक्त शीर्षक","फक्त पहिला परिच्छेद","काहीही नाही"],
+        0,
+        "पुनरावृत्ती करताना महत्त्वाचे तथ्य आणि Revision Points पुन्हा पाहणे उपयुक्त आहे."
+      ]
+    ]
+  };
 }
 
-function filterCat(cat, elem) {
-  currentCat = cat;
-  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-  if (elem) elem.classList.add('active');
-  const filtered = cat === 'all' ? syllabus : syllabus.filter(t => t.cat === cat);
-  renderList(filtered);
-}
 
-function searchTopics() {
-  const q = document.getElementById('search').value.toLowerCase();
-  const filtered = syllabus.filter(t => {
-    const matchesCat = (currentCat === 'all' || t.cat === currentCat);
-    return matchesCat && (t.title.toLowerCase().includes(q) || (t.id + '').includes(q));
-  });
-  renderList(filtered);
-}
+/* =========================================================
+   APP VARIABLES
+========================================================= */
 
-function loadLesson(id) {
-  document.querySelectorAll('.topic').forEach(b => b.classList.remove('active'));
-  const activeBtn = document.getElementById('top-' + id);
-  if (activeBtn) activeBtn.classList.add('active');
+let currentTopic=-1;
+let currentQuizScore=0;
+let answeredQuestions=0;
+let currentQuiz=[];
 
-  const container = document.getElementById('lessonContainer');
-  const data = lessonsContent[id];
+let completed=JSON.parse(
+  localStorage.getItem("naviDishaGeoCompleted") || "[]"
+);
 
-  if (!data) {
-    const topicInfo = syllabus.find(t => t.id === id);
-    container.innerHTML = `
-      <h1>${topicInfo.id}. ${topicInfo.title}</h1>
-      <div class="box">
-        <b>विभाग:</b> ${topicInfo.cat} भूगोल<br>
-        या घटकाचा संपूर्ण सविस्तर अभ्यासक्रम, संकल्पना, सराव तक्ते आणि परीक्षाभिमुख प्रश्न लवकरच अपडेट होत आहेत.
-      </div>
-      <h2>अभ्यास रूपरेषा</h2>
-      <ul>
-        <li>मूलभूत संकल्पना व व्याख्या</li>
-        <li>परीक्षेच्या दृष्टीने आवश्यक घटक व वर्गीकरण</li>
-        <li>महाराष्ट्राच्या व भारताच्या संदर्भातील तथ्ये</li>
-        <li>१० ते २० वस्तुनिष्ठ सराव बहुपर्यायी प्रश्न (MCQ)</li>
-      </ul>
-    `;
+let bestScore=Number(
+  localStorage.getItem("naviDishaGeoBestScore") || 0
+);
+
+
+/* =========================================================
+   RENDER TOPICS
+========================================================= */
+
+function renderTopics(list=topics){
+
+  const area=document.getElementById("topicArea");
+
+  if(!list.length){
+    area.innerHTML=
+      `<div class="no-result">
+        🔎 कोणताही विषय सापडला नाही.
+      </div>`;
     return;
   }
 
-  let mcqHTML = '<h2>📝 सराव प्रश्नसंच (MCQ)</h2>';
-  data.mcqs.forEach((m, idx) => {
-    mcqHTML += `
-      <div class="mcq-card">
-        <b>प्र. ${idx + 1}) ${m.q}</b>
-        ${m.options.map((opt, oIdx) => `
-          <button class="opt-btn" onclick="checkAnswer(this, ${oIdx === m.ans}, ${idx}, '${encodeURIComponent(m.exp)}')">
-            ${String.fromCharCode(65 + oIdx)}. ${opt}
-          </button>
-        `).join('')}
-        <div class="exp" id="exp-${idx}"></div>
+  area.innerHTML=list.map((item)=>{
+
+    const index=topics.indexOf(item);
+    const title=item[0];
+    const category=item[1];
+
+    return `
+      <div class="topic-card ${completed.includes(index)?"completed":""}"
+           onclick="openTopic(${index})">
+
+        <div class="topic-number">घटक ${index+1} / 73</div>
+
+        <h3>
+          ${completed.includes(index)?"✅ ":""}
+          ${title}
+        </h3>
+
+        <span class="badge">
+          ${categoryNames[category]}
+        </span>
+
+        <p>
+          📘 सविस्तर धडा • 📝 MCQ • 🔄 Revision
+        </p>
+
       </div>
     `;
-  });
 
-  container.innerHTML = `
-    <h1>${data.title}</h1>
-    ${data.content}
-    ${mcqHTML}
+  }).join("");
+
+  updateStats();
+}
+
+
+/* =========================================================
+   OPEN TOPIC
+========================================================= */
+
+function openTopic(index){
+
+  const lesson=lessonData[index];
+
+  if(!lesson){
+    alert("या विषयाचा धडा उपलब्ध नाही.");
+    return;
+  }
+
+  currentTopic=index;
+  currentQuiz=lesson.quiz || [];
+  currentQuizScore=0;
+  answeredQuestions=0;
+
+  document.getElementById("homeArea").style.display="none";
+
+  const box=document.getElementById("lesson");
+  box.classList.add("active");
+
+  document.getElementById("lessonTitle").textContent=
+    `${index+1}. ${topics[index][0]}`;
+
+  document.getElementById("lessonCategory").textContent=
+    `विभाग : ${categoryNames[topics[index][1]]}`;
+
+  document.getElementById("lessonContent").innerHTML=`
+
+    <div class="lesson-box definition">
+      <h3>📖 संकल्पना / व्याख्या</h3>
+      <p>${lesson.definition}</p>
+    </div>
+
+    <div class="lesson-box">
+      <h3>📚 सविस्तर स्पष्टीकरण</h3>
+
+      <p>
+        ${lesson.definition}
+      </p>
+
+      <p>
+        ${lesson.points[0]}
+      </p>
+
+      <p>
+        ${lesson.points[1]}
+      </p>
+
+      <p>
+        ${lesson.points[2]}
+      </p>
+    </div>
+
+    <div class="lesson-box">
+      <h3>📌 परीक्षेसाठी महत्त्वाचे मुद्दे</h3>
+
+      <ul class="points">
+        ${lesson.points.map(x=>`<li>${x}</li>`).join("")}
+      </ul>
+    </div>
+
+    <div class="lesson-box revision">
+      <h3>🔄 Revision Box</h3>
+      <p>${lesson.revision}</p>
+    </div>
+
+    <div class="lesson-box exam">
+      <h3>🎯 Exam Point</h3>
+      <p>${lesson.exam}</p>
+    </div>
+
+    <div class="lesson-box warning">
+      <h3>⚠️ अभ्यास टिप</h3>
+      <p>
+        या विषयातील संकल्पना फक्त पाठ न करता
+        कारण, परिणाम, उदाहरण आणि भौगोलिक स्थान यांच्या
+        संदर्भात समजून घ्या.
+      </p>
+    </div>
+  `;
+
+  renderQuiz();
+
+  box.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+function renderQuiz(){
+
+  const area=document.getElementById("quizArea");
+
+  if(!currentQuiz.length){
+    area.innerHTML="";
+    return;
+  }
+
+  area.innerHTML=`
+    <h2 class="section-title">
+      📝 सराव प्रश्नसंच
+    </h2>
+
+    <p>
+      या धड्याचे प्रश्न सोडवा. योग्य उत्तर निवडल्यानंतर
+      उत्तराचे स्पष्टीकरण दिसेल.
+    </p>
+
+    ${currentQuiz.map((q,i)=>`
+
+      <div class="question">
+
+        <h4>
+          प्रश्न ${i+1}. ${q[0]}
+        </h4>
+
+        <div id="options-${i}">
+          ${q[1].map((option,j)=>`
+            <button
+              class="option"
+              onclick="answerQuestion(${i},${j})">
+              ${String.fromCharCode(65+j)}. ${option}
+            </button>
+          `).join("")}
+        </div>
+
+        <div id="explanation-${i}" class="explanation">
+        </div>
+
+      </div>
+
+    `).join("")}
+
+    <div id="quizResult"></div>
   `;
 }
 
-function checkAnswer(btn, isCorrect, qIdx, expEncoded) {
-  const parent = btn.parentElement;
-  parent.querySelectorAll('.opt-btn').forEach(b => b.disabled = true);
-  const expBox = document.getElementById('exp-' + qIdx);
-  expBox.style.display = 'block';
-  expBox.innerHTML = '<b>स्पष्टीकरण:</b> ' + decodeURIComponent(expEncoded);
 
-  if (isCorrect) {
-    btn.classList.add('correct');
-  } else {
-    btn.classList.add('wrong');
+function answerQuestion(qIndex,selected){
+
+  const q=currentQuiz[qIndex];
+
+  const options=
+    document.querySelectorAll(`#options-${qIndex} .option`);
+
+  options.forEach(btn=>{
+    btn.disabled=true;
+  });
+
+  if(selected===q[2]){
+
+    options[selected].classList.add("correct");
+
+    currentQuizScore++;
+
+  }else{
+
+    options[selected].classList.add("wrong");
+    options[q[2]].classList.add("correct");
+
+  }
+
+  answeredQuestions++;
+
+  const explanation=
+    document.getElementById(`explanation-${qIndex}`);
+
+  explanation.style.display="block";
+
+  explanation.innerHTML=
+    `<b>उत्तर:</b> ${q[1][q[2]]}<br>
+     <b>स्पष्टीकरण:</b> ${q[3]}`;
+
+  if(answeredQuestions===currentQuiz.length){
+    showQuizResult();
   }
 }
 
-function speakCurrent() {
-  const text = document.getElementById('lessonContainer').innerText;
-  if (!('speechSynthesis' in window)) {
-    alert('आपल्या ब्राउझरमध्ये ऑडिओ सुविधा उपलब्ध नाही.');
+
+function showQuizResult(){
+
+  const result=document.getElementById("quizResult");
+
+  const total=currentQuiz.length;
+
+  if(currentQuizScore>bestScore){
+
+    bestScore=currentQuizScore;
+
+    localStorage.setItem(
+      "naviDishaGeoBestScore",
+      bestScore
+    );
+  }
+
+  result.innerHTML=`
+    <div class="quiz-result">
+
+      🎉 प्रश्नसंच पूर्ण!
+
+      <br><br>
+
+      तुमचे गुण:
+      ${currentQuizScore} / ${total}
+
+      <br>
+
+      ${currentQuizScore===total
+        ?"🌟 उत्कृष्ट! सर्व उत्तरे बरोबर!"
+        :"👍 पुन्हा एकदा Revision करून प्रयत्न करा."}
+
+      <br><br>
+
+      <button class="btn"
+              onclick="openTopic(${currentTopic})">
+        🔄 पुन्हा सोडवा
+      </button>
+
+    </div>
+  `;
+
+  updateStats();
+}
+
+
+/* =========================================================
+   MARK COMPLETED
+========================================================= */
+
+function markCompleted(){
+
+  if(currentTopic<0) return;
+
+  if(!completed.includes(currentTopic)){
+    completed.push(currentTopic);
+
+    localStorage.setItem(
+      "naviDishaGeoCompleted",
+      JSON.stringify(completed)
+    );
+  }
+
+  updateStats();
+
+  alert("✅ हा धडा पूर्ण म्हणून नोंदवला आहे.");
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+function updateStats(){
+
+  const total=topics.length;
+  const done=completed.length;
+  const remaining=total-done;
+  const percent=Math.round((done/total)*100);
+
+  document.getElementById("totalCount").textContent=total;
+  document.getElementById("completedCount").textContent=done;
+  document.getElementById("remainingCount").textContent=remaining;
+  document.getElementById("bestScore").textContent=bestScore;
+
+  document.getElementById("progressFill").style.width=
+    percent+"%";
+
+  document.getElementById("progressText").textContent=
+    `${percent}% अभ्यास पूर्ण`;
+
+  renderTopics(currentDisplayedTopics);
+}
+
+
+/* =========================================================
+   CATEGORY FILTER
+========================================================= */
+
+let currentDisplayedTopics=topics;
+
+function filterCategory(category,button){
+
+  document.querySelectorAll(".category-tabs button")
+    .forEach(b=>b.classList.remove("active"));
+
+  if(button){
+    button.classList.add("active");
+  }
+
+  if(category==="all"){
+    currentDisplayedTopics=topics;
+  }else{
+    currentDisplayedTopics=
+      topics.filter(t=>t[1]===category);
+  }
+
+  renderTopics(currentDisplayedTopics);
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function searchTopics(){
+
+  const text=
+    document.getElementById("searchBox")
+    .value
+    .trim()
+    .toLowerCase();
+
+  if(!text){
+    renderTopics(currentDisplayedTopics);
     return;
   }
-  window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = 'mr-IN';
-  u.rate = 0.9;
-  window.speechSynthesis.speak(u);
+
+  const result=topics.filter(item=>
+    item[0].toLowerCase().includes(text) ||
+    categoryNames[item[1]].toLowerCase().includes(text)
+  );
+
+  renderTopics(result);
 }
 
-// Initial Load
-filterCat('all');
-loadLesson(1);
+
+/* =========================================================
+   HOME
+========================================================= */
+
+function showHome(){
+
+  document.getElementById("lesson").classList.remove("active");
+
+  document.getElementById("homeArea").style.display="block";
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+
+/* =========================================================
+   TEXT TO SPEECH
+========================================================= */
+
+function speakCurrentLesson(){
+
+  if(currentTopic<0){
+    alert("प्रथम एखादा धडा उघडा.");
+    return;
+  }
+
+  const lesson=lessonData[currentTopic];
+
+  if(!lesson){
+    return;
+  }
+
+  if(!("speechSynthesis" in window)){
+    alert("तुमच्या ब्राउझरमध्ये आवाजाची सुविधा उपलब्ध नाही.");
+    return;
+  }
+
+  speechSynthesis.cancel();
+
+  const text=
+    `${topics[currentTopic][0]}. `+
+    `${lesson.definition}. `+
+    `${lesson.points.join(". ")}. `+
+    `${lesson.revision}`;
+
+  const speech=
+    new SpeechSynthesisUtterance(text);
+
+  speech.lang="mr-IN";
+  speech.rate=.85;
+  speech.pitch=1;
+
+  speechSynthesis.speak(speech);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+function resetProgress(){
+
+  const confirmReset=
+    confirm(
+      "तुमची सर्व Geography progress नोंद हटवायची आहे का?"
+    );
+
+  if(!confirmReset) return;
+
+  completed=[];
+
+  localStorage.removeItem(
+    "naviDishaGeoCompleted"
+  );
+
+  updateStats();
+
+  alert("Progress Reset झाली.");
+}
+
+
+/* =========================================================
+   INITIAL LOAD
+========================================================= */
+
+renderTopics(topics);
+updateStats();
+
 </script>
 
 </body>
