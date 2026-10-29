@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#063b70">
 <title>नवी दिशा — स्पर्धा परीक्षा संपूर्ण अभ्यास</title>
+
+<!-- PWA & Icon Integration -->
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-512.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;background:#f5fbff;color:#123252}
@@ -91,7 +98,7 @@ footer{background:#042f5c;color:white;margin-top:30px;padding:30px;text-align:ce
     <div class="title"><h2>📚 विषयानुसार अभ्यास</h2><div class="line"></div></div>
     <div class="grid" id="grid">
       
-      <!-- १. मराठी व्याकरण (स्वतंत्र) -->
+      <!-- १. मराठी व्याकरण -->
       <div class="card c1">
         <div class="ico">🚩</div>
         <h3>मराठी व्याकरण</h3>
@@ -103,7 +110,7 @@ footer{background:#042f5c;color:white;margin-top:30px;padding:30px;text-align:ce
         <a class="start" href="marathi.html">अभ्यास सुरू करा →</a>
       </div>
 
-      <!-- २. इंग्रजी व्याकरण (स्वतंत्र - क्लासिक नेव्ही रंग) -->
+      <!-- २. इंग्रजी व्याकरण -->
       <div class="card c9">
         <div class="ico">🇬🇧</div>
         <h3>इंग्रजी व्याकरण</h3>
@@ -250,6 +257,15 @@ function find(q){
   q = q.toLowerCase();
   document.querySelectorAll(".card").forEach(c => {
     c.style.display = !q || c.innerText.toLowerCase().includes(q) ? "" : "none";
+  });
+}
+
+// Service Worker Registration for PWA Installation
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => console.log('Service Worker Registered Successfully!'))
+      .catch(err => console.log('Service Worker Registration Failed:', err));
   });
 }
 </script>
