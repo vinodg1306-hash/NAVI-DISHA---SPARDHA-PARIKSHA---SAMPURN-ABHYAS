@@ -1,0 +1,1500 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#063b70">
+<title>नवी दिशा — MPSC English Complete Course (Module 1)</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-512.png">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;background:#f0f5fa;color:#0f2842;line-height:1.8}
+.top{background:linear-gradient(120deg,#042e5c,#075a96);color:white;position:sticky;top:0;z-index:100;box-shadow:0 3px 12px rgba(0,0,0,0.15)}
+.nav{max-width:1180px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
+.back-btn{color:white;text-decoration:none;font-size:15px;background:rgba(255,255,255,0.15);padding:7px 15px;border-radius:20px;display:inline-flex;align-items:center;gap:6px}
+.back-btn:hover{background:rgba(255,255,255,0.3)}
+.logo-title{font-size:20px;font-weight:bold;color:#ffd026}
+
+.container{max-width:1140px;margin:22px auto;padding:0 15px}
+.header-card{background:linear-gradient(135deg,#063b70,#0d5591);color:white;padding:32px;border-radius:20px;box-shadow:0 8px 25px rgba(6,59,112,0.18);margin-bottom:25px}
+.header-card h1{margin:0 0 10px;font-size:30px;color:#ffd026}
+.header-card p{margin:0;font-size:15.5px;color:#e1effa}
+
+/* Audio Player */
+.audio-bar{background:white;border:1px solid #cce4f7;border-radius:15px;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:25px;box-shadow:0 4px 15px rgba(0,0,0,0.05)}
+.audio-info{font-weight:bold;color:#063b70;display:flex;align-items:center;gap:8px}
+.audio-controls{display:flex;gap:10px}
+.audio-btn{background:#ffbd18;border:none;color:#0e2942;padding:8px 18px;border-radius:20px;font-weight:bold;cursor:pointer;font-size:14px}
+.audio-btn:hover{background:#ffa800}
+
+/* Lesson Navigation */
+.topic-index{background:white;border-radius:16px;border:1px solid #d4e8f7;padding:20px;margin-bottom:25px}
+.topic-index h3{margin-top:0;color:#063b70;font-size:18px}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.index-item{background:#f8fbfe;border:1px solid #cde3f5;padding:8px 12px;border-radius:10px;text-decoration:none;color:#0e3c66;font-size:13.5px;font-weight:600;display:block}
+.index-item:hover{background:#075a96;color:white;border-color:#075a96}
+
+/* Cards & Content */
+.lesson-card{background:white;border-radius:20px;border:1px solid #d4e8f7;padding:28px;margin-bottom:35px;box-shadow:0 6px 20px rgba(12,65,110,0.06)}
+.lesson-card h2{color:#074882;font-size:25px;margin-top:0;border-bottom:2px solid #e2effa;padding-bottom:10px}
+.lesson-card h3{color:#0a5c9e;font-size:19px;margin:22px 0 8px}
+
+.def-box{background:#f0f8ff;border-left:5px solid #007cba;padding:14px 18px;border-radius:0 12px 12px 0;margin:14px 0}
+.def-box b{color:#004b75}
+.formula-box{background:#fdf6e7;border-left:5px solid #e68a00;padding:14px 18px;border-radius:0 12px 12px 0;margin:14px 0}
+.formula-box b{color:#995c00}
+.exam-tip{background:#fff3cd;border-left:5px solid #ffc107;padding:14px 18px;border-radius:0 12px 12px 0;margin:14px 0}
+.exam-tip b{color:#856404}
+.error-box{background:#fdf2f2;border-left:5px solid #dc3545;padding:14px 18px;border-radius:0 12px 12px 0;margin:14px 0}
+.error-box b{color:#721c24}
+
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+th,td{padding:10px 14px;border:1px solid #dce8f2;text-align:left}
+th{background:#074882;color:white}
+tr:nth-child(even){background:#f8fbfe}
+
+/* Quiz Styles */
+.quiz-section{background:#f4f9fd;border:1px solid #bcdbf3;border-radius:16px;padding:22px;margin-top:30px}
+.quiz-section h4{color:#074882;margin:0 0 16px;font-size:18px;border-bottom:1px solid #dcecf8;padding-bottom:8px}
+.quiz-item{background:white;border:1px solid #d8e8f5;border-radius:12px;padding:16px;margin-bottom:16px}
+.quiz-q{font-weight:bold;color:#063b70;margin-bottom:12px;font-size:15px}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt-btn{background:#fafcff;border:1px solid #c2dbef;padding:10px 14px;border-radius:10px;text-align:left;cursor:pointer;font-size:14px;font-weight:500}
+.opt-btn:hover{background:#e5f2fd}
+.opt-btn.correct{background:#dcfce7;border-color:#22c55e;color:#15803d;font-weight:bold}
+.opt-btn.wrong{background:#fee2e2;border-color:#ef4444;color:#b91c1c;font-weight:bold}
+.expl{display:none;margin-top:10px;padding:10px 12px;border-radius:8px;background:#f8fafc;border:1px solid #cbd5e1;font-size:13.5px}
+
+@media(max-width:768px){
+  .options{grid-template-columns:1fr}
+  .header-card{padding:20px}
+  .header-card h1{font-size:22px}
+  .lesson-card{padding:16px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="nav">
+    <a class="back-btn" href="index.html">← मुख्यपृष्ठ</a>
+    <div class="logo-title">नवी दिशा • MPSC इंग्रजी संपूर्ण कोर्स</div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="header-card">
+    <h1>📘 भाग १ — Grammar Foundation (घटक १ ते १०)</h1>
+    <p>MPSC राज्यसेवा (Mains Qualifying 300 Marks & CSAT) आणि संयुक्त गट-ब/क परीक्षेसाठी सविस्तर संकल्पना, व्याख्या, सूत्रे, MPSC Exam Points, सामान्य चुका आणि प्रत्येकी १० सराव MCQs.</p>
+  </div>
+
+  <div class="audio-bar">
+    <div class="audio-info">
+      <span>🎧</span> <b>ऑडिओ मार्गदर्शक:</b> इंग्रजी व्याकरण नियमांचे महत्त्वाचे मुद्दे आवाजात ऐका
+    </div>
+    <div class="audio-controls">
+      <button class="audio-btn" onclick="readFullLesson()">▶️ ऑडिओ सुरू करा</button>
+      <button class="audio-btn" style="background:#e2e8f0;color:#334155" onclick="stopAudio()">⏹ बंद करा</button>
+    </div>
+  </div>
+
+  <!-- अनुक्रमणिका -->
+  <div class="topic-index">
+    <h3>📑 भाग १ मधील अभ्यास घटक (Topics 1 to 10):</h3>
+    <div class="index-grid">
+      <a class="index-item" href="#topic1">१. The Sentence (वाक्य)</a>
+      <a class="index-item" href="#topic2">२. Parts of Speech (शब्दांच्या जाती)</a>
+      <a class="index-item" href="#topic3">३. Noun (नाम व नियम)</a>
+      <a class="index-item" href="#topic4">४. Pronoun (सर्वनाम व नियम)</a>
+      <a class="index-item" href="#topic5">५. Adjective (विशेषण)</a>
+      <a class="index-item" href="#topic6">६. Verb (क्रियापद व प्रकार)</a>
+      <a class="index-item" href="#topic7">७. Adverb (क्रियाविशेषण)</a>
+      <a class="index-item" href="#topic8">८. Preposition (शब्दयोगी अव्यय)</a>
+      <a class="index-item" href="#topic9">९. Conjunction (उभयान्वयी अव्यय)</a>
+      <a class="index-item" href="#topic10">१०. Interjection (केवलप्रयोगी अव्यय)</a>
+    </div>
+  </div>
+
+  <!-- TOPIC 1 -->
+  <div class="lesson-card" id="topic1">
+    <h2>१. The Sentence — वाक्य व त्याची रचना</h2>
+    <div class="def-box">
+      <b>१. Definition (व्याख्या):</b> पूर्ण अर्थ व्यक्त करणाऱ्या अर्थपूर्ण शब्दसमूहाला <b>Sentence (वाक्य)</b> असे म्हणतात. "A group of words that makes complete sense is called a sentence."
+    </div>
+
+    <h3>२. Parts of Sentence (वाक्याचे दोन मुख्य भाग):</h3>
+    <ul>
+      <li><b>Subject (उद्देश / कर्ता):</b> वाक्यात ज्याच्याबद्दल काही सांगितले जाते तो भाग. (उदा. <i>The sun</i> rises in the east.)</li>
+      <li><b>Predicate (विधेय):</b> वाक्यात कर्त्याबद्दल जे काही विधान केले जाते तो भाग. (उदा. The sun <i>rises in the east</i>.)</li>
+    </ul>
+
+    <h3>३. Types of Sentences (अर्थानुसार वाक्यांचे ४ प्रकार):</h3>
+    <table>
+      <tr><th>प्रकार (Type)</th><th>कार्य व ओळख</th><th>उदाहरण</th></tr>
+      <tr><td>Assertive / Declarative</td><td>साधे विधान करते, शेवटी Full Stop (.)</td><td>Knowledge is power.</td></tr>
+      <tr><td>Interrogative</td><td>प्रश्न विचारते, शेवटी Question Mark (?)</td><td>Where do you live?</td></tr>
+      <tr><td>Imperative</td><td>आज्ञा, विनंती, सल्ला; क्रियापदाने सुरू होते</td><td>Please help me.</td></tr>
+      <tr><td>Exclamatory</td><td>तीव्र भावना व्यक्त करते, उद्गारवाचक चिन्ह (!)</td><td>What a beautiful view!</td></tr>
+    </table>
+
+    <div class="formula-box">
+      <b>४. Formula (वाक्यरचनेचे मूलभूत सूत्र):</b><br>
+      • Assertive: <b>Subject + Verb + Object (S + V + O)</b><br>
+      • Interrogative: <b>Helping Verb + Subject + Main Verb + Object?</b>
+    </div>
+
+    <div class="exam-tip">
+      <b>⭐ MPSC Exam Points:</b><br>
+      १. वाक्याचा क्रम बदलून विधानाार्थीचे प्रश्नार्थी किंवा उद्गारार्थी करताना Subject आणि Verb चा क्रम अत्यंत महत्त्वाचा ठरतो.<br>
+      २. Indirect Speech मध्ये रुपांतर करताना प्रश्नार्थक रचना ही नेहमी विधानार्थी (Subject + Verb) क्रमातच बदलावी लागते.
+    </div>
+
+    <div class="error-box">
+      <b>Common Errors (सामान्य चुका):</b><br>
+      ❌ <i>He asked me where was I going.</i> (प्रश्नार्थक क्रम चुकीचा आहे)<br>
+      ✅ <i>He asked me where I was going.</i> (विधानार्थी क्रम अचूक)
+    </div>
+
+    <!-- 10 MCQs Topic 1 -->
+    <div class="quiz-section">
+      <h4>📝 सराव संच १: The Sentence (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. Identify the Subject in the sentence: "Down went the Royal George."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Down हे Adverb आहे.')">A) Down</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'went हे Verb आहे.')">B) went</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! क्रिया कोणाबद्दल घडत आहे - the Royal George हा कर्ता (Subject) आहे.')">C) the Royal George</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'दोन्ही मिळून कर्ता होत नाही.')">D) Down went</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. "Please lend me your pen." Which type of sentence is this?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'हे साधे विधान नाही.')">A) Assertive</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! विनंती किंवा आज्ञा दर्शवणारे वाक्य Imperative Sentence असते.')">B) Imperative</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'यात प्रश्न नाही.')">C) Interrogative</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'यात तीव्र भावना नाही.')">D) Exclamatory</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. Identify the Predicate: "The singing of the birds makes me happy."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'हा Subject चा भाग आहे.')">A) The singing of the birds</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! कर्त्याबद्दल विधान करणारा संपूर्ण भाग Predicate असतो.')">B) makes me happy</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'केवळ क्रियापद नव्हे.')">C) makes</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'हे Object आहे.')">D) me happy</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. Turn into Assertive: "What a piece of work is man!"</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'अपूर्ण वाक्य आहे.')">A) Man is work.</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Man is a wonderful piece of work हे योग्य विधानार्थी रूप आहे.')">B) Man is a wonderful piece of work.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'काळ बदलला आहे.')">C) Man was a great work.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'क्रम चुकीचा आहे.')">D) Piece of work is man.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. Which of the following is an Optative Sentence (इच्छादर्शक)?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! May you live long! ही सदिच्छा व्यक्त करते.')">A) May you live long!</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'हा प्रश्न आहे.')">B) May I come in?</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'हे विधानार्थी आहे.')">C) He may come today.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'हे आज्ञार्थी आहे.')">D) Do your best.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. Choose the correct word order for an indirect question:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'प्रश्नार्थक क्रम चुकीचा आहे.')">A) Tell me where do you stay.</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Indirect रचनेत Wh-word नंतर Subject + Verb (where you stay) येते.')">B) Tell me where you stay.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'where stay you अशुद्ध रचना आहे.')">C) Tell me where stay you.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'did you stay अशुद्ध आहे.')">D) Tell me where did you stay.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. An Imperative Sentence usually begins with a:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'नाम सुरुवातीला येत नाही.')">A) Noun</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! आज्ञार्थी वाक्याची सुरुवात मूळ क्रियापदाने (Base Verb) होते (Subject "You" लपलेला असतो).')">B) Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Pronoun येत नाही.')">C) Pronoun</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Adverb अपवाद वगळता येत नाही.')">D) Adjective</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. "Who does not know Mahatma Gandhi?" Convert into Assertive:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'No one चुकीचा अर्थ देईल.')">A) No one knows Mahatma Gandhi.</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! "Who does not know" चे विधानाार्थी "Everyone knows Mahatma Gandhi" होते.')">B) Everyone knows Mahatma Gandhi.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Someone अपूर्ण अर्थ देतो.')">C) Someone knows Mahatma Gandhi.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'अर्थ बदलतो.')">D) Everyone did not know Mahatma Gandhi.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. Identify the sentence with correct punctuation:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Question mark हवा.')">A) How are you.</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! उद्गारवाचक वाक्याच्या शेवटी Exclamation mark (!) अचूक आहे.')">B) How sweet the moonlight sleeps upon this bank!</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'शेवटी फुल स्टॉप हवा.')">C) Please sit down?</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'विरामचिन्ह चुकीचे आहे.')">D) What is your name!</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. In the sentence "Sit down", what is the subject?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Sit हे Verb आहे.')">A) Sit</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Down हे Adverb आहे.')">B) Down</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! आज्ञार्थी वाक्यात कर्ता "You" हा अध्याहृत (Understood/Implied) असतो.')">C) You (Understood)</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'कर्त्याशिवाय वाक्य नसते.')">D) No Subject</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 2 -->
+  <div class="lesson-card" id="topic2">
+    <h2>२. Parts of Speech — शब्दांच्या जाती (विहंगावलोकन)</h2>
+    <div class="def-box">
+      <b>१. Definition (व्याख्या):</b> वाक्यातील त्यांच्या कार्यानुसार शब्दांचे जे ८ वर्ग पाडले जातात त्यांना <b>Parts of Speech</b> म्हणतात.
+    </div>
+
+    <h3>२. The 8 Parts of Speech (८ जाती व कार्य):</h3>
+    <table>
+      <tr><th>Part of Speech</th><th>कार्य (Function)</th><th>उदाहरणे</th></tr>
+      <tr><td>१. Noun (नाम)</td><td>व्यक्ती, वस्तू किंवा संकल्पनेचे नाव</td><td>Sachin, Pune, Courage</td></tr>
+      <tr><td>२. Pronoun (सर्वनाम)</td><td>नामाऐवजी येणारा शब्द</td><td>He, She, They, Who</td></tr>
+      <tr><td>३. Adjective (विशेषण)</td><td>नामाबद्दल विशेष माहिती सांगणारा शब्द</td><td>Brave, Intelligent, Five</td></tr>
+      <tr><td>४. Verb (क्रियापद)</td><td>कृती किंवा अवस्था दर्शवणारा शब्द</td><td>Play, Write, Is, Became</td></tr>
+      <tr><td>५. Adverb (क्रियाविशेषण)</td><td>क्रियापद, विशेषणाबद्दल अधिक माहिती देणारा</td><td>Quickly, Very, Well</td></tr>
+      <tr><td>६. Preposition (शब्दयोगी)</td><td>नामाचा इतर शब्दांशी संबंध दाखवणारा</td><td>In, On, At, Under</td></tr>
+      <tr><td>७. Conjunction (उभयान्वयी)</td><td>शब्द किंवा वाक्य जोडणारा</td><td>And, But, Although</td></tr>
+      <tr><td>८. Interjection (केवलप्रयोगी)</td><td>उत्कट भावना दर्शवणारा उद्गार</td><td>Oh!, Alas!, Hurrah!</td></tr>
+    </table>
+
+    <div class="exam-tip">
+      <b>⭐ MPSC Exam Point: एकाच शब्दाचे विविध कार्य (Word used as different parts of speech):</b><br>
+      • <i>They arrived soon <b>after</b>.</i> $\rightarrow$ Adverb<br>
+      • <i>He arrived <b>after</b> us.</i> $\rightarrow$ Preposition<br>
+      • <i>He arrived <b>after</b> we had left.</i> $\rightarrow$ Conjunction
+    </div>
+
+    <!-- 10 MCQs Topic 2 -->
+    <div class="quiz-section">
+      <h4>📝 सराव संच २: Parts of Speech (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. "He fasts once a week." What is the part of speech of 'fasts'?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'नाम नाही.')">A) Noun</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! येथे उपवास करण्याची कृती दर्शवली आहे, म्हणून ते Verb आहे.')">B) Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'विशेषण नाही.')">C) Adjective</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'क्रियाविशेषण नाही.')">D) Adverb</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. "He is an early riser and catches the early train." The two 'early' words are respectively:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'दोन्ही Adverb नाहीत.')">A) Adverb, Adjective</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! दोन्ही ठिकाणी नाम (riser आणि train) बद्दल माहिती देत असल्याने दोन्ही Adjectives आहेत.')">B) Adjective, Adjective</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'चूक.')">C) Adjective, Adverb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'चूक.')">D) Noun, Adjective</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. "Still waters run deep." Identify the part of speech of 'Still':</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Waters (नाम) बद्दल माहिती देणारा शब्द Adjective (विशेषण) आहे.')">A) Adjective</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'क्रियाविशेषण नाही.')">B) Adverb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'नाम नाही.')">C) Noun</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Conjunction नाही.')">D) Conjunction</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. "He is still in the room." Here 'still' is:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'विशेषण नाही.')">A) Adjective</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! काल दर्शवणारा क्रियाविशेषण शब्द (Adverb of Time) आहे.')">B) Adverb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Preposition नाही.')">C) Preposition</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Verb नाही.')">D) Verb</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. "Look above." Identify the part of speech of 'above':</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'पुढे नाम नसल्याने Preposition नाही.')">A) Preposition</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Look (क्रियापदाला) कोठे पहायचे हे सांगत असल्याने ते Adverb of Place आहे.')">B) Adverb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Noun नाही.')">C) Noun</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Adjective नाही.')">D) Adjective</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. "The moral law is above the civil." Here 'above' is:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! The civil या नामापूर्वी येऊन संबंध जोडत असल्याने ते Preposition आहे.')">A) Preposition</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Adverb नाही.')">B) Adverb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Conjunction नाही.')">C) Conjunction</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Adjective नाही.')">D) Adjective</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. "We walked around the lake." What is 'around'?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! The lake या नामाशी क्रियापदाचा संबंध दाखवणारे Preposition आहे.')">A) Preposition</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Adverb नाही.')">B) Adverb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Verb नाही.')">C) Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Noun नाही.')">D) Noun</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. "He worked hard, but he failed." What is 'but'?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Preposition नाही.')">A) Preposition</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! दोन स्वतंत्र उपवाक्ये जोडणारा शब्द Conjunction असतो.')">B) Conjunction</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Adverb नाही.')">C) Adverb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Interjection नाही.')">D) Interjection</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. "There is no but about it." What is 'but' here?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Conjunction नाही.')">A) Conjunction</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! 'No' या विशेषणानंतर आल्यामुळे येथे 'but' चा वापर Noun (नाम) म्हणून झाला आहे.')">B) Noun</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Preposition नाही.')">C) Preposition</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Verb नाही.')">D) Verb</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. "Alas! She is no more." What is 'Alas'?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Adverb नाही.')">A) Adverb</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! अचानक व्यक्त झालेली दुःखाची भावना म्हणजे Interjection.')">B) Interjection</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Conjunction नाही.')">C) Conjunction</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Noun नाही.')">D) Noun</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 3 -->
+  <div class="lesson-card" id="topic3">
+    <h2>३. Noun (नाम, प्रकार व MPSC नियम)</h2>
+    <div class="def-box">
+      <b>१. Definition:</b> "A Noun is a word used as the name of a person, place, thing, quality, or idea."
+    </div>
+
+    <h3>२. Types of Noun:</h3>
+    <ul>
+      <li><b>Proper Noun:</b> विशिष्ट नाव (Raju, Mumbai, Ganga).</li>
+      <li><b>Common Noun:</b> सामान्य नाव (Boy, River, Country).</li>
+      <li><b>Collective Noun:</b> समूहवाचक (Army, Jury, Parliament, Crowd).</li>
+      <li><b>Material Noun:</b> पदार्थवाचक (Gold, Water, Iron, Cotton).</li>
+      <li><b>Abstract Noun:</b> भाववाचक (Honesty, Childhood, Bravery, Theft).</li>
+    </ul>
+
+    <div class="formula-box">
+      <b>३. MPSC नियम व सूत्रे (Golden Rules):</b><br>
+      • <b>नियम १ (Uncountable Nouns):</b> Advice, Information, Furniture, Luggage, Baggage, Scenery, Poetry, Bread, Machinery, Hair, News.<br>
+      <i>Formula:</i> <b>[Uncountable Noun] + [Singular Verb]</b> (कधीही 's/es' किंवा 'a/an' लागत नाही).<br>
+      • <b>नियम २ (नेहमी अनेकवचनी मानली जाणारी नामे):</b> Scissors, Trousers, Spectacles, Assets, Thanks, Premises + <b>Plural Verb (are/were)</b>.<br>
+      • <b>नियम ३ (दिसायला अनेकवचनी पण एकवचनी):</b> Physics, Mathematics, Innings, Politics, News, Measles + <b>Singular Verb (is/was)</b>.
+    </div>
+
+    <div class="error-box">
+      <b>Common Errors:</b><br>
+      ❌ <i>He gave me many advices and informations.</i><br>
+      ✅ <i>He gave me much advice and information.</i> (किंवा many pieces of advice).
+    </div>
+
+    <!-- 10 MCQs Topic 3 -->
+    <div class="quiz-section">
+      <h4>📝 सराव संच ३: Noun (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. The committee ______ divided in their opinions.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'is एकमत असताना येते.')">A) was</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Collective Noun चे सदस्य विभक्त/विभागलेले असतील तर क्रियापद अनेकवचनी (were) येते.')">B) were</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has एकवचनी आहे.')">C) has</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'चूक.')">D) is</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. Identify the Abstract Noun:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Common noun आहे.')">A) Boy</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Collective noun आहे.')">B) Crowd</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Childhood (बालपण) ही अवस्था/भाव दर्शवणारे Abstract Noun आहे.')">C) Childhood</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Material noun आहे.')">D) Silver</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. My spectacles ______ missing.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Spectacles सोबत is येत नाही.')">A) is</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Spectacles चे दोन भाग असल्याने अनेकवचनी क्रियापद (are) घेते.')">B) are</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'was एकवचनी आहे.')">C) was</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has चूक आहे.')">D) has</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. The first innings ______ over.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Innings दिसायला अनेकवचनी असले तरी एकवचनी अर्थाने is/was वापरतात.')">A) was</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'were अनेकवचनी आहे.')">B) were</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'are वर्तमान अनेकवचनी आहे.')">C) are</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'have चूक आहे.')">D) have</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. Choose the correct plural of 'Hypothesis':</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'चुकीचे स्पेलिंग.')">A) Hypothesiss</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! ग्रीक शब्दांच्या शेवटी -is असल्यास अनेकवचनात -es (Hypotheses) होते.')">B) Hypotheses</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'चुकीचे रूप.')">C) Hypothesas</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'चुकीचे रूप.')">D) Hypothesii</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. "He bought two dozen bananas." What is 'dozen'?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Dozen च्या आधी निश्चित संख्या (two) असल्यास dozes होत नाही, ते Singular Noun राहते.')">A) Singular noun in form</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'चूक.')">B) Plural noun</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'चूक.')">C) Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'चूक.')">D) Pronoun</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. Cattle ______ grazing in the meadow.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'is एकवचनी आहे.')">A) is</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Cattle, People, Police हे दिसायला एकवचनी वाटले तरी नेहमी अनेकवचनी (are) क्रियापद घेतात.')">B) are</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'was एकवचनी आहे.')">C) was</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has चूक आहे.')">D) has</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. The feminine of 'Fox' is:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'She-fox चूक.')">A) She-fox</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Fox (नर कोल्हा) चे स्त्रीलिंगी रूप Vixen (मादी कोल्हा) होते.')">B) Vixen</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Bitch कुत्र्यासाठी असते.')">C) Bitch</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Doe हरणासाठी असते.')">D) Doe</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. Choose the incorrect form:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Father-in-law चे Fathers-in-law बरोबर आहे.')">A) Fathers-in-law</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Passers-by बरोबर आहे.')">B) Passers-by</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'चूक रूप सापडले! Commander-in-chief चे अनेकवचन Commanders-in-chief होते (chiefs नव्हे).')">C) Commander-in-chiefs</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Brothers-in-law बरोबर आहे.')">D) Brothers-in-law</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. "Lata\'s voice" shows which case?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Nominative प्रथमा असते.')">A) Nominative</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Accusative द्वितीया असते.')">B) Accusative</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! \'s द्वारे मालकी/संबंध दर्शवणारी केस Possessive / Genitive Case (षष्ठी) असते.')">C) Possessive (Genitive)</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Vocative संबोधन असते.')">D) Vocative</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 4: PRONOUN -->
+  <div class="lesson-card" id="topic4">
+    <h2>४. Pronoun (सर्वनाम, प्रकार व MPSC नियम)</h2>
+    <div class="def-box">
+      <b>१. Definition:</b> "A Pronoun is a word used instead of a Noun." नामाची अनावश्यक पुनरावृत्ती टाळण्यासाठी सर्वनाम वापरतात.
+    </div>
+
+    <h3>२. Pronoun चे मुख्य प्रकार:</h3>
+    <ul>
+      <li><b>Personal:</b> I, We, You, He, She, It, They.</li>
+      <li><b>Reflexive / Emphatic:</b> Myself, Yourself, Himself, Themselves.</li>
+      <li><b>Demonstrative:</b> This, That, These, Those.</li>
+      <li><b>Relative:</b> Who, Whom, Whose, Which, That.</li>
+      <li><b>Indefinite:</b> Everyone, Somebody, Nobody, None, All.</li>
+      <li><b>Distributive:</b> Each, Either, Neither.</li>
+    </ul>
+
+    <div class="formula-box">
+      <b>⭐ MPSC Pronoun महत्त्वाचे नियम (Rules):</b><br>
+      • <b>Rule 1 (Order of Pronouns):</b> सामान्य/चांगल्या संदर्भात क्रम: <b>2 - 3 - 1</b> (Second person, Third person, First person $\rightarrow$ You, he and I). चूक स्वीकारताना: <b>1 - 2 - 3</b>.<br>
+      • <b>Rule 2:</b> 'One' चा कर्ता म्हणून वापर केल्यास सर्वनाम <b>one's</b> च येते (his किंवा her येत नाही).<br>
+      • <b>Rule 3:</b> Let, Between, Except, Preposition नंतर नेहमी <b>Objective Pronoun (me, him, her, us, them)</b> येते.
+    </div>
+
+    <!-- 10 MCQs Topic 4 -->
+    <div class="quiz-section">
+      <h4>📝 सराव संच ४: Pronoun (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. ______ shall do our duty. (Select correct order of persons)</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, '1-2-3 चूक.')">A) I, you and he</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! चांगल्या संदर्भात २-३-१ हाच नियम लागू होतो: You, he and I.')">B) You, he and I</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'क्रम चूक.')">C) You, I and he</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'क्रम चूक.')">D) He, you and I</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. One should not boast of ______ own merits.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'his येत नाही.')">A) his</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! One साठी नेहमी one\'s वापरले जाते.')">B) one's</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'her येत नाही.')">C) her</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'their अनेकवचनी आहे.')">D) their</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. Let you and ______ solve this problem.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'I Nominative आहे.')">A) I</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! 'Let' नंतर नेहमी Objective case (me) वापरतात.')">B) me</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'we चूक.')">C) we</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'myself चूक.')">D) myself</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. The two brothers quarrelled with ______.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! केवळ दोन व्यक्तींसाठी Each other वापरतात.')">A) each other</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'One another दोनपेक्षा जास्त लोकांसाठी वापरतात.')">B) one another</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'themselves चूक.')">C) themselves</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'together चूक.')">D) together</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. This is the man ______ car was stolen.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'who Subject साठी येतो.')">A) who</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'whom Object साठी येतो.')">B) whom</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! मालकी/संबंध दर्शवण्यासाठी Whose वापरतात.')">C) whose</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'which निर्जीव घटकांसाठी येतो.')">D) which</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. It is ______ who helped you.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! It is / It was नंतर नेहमी Nominative Pronoun (I, he, she) येते.')">A) I</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'me बोलचालीत वापरतात पण व्याकरणदृष्ट्या चूक.')">B) me</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'my विशेषण आहे.')">C) my</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'myself चूक.')">D) myself</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. "I myself did the work." Here 'myself' is:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Reflexive क्रियापदाच्या पुढे येते.')">A) Reflexive Pronoun</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! कर्त्यावर जोर देण्यासाठी कर्त्यालगत वापरलेले सर्वनाम Emphatic Pronoun असते.')">B) Emphatic Pronoun</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Relative pronoun नव्हे.')">C) Relative Pronoun</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Personal pronoun नव्हे.')">D) Personal Pronoun</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. Neither of the two sisters ______ qualified.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Neither of नंतर क्रियापद नेहमी एकवचनी (is) येते.')">A) is</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'are अनेकवचनी आहे.')">B) are</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'were अनेकवचनी आहे.')">C) were</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'have अनेकवचनी आहे.')">D) have</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. "He is as tall as ______."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! As...as ने दोन कर्त्यांची तुलना होत असताना Nominative Pronoun (I) वापरतात (as tall as I am).')">A) I</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'me अशुद्ध आहे.')">B) me</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'my चूक.')">C) my</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'mine चूक.')">D) mine</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. All that glitters ______ not gold.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! All नंतर Relative pronoun 'that' येते आणि एकवचनी क्रियापद 'is' येते.')">A) is</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'are म्हणीमध्ये वापरत नाहीत.')">B) are</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'were भूतकाळ आहे.')">C) were</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'have चूक आहे.')">D) have</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 5: ADJECTIVE -->
+  <div class="lesson-card" id="topic5">
+    <h2>५. Adjective (विशेषण, प्रकार व तुलना)</h2>
+    <div class="def-box">
+      <b>१. Definition:</b> "An Adjective is a word that qualifies or describes a Noun or a Pronoun."
+    </div>
+
+    <h3>२. Types of Adjectives:</h3>
+    <ul>
+      <li><b>Quality (गुणविशेषण):</b> Honest, Large, Beautiful.</li>
+      <li><b>Quantity (परिमाणदर्शक):</b> Much, Little, Some, Any.</li>
+      <li><b>Number (संख्याविशेषण):</b> Five, Many, First, Second.</li>
+      <li><b>Demonstrative (दर्शक):</b> This, That, These, Those.</li>
+      <li><b>Distributive (विभागीय):</b> Each, Every, Either, Neither.</li>
+    </ul>
+
+    <div class="formula-box">
+      <b>⭐ MPSC Adjective नियम:</b><br>
+      • <b>Little vs Few:</b><br>
+      - <i>Little (मोजता न येणारे):</i> Little (जवळजवळ नाही), A little (थोडेफार), The little (जे काही आहे ते सर्व).<br>
+      - <i>Few (मोजता येणारे):</i> Few (नगण्य), A few (काही), The few (जे काही थोडे आहेत ते सर्व).<br>
+      • <b>Preferable, Senior, Junior, Superior</b> यांच्यानंतर <b>'than' येत नाही, 'to' येते</b>.
+    </div>
+
+    <!-- 10 MCQs Topic 5 -->
+    <div class="quiz-section">
+      <h4>📝 सराव संच ५: Adjective (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. Milk is preferable ______ tea.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Preferable सोबत than येत नाही.')">A) than</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Preferable नंतर नेहमी to येते.')">B) to</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'from चूक.')">C) from</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'over चूक.')">D) over</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. There is ______ hope of his recovery. (नगण्य आशा)</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Hope मोजता येत नाही आणि नगण्य/नकारार्थी अर्थाने Little वापरतात.')">A) little</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'a little थोडी सकारात्मक आशा दर्शवते.')">B) a little</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'few मोजता येणाऱ्या घटकांसाठी येते.')">C) few</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'a few मोजता येणाऱ्या घटकांसाठी येते.')">D) a few</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. ______ friends he had left him.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Few नगण्य दर्शवतो.')">A) Few</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'A few काही दर्शवतो.')">B) A few</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! "जे काही थोडे मित्र होते ते सर्व" या अर्थाने The few वापरतात.')">C) The few</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Little मोजता न येणाऱ्या नामासाठी येते.')">D) The little</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. Shakespeare is greater than ______ poet in English.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'All poet व्याकरणदृष्ट्या चूक.')">A) all</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! स्वतःच्या गटात तुलना करताना त्या व्यक्तीला वगळण्यासाठी any other वापरतात.')">B) any other</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'any poet मध्ये शेक्सपिअर स्वतःचाही समावेश होतो.')">C) any</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'other poet अपूर्ण आहे.')">D) other</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. Of the two sisters, Sunita is ______.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'the best दोनपेक्षा अधिक घटकांसाठी येते.')">A) the best</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! दोघांमध्ये निवड दर्शवण्यासाठी Comparative degree पूर्वी the येते (the better).')">B) the better</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'better पूर्वी the आवश्यक आहे.')">C) better</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'good मूळ रूप आहे.')">D) good</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. Have you ______ money?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'some होकारार्थी वाक्यात येते.')">A) some</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! सामान्य प्रश्नार्थक आणि नकारार्थी वाक्यांत Any वापरतात.')">B) any</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'many मोजता येणाऱ्या नामासाठी येते.')">C) many</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'few चूक.')">D) few</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. This cloth is ______ to that.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Superior नंतर to येते, than येत नाही.')">A) superior</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'more superior double comparative होते.')">B) more superior</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'better नंतर than येते.')">C) better</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'good चूक.')">D) good</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. The climate of Pune is better than ______ of Mumbai.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'these अनेकवचनी आहे.')">A) these</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! नामाची पुनरावृत्ती टाळण्यासाठी एकवचनी हवामानासाठी "that of" वापरतात.')">B) that</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'those अनेकवचनासाठी येते.')">C) those</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'this चूक.')">D) this</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. A ______ amount of money was spent.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'many मोजता येणाऱ्या नामासाठी येते.')">A) many</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Amount सोबत large विशेषण अचूक बसते.')">B) large</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'few संख्या दर्शवतो.')">C) few</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'several संख्या दर्शवतो.')">D) several</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. Identify the proper adjective:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Common adjective आहे.')">A) Golden</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! India या Proper Noun वरून तयार झालेले विशेषण Indian हे Proper Adjective आहे.')">B) Indian</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Quality आहे.')">C) Beautiful</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Number आहे.')">D) Double</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 6: VERB -->
+  <div class="lesson-card" id="topic6">
+    <h2>६. Verb (क्रियापद, प्रकार व रचना)</h2>
+    <div class="def-box">
+      <b>१. Definition:</b> "A Verb is a word that expresses an action, state, or occurrence."
+    </div>
+
+    <h3>२. मुख्य वर्गीकरण:</h3>
+    <ul>
+      <li><b>Transitive Verb (सकर्मक):</b> ज्याला अर्थ पूर्ण करण्यासाठी कर्माची (Object) गरज असते. (He <i>killed</i> a snake.)</li>
+      <li><b>Intransitive Verb (अकर्मक):</b> ज्याला कर्माची गरज नसते. (Birds <i>fly</i>.)</li>
+      <li><b>Finite Verb:</b> कर्त्याच्या काळ, लिंग व वचनानुसार रूप बदलते.</li>
+      <li><b>Non-Finite Verb:</b> रूप बदलत नाही (Infinitive, Gerund, Participle).</li>
+    </ul>
+
+    <div class="exam-tip">
+      <b>⭐ MPSC Exam Point: Transitive vs Intransitive Confusion:</b><br>
+      • <b>Lie (शारीरिक पडून राहणे / खोटे बोलणे):</b> Lie - Lay - Lain (Intransitive - अकर्मक).<br>
+      • <b>Lay (वस्तू खाली ठेवणे / अंडी घालणे):</b> Lay - Laid - Laid (Transitive - सकर्मक - पुढे कर्म हवे).
+    </div>
+
+    <!-- 10 MCQs Topic 6 -->
+    <div class="quiz-section">
+      <h4>📝 सराव संच ६: Verb (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. Please ______ the book on the table.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'lie अकर्मक आहे.')">A) lie</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! वस्तू खाली ठेवण्यासाठी Transitive Verb "lay" वापरतात.')">B) lay</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'laid भूतकाळ आहे.')">C) laid</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'lain V3 आहे.')">D) lain</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. The tired traveller ______ under the tree.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! विश्रांतीसाठी पडून राहणे या अर्थाने Lie चा भूतकाळ Lay होतो.')">A) lay</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'laid ठेवले या अर्थाने येते.')">B) laid</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'lied खोटे बोलला या अर्थाने येते.')">C) lied</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'lain तिसरे रूप आहे.')">D) lain</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. The river has ______ its banks.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'overflowed बरोबर रूप आहे, overflown उडण्यासाठी येते.')">A) overflown</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! वाहून जाण्यासाठी Flow चे रूप Overflowed होते (Fly चे Flown होते).')">B) overflowed</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'चुकीचे रूप.')">C) overflow</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'चुकीचे रूप.')">D) overflew</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. The culprit was ______ yesterday. (फाशी दिली)</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'hung वस्तू लटकवण्यासाठी वापरतात.')">A) hung</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! फाशी देणे या अर्थाने Hang चे भूतकाळी रूप Hanged होते.')">B) hanged</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'hang मूळ रूप आहे.')">C) hang</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'hanging चालू रूप आहे.')">D) hanging</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. "The boy laughed." The verb 'laughed' is:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'यात कर्म (Object) नाही.')">A) Transitive Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! कर्माशिवाय अर्थ पूर्ण होत असल्याने ते Intransitive Verb (अकर्मक) आहे.')">B) Intransitive Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Auxiliary सहाय्यकारी असते.')">C) Auxiliary Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Modal नाही.')">D) Modal Verb</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. Which of the following is a Non-finite verb?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'goes finite आहे.')">A) goes</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'played finite आहे.')">B) played</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! To sing हे Infinitive असून Non-finite Verb आहे.')">C) to sing</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'am finite आहे.')">D) am</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. Prices have ______ sharply.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! स्वतः वाढणे यासाठी Rise चे तिसरे रूप Risen वापरतात.')">A) risen</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'raised दुसऱ्याने वाढवणे या सकर्मक अर्थाने येते.')">B) raised</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'rose V2 आहे.')">C) rose</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'rise मूळ रूप आहे.')">D) rise</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. He ______ his hand to ask a question.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'rose अकर्मक आहे.')">A) rose</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! हात वर उचलणे (कर्म पुढे असल्याने) Transitive Verb "raised" वापरतात.')">B) raised</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'risen V3 आहे.')">C) risen</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'arose उद्भवले या अर्थाने येते.')">D) arose</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. "Barking dogs seldom bite." Here 'Barking' is:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Gerund नामाचे कार्य करते.')">A) Gerund</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Dogs या नामाची माहिती देणारे V-ing हे Present Participle (कृदंत) आहे.')">B) Present Participle</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Finite verb नाही.')">C) Finite Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Infinitive नाही.')">D) Infinitive</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. "Swimming is good for health." Here 'Swimming' is:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! वाक्याचा कर्ता (नाम) म्हणून वापरलेले V-ing रूप Gerund (धातुसाधित नाम) असते.')">A) Gerund</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Participle विशेषणाचे कार्य करते.')">B) Participle</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Finite verb नाही.')">C) Finite Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Preposition नाही.')">D) Preposition</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 7: ADVERB -->
+  <div class="lesson-card" id="topic7">
+    <h2>७. Adverb (क्रियाविशेषण, प्रकार व स्थान)</h2>
+    <div class="def-box">
+      <b>१. Definition:</b> "An Adverb is a word that modifies a Verb, an Adjective, or another Adverb."
+    </div>
+
+    <h3>२. Adverb चे प्रकार:</h3>
+    <ul>
+      <li><b>Manner (रीती):</b> Quickly, Bravely, Well (कसे?).</li>
+      <li><b>Place (स्थळ):</b> Here, There, Everywhere (कोठे?).</li>
+      <li><b>Time (काळ):</b> Now, Yesterday, Soon, Daily (केव्हा?).</li>
+      <li><b>Frequency (वारंवारता):</b> Always, Often, Seldom, Never (किती वेळा?).</li>
+      <li><b>Degree (प्रमाण):</b> Very, Too, Quite, Almost (किती प्रमाणात?).</li>
+    </ul>
+
+    <div class="formula-box">
+      <b>⭐ MPSC Adverb नियम व क्रम:</b><br>
+      • <b>Rule of M-P-T:</b> वाक्यात अनेक Adverbs आल्यास क्रम: <b>Manner $\rightarrow$ Place $\rightarrow$ Time</b> असावा.<br>
+      <i>उदा:</i> She sang <b>well</b> (Manner) <b>in the hall</b> (Place) <b>yesterday</b> (Time).<br>
+      • <b>Inversion Rule:</b> वाक्य Hardley, Scarcely, Seldom, Never, No sooner ने सुरू झाल्यास <b>Auxiliary Verb कर्त्याच्या आधी येते</b>.
+    </div>
+
+    <!-- 10 MCQs Topic 7 -->
+    <div class="quiz-section">
+      <h4>📝 सराव संच ७: Adverb (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. Seldom ______ such a beautiful painting.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Inversion झाले नाही.')">A) I have seen</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Seldom ने वाक्याची सुरुवात झाल्यास Inversion होऊन क्रियापद आधी येते (have I seen).')">B) have I seen</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'I saw विधानाार्थी आहे.')">C) I saw</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'saw I अशुद्ध आहे.')">D) saw I</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. She performed ______ last night. (Select correct M-P-T order)</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Manner (splendidly) + Place (at the concert) हा अचूक क्रम आहे.')">A) splendidly at the concert</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'क्रम उलट आहे.')">B) at the concert splendidly</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'अशुद्ध क्रम.')">C) last night splendidly at the concert</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'अशुद्ध.')">D) splendidly last night at the concert</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. He is ______ intelligent to fail.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! "इतका हुशार की नापास होणार नाही" या नकारार्थी जोडीसाठी Too...to वापरतात.')">A) too</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'very सोबत to येत नाही.')">B) very</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'much चा वापर चूक.')">C) much</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'so नंतर that हवे.')">D) so</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. He worked ______ to pass the examination.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Hard म्हणजे कठोरपणे; Hardly म्हणजे नगण्य/क्वचितच.')">A) hard</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'hardly नकारात्मक अर्थ देतो.')">B) hardly</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'hardest Superlative आहे.')">C) hardest</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'barely नकारार्थी आहे.')">D) barely</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. She is ______ tired today.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Past Participle (tired) पूर्वी सामान्यतः very किंवा much वापरतात, Tired सोबत Very अचूक बसते.')">A) very</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'too नकारात्मक जोडीसाठी येते.')">B) too</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'much Comparative सोबत येते.')">C) much</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'so नंतर that आवश्यक आहे.')">D) so</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. I met him ______ in Mumbai.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'late उशिरा दर्शवतो.')">A) late</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Lately म्हणजे अलीकडेच (Recently).')">B) lately</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'latest अद्ययावत.')">C) latest</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'latter दुसरा.')">D) latter</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. He runs ______.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'fastly शब्द इंग्रजीत अस्तित्वात नाही.')">A) fastly</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Fast हेच विशेषण आणि क्रियाविशेषण (Adverb) दोन्ही असते.')">B) fast</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'faster तुलना करताना येते.')">C) faster</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'quick विशेषण आहे.')">D) quick</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. The mango tastes ______.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Sensory verbs (Taste, Smell, Feel) नंतर Adjective (sweet) येते, Adverb येत नाही.')">A) sweet</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'sweetly क्रियापदाची रीत दर्शवत नाही.')">B) sweetly</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'sweetness नाम आहे.')">C) sweetness</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'sweeter तुलना करताना येते.')">D) sweeter</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. No sooner had he left ______ the rain started.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! No sooner चा जोडीदार शब्द than असतो.')">A) than</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'then वेळेचा संदर्भ देतो.')">B) then</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'when Hardly सोबत येतो.')">C) when</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'that येत नाही.')">D) that</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. He is rich ______ to buy this car.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Enough हे विशेषणाच्या नंतर येते (rich enough).')">A) enough</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'too rich to buy चा अर्थ गाडी खरेदी करू शकणार नाही असा होतो.')">B) too</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'very चूक रचना.')">C) very</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'so चूक.')">D) so</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 8: PREPOSITION -->
+  <div class="lesson-card" id="topic8">
+    <h2>८. Preposition (शब्दयोगी अव्यय व Fixed Prepositions)</h2>
+    <div class="def-box">
+      <b>१. Definition:</b> "A Preposition is a word placed before a Noun or Pronoun to show its relation to some other word in the sentence."
+    </div>
+
+    <h3>२. वेळेचे आणि स्थळाचे Prepositions:</h3>
+    <ul>
+      <li><b>At:</b> निश्चित वेळ (at 5 PM, at night) किंवा लहान ठिकाण (at Karad).</li>
+      <li><b>In:</b> महिना/वर्ष (in May, in 2026), मोठे शहर/देश (in Pune, in India).</li>
+      <li><b>On:</b> वार आणि तारीख (on Monday, on 15th August).</li>
+      <li><b>Between vs Among:</b> दोन घटकांसाठी Between; दोनपेक्षा अधिक घटकांसाठी Among.</li>
+    </ul>
+
+    <div class="formula-box">
+      <b>⭐ MPSC Fixed Prepositions Chart:</b><br>
+      • Abstain / Refrain + <b>from</b> | Accused + <b>of</b> | Congratulate + <b>on</b><br>
+      • Senior / Junior + <b>to</b> | Prevent + <b>from</b> | Insist + <b>on</b> | Fond + <b>of</b>
+    </div>
+
+    <!-- 10 MCQs Topic 8 -->
+    <div class="quiz-section">
+      <h4>📝 सराव संच ८: Preposition (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. He was accused ______ theft.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Accused नंतर नेहमी of हे Fixed Preposition येते.')">A) of</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'for चुकीचे आहे.')">B) for</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'with चुकीचे आहे.')">C) with</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'to चुकीचे आहे.')">D) to</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. I congratulated him ______ his success.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'for बोलचालीत वापरतात पण व्याकरणदृष्ट्या चूक.')">A) for</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Congratulate नंतर नेहमी on वापरतात.')">B) on</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'at चूक.')">C) at</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'with चूक.')">D) with</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. The frog jumped ______ the well.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'in आत स्थिर स्थिती दर्शवतो.')">A) in</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! बाहेरून आत हालचाल दर्शवण्यासाठी Into वापरतात.')">B) into</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'on वर दर्शवतो.')">C) on</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'to कडे दर्शवतो.')">D) to</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. He died ______ malaria.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! रोगाने मृत्यू झाल्यास Die of वापरतात (Die from जखम किंवा ओव्हरईटिंगसाठी येते).')">A) of</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'from रोगासाठी येत नाही.')">B) from</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'with चूक.')">C) with</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'by अपघातासाठी येते.')">D) by</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. She is proficient ______ English.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Proficient नंतर in येते (Good नंतर at येते).')">A) in</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'at Good सोबत येते.')">B) at</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'with चूक.')">C) with</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'of चूक.')">D) of</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. He has been absent ______ Monday.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! निश्चित वार/वेळ दर्शवण्यासाठी Since वापरतात.')">A) since</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'for कालावधीसाठी येतो.')">B) for</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'from भविष्यातील आरंभासाठी येतो.')">C) from</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'to चूक.')">D) to</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. You must abstain ______ smoking.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Abstain आणि Refrain नंतर नेहमी from हे Preposition येते.')">A) from</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'to चूक.')">B) to</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'of चूक.')">C) of</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'with चूक.')">D) with</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. The property was divided ______ the four sons.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'between दोन लोकांसाठी येते.')">A) between</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! दोनपेक्षा अधिक व्यक्तींमध्ये वाटणीसाठी Among वापरतात.')">B) among</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'in चूक.')">C) in</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'into तुकडे करण्यासाठी येते.')">D) into</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. Beware ______ pickpockets.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Beware नंतर नेहमी of येते.')">A) of</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'from चूक.')">B) from</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'with चूक.')">C) with</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'for चूक.')">D) for</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. He is married ______ my sister.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'with बोलचालीत वापरतात पण चूक आहे.')">A) with</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Married नंतर Passive रचनेत to हे Preposition येते.')">B) to</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'by चूक.')">C) by</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'for चूक.')">D) for</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 9: CONJUNCTION -->
+  <div class="lesson-card" id="topic9">
+    <h2>९. Conjunction (उभयान्वयी अव्यय व Correlatives)</h2>
+    <div class="def-box">
+      <b>१. Definition:</b> "A Conjunction is a word that joins words, phrases, or clauses together."
+    </div>
+
+    <h3>२. मुख्य प्रकार:</h3>
+    <ul>
+      <li><b>Co-ordinating Conjunctions:</b> समान दर्जाची वाक्ये जोडतात (FANBOYS: For, And, Nor, But, Or, Yet, So).</li>
+      <li><b>Sub-ordinating Conjunctions:</b> गौण वाक्य मुख्य वाक्याशी जोडतात (Because, Although, If, Since, Unless).</li>
+      <li><b>Correlative Conjunctions (जोडीने येणारे):</b> Either...or, Neither...nor, Not only...but also, Both...and.</li>
+    </ul>
+
+    <div class="formula-box">
+      <b>⭐ MPSC Correlative Rules:</b><br>
+      • <b>Not only...but also:</b> दोन्ही बाजूंना समान Parts of Speech असावे (Parallel structure).<br>
+      • <b>Unless = If not:</b> Unless असलेल्या भागात पुन्हा 'not' वापरू नये.<br>
+      • <b>Lest चा जोडीदार:</b> नेहमी <b>should</b> च येतो (कधीही not किंवा would येत नाही).
+    </div>
+
+    <!-- 10 MCQs Topic 9 -->
+    <div class="quiz-section">
+      <h4>📝 सराव संच ९: Conjunction (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. Walk carefully lest you ______ stumble.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'may येत नाही.')">A) may</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Lest चा जोडीदार मोडल नेहमी should असतो.')">B) should</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'will येत नाही.')">C) will</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'might येत नाही.')">D) might</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. Although he is poor, ______ he is honest.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'but वापरत नाहीत.')">A) but</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Although किंवा Though नंतर स्वल्पविराम (,) किंवा Yet वापरतात.')">B) yet</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'still येत नाही.')">C) still</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'so परिणाम दाखवतो.')">D) so</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. Unless you ______ hard, you will not succeed.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Unless मध्ये not आधीच असतो, do not work चूक.')">A) do not work</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Unless असलेल्या भागात पुन्हा not येत नाही, म्हणून work हे साधे रूप येते.')">B) work</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'will work भविष्यकाळ चूक.')">C) will work</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'worked भूतकाळ चूक.')">D) worked</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. Scarcely had he reached the station ______ the train started.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'than No sooner सोबत येतो.')">A) than</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Scarcely आणि Hardly चा जोडीदार शब्द When किंवा Before असतो.')">B) when</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'then वेळेसाठी येतो.')">C) then</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'that येत नाही.')">D) that</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. Both Raju ______ Ravi are intelligent.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Both चा जोडीदार शब्द नेहमी and असतो.')">A) and</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'as well as Both सोबत येत नाही.')">B) as well as</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'also चूक.')">C) also</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'with चूक.')">D) with</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. Make hay ______ the sun shines.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! कालावधी दर्शवण्यासाठी While (Make hay while the sun shines) अचूक म्हण आहे.')">A) while</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'when वेळ बिंदू दाखवतो.')">B) when</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'as कारण दाखवतो.')">C) as</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'till पर्यंत दर्शवतो.')">D) till</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. Wait here ______ I return.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! वेळ मर्यादा दर्शवण्यासाठी Until / Till वापरतात.')">A) until</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'unless अट दर्शवतो.')">B) unless</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'while चालू क्रिया दर्शवतो.')">C) while</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'since आरंभ दर्शवतो.')">D) since</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. He not only gave me advice ______ helped me financially.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Not only चा जोडीदार बट अल्सो (but also) असतो.')">A) but also</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'and also चूक.')">B) and also</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'also चूक.')">C) also</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'as well चूक.')">D) as well</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. I doubt ______ he will pass.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Doubt (संशय) होकारार्थी वाक्यात आल्यास whether / if वापरतात.')">A) whether</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'that नकारात्मक संशय नसताना येतो.')">B) that</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'as कारण दाखवतो.')">C) as</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'because कारण दाखवतो.')">D) because</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. As you sow, ______ shall you reap.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! As...so ही प्रसिद्ध म्हण आहे.')">A) so</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'then चूक.')">B) then</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'that चूक.')">C) that</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'as चूक.')">D) as</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 10: INTERJECTION -->
+  <div class="lesson-card" id="topic10">
+    <h2>१०. Interjection (केवलप्रयोगी अव्यय व भावना)</h2>
+    <div class="def-box">
+      <b>१. Definition:</b> "An Interjection is a word which expresses some sudden feeling or emotion." हे व्याकरणाच्या दृष्टीने वाक्याच्या संरचनेशी थेट जोडलेले नसते.
+    </div>
+
+    <h3>२. विविध भावना व Interjections:</h3>
+    <table>
+      <tr><th>व्यक्त होणारी भावना</th><th>Interjection शब्द</th><th>वाक्यात उदाहरण</th></tr>
+      <tr><td>Joy (आनंद)</td><td>Hurrah!, Ha!</td><td>Hurrah! We won the match.</td></tr>
+      <tr><td>Grief / Sorrow (दुःख)</td><td>Alas!, Ah!</td><td>Alas! He is dead.</td></tr>
+      <tr><td>Approval (प्रशंसा)</td><td>Bravo!, Well done!</td><td>Bravo! You played well.</td></tr>
+      <tr><td>Attention (लक्ष वेधणे)</td><td>Hark!, Hush!, Lo!</td><td>Hush! The baby is sleeping.</td></tr>
+      <tr><td>Surprise (आश्चर्य)</td><td>What!, Oh!, Ah!</td><td>What! Did he fail?</td></tr>
+    </table>
+
+    <div class="exam-tip">
+      <b>⭐ MPSC Exam Point: Direct-Indirect रूपांतरात महत्त्व:</b><br>
+      उद्गारवाचक वाक्याचे Indirect Speech करताना हे शब्द निघून जातात आणि त्यांच्या जागी Reporting Verb बदलते:<br>
+      • Hurrah! $\rightarrow$ exclaimed with joy<br>
+      • Alas! $\rightarrow$ exclaimed with sorrow / grief<br>
+      • Bravo! $\rightarrow$ applauded + saying that
+    </div>
+
+    <!-- 10 MCQs Topic 10 -->
+    <div class="quiz-section">
+      <h4>📝 सराव संच १०: Interjection (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. "______! The king is dead." (Select appropriate interjection for grief)</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! दुःखासाठी Alas! वापरतात.')">A) Alas</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Hurrah आनंदासाठी येते.')">B) Hurrah</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Bravo कौतुकासाठी येते.')">C) Bravo</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Ha आनंदासाठी येते.')">D) Ha</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. "Bravo! A capital hit." What does 'Bravo' express?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'दुःख नाही.')">A) Sorrow</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Bravo हे Approval / Praise (कौतुक/प्रशंसा) दर्शवते.')">B) Approval / Applause</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'भिती नाही.')">C) Fear</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'आश्चर्य नाही.')">D) Wonder</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. "Hush! Don\'t make a noise." What does 'Hush' indicate?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! शांत राहण्यासाठी किंवा लक्ष वेधण्यासाठी Hush वापरतात.')">A) Silence / Attention</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'आनंद नाही.')">B) Joy</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'राग नाही.')">C) Anger</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'दुःख नाही.')">D) Grief</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. In Indirect Speech, "He said, 'Hurrah! I won.'" becomes:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Hurrah चे रूपांतर exclaimed with joy मध्ये होते.')">A) He exclaimed with joy that he had won.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Hurrah शब्द गाळला पाहिजे.')">B) He exclaimed with joy hurrah that he won.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'दुःख नाही.')">C) He exclaimed with sorrow that he won.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'काळ बदलला नाही.')">D) He said with joy that he has won.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. Which punctuation mark is mandatory after an Interjection?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'प्रश्नचिन्ह नाही.')">A) Question Mark (?)</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! केवलप्रयोगी अव्ययानंतर नेहमी Exclamation Mark (!) येतो.')">B) Exclamation Mark (!)</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'पूर्णविराम नाही.')">C) Full Stop (.)</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'स्वल्पविराम सामान्यतः नाही.')">D) Comma (,)</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. "Fie! A soldier and afraid of death!" What emotion does 'Fie' express?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Fie हे तिरस्कार किंवा धिक्कार (Contempt / Disgust) दर्शवण्यासाठी वापरतात.')">A) Contempt / Disgust (धिक्कार)</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'आनंद नाही.')">B) Joy</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'कौतुक नाही.')">C) Praise</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'सहानुभूती नाही.')">D) Sympathy</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. "Pooh! There is nothing in it." Here 'Pooh' shows:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! तुच्छता किंवा तिरस्कार दर्शवण्यासाठी Pooh वापरतात.')">A) Scorn / Contempt</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'आनंद नाही.')">B) Gladness</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'दुःख नाही.')">C) Sadness</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'आश्चर्य नाही.')">D) Surprise</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. Identify the sentence with correct use of Interjection:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'चिन्ह चुकीचे आहे.')">A) Alas? He has ruined himself.</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Alas नंतर उद्गारवाचक चिन्ह अचूक आहे.')">B) Alas! He has ruined himself.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'चिन्ह नाही.')">C) Alas, he has ruined himself?</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'चिन्ह शेवटी नाही.')">D) Alas he has ruined himself.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. "Hello! What are you doing there?" 'Hello' is used for:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! अभिवादन आणि लक्ष वेधण्यासाठी Hello वापरतात.')">A) Greeting / Catching attention</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'दुःख नाही.')">B) Expressing sorrow</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'कौतुक नाही.')">C) Praising</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'शांतता नाही.')">D) Silence</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. "Ah! What a relief!" What does 'Ah' express?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'धिक्कार नाही.')">A) Disgust</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! सुटकेचा निःश्वास किंवा आनंद दर्शवण्यासाठी Ah! वापरतात.')">B) Relief / Pleasure</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'राग नाही.')">C) Anger</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'भिती नाही.')">D) Terror</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+    <div style="text-align:center; margin:35px 0;">
+    <a href="english-2.html" class="btn" style="background:#075a96; color:white; padding:14px 28px; border-radius:28px; text-decoration:none; font-weight:bold; font-size:16px; box-shadow:0 4px 15px rgba(7,90,150,0.3); display:inline-block;">
+      पुढील भाग: Verb & Tenses (घटक ११ ते २०) →
+    </a>
+  </div>
+
+
+<!-- Footer -->
+<footer style="background:#042f5c;color:white;padding:26px;text-align:center;margin-top:40px">
+  <div style="font-weight:bold;color:#ffd026;font-size:18px">नवी दिशा — MPSC इंग्रजी संपूर्ण अभ्यासिका (Module 1)</div>
+  <p style="font-size:14px;color:#cbd5e1">स्वप्न | अभ्यास | यश — ५० घटकांची संपूर्ण तयारी</p>
+  <a href="index.html" style="color:white;text-decoration:underline">← मुख्यपृष्ठावर परत जा</a>
+</footer>
+
+<script>
+// Quiz Answer Checker Function
+function checkQ(btn, isCorrect, explanation) {
+  const parent = btn.parentElement;
+  const explBox = parent.nextElementSibling;
+  const buttons = parent.querySelectorAll('.opt-btn');
+  
+  buttons.forEach(b => {
+    b.disabled = true;
+    b.style.cursor = 'default';
+  });
+
+  if (isCorrect) {
+    btn.classList.add('correct');
+    explBox.innerHTML = "✅ " + explanation;
+    explBox.style.color = "#15803d";
+  } else {
+    btn.classList.add('wrong');
+    explBox.innerHTML = "❌ " + explanation;
+    explBox.style.color = "#b91c1c";
+  }
+  explBox.style.display = "block";
+}
+
+// Text to Speech Functionality
+let speech = null;
+function readFullLesson() {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    const textToRead = "Welcome to Navi Disha MPSC English Foundation Course. This module covers the first ten topics: Sentences, Parts of Speech, Nouns, Pronouns, Adjectives, Verbs, Adverbs, Prepositions, Conjunctions, and Interjections with comprehensive MPSC exam rules and practice tests.";
+    speech = new SpeechSynthesisUtterance(textToRead);
+    speech.lang = 'en-US';
+    speech.rate = 0.9;
+    window.speechSynthesis.speak(speech);
+  } else {
+    alert("तुमच्या ब्राउझरमध्ये Text-to-Speech सपोर्ट उपलब्ध नाही.");
+  }
+}
+
+function stopAudio() {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+  }
+}
+</script>
+
+</body>
+</html>
