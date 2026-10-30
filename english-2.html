@@ -1,0 +1,1509 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#063b70">
+<title>नवी दिशा — MPSC English Complete Course (Module 2: Verb & Tenses)</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-512.png">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;background:#f0f5fa;color:#0f2842;line-height:1.8}
+.top{background:linear-gradient(120deg,#042e5c,#075a96);color:white;position:sticky;top:0;z-index:100;box-shadow:0 3px 12px rgba(0,0,0,0.15)}
+.nav{max-width:1180px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
+.back-btn{color:white;text-decoration:none;font-size:15px;background:rgba(255,255,255,0.15);padding:7px 15px;border-radius:20px;display:inline-flex;align-items:center;gap:6px}
+.back-btn:hover{background:rgba(255,255,255,0.3)}
+.logo-title{font-size:20px;font-weight:bold;color:#ffd026}
+
+.container{max-width:1140px;margin:22px auto;padding:0 15px}
+.header-card{background:linear-gradient(135deg,#063b70,#0d5591);color:white;padding:32px;border-radius:20px;box-shadow:0 8px 25px rgba(6,59,112,0.18);margin-bottom:25px}
+.header-card h1{margin:0 0 10px;font-size:30px;color:#ffd026}
+.header-card p{margin:0;font-size:15.5px;color:#e1effa}
+
+/* Audio Player */
+.audio-bar{background:white;border:1px solid #cce4f7;border-radius:15px;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:25px;box-shadow:0 4px 15px rgba(0,0,0,0.05)}
+.audio-info{font-weight:bold;color:#063b70;display:flex;align-items:center;gap:8px}
+.audio-controls{display:flex;gap:10px}
+.audio-btn{background:#ffbd18;border:none;color:#0e2942;padding:8px 18px;border-radius:20px;font-weight:bold;cursor:pointer;font-size:14px}
+.audio-btn:hover{background:#ffa800}
+
+/* Lesson Navigation */
+.topic-index{background:white;border-radius:16px;border:1px solid #d4e8f7;padding:20px;margin-bottom:25px}
+.topic-index h3{margin-top:0;color:#063b70;font-size:18px}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.index-item{background:#f8fbfe;border:1px solid #cde3f5;padding:8px 12px;border-radius:10px;text-decoration:none;color:#0e3c66;font-size:13.5px;font-weight:600;display:block}
+.index-item:hover{background:#075a96;color:white;border-color:#075a96}
+
+/* Cards & Content */
+.lesson-card{background:white;border-radius:20px;border:1px solid #d4e8f7;padding:28px;margin-bottom:35px;box-shadow:0 6px 20px rgba(12,65,110,0.06)}
+.lesson-card h2{color:#074882;font-size:25px;margin-top:0;border-bottom:2px solid #e2effa;padding-bottom:10px}
+.lesson-card h3{color:#0a5c9e;font-size:19px;margin:22px 0 8px}
+
+.def-box{background:#f0f8ff;border-left:5px solid #007cba;padding:14px 18px;border-radius:0 12px 12px 0;margin:14px 0}
+.def-box b{color:#004b75}
+.formula-box{background:#fdf6e7;border-left:5px solid #e68a00;padding:14px 18px;border-radius:0 12px 12px 0;margin:14px 0}
+.formula-box b{color:#995c00}
+.exam-tip{background:#fff3cd;border-left:5px solid #ffc107;padding:14px 18px;border-radius:0 12px 12px 0;margin:14px 0}
+.exam-tip b{color:#856404}
+.error-box{background:#fdf2f2;border-left:5px solid #dc3545;padding:14px 18px;border-radius:0 12px 12px 0;margin:14px 0}
+.error-box b{color:#721c24}
+
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}
+th,td{padding:10px 14px;border:1px solid #dce8f2;text-align:left}
+th{background:#074882;color:white}
+tr:nth-child(even){background:#f8fbfe}
+
+/* Quiz Styles */
+.quiz-section{background:#f4f9fd;border:1px solid #bcdbf3;border-radius:16px;padding:22px;margin-top:30px}
+.quiz-section h4{color:#074882;margin:0 0 16px;font-size:18px;border-bottom:1px solid #dcecf8;padding-bottom:8px}
+.quiz-item{background:white;border:1px solid #d8e8f5;border-radius:12px;padding:16px;margin-bottom:16px}
+.quiz-q{font-weight:bold;color:#063b70;margin-bottom:12px;font-size:15px}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt-btn{background:#fafcff;border:1px solid #c2dbef;padding:10px 14px;border-radius:10px;text-align:left;cursor:pointer;font-size:14px;font-weight:500}
+.opt-btn:hover{background:#e5f2fd}
+.opt-btn.correct{background:#dcfce7;border-color:#22c55e;color:#15803d;font-weight:bold}
+.opt-btn.wrong{background:#fee2e2;border-color:#ef4444;color:#b91c1c;font-weight:bold}
+.expl{display:none;margin-top:10px;padding:10px 12px;border-radius:8px;background:#f8fafc;border:1px solid #cbd5e1;font-size:13.5px}
+
+/* Navigation Button Container */
+.nav-buttons-container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;margin:35px 0}
+.nav-btn{background:#075a96;color:white;padding:13px 26px;border-radius:28px;text-decoration:none;font-weight:bold;font-size:15px;box-shadow:0 4px 15px rgba(7,90,150,0.25);display:inline-block}
+.nav-btn:hover{background:#042e5c}
+.nav-btn.secondary{background:#e2e8f0;color:#0f2842;box-shadow:none}
+.nav-btn.secondary:hover{background:#cbd5e1}
+
+@media(max-width:768px){
+  .options{grid-template-columns:1fr}
+  .header-card{padding:20px}
+  .header-card h1{font-size:22px}
+  .lesson-card{padding:16px}
+  .nav-buttons-container{flex-direction:column;align-items:stretch}
+  .nav-btn{text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="nav">
+    <a class="back-btn" href="english.html">← भाग १ कडे जा</a>
+    <div class="logo-title">नवी दिशा • Verb & Tenses (Module 2)</div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="header-card">
+    <h1>📘 भाग २ — Verb & Tenses (घटक ११ ते २०)</h1>
+    <p>MPSC राज्यसेवा (Mains Qualifying 300 Marks & CSAT) आणि सरळसेवा परीक्षांसाठी Subject-Verb Agreement, सर्व काळ, Modals, Non-finites आणि Voice चा सविस्तर व परीक्षाभिमुख अभ्यास.</p>
+  </div>
+
+  <div class="audio-bar">
+    <div class="audio-info">
+      <span>🎧</span> <b>ऑडिओ मार्गदर्शक:</b> Verb आणि Tenses चे महत्त्वाचे नियम आवाजात ऐका
+    </div>
+    <div class="audio-controls">
+      <button class="audio-btn" onclick="readFullLesson()">▶️ ऑडिओ सुरू करा</button>
+      <button class="audio-btn" style="background:#e2e8f0;color:#334155" onclick="stopAudio()">⏹ बंद करा</button>
+    </div>
+  </div>
+
+  <!-- अनुक्रमणिका -->
+  <div class="topic-index">
+    <h3>📑 भाग २ मधील अभ्यास घटक (Topics 11 to 20):</h3>
+    <div class="index-grid">
+      <a class="index-item" href="#topic11">११. Subject–Verb Agreement</a>
+      <a class="index-item" href="#topic12">१२. Present Tense (वर्तमानकाळ)</a>
+      <a class="index-item" href="#topic13">१३. Past Tense (भूतकाळ)</a>
+      <a class="index-item" href="#topic14">१४. Future Tense (भविष्यकाळ)</a>
+      <a class="index-item" href="#topic15">१५. 12 Tenses — Complete Revision</a>
+      <a class="index-item" href="#topic16">१६. Main Verb & Helping Verb</a>
+      <a class="index-item" href="#topic17">१७. Modal Verbs (भाववाचक क्रियापदे)</a>
+      <a class="index-item" href="#topic18">१८. Finite & Non-finite Verbs</a>
+      <a class="index-item" href="#topic19">१९. Gerund, Infinitive & Participle</a>
+      <a class="index-item" href="#topic20">२०. Active Voice & Passive Voice</a>
+    </div>
+  </div>
+
+  <!-- TOPIC 11 -->
+  <div class="lesson-card" id="topic11">
+    <h2>११. Subject–Verb Agreement (कर्ता आणि क्रियापद सुसंगती)</h2>
+    <div class="def-box">
+      <b>१. Definition (व्याख्या):</b> वाक्यातील क्रियापदाचे रूप (Verb) हे नेहमी त्याच्या कर्त्याच्या (Subject) पुरुष (Person) आणि वचनानुसार (Number) असावे लागते. या नियमाला <b>Subject-Verb Agreement / Syntax</b> म्हणतात.
+    </div>
+
+    <div class="formula-box">
+      <b>२. Golden Formulas & Rules:</b><br>
+      • <b>सूत्र १:</b> Singular Subject $\rightarrow$ <b>Singular Verb</b> (He / She / It + is / was / has / V1+s/es).<br>
+      • <b>सूत्र २:</b> Plural Subject $\rightarrow$ <b>Plural Verb</b> (We / They / You + are / were / have / V1).<br>
+      • <b>Rule of 'As well as / Along with / With':</b> दोन कर्ते <i>as well as, along with, with, together with, in addition to, accompanied by</i> ने जोडले असल्यास क्रियापद नेहमी <b>पहिल्या कर्त्यानुसार</b> येते.<br>
+      • <b>Rule of 'Either...or / Neither...nor / Not only...but also':</b> क्रियापद नेहमी <b>जवळच्या (दुसऱ्या) कर्त्यानुसार</b> येते.
+    </div>
+
+    <h3>३. Examples (उदाहरणे):</h3>
+    <ul>
+      <li>The captain, along with his team members, <b>was</b> welcomed. (पहिला कर्ता Captain एकवचनी आहे).</li>
+      <li>Neither the teacher nor the students <b>were</b> present. (जवळचा कर्ता students अनेकवचनी आहे).</li>
+      <li>Bread and butter <b>is</b> his favorite breakfast. (दोन्ही मिळून एकाच कल्पनेचा बोध होतो).</li>
+      <li>Each of the girls <b>has</b> received a medal. (Each of नंतर क्रियापद एकवचनी येते).</li>
+      <li>A number of students <b>are</b> absent today. (A number of + Plural Verb; The number of + Singular Verb).</li>
+    </ul>
+
+    <div class="exam-tip">
+      <b>⭐ MPSC Exam Points:</b><br>
+      १. <i>More than one + Singular Noun</i> असल्यास क्रियापद एकवचनी (is/was) येते; परंतु <i>More than two</i> असल्यास अनेकवचनी येते.<br>
+      २. अंतर, वजन, कालावधी किंवा पैशांची ठरावीक रक्कम एकसंध मानल्यास क्रियापद एकवचनी येते (उदा. <i>Fifty thousand rupees <b>is</b> a huge sum</i>).
+    </div>
+
+    <div class="error-box">
+      <b>Common Errors:</b><br>
+      ❌ <i>The Prime Minister, with all his ministers, are visiting the state.</i><br>
+      ✅ <i>The Prime Minister, with all his ministers, <b>is</b> visiting the state.</i>
+    </div>
+
+    <div class="quiz-section">
+      <h4>📝 सराव संच ११: Subject–Verb Agreement (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. The quality of these mangoes ______ not good.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Mangoes अनेकवचनी असले तरी मुख्य कर्ता Quality आहे.')">A) were</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! मुख्य कर्ता The quality एकवचनी असल्याने क्रियापद was अचूक आहे.')">B) was</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'are अनेकवचनी आहे.')">C) are</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'have चूक.')">D) have</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. Neither you nor he ______ to blame.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Neither...nor मध्ये क्रियापदाच्या जवळचा कर्ता He असल्याने is येते.')">A) is</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'are बहुवचनी आहे.')">B) are</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'were भूतकाळ अनेकवचनी आहे.')">C) were</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'am I साठी येते.')">D) am</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. The collector, along with his assistants, ______ present at the site.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Along with ने जोडल्यास पहिल्या कर्त्यानुसार (The collector) क्रियापद was येते.')">A) was</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'were अनेकवचनी आहे.')">B) were</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'are अनेकवचनी आहे.')">C) are</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'have अनेकवचनी आहे.')">D) have</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. The number of candidates ______ increased this year.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! "The number of" नंतर क्रियापद नेहमी एकवचनी (has) येते.')">A) has</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'have हे "A number of" सोबत येते.')">B) have</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'are चालू काळात येते.')">C) are</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'were भूतकाळात येते.')">D) were</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. Ten miles ______ a long distance to walk.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! अंतराचे एकत्रित परिमाण एकवचनी मानले जाते (is).')">A) is</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'are अनेकवचनी आहे.')">B) are</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'were भूतकाळ अनेकवचनी आहे.')">C) were</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'have चूक.')">D) have</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. One of my friends ______ an IAS officer.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Friends अनेकवचनी असले तरी कर्ता One आहे.')">A) are</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! "One of +" नंतर अनेकवचनी नाम आले तरी क्रियापद एकवचनी (is) येते.')">B) is</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'were अनेकवचनी आहे.')">C) were</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'have चूक.')">D) have</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. Slow and steady ______ the race.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Slow and steady एकसंध कल्पना दर्शवत असल्याने क्रियापद wins (एकवचनी) येते.')">A) wins</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'win अनेकवचनी रूप आहे.')">B) win</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'won भूतकाळ आहे.')">C) won</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'is winning चालू काळ म्हणीत वापरत नाहीत.')">D) is winning</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. Many a student ______ failed in the examination.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! नियम: "Many a + Singular Noun" नंतर क्रियापद नेहमी एकवचनी (has) येते.')">A) has</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'have हे फक्त Many students सोबत येते.')">B) have</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'are पूर्ण काळात येत नाही.')">C) are</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'were चूक.')">D) were</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. The jury ______ divided in their opinions.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'was एकमत असताना वापरतात.')">A) was</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! मतभेद किंवा विभागणी असल्यास समूहवाचक नामासोबत अनेकवचनी (were) क्रियापद येते.')">B) were</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'is एकवचनी आहे.')">C) is</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has चूक.')">D) has</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. Every boy and every girl ______ given a book.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Each किंवा Every ने जोडलेल्या नामांसाठी नेहमी एकवचनी (was) क्रियापद येते.')">A) was</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'were अनेकवचनी आहे.')">B) were</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'are अनेकवचनी आहे.')">C) are</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'have अनेकवचनी आहे.')">D) have</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 12 -->
+  <div class="lesson-card" id="topic12">
+    <h2>१२. Present Tense (वर्तमानकाळ व ४ उपप्रकार)</h2>
+    <div class="def-box">
+      <b>१. Definition:</b> वर्तमान काळात घडणारी कृती, सवय, नित्यक्रम किंवा वैश्विक सत्य दर्शवण्यासाठी <b>Present Tense</b> चा वापर केला जातो.
+    </div>
+
+    <h3>२. Types & Formulas:</h3>
+    <table>
+      <tr><th>प्रकार (Sub-type)</th><th>रचना (Formula)</th><th>मराठी प्रत्यय / अर्थ</th></tr>
+      <tr><td>Simple Present</td><td><b>S + V1 (s/es) + O</b></td><td>करतो / करते / करतात</td></tr>
+      <tr><td>Present Continuous</td><td><b>S + am/is/are + V-ing + O</b></td><td>करत आहे / चालू आहे</td></tr>
+      <tr><td>Present Perfect</td><td><b>S + have/has + V3 + O</b></td><td>केले आहे / पूर्ण झाले आहे</td></tr>
+      <tr><td>Present Perf. Cont.</td><td><b>S + have/has been + V-ing + O</b></td><td>करत आलेला आहे (आरंभ भूतकाळात)</td></tr>
+    </table>
+
+    <div class="exam-tip">
+      <b>⭐ MPSC Exam Points:</b><br>
+      १. <b>Stative Verbs</b> (उदा. Know, Understand, Believe, Own, Love, Hate, Smell, Taste) यांचे सामान्यतः Continuous Tense होत नाही.<br>
+      २. <b>Since vs For:</b> Since निश्चित वेळ दर्शवतो (Since 2020), तर For कालावधी दर्शवतो (For five years).
+    </div>
+
+    <div class="error-box">
+      <b>Common Errors:</b><br>
+      ❌ <i>I am knowing him very well.</i> (Stative Verb चा Continuous होत नाही)<br>
+      ✅ <i>I <b>know</b> him very well.</i>
+    </div>
+
+    <div class="quiz-section">
+      <h4>📝 सराव संच १२: Present Tense (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. He ______ to gym every morning.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'go हे Plural/I/You साठी येते.')">A) go</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! He हा Third Person Singular असल्याने क्रियापदाला es लागते (goes).')">B) goes</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'going सहाय्यकारी क्रियापदाशिवाय येत नाही.')">C) going</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'went भूतकाळ आहे.')">D) went</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. She ______ this watch for three years.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'is possessing स्टॅटिव्ह असल्याने continuous होत नाही.')">A) is possessing</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! मालकी आणि कालावधीसाठी Present Perfect (has possessed / has had) वापरतात.')">B) has possessed</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'possesses कालावधी दर्शवत नाही.')">C) possesses</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'was possessed पॅसिव्ह आहे.')">D) was possessed</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. Look! The bus ______.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Look! नंतर डोळ्यांसमोर चालू असलेली कृती Present Continuous (is coming) मध्ये येते.')">A) is coming</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'comes नित्यक्रम दर्शवतो.')">B) comes</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'came भूतकाळ आहे.')">C) came</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has come पूर्ण क्रिया दर्शवतो.')">D) has come</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. I ______ him since Monday.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'did not see साधा भूतकाळ आहे.')">A) did not see</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Since + वेळेचा उल्लेख असल्यास नकारात्मक वाक्यात Present Perfect (have not seen) येते.')">B) have not seen</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'am not seeing चुकीचे आहे.')">C) am not seeing</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'do not see नित्यक्रम दर्शवतो.')">D) do not see</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. Water ______ at zero degree Celsius.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! वैज्ञानिक सत्यासाठी Simple Present (freezes) वापरतात.')">A) freezes</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'froze भूतकाळ आहे.')">B) froze</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'is freezing चालू काळ योग्य नाही.')">C) is freezing</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has frozen चूक.')">D) has frozen</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. How long ______ you ______ English?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'are you learning कालावधी विचारताना योग्य नाही.')">A) are / learning</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! कृती किती काळापासून सुरू आहे हे विचारण्यासाठी have you been learning वापरतात.')">B) have / been learning</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'do / learn नित्यक्रम दर्शवतो.')">C) do / learn</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'did / learn भूतकाळ दर्शवतो.')">D) did / learn</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. The plane ______ at 7:30 AM tomorrow.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! अधिकृत निश्चित वेळापत्रक (Fixed Timetable) दर्शवण्यासाठी Simple Present (takes off) वापरतात.')">A) takes off</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'took off भूतकाळ आहे.')">B) took off</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has taken off पूर्ण काळ आहे.')">C) has taken off</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'is taken off पॅसिव्ह आहे.')">D) is taken off</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. I ______ what you mean.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'understand चा continuous होत नाही.')">A) am understanding</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Understand हे Stative Verb असल्याने Simple Present (understand) च येते.')">B) understand</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'have understood पूर्ण काळ आवश्यक नाही.')">C) have understood</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'understood भूतकाळ आहे.')">D) understood</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. It ______ since morning.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'rains नित्यक्रम आहे.')">A) rains</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'is raining कालावधी दर्शवत नाही.')">B) is raining</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! भूतकाळात सुरू झालेली कृती अजून चालू असल्याने has been raining अचूक आहे.')">C) has been raining</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'rained भूतकाळ आहे.')">D) rained</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. Just now, he ______ his work.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Just किंवा Just now आल्यास Present Perfect (has finished) वापरतात.')">A) has finished</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'finished साधा भूतकाळ आहे.')">B) finished</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'is finishing चालू काळ आहे.')">C) is finishing</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'finishes वर्तमान आहे.')">D) finishes</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 13 -->
+  <div class="lesson-card" id="topic13">
+    <h2>१३. Past Tense (भूतकाळ, प्रकार व नियमांची सांगड)</h2>
+    <div class="def-box">
+      <b>१. Definition:</b> भूतकाळात घडलेली घटना, पूर्ण झालेली कृती किंवा भूतकाळातील सवय दर्शवण्यासाठी <b>Past Tense</b> चा वापर केला जातो.
+    </div>
+
+    <h3>२. Types & Formulas:</h3>
+    <table>
+      <tr><th>प्रकार (Sub-type)</th><th>रचना (Formula)</th><th>मराठी प्रत्यय / अर्थ</th></tr>
+      <tr><td>Simple Past</td><td><b>S + V2 + O</b></td><td>केले / गेला / खाल्ले</td></tr>
+      <tr><td>Past Continuous</td><td><b>S + was/were + V-ing + O</b></td><td>करत होता / चालू होते</td></tr>
+      <tr><td>Past Perfect</td><td><b>S + had + V3 + O</b></td><td>केले होते (पहिली भूतकाळी घटना)</td></tr>
+      <tr><td>Past Perf. Cont.</td><td><b>S + had been + V-ing + O</b></td><td>करत आलेला होता</td></tr>
+    </table>
+
+    <div class="exam-tip">
+      <b>⭐ MPSC Exam Points:</b><br>
+      १. भूतकाळात एकापाठोपाठ दोन घटना घडल्यास: <b>पहिली घटना Past Perfect (had + V3)</b> मध्ये आणि <b>दुसरी घटना Simple Past (V2)</b> मध्ये असते.<br>
+      २. Yesterday, ago, last year, in 1947 यांसारखे निश्चित भूतकाळी वेळेचे शब्द वाक्यात असल्यास फक्त <b>Simple Past (V2)</b> च येतो (Present Perfect कधीही वापरू नये).
+    </div>
+
+    <div class="error-box">
+      <b>Common Errors:</b><br>
+      ❌ <i>India has won freedom in 1947.</i><br>
+      ✅ <i>India <b>won</b> freedom in 1947.</i>
+    </div>
+
+    <div class="quiz-section">
+      <h4>📝 सराव संच १३: Past Tense (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. I ______ him yesterday.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'have seen वर्तमानकाळ आहे.')">A) have seen</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Yesterday आल्यामुळे फक्त Simple Past (saw) च येते.')">B) saw</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'had seen दोन घटना असल्याशिवाय येत नाही.')">C) had seen</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'see वर्तमान आहे.')">D) see</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. When we reached the cinema, the film ______.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! चित्रपट आधीच सुरू झाला होता, म्हणून पहिली घटना Past Perfect (had started) मध्ये येते.')">A) had started</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'started दुसरी घटना दर्शवतो.')">B) started</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has started वर्तमानकाळ आहे.')">C) has started</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'was starting अपूर्ण क्रिया आहे.')">D) was starting</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. While she ______ dinner, the lights went out.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! भूतकाळात दीर्घकाळ चालू असलेली क्रिया Past Continuous (was cooking) मध्ये असते.')">A) was cooking</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'cooked साधी क्रिया आहे.')">B) cooked</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'had cooked पूर्ण काळ आहे.')">C) had cooked</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'is cooking वर्तमानकाळ आहे.')">D) is cooking</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. Gandhiji ______ truth and non-violence.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! ऐतिहासिक व्यक्तीच्या तत्त्वांसाठी Simple Past (preached) वापरतात.')">A) preached</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'preaches वर्तमानकाळ चुकीचा आहे.')">B) preaches</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has preached चूक.')">C) has preached</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'had preached संदर्भ नाही.')">D) had preached</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. She told me that she ______ unwell for two days.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! मुख्य वाक्य भूतकाळात (told) असल्याने आणि कालावधी असल्याने Past Perfect (had been) येते.')">A) had been</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has been वर्तमानकाळ आहे.')">B) has been</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'was कालावधी दर्शवत नाही.')">C) was</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'is वर्तमानकाळ आहे.')">D) is</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. It is high time we ______ our journey.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'start वर्तमानकाळ आहे.')">A) start</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! नियम: "It is high time" नंतर नेहमी Simple Past (started) येतो.')">B) started</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'had started पूर्ण भूतकाळ चूक.')">C) had started</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'should start चूक.')">D) should start</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. He ______ to school by bus in his childhood.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! भूतकाळातील जुनी सवय दर्शवण्यासाठी used to go (किंवा went) वापरतात.')">A) used to go</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'is going वर्तमान आहे.')">B) is going</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'goes वर्तमान आहे.')">C) goes</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has gone पूर्ण वर्तमान आहे.')">D) has gone</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. The patient had died before the doctor ______.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Before नंतर दुसरी भूतकाळी घटना Simple Past (came) मध्ये येते.')">A) came</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'had come पहिली घटना असते.')">B) had come</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'comes वर्तमान आहे.')">C) comes</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'was coming अपूर्ण क्रिया आहे.')">D) was coming</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. I ______ ten letters yesterday.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Yesterday चा उल्लेख असल्याने Simple Past (wrote) येते.')">A) wrote</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'have written वर्तमानकाळ आहे.')">B) have written</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'had written संदर्भ नाही.')">C) had written</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'write वर्तमान आहे.')">D) write</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. As soon as he saw the tiger, he ______.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! एकामागोमाग तात्काळ घडलेल्या दोन क्रियांसाठी दोन्हीकडे Simple Past (fled) येतो.')">A) fled</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'had fled तात्काळ क्रियेत वापरत नाहीत.')">B) had fled</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'flees वर्तमान आहे.')">C) flees</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'was fleeing अपूर्ण क्रिया आहे.')">D) was fleeing</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 14 -->
+  <div class="lesson-card" id="topic14">
+    <h2>१४. Future Tense (भविष्यकाळ व रचना)</h2>
+    <div class="def-box">
+      <b>१. Definition:</b> भविष्यात घडणाऱ्या घटना, योजना किंवा शक्यता व्यक्त करण्यासाठी <b>Future Tense</b> वापरतात.
+    </div>
+
+    <h3>२. Types & Formulas:</h3>
+    <table>
+      <tr><th>प्रकार (Sub-type)</th><th>रचना (Formula)</th><th>उदाहरण</th></tr>
+      <tr><td>Simple Future</td><td><b>S + will/shall + V1 + O</b></td><td>I will visit Delhi next week.</td></tr>
+      <tr><td>Future Continuous</td><td><b>S + will/shall be + V-ing + O</b></td><td>I will be studying at 8 PM.</td></tr>
+      <tr><td>Future Perfect</td><td><b>S + will/shall have + V3 + O</b></td><td>He will have completed the work by Monday.</td></tr>
+      <tr><td>Future Perf. Cont.</td><td><b>S + will have been + V-ing</b></td><td>They will have been living here for 5 years.</td></tr>
+    </table>
+
+    <div class="exam-tip">
+      <b>⭐ MPSC Exam Point (Time Clauses):</b><br>
+      When, As soon as, If, Until, Before, After यांसारख्या शब्दांनी सुरू होणाऱ्या भविष्यातील गौण वाक्यात (Subordinate Clause) <b>कधीही Will किंवा Shall वापरत नाहीत; तिथे Simple Present Tense येतो</b>.<br>
+      <i>Formula:</i> <b>When + Simple Present, Future Tense</b>.
+    </div>
+
+    <div class="error-box">
+      <b>Common Errors:</b><br>
+      ❌ <i>When you will come, I will help you.</i><br>
+      ✅ <i>When you <b>come</b>, I will help you.</i>
+    </div>
+
+    <div class="quiz-section">
+      <h4>📝 सराव संच १४: Future Tense (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. If it rains, the match ______ cancelled.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! If + Simple Present नंतर will be + V3 येते.')">A) will be</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'would be Type 2 मध्ये येते.')">B) would be</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'is साधा वर्तमान आहे.')">C) is</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'was भूतकाळ आहे.')">D) was</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. By 2030, scientists ______ a cure for cancer.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'will discover साधा काळ आहे.')">A) will discover</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! "By + भविष्यातील मुदत" असल्यास Future Perfect (will have discovered) येते.')">B) will have discovered</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'have discovered वर्तमान आहे.')">C) have discovered</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'discovered भूतकाळ आहे.')">D) discovered</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. We will leave as soon as the rain ______.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Time clause मध्ये भविष्यकाळाऐवजी Simple Present (stops) येतो.')">A) stops</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'will stop टाइम क्लॉजमध्ये येत नाही.')">B) will stop</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'stopped भूतकाळ आहे.')">C) stopped</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has stopped चालू परिस्थिती दर्शवत नाही.')">D) has stopped</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. This time tomorrow, we ______ on a beach.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'will sit साधी क्रिया दर्शवतो.')">A) will sit</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! भविष्यातील निश्चित वेळी चालू असणारी कृती Future Continuous (will be sitting) मध्ये येते.')">B) will be sitting</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'are sitting चालू वर्तमान आहे.')">C) are sitting</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'sat भूतकाळ आहे.')">D) sat</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. Wait here until I ______ back.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Until नंतरच्या भागात भविष्यकाळ न वापरता Simple Present (come) वापरतात.')">A) come</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'will come अशुद्ध आहे.')">B) will come</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'came भूतकाळ आहे.')">C) came</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'am coming चालू काळ नाही.')">D) am coming</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. I think India ______ the final match.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! वैयक्तिक मत किंवा अंदाज व्यक्त करण्यासाठी will win वापरतात.')">A) will win</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'wins वर्तमान आहे.')">B) wins</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'won भूतकाळ आहे.')">C) won</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'is winning चालू काळ आहे.')">D) is winning</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. By the end of this month, she ______ here for two years.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'will work साधा काळ आहे.')">A) will work</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! भविष्यातील कालावधी दर्शवण्यासाठी Future Perfect Continuous (will have been working) वापरतात.')">B) will have been working</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has been working वर्तमान आहे.')">C) has been working</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'is working चालू वर्तमान आहे.')">D) is working</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. Look at those dark clouds! It ______ rain.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'will rain सामान्य अंदाज दर्शवतो.')">A) will</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! प्रत्यक्ष पुरावा डोळ्यांसमोर असताना नजीकच्या भविष्यासाठी "is going to" वापरतात.')">B) is going to</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'shall फक्त I/We सोबत येते.')">C) shall</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'rains वर्तमान आहे.')">D) rains</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. ______ I open the window for you?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! विनंती किंवा ऑफर दर्शवण्यासाठी First person (I) सोबत Shall वापरतात.')">A) Shall</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Will ऑफरसाठी कमी औपचारिक मानले जाते.')">B) Will</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Would चा वापर वेगळा असतो.')">C) Would</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Can क्षमता दर्शवतो.')">D) Can</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. By this time next year, he ______ his degree.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! By + भविष्यातील वेळ आल्यास Future Perfect (will have completed) येते.')">A) will have completed</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'will complete साधा काळ आहे.')">B) will complete</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'completed भूतकाळ आहे.')">C) completed</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has completed वर्तमान आहे.')">D) has completed</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 15 -->
+  <div class="lesson-card" id="topic15">
+    <h2>१५. 12 Tenses — Complete Revision & Identification</h2>
+    <div class="def-box">
+      <b>१. Definition & Significance:</b> MPSC परीक्षेत वाक्याचा काळ अचूक ओळखणे (Identification of Tense) आणि एका काळाचे दुसऱ्या काळात रूपांतर करणे (Transformation) यावर नियमित प्रश्न विचारले जातात.
+    </div>
+
+    <h3>२. मास्टर रिव्हिजन चार्ट (Master Tense Chart):</h3>
+    <table>
+      <tr><th>Tense Name</th><th>Helping Verb</th><th>Main Verb Form</th><th>की-वर्ड्स (Clues)</th></tr>
+      <tr><td>Simple Present</td><td>do / does (Negative/Q)</td><td>V1 / V1+s/es</td><td>always, daily, usually, every day</td></tr>
+      <tr><td>Present Continuous</td><td>am / is / are</td><td>V-ing</td><td>now, look, listen, at present</td></tr>
+      <tr><td>Present Perfect</td><td>have / has</td><td>V3</td><td>already, just, yet, so far, recently</td></tr>
+      <tr><td>Present Perf. Cont.</td><td>have been / has been</td><td>V-ing</td><td>since, for</td></tr>
+      <tr><td>Simple Past</td><td>did (Negative/Q)</td><td>V2</td><td>yesterday, ago, last year, in 2010</td></tr>
+      <tr><td>Past Continuous</td><td>was / were</td><td>V-ing</td><td>while, when, at that time</td></tr>
+      <tr><td>Past Perfect</td><td>had</td><td>V3</td><td>before, after, by the time (past)</td></tr>
+      <tr><td>Past Perf. Cont.</td><td>had been</td><td>V-ing</td><td>since/for (past context)</td></tr>
+      <tr><td>Simple Future</td><td>will / shall</td><td>V1</td><td>tomorrow, next week, soon</td></tr>
+      <tr><td>Future Continuous</td><td>will be / shall be</td><td>V-ing</td><td>at this time tomorrow</td></tr>
+      <tr><td>Future Perfect</td><td>will have / shall have</td><td>V3</td><td>by + future time</td></tr>
+      <tr><td>Future Perf. Cont.</td><td>will have been</td><td>V-ing</td><td>by next year + for 2 years</td></tr>
+    </table>
+
+    <div class="quiz-section">
+      <h4>📝 सराव संच १५: 12 Tenses Revision (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. Identify the tense: "She has been working in this bank since 2015."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'यात been + ing आहे.')">A) Present Perfect</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! has been + V-ing ही रचना Present Perfect Continuous Tense ची आहे.')">B) Present Perfect Continuous</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has हा वर्तमानकाळ दर्शवतो.')">C) Past Perfect Continuous</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'चालू काळ नव्हे.')">D) Present Continuous</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. "He had seen him before." Identify the tense:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! had + V3 (seen) हे Past Perfect Tense चे रूप आहे.')">A) Past Perfect Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Simple past मध्ये had येत नाही.')">B) Simple Past Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Present perfect मध्ये have/has येते.')">C) Present Perfect Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Past continuous मध्ये V-ing येते.')">D) Past Continuous Tense</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. Convert to Present Perfect: "She writes a letter."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'wrote भूतकाळ आहे.')">A) She wrote a letter.</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! She सोबत has + V3 (written) लागून "She has written a letter" होते.')">B) She has written a letter.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'had भूतकाळात जाते.')">C) She had written a letter.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'is writing चालू काळ आहे.')">D) She is writing a letter.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. Identify the tense: "The train leaves at 5 PM."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Leaves हे V1+s असल्याने Simple Present Tense आहे.')">A) Simple Present Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'will नाही.')">B) Simple Future Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'is leaving नाही.')">C) Present Continuous Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Simple past नाही.')">D) Simple Past Tense</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. "They will have reached by noon." Identify the tense:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! will have + V3 ही रचना Future Perfect Tense ची आहे.')">A) Future Perfect Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Future continuous मध्ये V-ing येते.')">B) Future Continuous Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Simple future मध्ये V1 येते.')">C) Simple Future Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Present perfect मध्ये will येत नाही.')">D) Present Perfect Tense</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. Which sentence is in Past Continuous Tense?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'played साधा भूतकाळ आहे.')">A) He played well.</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! was + V-ing (playing) हे Past Continuous Tense आहे.')">B) He was playing well.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'had played पूर्ण काळ आहे.')">C) He had played well.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'had been playing पूर्ण अपूर्ण काळ आहे.')">D) He had been playing well.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. Convert to Simple Past: "He does his work sincerely."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Does चे भूतकाळी रूप Did (V2) होते.')">A) He did his work sincerely.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has done पूर्ण वर्तमान आहे.')">B) He has done his work sincerely.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'had done पूर्ण भूतकाळ आहे.')">C) He had done his work sincerely.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'was doing चालू काळ आहे.')">D) He was doing his work sincerely.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. "We were listening to the lecture." The tense is:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! were + listening हे Past Continuous Tense चे रूप आहे.')">A) Past Continuous Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Present नाही.')">B) Present Continuous Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Simple past नाही.')">C) Simple Past Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Past perfect नाही.')">D) Past Perfect Tense</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. "I have no money." Here 'have' represents which tense?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Have नंतर V3 नसून थेट नाम आल्यामुळे ते Simple Present चे Main Verb आहे.')">A) Simple Present Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Present perfect साठी पुढे V3 आवश्यक असतो.')">B) Present Perfect Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Past tense नाही.')">C) Past Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Continuous नाही.')">D) Present Continuous Tense</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. "The birds had flown away." Identify the tense:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! had + flown (V3) हे Past Perfect Tense आहे.')">A) Past Perfect Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Present perfect मध्ये have/has येते.')">B) Present Perfect Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Simple past मध्ये had येत नाही.')">C) Simple Past Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Future नाही.')">D) Future Perfect Tense</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 16 -->
+  <div class="lesson-card" id="topic16">
+    <h2>१६. Main Verb & Helping Verb (मुख्य व सहाय्यकारी क्रियापदे)</h2>
+    <div class="def-box">
+      <b>१. Definition:</b><br>
+      • <b>Main Verb (मुख्य क्रियापद):</b> जे वाक्यातील प्रत्यक्ष कृती किंवा अवस्था दर्शवते (उदा. write, play, run, sleep).<br>
+      • <b>Helping / Auxiliary Verb (सहाय्यकारी क्रियापद):</b> जे मुख्य क्रियापदाला काळ (Tense), मूड किंवा व्हॉईस व्यक्त करण्यासाठी मदत करते (उदा. am, is, are, was, were, have, has, had, do, does, did).
+    </div>
+
+    <h3>२. Primary Auxiliaries चे दुहेरी कार्य (Dual Role):</h3>
+    <ul>
+      <li><b>Be (am, is, are, was, were):</b><br>
+        - <i>Main Verb म्हणून:</i> He <b>is</b> a teacher. (येथे दुसरे कोणतेही क्रियापद नाही).<br>
+        - <i>Helping Verb म्हणून:</i> He <b>is</b> teaching. (teaching या मुख्य क्रियापदाला मदत करते).
+      </li>
+      <li><b>Have (have, has, had):</b><br>
+        - <i>Main Verb म्हणून:</i> I <b>have</b> a car. (मालकी दर्शवते).<br>
+        - <i>Helping Verb म्हणून:</i> I <b>have</b> washed the car. (पूर्ण काळ दर्शवते).
+      </li>
+      <li><b>Do (do, does, did):</b><br>
+        - <i>Main Verb म्हणून:</i> He <b>did</b> his work.<br>
+        - <i>Helping Verb म्हणून:</i> <b>Did</b> he come? / He <b>does</b> not know.
+      </li>
+    </ul>
+
+    <div class="quiz-section">
+      <h4>📝 सराव संच १६: Main Verb & Helping Verb (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. In "She has a beautiful voice", 'has' acts as:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! वाक्यात इतर कोणतेही क्रियापद नसल्याने has हे Main Verb (मुख्य क्रियापद) आहे.')">A) Main Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Helping verb तेव्हाच असते जेव्हा पुढे मुख्य क्रियापद असते.')">B) Helping Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Modal auxiliary नाही.')">C) Modal Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Non-finite नाही.')">D) Non-finite Verb</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. In "They did not invite us", 'did' is:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Invite हे मुख्य क्रियापद आहे.')">A) Main Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! नकारार्थी वाक्य तयार करण्यासाठी did हे Helping (Auxiliary) Verb म्हणून आले आहे.')">B) Helping Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Modal नाही.')">C) Modal Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Infinitive नाही.')">D) Infinitive</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. Which of the following is NOT a primary auxiliary verb?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Be हा Primary Auxiliary आहे.')">A) Be</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Have हा Primary Auxiliary आहे.')">B) Have</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Do हा Primary Auxiliary आहे.')">C) Do</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Can हा Modal Auxiliary Verb आहे, Primary नाही.')">D) Can</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. "I do believe you." Here 'do' is used for:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'प्रश्न विचारण्यासाठी नाही.')">A) Asking a question</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! विधानावर जोर (Emphasis) देण्यासाठी होकारार्थी वाक्यात do वापरतात.')">B) Emphasizing the statement</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'नकार दर्शवण्यासाठी नाही.')">C) Making a negative sentence</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'भूतकाळ दर्शवण्यासाठी नाही.')">D) Showing past tense</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. "He is walking." Here 'is' helps in forming:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! is + walking मिळून Present Continuous Tense तयार होतो.')">A) Continuous Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Perfect मध्ये have/has येते.')">B) Perfect Tense</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Passive मध्ये V3 येते.')">C) Passive Voice</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Simple present मध्ये is एकटा असतो.')">D) Simple Present</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. "The criminal was arrested." Here 'was' helps in forming:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! was + V3 (arrested) मिळून Passive Voice तयार होतो.')">A) Passive Voice</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Active voice मध्ये did/arrested असते.')">B) Active Voice</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Continuous मध्ये V-ing असते.')">C) Past Continuous</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Perfect मध्ये had असते.')">D) Past Perfect</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. Choose the sentence where 'have' is used as a Main Verb:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'येथे finished हे मुख्य क्रियापद आहे.')">A) I have finished my breakfast.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'येथे gone हे मुख्य क्रियापद आहे.')">B) They have gone home.</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! "I have lunch at 1 PM" मध्ये have खाणे या अर्थाने Main Verb म्हणून आले आहे.')">C) I have lunch at 1 PM.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'येथे been हे मुख्य क्रियापद आहे.')">D) She has been ill.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. "Does he play cricket?" The Main Verb in this sentence is:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Does हे Helping verb आहे.')">A) Does</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! मुख्य कृती दर्शवणारे क्रियापद Play हे Main Verb आहे.')">B) Play</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'He कर्ता आहे.')">C) He</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Cricket कर्म आहे.')">D) Cricket</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. Auxiliaries that combine with main verbs to express possibility, permission, etc. are called:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Primary auxiliaries Be, Have, Do असतात.')">A) Primary Auxiliaries</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! शक्यता व परवानगी दर्शवणारी क्रियापदे Modal Auxiliaries असतात.')">B) Modal Auxiliaries</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Transitive verbs सकर्मक असतात.')">C) Transitive Verbs</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Non-finite चे कार्य वेगळे असते.')">D) Non-finite Verbs</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. "He did do his best." Here the first 'did' is:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! पहिला did हा Emphatic Helping Verb आहे आणि दुसरा do हा Main Verb आहे.')">A) Emphatic Helping Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'पहिला did मुख्य क्रियापद नाही.')">B) Main Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Modal नाही.')">C) Modal Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Participle नाही.')">D) Participle</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 17 -->
+  <div class="lesson-card" id="topic17">
+    <h2>१७. Modal Verbs (भाववाचक सहाय्यकारी क्रियापदे)</h2>
+    <div class="def-box">
+      <b>१. Definition:</b> कर्त्याची क्षमता, शक्यता, परवानगी, कर्तव्य किंवा अनिवार्यता यांसारखा 'मूड' (भाव) दर्शवणाऱ्या सहाय्यकारी क्रियापदांना <b>Modal Auxiliaries</b> म्हणतात.
+    </div>
+
+    <h3>२. मुख्य Modals व त्यांचे कार्य (Functions):</h3>
+    <table>
+      <tr><th>Modal Verb</th><th>व्यक्त होणारा भाव (Function)</th><th>उदाहरण</th></tr>
+      <tr><td>Can</td><td>वर्तमान क्षमता (Ability), अनौपचारिक परवानगी</td><td>I <b>can</b> swim. / <b>Can</b> I take this?</td></tr>
+      <tr><td>Could</td><td>भूतकाळातील क्षमता, अतिशय नम्र विनंती</td><td><b>Could</b> you please help me?</td></tr>
+      <tr><td>May</td><td>शक्यता (५०%), औपचारिक परवानगी</td><td><b>May</b> I come in, Sir? / It <b>may</b> rain.</td></tr>
+      <tr><td>Might</td><td>अत्यंत क्षीण शक्यता (२५%)</td><td>He <b>might</b> pass (फार कमी शक्यता).</td></tr>
+      <tr><td>Must</td><td>सक्ती, अनिवार्यता (Compulsion), ठाम खात्री</td><td>You <b>must</b> follow traffic rules.</td></tr>
+      <tr><td>Should / Ought to</td><td>नैतिक कर्तव्य, चांगला सल्ला (Advice)</td><td>We <b>ought to</b> respect our elders.</td></tr>
+      <tr><td>Used to</td><td>भूतकाळातील बंद पडलेली सवय</td><td>He <b>used to</b> smoke.</td></tr>
+    </table>
+
+    <div class="formula-box">
+      <b>⭐ महत्त्वाचा नियम:</b> कोणत्याही Modal Verb नंतर नेहमी <b>मूळ क्रियापद (Base Verb - V1)</b> च येते (कधीही s/es, ed किंवा ing लागत नाही).
+    </div>
+
+    <div class="quiz-section">
+      <h4>📝 सराव संच १७: Modal Verbs (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. We ______ respect our national flag. (Moral Obligation)</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Might क्षीण शक्यता दर्शवतो.')">A) might</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! नैतिक कर्तव्यासाठी Ought to (किंवा Should) वापरतात.')">B) ought to</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Can क्षमता दर्शवतो.')">C) can</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'May परवानगी दर्शवतो.')">D) may</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. ______ you please lend me your pen? (Polite Request)</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! अत्यंत नम्र विनंतीसाठी Could (किंवा Would) वापरतात.')">A) Could</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Must सक्ती दर्शवतो.')">B) Must</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Should सल्ला दर्शवतो.')">C) Should</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Might विनंतीसाठी योग्य नाही.')">D) Might</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. The sky is completely clear, but it ______ rain. (Remote possibility)</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Must ठाम शक्यता दर्शवतो.')">A) must</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'May ५०% शक्यता दर्शवतो.')">B) may</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! अत्यंत क्षीण/नगण्य शक्यता दर्शवण्यासाठी Might वापरतात.')">C) might</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Can क्षमता दर्शवतो.')">D) can</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. Candidates ______ answer all questions. (Compulsion)</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! परीक्षेतील अनिवार्य सक्ती दर्शवण्यासाठी Must वापरतात.')">A) must</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'might शक्यता दर्शवतो.')">B) might</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'could भूतकाळ दर्शवतो.')">C) could</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'may ऐच्छिक दर्शवतो.')">D) may</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. You ______ not worry, everything will be fine. (Absence of obligation)</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! काळजी करण्याची गरज नाही (Lack of necessity) यासाठी Need not वापरतात.')">A) need</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'must सक्ती दर्शवतो.')">B) must</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'dare हिंमत दर्शवतो.')">C) dare</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'ought नंतर to आवश्यक असतो.')">D) ought</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. How ______ you insult my brother? (Challenge/Courage)</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! हिंमत किंवा धाडस या अर्थाने Dare वापरतात (How dare you).')">A) dare</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'need गरज दर्शवतो.')">B) need</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'should सल्ला दर्शवतो.')">C) should</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'would इच्छा दर्शवतो.')">D) would</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. He said that he ______ solve that puzzle easily.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'मुख्य वाक्य भूतकाळात असल्याने can येत नाही.')">A) can</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! भूतकाळातील क्षमतेसाठी Can चे भूतकाळी रूप Could वापरतात.')">B) could</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'may वर्तमान आहे.')">C) may</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'shall वर्तमान आहे.')">D) shall</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. ______ God bless you with success!</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! सदिच्छा किंवा आशीर्वाद व्यक्त करण्यासाठी May वापरतात.')">A) May</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Can क्षमता दर्शवतो.')">B) Can</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Must सक्ती दर्शवतो.')">C) Must</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Might क्षीण शक्यता दर्शवतो.')">D) Might</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. I ______ swim across the river when I was young.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'can वर्तमान क्षमता दर्शवतो.')">A) can</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! भूतकाळातील शारीरिक क्षमता दर्शवण्यासाठी could वापरतात.')">B) could</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'may शक्यता दर्शवतो.')">C) may</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'must सक्ती दर्शवतो.')">D) must</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. You ______ see a doctor at once. (Strong Advice)</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! अत्यंत निकडीचा व महत्त्वाचा सल्ला देण्यासाठी Should वापरतात.')">A) should</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'might क्षीण शक्यता दर्शवतो.')">B) might</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'could नम्र विनंतीसाठी येते.')">C) could</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'would इच्छा दर्शवतो.')">D) would</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 18 -->
+  <div class="lesson-card" id="topic18">
+    <h2>१८. Finite & Non-finite Verbs (मर्यादित व अमर्यादित क्रियापदे)</h2>
+    <div class="def-box">
+      <b>१. Definition:</b><br>
+      • <b>Finite Verb:</b> ज्या क्रियापदाचे रूप कर्त्याचा पुरुष (Person), वचन (Number) किंवा वाक्याच्या काळानुसार (Tense) बदलते, त्यास <i>Finite Verb</i> म्हणतात.<br>
+      • <b>Non-finite Verb:</b> ज्या क्रियापदावर कर्त्याच्या लिंग, वचन किंवा काळाचा कोणताही परिणाम होत नाही, त्यास <i>Non-finite Verb</i> म्हणतात.
+    </div>
+
+    <h3>२. उदाहरणांवरून फरक समजून घ्या:</h3>
+    <ul>
+      <li>I <b>want</b> to play. (want हे Finite आहे, to play हे Non-finite आहे).</li>
+      <li>He <b>wants</b> to play. (कर्त्यानुसार want चे रूप 'wants' झाले, पण 'to play' बदलले नाही).</li>
+      <li>They <b>wanted</b> to play. (काळ बदलल्यावर 'wanted' झाले, पण 'to play' तसाच राहिला).</li>
+    </ul>
+
+    <div class="formula-box">
+      <b>३. Non-finite Verbs चे ३ प्रकार:</b><br>
+      १. <b>Infinitive:</b> To + V1 (उदा. to read, to go).<br>
+      २. <b>Gerund:</b> V-ing (नामाचे कार्य करणारे धातुसाधित).<br>
+      ३. <b>Participle:</b> विशेषणाचे कार्य करणारे धातुसाधित (Present Participle: V-ing; Past Participle: V3).
+    </div>
+
+    <div class="quiz-section">
+      <h4>📝 सराव संच १८: Finite & Non-finite Verbs (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. Identify the Non-finite verb: "She loves to dance on classical songs."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'loves हे Finite verb आहे.')">A) loves</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! To dance हे Infinitive असून Non-finite Verb आहे.')">B) to dance</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'songs नाम आहे.')">C) songs</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'dance एकटा नाही.')">D) on</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. How many Finite Verbs are in: "Hearing the noise, the boy woke up."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! फक्त "woke" हे एकच Finite Verb आहे (Hearing हे Participle आहे).')">A) One</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'दोन नाहीत.')">B) Two</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'शून्य नाही.')">C) Zero</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'तीन नाहीत.')">D) Three</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. A sentence MUST have at least one:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! वाक्याचा अर्थ पूर्ण होण्यासाठी कमीत कमी एक Finite Verb असणे अनिवार्य असते.')">A) Finite Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Non-finite ऐच्छिक असते.')">B) Non-finite Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Gerund अनिवार्य नाही.')">C) Gerund</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Infinitive अनिवार्य नाही.')">D) Participle</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. In "He prevented me from going", 'going' is a:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Finite verb नाही.')">A) Finite Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Preposition नंतर आलेले V-ing हे Gerund (Non-finite) असते.')">B) Non-finite Verb (Gerund)</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Modal नाही.')">C) Modal Auxiliary</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Adverb नाही.')">D) Adverb</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. "The broken glass injured his foot." Here 'broken' is:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'injured हे Finite verb आहे.')">A) Finite Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Glass या नामाची माहिती देणारे V3 हे Past Participle (Non-finite) आहे.')">B) Non-finite Verb (Past Participle)</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Gerund नामाचे कार्य करते.')">C) Gerund</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Infinitive नाही.')">D) Infinitive</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. Which of the following sentences contains ONLY a Finite Verb?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! "The sun shines brightly" मध्ये केवळ shines हे एकच Finite Verb आहे.')">A) The sun shines brightly.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'यात to study हे non-finite आहे.')">B) He likes to study.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'यात walking हे non-finite आहे.')">C) Walking is good.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'यात to read हे non-finite आहे.')">D) I want to read.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. In "They saw the thief running", 'running' is:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Finite verb नाही.')">A) Finite Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! चोराची चालू स्थिती दर्शवणारे Non-finite Present Participle आहे.')">B) Non-finite Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Infinitive नाही.')">C) Infinitive</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Conjunction नाही.')">D) Conjunction</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. The verb form which is limited by the person and number of its subject is called:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! कर्त्याच्या पुरुष व वचनाने मर्यादित असणाऱ्या क्रियापदाला Finite Verb म्हणतात.')">A) Finite Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Non-finite मर्यादित नसते.')">B) Non-finite Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Participle नाही.')">C) Participle</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Gerund नाही.')">D) Gerund</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. Identify the Finite Verb in: "Having completed his work, Raju went home."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Having completed हे Perfect Participle आहे.')">A) Having</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'completed Participle चा भाग आहे.')">B) completed</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! मुख्य वाक्यातील भूतकाळी रूप "went" हे एकमेव Finite Verb आहे.')">C) went</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'home नाम/अ‍ॅडव्हर्ब आहे.')">D) home</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. "I made him cry." Here 'cry' is:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Make नंतर 'to' शिवाय येणारे Bare Infinitive (Non-finite) असते.')">A) Bare Infinitive (Non-finite)</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'made हे Finite verb आहे.')">B) Finite Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Gerund नाही.')">C) Gerund</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Participle नाही.')">D) Past Participle</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 19 -->
+  <div class="lesson-card" id="topic19">
+    <h2>१९. Gerund, Infinitive & Participle (धातुसाधिते व नियम)</h2>
+    <div class="def-box">
+      <b>१. Definition & Distinction:</b><br>
+      • <b>Gerund (Verbal Noun):</b> क्रियापदाचे 'V-ing' रूप जे वाक्यात <b>नामाचे (Noun)</b> कार्य करते (उदा. <i>Smoking</i> is injurious).<br>
+      • <b>Infinitive:</b> क्रियापदाचे मूळ रूप, सामान्यतः <b>'To + V1'</b> (उदा. I love <i>to read</i>).<br>
+      • <b>Participle (Verbal Adjective):</b> जे वाक्यात <b>विशेषणाचे (Adjective)</b> कार्य करते (उदा. A <i>rolling</i> stone gathers no moss).
+    </div>
+
+    <div class="formula-box">
+      <b>⭐ MPSC चे अत्यंत महत्त्वाचे नियम (Golden Rules):</b><br>
+      • <b>नियम १ (Gerund नंतर Possessive):</b> Gerund पूर्वी नेहमी Possessive Adjective (my, his, her, their, Raju's) येते, Objective case (me, him, them) येत नाही.<br>
+      • <b>नियम २ (With a view to / Looking forward to):</b> <i>Look forward to, with a view to, used to, addicted to, accustomed to</i> यांच्यानंतर 'To + V1' न येता <b>Gerund (V-ing)</b> च येतो.<br>
+      • <b>नियम ३ (Bare Infinitive):</b> <i>Bid, let, make, hear, see, watch</i> यांच्यानंतर 'To' शिवाय फक्त मूळ रूप (V1) येते.
+    </div>
+
+    <div class="error-box">
+      <b>Common Errors:</b><br>
+      ❌ <i>I am looking forward to meet you.</i><br>
+      ✅ <i>I am looking forward to <b>meeting</b> you.</i><br>
+      ❌ <i>He objected to me coming late.</i><br>
+      ✅ <i>He objected to <b>my coming</b> late.</i>
+    </div>
+
+    <div class="quiz-section">
+      <h4>📝 सराव संच १९: Gerund, Infinitive & Participle (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. He came here with a view to ______ money.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'with a view to नंतर V1 येत नाही.')">A) borrow</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! नियम: "With a view to" नंतर नेहमी Gerund (borrowing) येतो.')">B) borrowing</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'borrowed भूतकाळ आहे.')">C) borrowed</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'to borrow पुन्हा to येत नाही.')">D) to borrow</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. She insisted on ______ paying the bill.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'me Objective आहे.')">A) me</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Paying हा Gerund असल्याने त्याच्यापूर्वी Possessive case (my) वापरतात.')">B) my</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'I Nominative आहे.')">C) I</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'mine चूक.')">D) mine</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. I saw him ______ the road.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! See नंतर Bare Infinitive (cross) किंवा Participle (crossing) येते.')">A) cross</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'to cross चा वापर See नंतर होत नाही.')">B) to cross</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'crossed भूतकाळ चूक.')">C) crossed</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'crosses चूक.')">D) crosses</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. "A burnt child dreads the fire." Here 'burnt' is:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'dreads हे Finite verb आहे.')">A) Finite Verb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Gerund नामाचे कार्य करते.')">B) Gerund</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Child या नामाचे वर्णन करणारे V3 रूप Past Participle (विशेषण) आहे.')">C) Past Participle</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Infinitive नाही.')">D) Infinitive</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. He is addicted to ______.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'addicted to नंतर V1 येत नाही.')">A) gamble</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Addicted to नंतर नेहमी Gerund (gambling) येतो.')">B) gambling</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'gambled भूतकाळ आहे.')">C) gambled</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'to gamble चूक.')">D) to gamble</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. Let him ______ there alone.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Let नंतर नेहमी Bare Infinitive (to शिवाय - go) येतो.')">A) go</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'to go येत नाही.')">B) to go</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'going चालू रूप चूक.')">C) going</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'went भूतकाळ चूक.')">D) went</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. You had better ______ at once.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Had better, had rather नंतर नेहमी Bare Infinitive (leave) येतो.')">A) leave</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'to leave येत नाही.')">B) to leave</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'left भूतकाळ चूक.')">C) left</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'leaving चूक.')">D) leaving</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. "To err is human." Here 'To err' functions as:</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! वाक्याचा कर्ता (Subject) म्हणून Infinitive चा वापर झाला आहे.')">A) Subject of the sentence</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Object क्रियापदानंतर येते.')">B) Object of the sentence</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Adverb नाही.')">C) Adverb</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Preposition नाही.')">D) Preposition</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. Avoid ______ in crowded places.</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Avoid नंतर to + V1 येत नाही.')">A) to spit</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Avoid, enjoy, mind, delay नंतर नेहमी Gerund (spitting) येतो.')">B) spitting</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'spit मूळ रूप चूक.')">C) spit</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'spat भूतकाळ चूक.')">D) spat</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. "Hearing a loud sound, he turned around." What is 'Hearing'?</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Gerund नामाचे कार्य करतो.')">A) Gerund</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! कर्त्याची तत्कालीन कृती दर्शवणारे V-ing हे Present Participle आहे.')">B) Present Participle</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Infinitive मध्ये to येतो.')">C) Infinitive</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Finite verb रूप बदलते.')">D) Finite Verb</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 20 -->
+  <div class="lesson-card" id="topic20">
+    <h2>२०. Active Voice & Passive Voice (प्रयोग व सखोल रूपांतर)</h2>
+    <div class="def-box">
+      <b>१. Definition:</b> कर्ता स्वतः कृती करत असल्यास <b>Active Voice (कर्तरी प्रयोग)</b>; आणि कर्मावर क्रिया घडत असल्याचे दर्शवले असल्यास <b>Passive Voice (कर्मणी प्रयोग)</b> म्हणतात.
+    </div>
+
+    <div class="formula-box">
+      <b>२. Master Transformation Formula:</b><br>
+      <b>Active:</b> Subject + Verb + Object<br>
+      <b>Passive:</b> <b>Object + To be चे योग्य रूप + V3 (Past Participle) + by + Subject</b><br>
+      <i>टीप:</i> ८ काळांचे Passive Voice होते (Present Perf. Cont., Past Perf. Cont., Future Cont., व Future Perf. Cont. चे Passive सामान्यतः होत नाही).
+    </div>
+
+    <h3>३. विशेष वाक्यांचे Passive Voice नियम:</h3>
+    <ul>
+      <li><b>Imperative (आज्ञा):</b> <b>Let + Object + be + V3</b> (उदा. <i>Let the door be shut</i>).</li>
+      <li><b>Moral Advice (सल्ला):</b> <b>Object + should be + V3</b> (उदा. <i>The poor should be helped</i>).</li>
+      <li><b>Interrogative (Who ने सुरू होणारे):</b> <b>By whom + Auxiliary + Object + V3?</b></li>
+      <li><b>Prepositional Verbs:</b> क्रियापदासोबतचे मूळ Preposition कायम राहते (उदा. <i>The car ran over the dog $\rightarrow$ The dog was run over by the car</i>).</li>
+    </ul>
+
+    <div class="quiz-section">
+      <h4>📝 सराव संच २०: Active & Passive Voice (१० MCQs)</h4>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१. Active: "The teacher punished the boys." (Passive करा)</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Simple Past चे Passive: were + V3 (The boys were punished by the teacher).')">A) The boys were punished by the teacher.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'Boys अनेकवचनी असल्याने was येत नाही.')">B) The boys was punished by the teacher.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'have been पूर्ण वर्तमानकाळ आहे.')">C) The boys have been punished by the teacher.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'being चालू काळात येते.')">D) The boys were being punished by the teacher.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">२. Active: "They are constructing a new bridge."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'चालू काळात being आवश्यक असते.')">A) A new bridge is constructed by them.</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Present Continuous चे Passive: is + being + V3 (is being constructed).')">B) A new bridge is being constructed by them.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'was भूतकाळ आहे.')">C) A new bridge was being constructed by them.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has been पूर्ण काळ आहे.')">D) A new bridge has been constructed by them.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">३. Active: "Shut the window."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! आज्ञार्थी वाक्याचे Passive: Let + Object + be + V3 (Let the window be shut).')">A) Let the window be shut.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'shutted शब्द इंग्रजीत नाही, shut-shut-shut.')">B) Let the window be shutted.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'be चा वापर झालेला नाही.')">C) Let the window shut.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'You shut ॲक्टिव्हच राहते.')">D) You shut the window.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">४. Active: "Who broke this glass?"</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Who ने सुरुवात होत नाही.')">A) Who was this glass broken?</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Who चे By whom आणि Simple Past साठी was + Subject + V3 अशी प्रश्नार्थक रचना होते.')">B) By whom was this glass broken?</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'यामध्ये प्रश्नार्थक क्रियापदाचा क्रम नाही.')">C) By whom this glass was broken?</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has been पूर्ण वर्तमान आहे.')">D) By whom has this glass been broken?</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">५. Active: "He has sold his old car."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Present Perfect चे Passive: has been + V3 (sold).')">A) His old car has been sold by him.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'car साठी have येत नाही.')">B) His old car have been sold by him.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'had been भूतकाळात होते.')">C) His old car had been sold by him.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'was sold साधा भूतकाळ आहे.')">D) His old car was sold by him.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">६. Active: "We must help the needy."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Modal चे Passive: must + be + V3 (must be helped).')">A) The needy must be helped by us.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'must have been रचना चूक.')">B) The needy must have been helped by us.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'should be मॉडेल बदलता येत नाही.')">C) The needy should be helped by us.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'are helped साधा वर्तमान आहे.')">D) The needy are helped by us.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">७. Active: "Everyone knows Mahatma Gandhi."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, false, 'Know नंतर by येत नाही.')">A) Mahatma Gandhi is known by everyone.</button>
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! अपवाद नियम: Know क्रियापदानंतर Passive मध्ये 'to' हे Preposition येते.')">B) Mahatma Gandhi is known to everyone.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'was भूतकाळ आहे.')">C) Mahatma Gandhi was known to everyone.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has been पूर्ण काळ आहे.')">D) Mahatma Gandhi has been known to everyone.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">८. Active: "The police caught the thief."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Simple Past चे Passive: was caught by the police.')">A) The thief was caught by the police.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'is वर्तमानकाळ आहे.')">B) The thief is caught by the police.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has been पूर्ण वर्तमान आहे.')">C) The thief has been caught by the police.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'being चालू काळात येते.')">D) The thief was being caught by the police.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">९. Passive: "The letter was written by Sita." (Active करा)</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! was written चे ॲक्टिव्ह रूप साध्या भूतकाळात (Sita wrote the letter) होते.')">A) Sita wrote the letter.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'writes साधा वर्तमान आहे.')">B) Sita writes the letter.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'has written पूर्ण वर्तमान आहे.')">C) Sita has written the letter.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'had written पूर्ण भूतकाळ आहे.')">D) Sita had written the letter.</button>
+        </div><div class="expl"></div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">१०. Active: "They will announce the results tomorrow."</div>
+        <div class="options">
+          <button class="opt-btn" onclick="checkQ(this, true, 'बरोबर! Simple Future चे Passive: will be + V3 (announced).')">A) The results will be announced tomorrow.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'will have been पूर्ण भविष्यकाळ आहे.')">B) The results will have been announced tomorrow.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'are announced वर्तमानकाळ आहे.')">C) The results are announced tomorrow.</button>
+          <button class="opt-btn" onclick="checkQ(this, false, 'would be टाईप २ मध्ये येते.')">D) The results would be announced tomorrow.</button>
+        </div><div class="expl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 👇 नेव्हिगेशन बटणे (मागील व पुढील भाग) 👇 -->
+  <div class="nav-buttons-container">
+    <a href="english.html" class="nav-btn secondary">
+      ← मागील भाग १: Foundation (घटक १ ते १०)
+    </a>
+    <a href="english-3.html" class="nav-btn">
+      पुढील भाग ३: Advanced Grammar (घटक २१ ते ३०) →
+    </a>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer style="background:#042f5c;color:white;padding:26px;text-align:center;margin-top:40px">
+  <div style="font-weight:bold;color:#ffd026;font-size:18px">नवी दिशा — MPSC इंग्रजी संपूर्ण अभ्यासिका (Module 2)</div>
+  <p style="font-size:14px;color:#cbd5e1">स्वप्न | अभ्यास | यश — Verb & Tenses सविस्तर तयारी</p>
+  <a href="index.html" style="color:white;text-decoration:underline">← मुख्यपृष्ठावर परत जा</a>
+</footer>
+
+<script>
+// Quiz Answer Checker Function
+function checkQ(btn, isCorrect, explanation) {
+  const parent = btn.parentElement;
+  const explBox = parent.nextElementSibling;
+  const buttons = parent.querySelectorAll('.opt-btn');
+  
+  buttons.forEach(b => {
+    b.disabled = true;
+    b.style.cursor = 'default';
+  });
+
+  if (isCorrect) {
+    btn.classList.add('correct');
+    explBox.innerHTML = "✅ " + explanation;
+    explBox.style.color = "#15803d";
+  } else {
+    btn.classList.add('wrong');
+    explBox.innerHTML = "❌ " + explanation;
+    explBox.style.color = "#b91c1c";
+  }
+  explBox.style.display = "block";
+}
+
+// Text to Speech Functionality
+let speech = null;
+function readFullLesson() {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    const textToRead = "Welcome to Navi Disha MPSC English Module Two. In this module, you will master Subject Verb Agreement, all Tenses with identification formulas, Modal Verbs, Finite and Non-finite verbs, Gerund, Participle, and Active and Passive Voice with one hundred practice questions.";
+    speech = new SpeechSynthesisUtterance(textToRead);
+    speech.lang = 'en-US';
+    speech.rate = 0.9;
+    window.speechSynthesis.speak(speech);
+  } else {
+    alert("तुमच्या ब्राउझरमध्ये Text-to-Speech सपोर्ट उपलब्ध नाही.");
+  }
+}
+
+function stopAudio() {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+  }
+}
+</script>
+
+</body>
+</html>
