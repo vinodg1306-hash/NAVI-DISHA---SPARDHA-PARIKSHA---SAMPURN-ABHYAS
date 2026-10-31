@@ -1,0 +1,111 @@
+/* ===================================================
+   नवी दिशा ॲप - संपूर्ण ॲपसाठी मोठे व ठळक फॉन्ट नियम
+=================================================== */
+
+/* १. मुख्य मजकूर मोठा व गडद करणे */
+body {
+  font-size: 18px !important;
+  line-height: 1.9 !important;
+  color: #0b1f33 !important;
+  font-weight: 500 !important;
+}
+
+/* २. धड्यांचे मथळे आणि उपशीर्षके मोठी करणे */
+.header-card h1 {
+  font-size: 28px !important;
+  line-height: 1.4 !important;
+}
+
+.lesson-card h2 {
+  font-size: 25px !important;
+  font-weight: 800 !important;
+  color: #042e5c !important;
+}
+
+.lesson-card h3 {
+  font-size: 21px !important;
+  font-weight: 700 !important;
+  color: #074882 !important;
+}
+
+/* ३. व्याख्या, सूत्रे, परीक्षा टिप्स आणि एरर बॉक्स */
+.def-box, .formula-box, .exam-tip, .error-box, .rule-box {
+  font-size: 17.5px !important;
+  line-height: 1.8 !important;
+  padding: 16px 20px !important;
+}
+
+/* ४. अनुक्रमणिका (Topic Index) बटणे */
+.index-item {
+  font-size: 16px !important;
+  padding: 12px 16px !important;
+  font-weight: 700 !important;
+}
+
+/* ५. तक्ते (Tables) मधील मजकूर */
+table {
+  font-size: 16.5px !important;
+}
+
+th, td {
+  padding: 12px 16px !important;
+  line-height: 1.6 !important;
+}
+
+/* ६. सराव प्रश्न (MCQs) आणि पर्याय मोठे करणे */
+.quiz-section h4 {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+}
+
+.quiz-q {
+  font-size: 17.5px !important;
+  font-weight: 700 !important;
+  line-height: 1.6 !important;
+}
+
+.opt-btn {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  padding: 12px 16px !important;
+  line-height: 1.5 !important;
+}
+
+.expl {
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  font-weight: 500 !important;
+}
+
+/* ७. ऑडिओ बार व नेव्हिगेशन बटणे */
+.audio-info {
+  font-size: 16px !important;
+}
+
+.nav-btn {
+  font-size: 16px !important;
+  padding: 14px 28px !important;
+}
+
+/* ८. मोबाईल स्क्रीनसाठी विशेष अनुकूलता */
+@media (max-width: 768px) {
+  body {
+    font-size: 17.5px !important;
+    line-height: 1.8 !important;
+  }
+  .header-card h1 {
+    font-size: 23px !important;
+  }
+  .lesson-card h2 {
+    font-size: 22px !important;
+  }
+  .lesson-card h3 {
+    font-size: 19px !important;
+  }
+  .quiz-q {
+    font-size: 17px !important;
+  }
+  .opt-btn {
+    font-size: 15.5px !important;
+  }
+}
