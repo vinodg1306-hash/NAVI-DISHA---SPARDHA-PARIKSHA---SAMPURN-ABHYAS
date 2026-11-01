@@ -109,3 +109,47 @@ th, td {
     font-size: 15.5px !important;
   }
 }
+/* Economics आणि इतर जुन्या विषयांच्या पानांसाठी अतिरिक्त फॉन्ट वाढ */
+.lesson, .lesson p, .lesson li {
+  font-size: 17.5px !important;
+  line-height: 1.8 !important;
+  color: #0b1f33 !important;
+}
+
+.lesson h1, .lesson h2 {
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  color: #8b3500 !important;
+}
+
+.lesson h3 {
+  font-size: 19.5px !important;
+  font-weight: 700 !important;
+  color: #b35900 !important;
+}
+
+/* डाव्या बाजूची अनुक्रमणिका मोठी करा */
+.topics, .topic {
+  font-size: 15.5px !important;
+  line-height: 1.5 !important;
+  padding: 10px 12px !important;
+  font-weight: 600 !important;
+}
+
+/* व्याख्या आणि संकल्पना बॉक्स */
+.box, .exam-fact {
+  font-size: 16.5px !important;
+  line-height: 1.8 !important;
+}
+
+/* सराव प्रश्न आणि पर्याय */
+.mcq-card h4 {
+  font-size: 17.5px !important;
+  line-height: 1.6 !important;
+}
+
+.opt-btn {
+  font-size: 16px !important;
+  padding: 12px 16px !important;
+  font-weight: 600 !important;
+}
